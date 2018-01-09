@@ -61,8 +61,14 @@
     "extends": "react-app"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
+    "firebase": "^4.8.1",
+    "history": "^4.7.2",
+    "immutable": "^3.8.2",
     "react-redux": "^5.0.6",
+    "react-router-redux": "5.0.0-alpha.6",
     "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "reselect": "^3.0.1"
   }
 }
