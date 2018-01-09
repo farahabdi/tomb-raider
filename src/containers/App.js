@@ -5,7 +5,7 @@ import { getAuth } from '../reducers/selectors'
 import Header from '../components/Header';
 
 import SignInPage from '../components/sign-in-page';
-import TasksPage from '../components/tasks-page';
+import LandingPage from '../pages/landing';
 
 
 const App = ({authenticated, signOut}) => (
@@ -18,7 +18,7 @@ const App = ({authenticated, signOut}) => (
     <main>
 
       {authenticated ? (
-        <TasksPage />
+        <LandingPage />
       ) : (
         <SignInPage  />
       )}

@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import configureStore from './store';
 import { initAuth } from './utils/auth';
-import history from './history';
 import App from './containers/App'
 
 const store = configureStore();
