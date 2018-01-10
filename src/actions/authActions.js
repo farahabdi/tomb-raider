@@ -4,18 +4,17 @@ import {
   INIT_AUTH,
   SIGN_IN_ERROR,
   SIGN_IN_SUCCESS,
-  SIGN_OUT_SUCCESS
+  SIGN_OUT_SUCCESS,
+  SAVE_USER
 } from '../constants';
-
 
 function authenticate(provider) {
   return dispatch => {
-    firebaseAuth.signInWithPopup(provider)
+    firebaseAuth.signInWithRedirect(provider)
       .then(result => dispatch(signInSuccess(result)))
       .catch(error => dispatch(signInError(error)));
   };
 }
-
 
 export function initialiseAuth(user) {
   return {
@@ -24,6 +23,12 @@ export function initialiseAuth(user) {
   };
 }
 
+export function signInSuccess(result) {
+  return {
+    type: SIGN_IN_SUCCESS,
+    payload: result.user
+  };
+}
 
 export function signInError(error) {
   return {
@@ -32,19 +37,16 @@ export function signInError(error) {
   };
 }
 
-
-export function signInSuccess(result) {
+export function saveUser(user) {
   return {
-    type: SIGN_IN_SUCCESS,
-    payload: result.user
+    type: SAVE_USER,
+    payload: user
   };
 }
-
 
 export function signInWithFacebook() {
   return authenticate(new firebase.auth.FacebookAuthProvider());
 }
-
 
 export function signOut() {
   return dispatch => {
@@ -52,7 +54,6 @@ export function signOut() {
       .then(() => dispatch(signOutSuccess()));
   };
 }
-
 
 export function signOutSuccess() {
   return {
