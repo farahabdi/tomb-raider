@@ -1,6 +1,5 @@
 import { firebaseAuth } from './config';
-import { initialiseAuth } from '../actions/authActions';
-
+import { initialiseAuth} from '../actions/authActions';
 
 export function initAuth(dispatch) {
   return new Promise((resolve, reject) => {
