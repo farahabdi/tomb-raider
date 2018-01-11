@@ -20,8 +20,8 @@ import {
 export const initialiseApp= () => {
   return function (dispatch)  {
     dispatch(fetchUsers());
-  };
-};
+}
+}
 
 export const fetchUsers = () => {
   return dispatch => {
@@ -30,7 +30,7 @@ export const fetchUsers = () => {
     })
  }
 }
-
+ 
 const receiveUserExists = (userExists) => {
   return dispatch => {
     if (userExists) {
