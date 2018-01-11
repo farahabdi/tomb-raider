@@ -1,42 +1,28 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { authActions } from '../actions';
 import { getAuth } from '../reducers/selectors'
-import Header from '../components/Header';
+import AuthenticatedPage from './AuthenticatedPage';
+import PublicPage from './PublicPage';
 
-import SignInPage from '../components/sign-in-page';
-import LandingPage from '../pages/landing';
+class App extends Component {
 
+    render() {
+      let { authenticated } = this.props
 
-const App = ({authenticated, signOut}) => (
-  <div>
-    <Header
-      authenticated={authenticated}
-      signOut={signOut}
-    />
-
-    <main>
-
-      {authenticated ? (
-        <LandingPage />
-      ) : (
-        <SignInPage  />
-      )}
-    </main>
-  </div>
-);
-
-
-//=====================================
-//  CONNECT
-//-------------------------------------
+      return (
+        <main>
+          {authenticated ? (
+            <AuthenticatedPage />
+          ) : (
+            <PublicPage />
+          )}
+        </main>
+      )
+    }
+}
 
 const mapStateToProps = getAuth;
 
-const mapDispatchToProps = {
-  signOut: authActions.signOut
-};
-
-export default connect( mapStateToProps, mapDispatchToProps )(App)
+export default connect( mapStateToProps, null )(App)
 
 
