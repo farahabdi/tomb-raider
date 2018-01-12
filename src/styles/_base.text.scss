@@ -1,0 +1,61 @@
+.tomb-raider {
+  @include inuit-font-size($content-font-size, $inuit-base-spacing-unit);
+
+  h1:not(.heading) {
+    @include h1();
+  }
+
+  h2:not(.heading) {
+    @include h2();
+  }
+
+  h3:not(.heading) {
+    @include h3();
+  }
+
+  h4:not(.heading) {
+    @include h4();
+  }
+
+  h5:not(.heading) {
+    @include h5();
+  }
+
+  h6:not(.heading) {
+    @include h6();
+  }
+
+  h1:not(.heading),
+  h2:not(.heading),
+  h3:not(.heading),
+  h4:not(.heading),
+  h5:not(.heading),
+  h6:not(.heading) {
+    @include heading();
+  }
+
+  dd,
+  li:not([class^=""]) {
+    max-width: $readable-text-width;
+    margin-left: 0px;
+    @include text();
+  }
+
+  dd {
+    font-size: $paragraph-font-size;
+    font-weight: $text-font-weight;
+    line-height: $paragraph-line-height;
+    margin-bottom: halve($inuit-base-spacing-unit);
+  }
+
+  p:not(.paragraph) {
+    @include paragraph();
+  }
+
+  blockquote {
+    @include inuit-font-size(36px);
+    margin-top: $inuit-base-spacing-unit;
+    margin-bottom: $inuit-base-spacing-unit;
+  }
+
+}
