@@ -1,27 +1,30 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { authActions } from '../actions';
 
 export class AuthenticatedPage extends Component {
-
-   componentWillMount() {
-    authActions.initialiseApp()
-   }
+  componentWillMount() {
+    authActions.initialiseApp();
+  }
 
   render() {
-    const { signOut } = this.props
+    const { signOut } = this.props;
     return (
-        <div>
-          <h1>Sign out</h1>
-          <button onClick={signOut}>Facebook</button>
-        </div>
-    )
+      <div>
+        <h1>Sign out</h1>
+        <button onClick={signOut}>Facebook</button>
+      </div>
+    );
   }
 }
 
-const mapDispatchToProps = {
-    signOut: authActions.signOut
+AuthenticatedPage.propTypes = {
+  signOut: PropTypes.func.isRequired,
 };
 
-  
-export default connect( null, mapDispatchToProps)(AuthenticatedPage)
+const mapDispatchToProps = {
+  signOut: authActions.signOut,
+};
+
+export default connect(null, mapDispatchToProps)(AuthenticatedPage);
