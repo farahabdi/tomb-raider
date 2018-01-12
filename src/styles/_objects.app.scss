@@ -33,3 +33,14 @@
     position: fixed;
   }
 }
+
+
+main {
+  background-image: url("../assets/map.jpg");
+  /* Full height */
+  height: 100vh; 
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

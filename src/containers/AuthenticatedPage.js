@@ -11,10 +11,10 @@ export class AuthenticatedPage extends Component {
   render() {
     const { signOut } = this.props;
     return (
-      <div>
+      <main>
         <h1>Sign out</h1>
         <button onClick={signOut}>Facebook</button>
-      </div>
+      </main>
     );
   }
 }

@@ -2,29 +2,22 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getAuth } from '../reducers/selectors';
-import { AuthenticatedPage } from './AuthenticatedPage';
-import { PublicPage } from './PublicPage';
+import AuthenticatedPage from './AuthenticatedPage';
+import PublicPage from './PublicPage';
 
-export class App extends Component {
+class App extends Component {
   componentWillMount() { }
-
   render() {
     const { authenticated } = this.props;
     return (
-      <main>
-        {authenticated ? (
-          <AuthenticatedPage />
-          ) : (
-            <PublicPage />
-        )}
-      </main>
+      authenticated ? <AuthenticatedPage /> : <PublicPage />
     );
   }
 }
-
 App.propTypes = {
-  authenticated: PropTypes.func.isRequired,
+  authenticated: PropTypes.bool.isRequired,
 };
+
 const mapStateToProps = getAuth;
 
 export default connect(mapStateToProps, null)(App);
