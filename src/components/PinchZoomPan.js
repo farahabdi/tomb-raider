@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { throttle } from 'lodash';
@@ -27,7 +26,7 @@ class PinchZoomPan extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.state.obj.scale !== nextProps.scale) {
-      const obj = { ...this.state.obj, scale: nextProps.scale}
+      const obj = { ...this.state.obj, scale: nextProps.scale };
       this.setState({ obj });
     }
   }
@@ -93,7 +92,7 @@ class PinchZoomPan extends Component {
             if (hasTwoTouchPoints(mm)) {
               // eslint-disable-next-line
               const scaleFactor = (isTouch() && mm.scale) ? mm.scale : (movePoint.x < (size.width / 2)) ? scale + ((translatePos(startPoint, size).x - translatePos(movePoint, size).x) / size.width) : scale + ((translatePos(movePoint, size).x - translatePos(startPoint, size).x) / size.width)
-              const nextScale = between(1, maxScale, scaleFactor)
+              const nextScale = between(1, maxScale, scaleFactor);
               return {
                 scale: nextScale,
                 x: (nextScale < 1.01) ? 0 : x,
@@ -128,7 +127,7 @@ class PinchZoomPan extends Component {
     }
 
     if (!this.state.isPinching) {
-      this.pinchStarted()
+      this.pinchStarted();
     }
 
     this.pinchTimeoutTimer = setTimeout(() => this.pinchStopped(), 500);
@@ -139,7 +138,7 @@ class PinchZoomPan extends Component {
       isPinching: false,
     }, () => {
       this.pinchTimeoutTimer = null;
-      this.props.onPinchStop && this.props.onPinchStop()
+      this.props.onPinchStop && this.props.onPinchStop();
     });
   }
 
@@ -147,7 +146,7 @@ class PinchZoomPan extends Component {
     this.setState({
       isPinching: true,
     }, () => {
-      this.props.onPinchStart && this.props.onPinchStart()
+      this.props.onPinchStart && this.props.onPinchStart();
     });
   }
 
@@ -172,7 +171,7 @@ function eventPreventDefault(event) {
 function isTouch() {
   return (('ontouchstart' in window) ||
       (navigator.MaxTouchPoints > 0) ||
-      (navigator.msMaxTouchPoints > 0))
+      (navigator.msMaxTouchPoints > 0));
 }
 
 function hasTwoTouchPoints(event) {
@@ -187,7 +186,7 @@ function isZoomed(scale) {
 }
 
 function between(min, max, val) {
-  return Math.min(max, Math.max(min, val))
+  return Math.min(max, Math.max(min, val));
 }
 
 function inverse(val) {
@@ -211,6 +210,7 @@ PinchZoomPan.propTypes = {
   onPinchStart: PropTypes.func.isRequired,
   onPinchStop: PropTypes.func.isRequired,
   maxScale: PropTypes.number,
+  scale: PropTypes.number.isRequired,
 };
 
 export default PinchZoomPan;

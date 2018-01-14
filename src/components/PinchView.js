@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import s from 'react-prefixr';
@@ -39,8 +38,8 @@ class PinchView extends Component {
       display: 'flex',
       alignItems: 'center',
       transform: `scale(${obj.scale}) translateY(${obj.y}px)translateX(${obj.x}px)`,
-      transition: '.3s ease-out'
-    }
+      transition: '.3s ease-out',
+    };
   }
 
   renderDebug(obj) {
