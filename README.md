@@ -15,9 +15,9 @@ See https://visualjazz.jira.com/wiki/spaces/VRS/pages/229316879/Tomb+Raider
 * yarn build
 
 ## Deployment
-* do a build manually
+* do a build manually - commit
 * push master branch to the remote server (managed via Dokku)
 
-(not worth setting up proper CI for this project as its so transitory)
+(Not worth setting up proper CI for this project as its so transitory. We wouldn't normally commit build branches but quick and dirty for this is ok - this thing will only be live for a month!).
 
 
