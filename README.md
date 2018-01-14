@@ -16,8 +16,12 @@ See https://visualjazz.jira.com/wiki/spaces/VRS/pages/229316879/Tomb+Raider
 
 ## Deployment
 * do a build manually - commit
-* push master branch to the remote server (managed via Dokku)
+* push master branch to the remote dokku server
 
-(Not worth setting up proper CI for this project as its so transitory. We wouldn't normally commit build branches but quick and dirty for this is ok - this thing will only be live for a month!).
-
+### Notes
+* Not worth setting up proper CI for this project as its so transitory. We wouldn't normally commit build branches but quick and dirty for this is ok - this thing will only be live for a month!)
+* for any new domain need to add it to the firebase authorised domains for Auth
+* current dokku remotes:
+1. dokku@isobar.space:tombraider (test server)
+2. (prod TBC)
 
