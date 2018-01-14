@@ -25,9 +25,15 @@ class App extends Component {
   }
 
   handleZoomOut(value) {
-    this.setState({
-      scale: this.state.scale-.25
-    })
+
+    if (this.state.scale <= 1.5) {
+      return
+    } else {
+      this.setState({
+        scale: this.state.scale-.25
+      })
+    }
+  
   }
 
   handleReset(value) {
