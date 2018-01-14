@@ -1,29 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import configureStore from './store';
-import { initAuth } from './utils/auth';
-import App from './containers/App'
+import { initAuth } from './actions/authActions';
+import App from './containers/App';
+import './styles/index.scss';
 
 const store = configureStore();
 
 function render(Component) {
   ReactDOM.render(
     <Provider store={store}>
-        <div>
-          <Component/>
-        </div>
+      <Component />
     </Provider>,
-      document.getElementById('root')
+    document.getElementById('root'),
   );
 }
 
 if (module.hot) {
   module.hot.accept('./containers/App', () => {
     render(require('./containers/App').default);
-  })
+  });
 }
-
 
 initAuth(store.dispatch)
   .then(() => render(App))

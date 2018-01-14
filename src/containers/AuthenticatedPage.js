@@ -1,27 +1,37 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
+/* eslint-disable */
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { authActions } from '../actions';
+import PinchPanZoom from '../components/PinchZoomPan'
+import s from 'react-prefixr'
+import PinchView from '../components/PinchView'
+import map from '../assets/map.jpg'
 
-export class AuthenticatedPage extends Component {
+class AuthenticatedPage extends Component {
 
-   componentWillMount() {
-    authActions.initialiseApp()
-   }
+  componentWillMount() {
+    authActions.initialiseApp();
+  }
 
   render() {
-    const { signOut } = this.props
+    const {height,width,handleZoomChange} = this.props
+    const ratio = (height / width) * 100
+    const { signOut, scale } = this.props;
     return (
-        <div>
-          <h1>Sign out</h1>
-          <button onClick={signOut}>Facebook</button>
-        </div>
-    )
+      <PinchView scale={scale} zoomChange={handleZoomChange} debug maxScale={4} containerRatio={((400 / 600) * 100)}>
+        <img src={map} style={{width: '100%', height: '100vh'}} />
+      </PinchView>
+    );
   }
 }
 
-const mapDispatchToProps = {
-    signOut: authActions.signOut
+AuthenticatedPage.propTypes = {
+  signOut: PropTypes.func.isRequired,
 };
 
-  
-export default connect( null, mapDispatchToProps)(AuthenticatedPage)
+const mapDispatchToProps = {
+  signOut: authActions.signOut,
+};
+
+export default connect(null, mapDispatchToProps)(AuthenticatedPage);

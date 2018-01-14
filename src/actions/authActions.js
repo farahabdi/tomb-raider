@@ -4,7 +4,7 @@ import { firebaseAuth } from '../utils/config';
 import {
   fetchUserExists,
   createUser,
-  fetchChallenges
+  fetchChallenges,
 } from '../api';
 
 import {
@@ -13,94 +13,99 @@ import {
   SIGN_IN_SUCCESS,
   SIGN_OUT_SUCCESS,
   RECEIVED_CHALLENGES,
-  NEW_USER_CREATED
+  NEW_USER_CREATED,
 } from '../constants';
 
+export const initialiseAuth = user => ({
+  type: INIT_AUTH,
+  payload: user,
+});
 
-export const initialiseApp= () => {
-  return function (dispatch)  {
-    dispatch(fetchUsers());
+export function initAuth(dispatch) {
+  return new Promise((resolve, reject) => {
+    const unsubscribe = firebaseAuth.onAuthStateChanged(
+      (authUser) => {
+        dispatch(initialiseAuth(authUser));
+        unsubscribe();
+        resolve();
+      },
+      error => reject(error),
+    );
+  });
 }
-}
-
-export const fetchUsers = () => {
-  return dispatch => {
-    fetchUserExists().then(userExists => { 
-      dispatch(receiveUserExists(userExists))
-    })
- }
-}
- 
-const receiveUserExists = (userExists) => {
-  return dispatch => {
-    if (userExists) {
-      dispatch(fetchUserChallenges())
-    } else {
-      dispatch(createNewUser())
-    }
-  };
-}
-
-export const createNewUser = () => {
-  return function (dispatch)  {
-    createUser().then(() => { 
-      dispatch(userCreated())
-    })
-  };
-};
-
-export const fetchUserChallenges = () => {
-  return function (dispatch)  {
-    fetchChallenges().then(challenges => { 
-      dispatch(receivedChallenges(challenges))
-    })
-  };
-};
-
-export const receivedChallenges = (challenges) => ({
-  type: RECEIVED_CHALLENGES,
-  payload: challenges
-})
 
 export const userCreated = () => ({
-  type: NEW_USER_CREATED
-})
+  type: NEW_USER_CREATED,
+});
+
+export const createNewUser = () =>
+  (dispatch) => {
+    createUser().then(() => {
+      dispatch(userCreated());
+    });
+  };
+
+export const receivedChallenges = challenges => ({
+  type: RECEIVED_CHALLENGES,
+  payload: challenges,
+});
+
+export const fetchUserChallenges = () =>
+  (dispatch) => {
+    fetchChallenges().then(challenges =>
+      dispatch(receivedChallenges(challenges)));
+  };
+
+const receiveUserExists = userExists =>
+  (dispatch) => {
+    if (userExists) {
+      dispatch(fetchUserChallenges());
+    } else {
+      dispatch(createNewUser());
+    }
+  };
+export const fetchUsers = () =>
+  (dispatch) => {
+    fetchUserExists().then((userExists) => {
+      dispatch(receiveUserExists(userExists));
+    });
+  };
+
+
+export const initialiseApp = () => (
+  (dispatch) => {
+    dispatch(fetchUsers());
+  }
+);
+
+export const signInSuccess = result => ({
+  type: SIGN_IN_SUCCESS,
+  payload: result.user,
+});
+
+export const signInError = error => ({
+  type: SIGN_IN_ERROR,
+  payload: error,
+});
 
 function authenticate(provider) {
-  return dispatch => {
+  return (dispatch) => {
     firebaseAuth.signInWithRedirect(provider)
       .then(result => dispatch(signInSuccess(result)))
       .catch(error => dispatch(signInError(error)));
   };
 }
 
-export const initialiseAuth = (user) => ({
-  type: INIT_AUTH,
-  payload: user
-})
-
-export const signInSuccess = (result) => ({
-  type: SIGN_IN_SUCCESS,
-  payload: result.user
-})
-
-export const signInError = (error) => ({
-  type: SIGN_IN_ERROR,
-  payload: error
-})
-
-
 export const signInWithFacebook = () => (
   authenticate(new firebase.auth.FacebookAuthProvider())
-)
+);
 
-export const signOut = () => {
-  return function (dispatch)  {
+export const signOutSuccess = () => ({
+  type: SIGN_OUT_SUCCESS,
+});
+
+export const signOut = () =>
+  (dispatch) => {
     firebaseAuth.signOut()
       .then(() => dispatch(signOutSuccess()));
   };
-}
-
-export const signOutSuccess = () => ({
-  type: SIGN_OUT_SUCCESS
-})
