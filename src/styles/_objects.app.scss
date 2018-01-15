@@ -45,6 +45,28 @@ main {
   background-size: cover;
 }
 
+.map {
+  height: 100vh;
+}
+
+.map__holder {
+  position: relative;
+}
+
+.map__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.map__container {
+  padding-top: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
 .panel {
   display: block;
   top: 50px;

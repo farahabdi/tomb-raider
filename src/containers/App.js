@@ -11,11 +11,12 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-        scale: 2.5,
+        scale: 1
     }
     this.handleZoomIn = this.handleZoomIn.bind(this)
     this.handleZoomOut = this.handleZoomOut.bind(this)
     this.handleReset = this.handleReset.bind(this)
+    this.goToAfrica = this.goToAfrica.bind(this)
   }
 
   handleZoomIn(value) {
@@ -26,14 +27,26 @@ class App extends Component {
 
   handleZoomOut(value) {
 
-    if (this.state.scale <= 1.5) {
+    /*
+
+        if (this.state.scale <= 1.5) {
       return
     } else {
       this.setState({
         scale: this.state.scale-.25
       })
     }
+    */
+
+      this.setState({
+        scale: this.state.scale-.25
+      })
+    
   
+  }
+
+  goToAfrica() {
+    
   }
 
   handleReset(value) {
@@ -53,6 +66,7 @@ class App extends Component {
           <input placeholder="Enter code here" type="text" />
           <button onClick={this.handleZoomIn}>Zoom In</button>
           <button onClick={this.handleZoomOut}>Zoom Out</button>
+          <button onClick={this.goToAfrica}>Africa</button>
           <button disabled onClick={this.handleReset}>Reset</button>
         </div>
       { authenticated ? <AuthenticatedPage scale={scale} /> : <PublicPage /> }

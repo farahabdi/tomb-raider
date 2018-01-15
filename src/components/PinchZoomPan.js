@@ -9,8 +9,8 @@ class PinchZoomPan extends Component {
     this.state = {
       obj: {
         scale: 2.5,
-        x: -102,
-        y: -136,
+        x: -90,
+        y: -13,
       },
       isPinching: false,
     };

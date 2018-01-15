@@ -1,33 +1,49 @@
 /* eslint-disable */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { authActions } from '../actions';
-import PinchPanZoom from '../components/PinchZoomPan'
-import s from 'react-prefixr'
-import PinchView from '../components/PinchView'
-import map from '../assets/map.jpg'
+import PinchView from '../components/PinchView';
+import map from '../assets/map.jpg';
 
 class AuthenticatedPage extends Component {
-
   componentWillMount() {
     authActions.initialiseApp();
   }
 
+    /* Use the css padding-top to make the container as high as inner content */
+    getContainerStyle(ratio) {
+      return {
+        paddingTop: ratio.toFixed(2) + '%',
+        overflow: 'hidden',
+        position: 'relative'
+      }
+    }
+
   render() {
-    const {height,width,handleZoomChange} = this.props
-    const ratio = (height / width) * 100
-    const { signOut, scale } = this.props;
+    const { scale, handleZoomChange } = this.props;
+
     return (
-      <PinchView scale={scale} zoomChange={handleZoomChange} debug maxScale={4} containerRatio={((400 / 600) * 100)}>
-        <img src={map} style={{width: '100%', height: '100vh'}} />
+      <PinchView
+        scale={scale}
+        zoomChange={handleZoomChange}
+        debug
+        maxScale={4}
+      >
+        <img className="map" src={map} style={{
+          margin: 'auto',
+          width: '100%',
+          height: 'auto'
+        }} />
       </PinchView>
     );
   }
 }
 
 AuthenticatedPage.propTypes = {
-  signOut: PropTypes.func.isRequired,
+  handleZoomChange: PropTypes.func.isRequired,
+  scale: PropTypes.number.isRequired,
 };
 
 const mapDispatchToProps = {

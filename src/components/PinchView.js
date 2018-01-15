@@ -1,44 +1,28 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import s from 'react-prefixr';
 import PinchZoomPan from './PinchZoomPan';
 
 class PinchView extends Component {
-  getContainerStyle() {
-    const { backgroundColor } = this.props;
+
+  getContainerStyle () {
+    const {backgroundColor, containerRatio} = this.props
     return {
-      paddingTop: '100vh',
+      paddingTop: containerRatio.toFixed(2) + '%',
       overflow: 'hidden',
       position: 'relative',
-      background: backgroundColor,
-    };
-  }
-
-  getInnerStyle() {
-    return {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-    };
-  }
-
-  getHolderStyle() {
-    return {
-      position: 'relative',
-    };
+      background: backgroundColor
+    }
   }
 
   getContentStyle(obj) {
     return {
-      width: '100%',
-      height: '100%',
+  
       align: 'center',
       display: 'flex',
       alignItems: 'center',
-      transform: `scale(${obj.scale}) translateY(${obj.y}px)translateX(${obj.x}px)`,
-      transition: '.3s ease-out',
+      transform: `scale(${obj.scale}) translateY(${obj.y}px)translateX(${obj.x}px)`
     };
   }
 
@@ -54,7 +38,7 @@ class PinchView extends Component {
 
   render() {
     const {
-      debug, initialScale, maxScale, holderClassName, containerClassName,
+      debug, initialScale, maxScale,
       children, onPinchStart, onPinchStop, scale,
     } = this.props;
     return (
@@ -65,9 +49,9 @@ class PinchView extends Component {
         // eslint-disable-next-line
         render={(obj) => {
         return (
-          <div style={this.getHolderStyle()} className={holderClassName}>
-            <div style={this.getContainerStyle()} className={containerClassName}>
-              <div style={this.getInnerStyle()}>
+          <div className="map__holder">
+            <div style={this.getContainerStyle()}>
+              <div className="map__inner">
                 <div style={s(this.getContentStyle(obj))}>
                   {children}
                 </div>
@@ -87,7 +71,7 @@ class PinchView extends Component {
 PinchView.defaultProps = {
   initialScale: 1,
   maxScale: 2,
-  backgroundColor: '#f2f2f2',
+  containerRatio: 100,
   debug: false,
   scale: 2.5,
 };
@@ -96,9 +80,6 @@ PinchView.propTypes = {
   initialScale: PropTypes.number,
   maxScale: PropTypes.number,
   children: PropTypes.element.isRequired,
-  containerClassName: PropTypes.string.isRequired,
-  holderClassName: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string,
   debug: PropTypes.bool,
   onPinchStart: PropTypes.func.isRequired,
   onPinchStop: PropTypes.func.isRequired,
