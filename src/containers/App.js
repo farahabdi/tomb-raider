@@ -62,6 +62,7 @@ class App extends Component {
   
     return (
       <div>
+        { authenticated &&
         <div  className="panel">
           <input placeholder="Enter code here" type="text" />
           <button onClick={this.handleZoomIn}>Zoom In</button>
@@ -69,6 +70,7 @@ class App extends Component {
           <button onClick={this.goToAfrica}>Africa</button>
           <button disabled onClick={this.handleReset}>Reset</button>
         </div>
+        }
       { authenticated ? <AuthenticatedPage scale={scale} /> : <PublicPage /> }
       </div>
     );

@@ -9,7 +9,7 @@ class PinchView extends Component {
   getContainerStyle () {
     const {backgroundColor, containerRatio} = this.props
     return {
-      paddingTop: containerRatio.toFixed(2) + '%',
+      paddingTop: '224%',
       overflow: 'hidden',
       position: 'relative',
       background: backgroundColor
@@ -22,7 +22,8 @@ class PinchView extends Component {
       align: 'center',
       display: 'flex',
       alignItems: 'center',
-      transform: `scale(${obj.scale}) translateY(${obj.y}px)translateX(${obj.x}px)`
+      transform: `scale(${obj.scale}) translateY(${obj.y}px)translateX(${obj.x}px)`,
+      position: 'fixed',
     };
   }
 
@@ -73,7 +74,7 @@ PinchView.defaultProps = {
   maxScale: 2,
   containerRatio: 100,
   debug: false,
-  scale: 2.5,
+  scale: 1,
 };
 
 PinchView.propTypes = {
