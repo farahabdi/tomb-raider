@@ -90,3 +90,9 @@ html, body, #map {
 .leaflet-container {
   background: #D6CDCA !important;
 }
+
+.test-control{
+  top: 50px;
+  left: 100px;
+  z-index: 3333;
+}

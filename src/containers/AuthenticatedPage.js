@@ -17,6 +17,10 @@ class AuthenticatedPage extends Component {
 
   componentDidMount() { 
     initMap()
+
+    var x = L.DomUtil.get("map")
+
+    x.insertBefore("<div>fuck you</div>")
   }
 
     /* Use the css padding-top to make the container as high as inner content */
@@ -32,7 +36,15 @@ class AuthenticatedPage extends Component {
     const { scale, handleZoomChange } = this.props;
 
     return (
-        <div id="map"> </div>
+        <div id="map" className="map">
+          <div className="test-control">
+              <div>sdfggcss padding-top to make the container as high as inner co</div>
+              <div>sdfggcss padding-top to make the container as high as inner co</div>
+              <div>sdfggcss padding-top to make the container as high as inner co</div>
+              <div>sdfggcss padding-top to make the container as high as inner co</div>
+          </div>
+        
+        </div>
     );
   }
 }

@@ -7,9 +7,9 @@ export default function init () {
     ]
     var map = L.map('map', {
       minZoom: 0,
-      maxZoom: 3,
+      maxZoom: 2,
       center: [0, 0],
-      zoom: 1,
+      zoom: 0,
       crs: L.CRS.Simple
     });
     
@@ -21,7 +21,10 @@ export default function init () {
     // calculate the edges of the image, in coordinate space
     var southWest = map.unproject([0, h], map.getMaxZoom()-1);
     var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
-    var bounds = new L.LatLngBounds(southWest, northEast);
+
+    const sw = {lat: -1100, lng: 10}
+    const ne = {lat: -10, lng: 1960}
+    var bounds = new L.LatLngBounds(sw, ne);
     
     // add the image overlay, 
     // so that it covers the entire map
