@@ -5,11 +5,18 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { authActions } from '../actions';
 import PinchView from '../components/PinchView';
-import map from '../assets/map.jpg';
+import initMap from './initMap'
+
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 
 class AuthenticatedPage extends Component {
+
   componentWillMount() {
     authActions.initialiseApp();
+  }
+
+  componentDidMount() { 
+    initMap()
   }
 
     /* Use the css padding-top to make the container as high as inner content */
@@ -25,18 +32,7 @@ class AuthenticatedPage extends Component {
     const { scale, handleZoomChange } = this.props;
 
     return (
-      <PinchView
-        scale={scale}
-        zoomChange={handleZoomChange}
-        debug
-        maxScale={4}
-      >
-        <img className="map" src={map} style={{
-          margin: 'auto',
-          width: '100%',
-          height: 'auto'
-        }} />
-      </PinchView>
+        <div id="map"> </div>
     );
   }
 }

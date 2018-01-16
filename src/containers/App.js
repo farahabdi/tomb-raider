@@ -62,16 +62,8 @@ class App extends Component {
   
     return (
       <div>
-        { authenticated &&
-        <div  className="panel">
-          <input placeholder="Enter code here" type="text" />
-          <button onClick={this.handleZoomIn}>Zoom In</button>
-          <button onClick={this.handleZoomOut}>Zoom Out</button>
-          <button onClick={this.goToAfrica}>Africa</button>
-          <button disabled onClick={this.handleReset}>Reset</button>
-        </div>
-        }
-      { authenticated ? <AuthenticatedPage scale={scale} /> : <PublicPage /> }
+        { }
+      { authenticated ? <AuthenticatedPage  /> : <PublicPage /> }
       </div>
     );
   }
