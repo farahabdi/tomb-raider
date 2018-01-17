@@ -139,18 +139,23 @@ html, body, #map {
 }
 
 .profile {
+  background-image: url("../assets/profileTexture.png");
+  background-repeat: no-repeat;
   margin-top: 40px;
   background-size: contain;
-  padding: 14px;
-  margin-top: -282px;
-  margin-left: -43px;
+  padding: 19px;
+  margin-top: -242px;
+  margin-left: -1px;
+
 }
 
 .profile__picture {
   background-repeat: no-repeat;
   background-size: contain;
   transform: rotate(-9deg);
-  padding: 50px;
+  padding: 36px;
+  margin-top: -21px;
+  margin-left: -9px;
   
 }
 
