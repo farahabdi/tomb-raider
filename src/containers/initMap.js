@@ -62,6 +62,11 @@ export default function init () {
         this.profilePicture= L.DomUtil.create('img', 'profile__picture', this.profile);
 
         this.profilePicture.src = window.photoURL
+        this.profilePicture.onclick = () => {
+          window.firebaseAuth.signOut()
+          window.location.reload(true);
+        }
+      
 
         var x = 3
         /*
