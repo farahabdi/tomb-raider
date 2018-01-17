@@ -24,11 +24,17 @@ export const initialiseAuth = user => ({
 
 export function initAuth(dispatch) {
   return new Promise((resolve, reject) => {
+    window.firebaseAuth = firebaseAuth
     const unsubscribe = firebaseAuth.onAuthStateChanged(
       (authUser) => {
-        window.photoURL = authUser.photoURL
-        dispatch(initialiseApp(authUser));
+
+
+     
         dispatch(initialiseAuth(authUser));
+        if (authUser != null) {
+          window.photoURL = authUser.photoURL
+          dispatch(initialiseApp(authUser));
+        }
         unsubscribe();
         resolve();
       },
@@ -110,6 +116,7 @@ export const signOutSuccess = () => {
 
 export const signOut = () =>
   (dispatch) => {
+    window.firebaseAuth = firebaseAuth
     firebaseAuth.signOut()
       .then(() => dispatch(signOutSuccess()));
   };

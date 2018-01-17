@@ -102,6 +102,8 @@ export default function init () {
     // tell leaflet that the map is exactly as big as the image
     map.setMaxBounds(bounds);
 
+    debugger
+
 
   }
   
