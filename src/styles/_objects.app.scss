@@ -171,3 +171,31 @@ html, body, #map {
 .leaflet-top .leaflet-control {
   margin-top: 84px;
 }
+
+.blueFolder__container {
+  margin-top: -33px;
+  margin-right: 292px;
+}
+
+.blueFolder__wrapper {
+  background-image: url("../assets/blueFolder.png") !important;
+  background-repeat: no-repeat !important;
+  width: 280px;
+  height: 570px;
+  padding-bottom: 49px;
+  padding-left: 48px;
+  padding-top: 51px;
+  padding-right: 49px;
+}
+
+.leaflet-right .leaflet-control {
+  margin-right: -5px !important;
+}
+
+input, input:before, input:after {
+  -webkit-user-select: initial;
+  -khtml-user-select: initial;
+  -moz-user-select: initial;
+  -ms-user-select: initial;
+  user-select: initial;
+ } 

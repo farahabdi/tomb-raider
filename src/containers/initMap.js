@@ -35,6 +35,9 @@ export default function init () {
     let items = []
 
 
+
+
+    // Search Control
     L.Control.Search = L.Control.extend({
       options: {
         // topright, topleft, bottomleft, bottomright
@@ -65,46 +68,72 @@ export default function init () {
         this.profile= L.DomUtil.create('div', 'profile', container);
         this.profilePicture= L.DomUtil.create('img', 'profile__picture', this.profile);
 
+
+
+          /* Image */
+
         this.profilePicture.src = window.photoURL
         this.profilePicture.onclick = () => {
           window.firebaseAuth.signOut()
           window.location.reload(true);
         }
-      
-
         var x = 3
-        /*
-        https://i.imgur.com/xJpeYCv.png
-        this.form = L.DomUtil.create('form', 'form', container);
-        var group = L.DomUtil.create('div', 'form-group', this.form);
-        this.input = L.DomUtil.create('input', 'form-control input-sm', group);
-        this.input.type = 'text';
-        this.input.placeholder = this.options.placeholder;
-        this.results = L.DomUtil.create('div', 'list-group', group);
-        L.DomEvent.addListener(this.input, 'keyup', _.debounce(this.keyup, 300), this);
-        L.DomEvent.addListener(this.form, 'submit', this.submit, this);
-        L.DomEvent.disableClickPropagation(container);
-        */
         return container;
-      },
-      onRemove: function (map) {
-
-      },
-      keyup: function(e) {
-
-      },
-      itemSelected: function(e) {
-
-      },
-      submit: function(e) {
       }
     });
+    // End Search control
+
+    //Folder Control
+    L.Control.Folder = L.Control.extend({
+      options: {
+        // topright, topleft, bottomleft, bottomright
+        position: 'topright',
+        placeholder: 'Folder...'
+      },
+      initialize: function (options /*{ data: {...}  }*/) {
+        // constructor
+        L.Util.setOptions(this, options);
+      },
+      onAdd: function (map) {
+        // happens after added to map
+         /* Blue folder */
+         var blueFolderContainer = L.DomUtil.create('div', 'blueFolder__container');
+         this.blueFolderWrapper = L.DomUtil.create('div', 'blueFolder__wrapper', blueFolderContainer );
+         this.blueFolderBox = L.DomUtil.create('div', 'blueFolder__box', blueFolderContainer );
+
+        return blueFolderContainer;
+      }
+    });
+    // End Folder control
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
     L.control.search = function(id, options) {
       return new L.Control.Search(id, options);
     }
 
+    L.control.folder = function(id, options) {
+      return new L.Control.Folder(id, options);
+    }
+
     L.control.search({
+      data: items
+    }).addTo(map)
+
+    L.control.folder({
       data: items
     }).addTo(map)
     
