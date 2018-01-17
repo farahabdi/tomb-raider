@@ -30,6 +30,7 @@ export async function createUser() {
 
   userRef.set({
     uid: user.uid,
+    photoURL: user.photoURL,
     displayName: user.displayName,
     birthday: '',
     email: user.email,

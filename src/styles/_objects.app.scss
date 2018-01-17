@@ -96,3 +96,60 @@ html, body, #map {
   left: 100px;
   z-index: 3333;
 }
+
+.header__wrapper {
+  text-decoration: white;
+  background-image: url(/static/media/headerTexture.8fdad4a8.png);
+  background-repeat: no-repeat;
+  padding: 95px 199px;
+  margin-top: -83px;
+  margin-left: -10px;
+}
+
+.search__container {
+  text-decoration: white;
+  background-image: url("../assets/searchTexture.png");
+  background-repeat: no-repeat;
+  padding: 91px 248px;
+  margin-top: -81px;
+  margin-left: -195px;
+}
+
+.search__input {
+  height: 31px;
+  width: 289px;
+  background: transparent;
+  outline: none;
+  border: none !important;
+  font-size: 26px;
+}
+
+.search__icon {
+  background-image: url("../assets/searchIcon.png");
+  background-repeat: no-repeat;
+
+  padding: 50px;
+  margin-top: -33px;
+  margin-left: 292px;
+}
+
+.search__wrapper {
+  margin-top: -79px;
+  margin-left: -224px;
+}
+
+.profile {
+  margin-top: 40px;
+  background-size: contain;
+  padding: 14px;
+  margin-top: -282px;
+  margin-left: -43px;
+}
+
+.profile__picture {
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: rotate(-9deg);
+  padding: 50px;
+  
+}

@@ -63,7 +63,7 @@ class App extends Component {
     return (
       <div>
         { }
-      { authenticated ? <AuthenticatedPage  /> : <PublicPage /> }
+      { authenticated ? <AuthenticatedPage /> : <PublicPage /> }
       </div>
     );
   }

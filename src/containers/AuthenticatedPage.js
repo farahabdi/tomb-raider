@@ -8,6 +8,8 @@ import PinchView from '../components/PinchView';
 import initMap from './initMap'
 
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { firebase } from '@firebase/app';
+import { firebaseAuth } from '../utils/config';
 
 class AuthenticatedPage extends Component {
 
@@ -18,9 +20,17 @@ class AuthenticatedPage extends Component {
   componentDidMount() { 
     initMap()
 
-    var x = L.DomUtil.get("map")
+    var htmlString = L.DomUtil.get("root")
 
-    x.insertBefore("<div>fuck you</div>")
+    var d1 = document.getElementById('map'); 
+
+    d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');
+
+  //  var wrapper= document.createElement('div');
+  //  wrapper.innerHTML= htmlstring;
+
+  //  htmlString.insertBefore("<div>fuck you</div>", ".test-control")
+
   }
 
     /* Use the css padding-top to make the container as high as inner content */
@@ -34,17 +44,17 @@ class AuthenticatedPage extends Component {
 
   render() {
     const { scale, handleZoomChange } = this.props;
+  
 
     return (
-        <div id="map" className="map">
-          <div className="test-control">
-              <div>sdfggcss padding-top to make the container as high as inner co</div>
-              <div>sdfggcss padding-top to make the container as high as inner co</div>
-              <div>sdfggcss padding-top to make the container as high as inner co</div>
-              <div>sdfggcss padding-top to make the container as high as inner co</div>
-          </div>
-        
-        </div>
+     [<div id="map" className="map"></div>,
+        <div id="test-control">
+        <div>sdfggcss padding-top to make the container as high as inner co</div>
+        <div>sdfggcss padding-top to make the container as high as inner co</div>
+        <div>sdfggcss padding-top to make the container as high as inner co</div>
+        <div>sdfggcss padding-top to make the container as high as inner co</div>
+      </div>]
+
     );
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable */
 import firebase from 'firebase';
 import { firebaseAuth } from '../utils/config';
 
@@ -25,6 +26,8 @@ export function initAuth(dispatch) {
   return new Promise((resolve, reject) => {
     const unsubscribe = firebaseAuth.onAuthStateChanged(
       (authUser) => {
+        window.photoURL = authUser.photoURL
+        dispatch(initialiseApp(authUser));
         dispatch(initialiseAuth(authUser));
         unsubscribe();
         resolve();
@@ -63,6 +66,7 @@ const receiveUserExists = userExists =>
     } else {
       dispatch(createNewUser());
     }
+    
   };
 export const fetchUsers = () =>
   (dispatch) => {
@@ -100,9 +104,9 @@ export const signInWithFacebook = () => (
   authenticate(new firebase.auth.FacebookAuthProvider())
 );
 
-export const signOutSuccess = () => ({
-  type: SIGN_OUT_SUCCESS,
-});
+export const signOutSuccess = () => {
+  return { type: SIGN_OUT_SUCCESS }
+};
 
 export const signOut = () =>
   (dispatch) => {
