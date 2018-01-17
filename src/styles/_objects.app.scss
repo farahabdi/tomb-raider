@@ -99,7 +99,7 @@ html, body, #map {
 
 .header__wrapper {
   text-decoration: white;
-  background-image: url(/static/media/headerTexture.8fdad4a8.png);
+  background-image: url("../assets/headerTexture.png");
   background-repeat: no-repeat;
   padding: 95px 199px;
   margin-top: -83px;
@@ -111,7 +111,7 @@ html, body, #map {
   background-image: url("../assets/searchTexture.png");
   background-repeat: no-repeat;
   padding: 91px 248px;
-  margin-top: -81px;
+  margin-top: -65px;
   margin-left: -195px;
 }
 
@@ -152,4 +152,16 @@ html, body, #map {
   transform: rotate(-9deg);
   padding: 50px;
   
+}
+
+.leaflet-control-zoom {
+  display: none;
+}
+
+.leaflet-left .leaflet-control {
+  margin-left: 12px;
+}
+
+.leaflet-top .leaflet-control {
+  margin-top: 84px;
 }

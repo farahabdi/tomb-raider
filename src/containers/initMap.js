@@ -11,6 +11,7 @@ export default function init () {
       maxZoom: 2,
       center: [0, 0],
       zoom: 0,
+      
       crs: L.CRS.Simple
     });
     
