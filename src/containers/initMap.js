@@ -25,7 +25,7 @@ export default function init () {
     var northEast = map.unproject([w, 0], map.getMaxZoom()-1);
 
     const sw = {lat: -1100, lng: 10}
-    const ne = {lat: -10, lng: 1960}
+    const ne = {lat: -10, lng: 2200}
     var bounds = new L.LatLngBounds(sw, ne);
     
     // add the image overlay, 
@@ -57,7 +57,7 @@ export default function init () {
 
         this.searchInput.setAttribute("autocomplete", "off")
         this.searchInput.setAttribute("spellcheck", "false")
-        this.searchInput.setAttribute("autocorrect", "off")
+        this.searchInput.setAttribute("autocorrect", "false")
         this.searchIcon = L.DomUtil.create('div', 'search__icon', this.searchWrapper);
 
         /* Image */
