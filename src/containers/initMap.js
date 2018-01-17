@@ -54,6 +54,10 @@ export default function init () {
         this.searchContainer  = L.DomUtil.create('div', 'search__container', this.headerWrapper);
         this.searchWrapper= L.DomUtil.create('div', 'search__wrapper', this.searchContainer);
         this.searchInput = L.DomUtil.create('input', 'search__input', this.searchWrapper);
+
+        this.searchInput.setAttribute("autocomplete", "off")
+        this.searchInput.setAttribute("spellcheck", "false")
+        this.searchInput.setAttribute("autocorrect", "off")
         this.searchIcon = L.DomUtil.create('div', 'search__icon', this.searchWrapper);
 
         /* Image */
