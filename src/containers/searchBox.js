@@ -16,8 +16,15 @@ export default function initSearch() {
 
     for (let i = 0; i < searchElement.length; i++) {
         searchElement[i].addEventListener("click", handleSearch);
+        searchElement[i].addEventListener('keyup', event => {
+            event.preventDefault();
+            if (event.keyCode === 13) {
+                handleSearch()
+            }
+        })
+        
     }
-
+    
     document.getElementsByClassName('challenge__1')[0].src = 'https://i.imgur.com/Q24mwMo.png'
     document.getElementsByClassName('challenge__2')[0].src = 'https://i.imgur.com/FQfXCwv.png'
     document.getElementsByClassName('challenge__3')[0].src = 'https://i.imgur.com/PPjvBQl.png'
