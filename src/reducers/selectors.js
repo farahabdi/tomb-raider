@@ -8,3 +8,5 @@ export const getAuth = createSelector(
 export function isAuthenticated(state) {
   return getAuth(state).authenticated;
 }
+
+window.isAuthenticated = isAuthenticated;

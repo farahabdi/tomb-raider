@@ -6,10 +6,12 @@ import { connect } from 'react-redux';
 import { authActions } from '../actions';
 import PinchView from '../components/PinchView';
 import initMap from './initMap'
+import initSearch from './searchBox'
 
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import { firebase } from '@firebase/app';
 import { firebaseAuth } from '../utils/config';
+import { initialiseApp } from '../actions/authActions';
 
 class AuthenticatedPage extends Component {
 
@@ -19,6 +21,7 @@ class AuthenticatedPage extends Component {
 
   componentDidMount() { 
     initMap()
+    initSearch()
 
     var htmlString = L.DomUtil.get("root")
 

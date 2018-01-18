@@ -1,3 +1,4 @@
+/* eslint-disable */
 import firebase from 'firebase';
 import { db } from '../utils/config';
 
@@ -15,11 +16,18 @@ export async function fetchUserExists() {
 export async function fetchChallenges() {
   const user = firebase.auth().currentUser;
   let challenges = {};
-  await db.collection('users')
+  var x = await db.collection('users')
     .doc(user.uid)
     .collection('challenges')
     .doc(user.uid)
-    .onSnapshot((querySnapshot) => { challenges = querySnapshot.data(); });
+    .onSnapshot((querySnapshot) => { 
+      var x = 3
+    
+      challenges = querySnapshot.data();
+      window.challenges = challenges;
+     });
+
+   
 
   return challenges;
 }

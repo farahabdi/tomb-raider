@@ -146,7 +146,7 @@ html, body, #map {
   background-size: contain;
   padding: 19px;
   margin-top: -242px;
-  margin-left: -1px;
+  margin-left: -13px;
 
 }
 
@@ -154,7 +154,7 @@ html, body, #map {
   background-repeat: no-repeat;
   background-size: contain;
   transform: rotate(-9deg);
-  padding: 36px;
+  padding: 22px;
   margin-top: -21px;
   margin-left: -9px;
   
@@ -192,6 +192,10 @@ html, body, #map {
   margin-right: -5px !important;
 }
 
+.challenge__container {
+  padding: 20px;
+}
+
 
 
  input, textarea {
@@ -200,4 +204,50 @@ html, body, #map {
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text;
+}
+
+.challenge__wrapper {
+  display: flex;
+  margin-top: -259px;
+  margin-left: 125px;
+}
+
+.challenge__1 {
+  background-repeat: no-repeat !important;
+  padding-top: 18px;
+  padding-bottom: 10px;
+  padding-left: -3px;
+  padding-right: 0px;
+}
+
+.challenge__2 {
+  background-repeat: no-repeat !important;
+  padding-top: 18px;
+  padding-bottom: 10px;
+  padding-left: -3px;
+  padding-right: 0px;
+}
+
+.challenge__3 {
+  background-repeat: no-repeat !important;
+  padding-top: 18px;
+  padding-bottom: 10px;
+  padding-left: -3px;
+  padding-right: 0px;
+}
+
+.challenge__4 {
+  background-repeat: no-repeat !important;
+  padding-top: 18px;
+  padding-bottom: 10px;
+  padding-left: -3px;
+  padding-right: 0px;
+}
+
+.challenge__5 {
+  background-repeat: no-repeat !important;
+  padding-top: 18px;
+  padding-bottom: 10px;
+  padding-left: -3px;
+  padding-right: 0px;
 }
