@@ -192,13 +192,7 @@ html, body, #map {
   margin-right: -5px !important;
 }
 
-input, input:before, input:after {
-  -webkit-user-select: initial;
-  -khtml-user-select: initial;
-  -moz-user-select: initial;
-  -ms-user-select: initial;
-  user-select: initial;
- } 
+
 
  input, textarea {
   -webkit-user-select: text;
