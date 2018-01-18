@@ -12,11 +12,12 @@ let x = initApp().map
 export default function initSearch() {
 
     let searchElement = document.getElementsByClassName('search__icon')
-
+    let searchInput = document.getElementsByClassName('search__input')
 
     for (let i = 0; i < searchElement.length; i++) {
         searchElement[i].addEventListener("click", handleSearch);
-        searchElement[i].addEventListener('keyup', event => {
+        searchInput[i].addEventListener('keyup', event => {
+            debugger
             event.preventDefault();
             if (event.keyCode === 13) {
                 handleSearch()

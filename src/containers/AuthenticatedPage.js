@@ -26,7 +26,7 @@ class AuthenticatedPage extends Component {
     initApp().init()
     initSearch()
     initChallenges()
-    debugger
+  
   }
 
   getContainerStyle(ratio) {
@@ -42,21 +42,13 @@ class AuthenticatedPage extends Component {
   
 
     return (
-     [<div id="map" className="map"></div>,
-        <div id="test-control">
-        <div>sdfggcss padding-top to make the container as high as inner co</div>
-        <div>sdfggcss padding-top to make the container as high as inner co</div>
-        <div>sdfggcss padding-top to make the container as high as inner co</div>
-        <div>sdfggcss padding-top to make the container as high as inner co</div>
-      </div>]
-
+     <div id="map" className="map"></div>
     );
   }
 }
 
 AuthenticatedPage.propTypes = {
-  handleZoomChange: PropTypes.func.isRequired,
-  scale: PropTypes.number.isRequired,
+
 };
 
 const mapDispatchToProps = {

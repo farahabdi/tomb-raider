@@ -21,7 +21,7 @@ export default function initApp () {
     });
 
     window.map = map
-    debugger
+ 
 
     // dimensions of the image
     var w = 3860,
@@ -85,7 +85,7 @@ export default function initApp () {
           firebaseAuth.signOut()
           window.location.reload(true);
         }
-        debugger
+  
 
          /* Image */
         this.profilePicture.src = window.photoURL

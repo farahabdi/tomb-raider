@@ -20,7 +20,6 @@ export async function initChallenges() {
     if (challenges.challenge2 == true) {
         document.getElementsByClassName('challenge__2')[0].src = code2
      //   window.map.flyTo([13.87992, 45.9791], 1)
-        debugger
 
         
     }
