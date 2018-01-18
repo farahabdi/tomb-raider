@@ -77,6 +77,10 @@ export default function initApp () {
 
          /* Image */
         this.profilePicture.src = window.photoURL
+        this.profilePicture.touchstart = () => {
+          firebaseAuth.signOut()
+          window.location.reload(true);
+        }
         this.profilePicture.onclick = () => {
           firebaseAuth.signOut()
           window.location.reload(true);
