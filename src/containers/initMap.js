@@ -76,7 +76,10 @@ export default function initApp () {
         this.profilePicture= L.DomUtil.create('img', 'profile__picture', this.profile);
 
         this.profilePicture.addEventListener("touchstart", logout, false);
+        this.profilePicture.addEventListener("click", logout, false);
 
+        this.profile.addEventListener("touchstart", logout, false);
+        this.profile.addEventListener("click", logout, false);
 
         function logout(event) {
           firebaseAuth.signOut()
