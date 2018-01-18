@@ -3,7 +3,9 @@
 import { firebaseAuth } from '../utils/config'
 import './searchBox'
 
-export default function init () {
+
+export default function initApp () {
+  function init() {
     var img = [
       3840,  // original width of image
       2160   // original height of image
@@ -17,7 +19,10 @@ export default function init () {
       
       crs: L.CRS.Simple
     });
-    
+
+    window.map = map
+    debugger
+
     // dimensions of the image
     var w = 3860,
         h = 2180,
@@ -30,16 +35,15 @@ export default function init () {
     const sw = {lat: -1100, lng: 10}
     const ne = {lat: -10, lng: 2200}
     var bounds = new L.LatLngBounds(sw, ne);
+    map.on('click', function(e) {
+      console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
+  });
     
     // add the image overlay, 
     // so that it covers the entire map
     L.imageOverlay(url, bounds).addTo(map);
 
     let items = []
-
-
-
-
     // Search Control
     L.Control.Search = L.Control.extend({
       options: {
@@ -64,23 +68,20 @@ export default function init () {
         this.searchInput.setAttribute("autocomplete", "off")
         this.searchInput.setAttribute("spellcheck", "false")
         this.searchInput.setAttribute("autocorrect", "false")
+        this.searchInput.setAttribute("placeholder", "Enter the landmark.")
         this.searchIcon = L.DomUtil.create('div', 'search__icon', this.searchWrapper);
 
         /* Image */
-
         this.profile= L.DomUtil.create('div', 'profile', container);
         this.profilePicture= L.DomUtil.create('img', 'profile__picture', this.profile);
 
-
-        
-          /* Image */
-
+         /* Image */
         this.profilePicture.src = window.photoURL
         this.profilePicture.onclick = () => {
           firebaseAuth.signOut()
           window.location.reload(true);
         }
-        var x = 3
+
         return container;
       }
     });
@@ -105,7 +106,10 @@ export default function init () {
          this.blueFolderBox = L.DomUtil.create('div', 'blueFolder__box', blueFolderContainer );
 
         return blueFolderContainer;
-      }
+      },
+
+
+
     });
     // End Folder control
 
@@ -125,58 +129,22 @@ export default function init () {
 
         /* Challenge container */
         var challengeContainer  = L.DomUtil.create('div', 'challenge__container');
-
         this.challengeWrapper  = L.DomUtil.create('div', 'challenge__wrapper', challengeContainer );
-
         this.challengeWrapper1  = L.DomUtil.create('img', 'challenge__1', this.challengeWrapper  );
         this.challengeWrapper2  = L.DomUtil.create('img', 'challenge__2', this.challengeWrapper  );
         this.challengeWrapper3  = L.DomUtil.create('img', 'challenge__3', this.challengeWrapper  );
         this.challengeWrapper4  = L.DomUtil.create('img', 'challenge__4', this.challengeWrapper  );
         this.challengeWrapper5  = L.DomUtil.create('img', 'challenge__5', this.challengeWrapper  );
 
-
-
-        // note done
-        //code 1 https://i.imgur.com/Q24mwMo.png
-        //code 2 https://i.imgur.com/FQfXCwv.png
-        //code 3 https://i.imgur.com/PPjvBQl.png
-        //code 4 https://i.imgur.com/sFfZ8DU.png
-        //code 5 https://i.imgur.com/sFfZ8DU.png
-
-
-        //code 1 https://i.imgur.com/Tnzujx4.png
-        //code 2 https://i.imgur.com/vp5VXcp.png
-        //code 3 https://i.imgur.com/zikZBt3.png
-        //code 4 https://i.imgur.com/rdioy0g.png
-        //code 5 https://i.imgur.com/lvhAJKO.png
-
-/* 
-
-        if (window.challenges.challenge1 == true) {
-          window.challenges.challenge1.src = 'https://i.imgur.com/Tnzujx4.png'
-
-        } else {
-          window.challenges.challenge1.src = 'https://i.imgur.com/Q24mwMo.png'
-        }
-
-        if (window.challenges.challenge2 == true) {
-          window.challenges.challenge1.src = 'https://i.imgur.com/Tnzujx4.png'
-
-        } else {
-          window.challenges.challenge2.src = 'https://i.imgur.com/FQfXCwv.png'
-        }
-     */
-
-
-
-
+        L.DomEvent.addListener(this.challengeWrapper1, 'farah', this.onChallenge2, this);
 
       return challengeContainer;
+    },
+    onChallenge2: function(e) {
+      console.log('sweet')
     }
   });
   // End Folder control
-
-
 
     L.control.search = function(id, options) {
       return new L.Control.Search(id, options);
@@ -204,9 +172,11 @@ export default function init () {
     
     // tell leaflet that the map is exactly as big as the image
     map.setMaxBounds(bounds);
+  }
 
-   
-
-
+    return {
+      init: init,
+ 
+    }
   }
   

@@ -73,7 +73,7 @@ PinchView.defaultProps = {
   initialScale: 1,
   maxScale: 2,
   containerRatio: 100,
-  debug: false,
+  debug: true,
   scale: 1,
 };
 

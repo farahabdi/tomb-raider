@@ -5,13 +5,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { authActions } from '../actions';
 import PinchView from '../components/PinchView';
-import initMap from './initMap'
+import initApp from './initMap'
 import initSearch from './searchBox'
+import { fetchChallenges } from '../api/index'
 
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
 import { firebase } from '@firebase/app';
 import { firebaseAuth } from '../utils/config';
 import { initialiseApp } from '../actions/authActions';
+import { initChallenges } from './initChallenges'
 
 class AuthenticatedPage extends Component {
 
@@ -20,30 +22,20 @@ class AuthenticatedPage extends Component {
   }
 
   componentDidMount() { 
-    initMap()
+    initApp()
+    initApp().init()
     initSearch()
-
-    var htmlString = L.DomUtil.get("root")
-
-    var d1 = document.getElementById('map'); 
-
-    d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');
-
-  //  var wrapper= document.createElement('div');
-  //  wrapper.innerHTML= htmlstring;
-
-  //  htmlString.insertBefore("<div>fuck you</div>", ".test-control")
-
+    initChallenges()
+    debugger
   }
 
-    /* Use the css padding-top to make the container as high as inner content */
-    getContainerStyle(ratio) {
-      return {
-        paddingTop: ratio.toFixed(2) + '%',
-        overflow: 'hidden',
-        position: 'relative'
-      }
+  getContainerStyle(ratio) {
+    return {
+      paddingTop: ratio.toFixed(2) + '%',
+      overflow: 'hidden',
+      position: 'relative'
     }
+  }
 
   render() {
     const { scale, handleZoomChange } = this.props;

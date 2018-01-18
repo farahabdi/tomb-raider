@@ -13,7 +13,7 @@ export async function fetchUserExists() {
   return userExists;
 }
 
-export async function fetchChallenges() {
+/* export async function fetchChallengess() {
   const user = firebase.auth().currentUser;
   let challenges = {};
   var x = await db.collection('users')
@@ -22,14 +22,45 @@ export async function fetchChallenges() {
     .doc(user.uid)
     .onSnapshot((querySnapshot) => { 
       var x = 3
-    
       challenges = querySnapshot.data();
       window.challenges = challenges;
      });
-
-   
-
   return challenges;
+} */
+
+export async function fetchChallenges(text) {
+  const user = firebaseAuth.currentUser;
+  let result = false
+  return db.collection('users')
+      .doc(user.uid)
+      .collection('challenges')
+      .doc(user.uid)
+      .get()
+      .then((result) => {
+          return result.data();
+      })
+}
+
+export async function updateChallenge(challenge) {
+  const user = firebase.auth().currentUser;
+  db.collection('users')
+  .doc(user.uid)
+  .collection('challenges')
+  .doc(user.uid)
+  .update({
+      [`${challenge}`]: true
+  })
+}
+
+export async function checkAnswer(text) {
+  const user = firebaseAuth.currentUser;
+  let result = false
+  return db.collection('challengeAnswers')
+      .doc('challenges')
+      .get()
+      .then((result) => {
+          return result.data();
+      })
 }
 
 export async function createUser() {

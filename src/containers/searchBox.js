@@ -2,6 +2,12 @@
 /* eslint-disable */
 import { firebaseAuth } from '../utils/config'
 import { db } from '../utils/config';
+import { updateChallenge, checkAnswer, fetchChallenges } from '../api/index'
+import initApp from './initMap'
+
+let init = initApp
+
+let x = initApp().map
 
 export default function initSearch() {
 
@@ -9,14 +15,8 @@ export default function initSearch() {
 
 
     for (let i = 0; i < searchElement.length; i++) {
-        searchElement[i].addEventListener("click", modifyText);
+        searchElement[i].addEventListener("click", handleSearch);
     }
-
-
-    debugger
-    
-
-
 
     document.getElementsByClassName('challenge__1')[0].src = 'https://i.imgur.com/Q24mwMo.png'
     document.getElementsByClassName('challenge__2')[0].src = 'https://i.imgur.com/FQfXCwv.png'
@@ -25,118 +25,41 @@ export default function initSearch() {
     document.getElementsByClassName('challenge__5')[0].src = 'https://i.imgur.com/sFfZ8DU.png'
 
     
-    async function modifyText() {
+    async function handleSearch() {
         let searchInput = document.getElementsByClassName('search__input')
         let answerInput = searchInput[0].value
         let result = await checkAnswer(answerInput)
-
         const user = firebaseAuth.currentUser;
-
 
         if (result.challenge1 == answerInput) {
             document.getElementsByClassName('challenge__1')[0].src = 'https://i.imgur.com/Tnzujx4.png'
-
-            
-            let challenges = {};
-            db.collection('users')
-              .doc(user.uid)
-              .collection('challenges')
-              .doc(user.uid)
-              .set({
-                  challenge1: true
-              })
-
-
-            
+  
+            // -465, 1174
+            window.map.flyTo([-465, 1174], 1)    
+            updateChallenge('challenge1')
         } else if (result.challenge2 == answerInput) {
             document.getElementsByClassName('challenge__2')[0].src = 'https://i.imgur.com/vp5VXcp.png'
 
-
-            db.collection('users')
-              .doc(user.uid)
-              .collection('challenges')
-              .doc(user.uid)
-              .set({
-                  challenge2: true
-              })
-
-
+            // -668, 1308
+            window.map.flyTo([-668, 1308], 1)
+            updateChallenge('challenge2')
         } else if (result.challenge3 == answerInput) {
             document.getElementsByClassName('challenge__3')[0].src = 'https://i.imgur.com/zikZBt3.png'
-
-
-            db.collection('users')
-              .doc(user.uid)
-              .collection('challenges')
-              .doc(user.uid)
-              .set({
-                  challenge3: true
-              })
-
-
+            // -474, 1683
+            
+            window.map.flyTo([-474, 1683], 1)
+            updateChallenge('challenge3')
         } else if (result.challenge4 == answerInput) {
             document.getElementsByClassName('challenge__4')[0].src = 'https://i.imgur.com/rdioy0g.png'
-
-            db.collection('users')
-              .doc(user.uid)
-              .collection('challenges')
-              .doc(user.uid)
-              .set({
-                  challenge4: true
-              })
-
-
-
+               // -585.7060241699219, 632.9839477539062
+            window.map.flyTo([-585.7060241699219, 632.9839477539062], 1)
+            updateChallenge('challenge4')
         } else if (result.challenge5 == answerInput) {
             document.getElementsByClassName('challenge__5')[0].src = 'https://i.imgur.com/lvhAJKO.png'
-
-
-            db.collection('users')
-              .doc(user.uid)
-              .collection('challenges')
-              .doc(user.uid)
-              .set({
-                  challenge5: true
-              })
-
-
+            updateChallenge('challenge5')
         }
-
-
-
-      
-
       }
-
-
   }
 
-
-
-  export async function checkAnswer(text) {
-    const user = firebaseAuth.currentUser;
-
-    let result = false
-
-   return db.collection('challengeAnswers')
-      .doc('challenges')
-      .get()
-      .then((result) => {
-          return result.data();
-      })
-  }
-  
-  
-  export async function saveChallenge(text) {
-    const user = firebaseAuth.currentUser;
-
-    db.collection('users')
-      .doc(user.uid).set({
-        name: "Los Angeles",
-        state: "CA",
-        country: "USA"
-    })
-  }
-  
   
 
