@@ -16,10 +16,9 @@ export default function initApp () {
       maxZoom: 2,
       center: [0, 0],
       zoom: 0,
-      
       crs: L.CRS.Simple
     });
-
+  
     window.map = map
  
 
@@ -37,7 +36,7 @@ export default function initApp () {
     var bounds = new L.LatLngBounds(sw, ne);
     map.on('click', function(e) {
       console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
-  });
+    });
     
     // add the image overlay, 
     // so that it covers the entire map
@@ -62,6 +61,7 @@ export default function initApp () {
 
         /* Search */  
         this.searchContainer  = L.DomUtil.create('div', 'search__container', this.headerWrapper);
+
         this.searchWrapper= L.DomUtil.create('div', 'search__wrapper', this.searchContainer);
         this.searchInput = L.DomUtil.create('input', 'search__input', this.searchWrapper);
 
@@ -70,6 +70,7 @@ export default function initApp () {
         this.searchInput.setAttribute("autocorrect", "false")
         this.searchInput.setAttribute("placeholder", "Enter the landmark.")
         this.searchIcon = L.DomUtil.create('div', 'search__icon', this.searchWrapper);
+        this.searchContainer.addEventListener("click", focusSearch, false); //see focusSearch() function
 
         /* Image */
         this.profile= L.DomUtil.create('div', 'profile', container);
@@ -85,7 +86,13 @@ export default function initApp () {
           firebaseAuth.signOut()
           window.location.reload(true);
         }
-  
+
+        function focusSearch(event) {
+          //bed - 19 Jan 2018 - have to manually tell this to focus for iOS. 
+          //I suspect this is due to iOS prevention of focus() events outside of the user manually doing it, and outside of an originating 'click' event - security reasons
+          //I think leaflet may be propogating touch events up? maybe. ¯\_(ツ)_/¯ This seems to work though as we start from a click event
+          event.srcElement.focus()
+        }
 
          /* Image */
         this.profilePicture.src = window.photoURL

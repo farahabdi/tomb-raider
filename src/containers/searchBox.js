@@ -22,8 +22,7 @@ export default function initSearch() {
             if (event.keyCode === 13) {
                 handleSearch()
             }
-        })
-        
+        })   
     }
     
     document.getElementsByClassName('challenge__1')[0].src = 'https://i.imgur.com/Q24mwMo.png'
@@ -31,11 +30,11 @@ export default function initSearch() {
     document.getElementsByClassName('challenge__3')[0].src = 'https://i.imgur.com/PPjvBQl.png'
     document.getElementsByClassName('challenge__4')[0].src = 'https://i.imgur.com/sFfZ8DU.png'
     document.getElementsByClassName('challenge__5')[0].src = 'https://i.imgur.com/sFfZ8DU.png'
-
     
     async function handleSearch() {
         let searchInput = document.getElementsByClassName('search__input')
         let answerInput = searchInput[0].value
+        searchInput[0].blur()
         let result = await checkAnswer(answerInput)
         const user = firebaseAuth.currentUser;
 
