@@ -1,0 +1,77 @@
+{
+    "GUID": "1ecb5e80-fcc9-11e7-b9c9-4bd12077311b",
+    "lastModifTS": "2018-01-19T03:30:48.804Z",
+    "persistenceSchemaVersion": "1",
+    "description": "",
+    "comments": "",
+    "author": "",
+    "version": "",
+    "collections": [],
+    "buckets": [
+        {
+            "GUID": "239c2070-fcc9-11e7-b9c9-4bd12077311b",
+            "name": "New Database",
+            "type": "bucket",
+            "description": "",
+            "comments": "",
+            "collectionIds": [],
+            "backgroundColor": {
+                "r": 164,
+                "g": 196,
+                "b": 0,
+                "a": 1
+            },
+            "show": true
+        }
+    ],
+    "views": [],
+    "relationships": [],
+    "users": [],
+    "idToNameHashTable": {
+        "239c2070-fcc9-11e7-b9c9-4bd12077311b": "New Database"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "1ecb5e81-fcc9-11e7-b9c9-4bd12077311b"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "1ecb5e82-fcc9-11e7-b9c9-4bd12077311b"
+    },
+    "modelName": "New Model",
+    "dbVersion": "v3.4",
+    "dbVendor": "MongoDB",
+    "hideModelViews": true,
+    "appTarget": "MONGODB",
+    "creationTS": "2018-01-19T03:30:39.336Z",
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [],
+                "buckets": [
+                    {
+                        "x": 40,
+                        "y": 40,
+                        "GUID": "239c2070-fcc9-11e7-b9c9-4bd12077311b"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "details": true
+        }
+    }
+}

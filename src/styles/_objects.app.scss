@@ -36,7 +36,7 @@
 
 
 main {
-  background-image: url("../assets/map.jpg");
+  
   /* Full height */
   height: 100vh;
   width: 100%;
@@ -172,24 +172,62 @@ html, body, #map {
   margin-top: 84px;
 }
 
-.blueFolder__container {
+.options__container {
   margin-top: -33px;
   margin-right: 292px;
 }
 
-.blueFolder__wrapper {
-  background-image: url("../assets/blueFolder.png") !important;
+.options__wrapper {
+  background-image: url("../assets/options.png") !important;
   background-repeat: no-repeat !important;
   width: 280px;
   height: 570px;
-  padding-bottom: 49px;
+  padding-bottom: -5px;
   padding-left: 48px;
   padding-top: 51px;
   padding-right: 49px;
+  transition: 2.15s all ease;
 }
 
+.options__wrapper:focus {
+ 
+  padding-left: 299px;
+  transition: 2.15s all ease;
+}
+
+.options__container:focus {
+  padding-left: 299px;
+  -webkit-transition: width 1s ease-in-out;
+  -moz-transition: width 1s ease-in-out;
+  -o-transition: width 1s ease-in-out;
+  transition: width 1s ease-in-out;
+}
+
+
+
+
+.fieldNotes1__container {
+  margin-top: -33px;
+  margin-right: 292px;
+}
+
+.fieldNotes1__wrapper {
+  background-image: url("../assets/options.png") !important;
+  background-repeat: no-repeat !important;
+  width: 280px;
+  height: 570px;
+  padding-bottom: -5px;
+  padding-left: 148px;
+  padding-top: 51px;
+  padding-right: 49px;
+  transition: 2.15s all ease;
+}
+
+
+
+
 .leaflet-right .leaflet-control {
-  margin-right: -5px !important;
+  margin-right: -254px !important;
 }
 
 .challenge__container {

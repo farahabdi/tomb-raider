@@ -25,7 +25,7 @@ export default function initApp () {
     // dimensions of the image
     var w = 3860,
         h = 2180,
-        url = 'https://i.imgur.com/YADK5Op.jpg';
+        url = 'https://i.imgur.com/zXtbZ1H.jpgca';
     
     // calculate the edges of the image, in coordinate space
     var southWest = map.unproject([0, h], map.getMaxZoom()-1);
@@ -33,6 +33,15 @@ export default function initApp () {
 
     const sw = {lat: -1100, lng: 10}
     const ne = {lat: -10, lng: 2200}
+
+    /* L.popup()
+    .setLatLng([-567.8762371950518, 957.0612003092365])
+    .setContent('<p>Hello world!<br />This is a nice popup.</p>')
+    .openOn(map); */
+
+
+
+
     var bounds = new L.LatLngBounds(sw, ne);
     map.on('click', function(e) {
       console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
@@ -82,6 +91,14 @@ export default function initApp () {
         this.profile.addEventListener("touchstart", logout, false);
         this.profile.addEventListener("click", logout, false);
 
+
+        /* 
+        For data URI SVG support in Firefox & IE it's necessary to URI encode the string
+        & replace the '#' character with '%23'. `encodeURI()` won't do this which is
+        why `replace()` must be used on the string afterwards.
+        */
+ 
+
         function logout(event) {
           firebaseAuth.signOut()
           window.location.reload(true);
@@ -110,8 +127,8 @@ export default function initApp () {
     });
     // End Search control
 
-    //Folder Control
-    L.Control.Folder = L.Control.extend({
+    //Options Control
+    L.Control.Options = L.Control.extend({
       options: {
         // topright, topleft, bottomleft, bottomright
         position: 'topright',
@@ -123,18 +140,53 @@ export default function initApp () {
       },
       onAdd: function (map) {
         // happens after added to map
-         /* Blue folder */
-         var blueFolderContainer = L.DomUtil.create('div', 'blueFolder__container');
-         this.blueFolderWrapper = L.DomUtil.create('div', 'blueFolder__wrapper', blueFolderContainer );
-         this.blueFolderBox = L.DomUtil.create('div', 'blueFolder__box', blueFolderContainer );
+         /* Blue Options */
+         var optionsContainer = L.DomUtil.create('div', 'options__container');
+         this.optionsWrapper = L.DomUtil.create('div', 'options__wrapper', optionsContainer );
 
-        return blueFolderContainer;
+         this.optionsWrapper.setAttribute("tabindex", "1")
+
+
+
+         let optionsElement = document.getElementsByClassName('options__wrapper')
+
+     
+
+         this.optionsBox = L.DomUtil.create('div', 'options__box', optionsContainer );
+
+        return optionsContainer;
       },
 
 
 
     });
-    // End Folder control
+    // End Options control
+
+
+    //FieldNotes Control
+    L.Control.FieldNotes= L.Control.extend({
+      options: {
+        // topright, topleft, bottomleft, bottomright
+        position: 'topright',
+        placeholder: 'FieldNotes...'
+      },
+      initialize: function (options /*{ data: {...}  }*/) {
+        // constructor
+        L.Util.setOptions(this, options);
+      },
+      onAdd: function (map) {
+        // happens after added to map
+          /* Field Notes */
+          var fieldNotesContainer = L.DomUtil.create('div', 'fieldNotes__container');
+ 
+
+        return fieldNotesContainer;
+      },
+
+
+
+    });
+    // End Options control
 
 
   //Folder Control
@@ -167,14 +219,18 @@ export default function initApp () {
       console.log('sweet')
     }
   });
-  // End Folder control
+  // End Options control
 
     L.control.search = function(id, options) {
       return new L.Control.Search(id, options);
     }
 
-    L.control.folder = function(id, options) {
-      return new L.Control.Folder(id, options);
+    L.control.options = function(id, options) {
+      return new L.Control.Options(id, options);
+    }
+
+    L.control.fieldNotes = function(id, options) {
+      return new L.Control.FieldNotes(id, options);
     }
 
     L.control.challenge = function(id, options) {
@@ -185,7 +241,11 @@ export default function initApp () {
       data: items
     }).addTo(map)
 
-    L.control.folder({
+    L.control.options({
+      data: items
+    }).addTo(map)
+
+    L.control.fieldNotes({
       data: items
     }).addTo(map)
 
