@@ -31,37 +31,39 @@ export default function initSearch() {
     document.getElementsByClassName('challenge__4')[0].src = 'https://i.imgur.com/sFfZ8DU.png'
     document.getElementsByClassName('challenge__5')[0].src = 'https://i.imgur.com/sFfZ8DU.png'
     
+
+    
     async function handleSearch() {
         let searchInput = document.getElementsByClassName('search__input')
         let answerInput = searchInput[0].value
         searchInput[0].blur()
-        let result = await checkAnswer(answerInput)
+        let answerKey = await checkAnswer(answerInput)
         const user = firebaseAuth.currentUser;
 
-        if (result.challenge1 == answerInput) {
+        if (answerKey === 'challenge1') {
             document.getElementsByClassName('challenge__1')[0].src = 'https://i.imgur.com/Tnzujx4.png'
   
             // -465, 1174
             window.map.flyTo([-465, 1174], 1)    
             updateChallenge('challenge1')
-        } else if (result.challenge2 == answerInput) {
+        } else if (answerKey === 'challenge2') {
             document.getElementsByClassName('challenge__2')[0].src = 'https://i.imgur.com/vp5VXcp.png'
 
             // -668, 1308
             window.map.flyTo([-668, 1308], 1)
             updateChallenge('challenge2')
-        } else if (result.challenge3 == answerInput) {
+        } else if (answerKey === 'challenge3') {
             document.getElementsByClassName('challenge__3')[0].src = 'https://i.imgur.com/zikZBt3.png'
             // -474, 1683
             
             window.map.flyTo([-474, 1683], 1)
             updateChallenge('challenge3')
-        } else if (result.challenge4 == answerInput) {
+        } else if (answerKey === 'challenge4') {
             document.getElementsByClassName('challenge__4')[0].src = 'https://i.imgur.com/rdioy0g.png'
                // -585.7060241699219, 632.9839477539062
             window.map.flyTo([-585.7060241699219, 632.9839477539062], 1)
             updateChallenge('challenge4')
-        } else if (result.challenge5 == answerInput) {
+        } else if (answerKey === 'challenge5') {
             document.getElementsByClassName('challenge__5')[0].src = 'https://i.imgur.com/lvhAJKO.png'
             updateChallenge('challenge5')
         }

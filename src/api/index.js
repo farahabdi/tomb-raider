@@ -52,14 +52,30 @@ export async function updateChallenge(challenge) {
   })
 }
 
+//returns either the challengeKey for a correct answer (ie 'challenge3') or null for no match
 export async function checkAnswer(text) {
   const user = firebaseAuth.currentUser;
-  let result = false
+  let result = null
   return db.collection('challengeAnswers')
       .doc('challenges')
       .get()
-      .then((result) => {
-          return result.data();
+      .then((getResult) => {
+          let answerKey = null
+          const challenges = getResult.data()
+          const keys = Object.keys(challenges)
+          keys.forEach(key => {
+            const answers = challenges[key]
+            if(Array.isArray(answers)){
+              answers.forEach(answer => {
+                if(answer.toUpperCase() == text.toUpperCase()){
+                   answerKey = key
+                }
+              })
+            } else if(answers.toUpperCase() == text.toUpperCase()){
+              answerKey = key
+            }
+          });
+          return answerKey;
       })
 }
 
