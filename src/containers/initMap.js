@@ -140,18 +140,21 @@ export default function initApp () {
       },
       onAdd: function (map) {
         // happens after added to map
+
          /* Blue Options */
          var optionsContainer = L.DomUtil.create('div', 'options__container');
+         optionsContainer.addEventListener("click", focusOptions, false); //work around for iOS need to capture click
+
          this.optionsWrapper = L.DomUtil.create('div', 'options__wrapper', optionsContainer );
-
          this.optionsWrapper.setAttribute("tabindex", "1")
+         self = this;
 
-
+         function focusOptions(event){
+           //manually set focus for iOS to work
+           self.optionsWrapper.focus()
+        }
 
          let optionsElement = document.getElementsByClassName('options__wrapper')
-
-     
-
          this.optionsBox = L.DomUtil.create('div', 'options__box', optionsContainer );
 
         return optionsContainer;
