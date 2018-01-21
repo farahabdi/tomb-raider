@@ -184,28 +184,40 @@ div.leaflet-top.leaflet-left {
 .options__wrapper {
   background-image: url("../assets/options.png") !important;
   background-repeat: no-repeat !important;
-  width: 280px;
+  width: 400px;
   height: 570px;
   padding-bottom: -5px;
-  padding-left: 48px;
+  // padding-left: 48px;
   // padding-top: 51px;
-  padding-right: 49px;
+  //padding-right: 49px;
   transition: 0.5s all ease;
 }
 
-.options__wrapper:focus {
- 
-  padding-left: 299px;
+.options__wrapper_opened { 
+  padding-left: 330px;
   transition: 0.5s all ease;
 }
 
-.options__container:focus {
-  padding-left: 299px;
-  -webkit-transition: width 0.5s ease-in-out;
-  -moz-transition: width 0.5s ease-in-out;
-  -o-transition: width 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
+@media (max-width: 768px) {
+  //extend less on a phone / iPad protrait etc
+  .options__wrapper_opened { 
+    padding-left: 260px;
+    transition: 0.5s all ease;
+  }
 }
+
+.options__wrapper_closed { 
+  padding-left: 0px;
+  transition: 0.5s all ease;
+}
+
+// .options__container:focus {
+//   padding-left: 299px;
+//   -webkit-transition: width 0.5s ease-in-out;
+//   -moz-transition: width 0.5s ease-in-out;
+//   -o-transition: width 0.5s ease-in-out;
+//   transition: width 0.5s ease-in-out;
+// }
 
 
 .fieldNotes1__container {
@@ -228,13 +240,20 @@ div.leaflet-top.leaflet-left {
 .fb_post_container {
   position: absolute;
   top: 0px;
-  width: 280px;
-  height: auto;
   padding-left: 170px;
   overflow: scroll;
+  height: 100%;
+  width: 350px;
 }
 
-
+@media (max-width: 768px) {
+  .fb_post_container {
+    // the minimum size FB supports rendering is 350
+    // but this just doesnt fit on most phones with the tabs (esp iph5 only 320px!)
+    // so we'll also use zoom to shrink it down
+    zoom: 0.8; 
+  }
+}
 
 .leaflet-right .leaflet-control {
   margin-right: -254px !important;
@@ -243,8 +262,6 @@ div.leaflet-top.leaflet-left {
 .challenge__container {
   padding: 20px;
 }
-
-
 
  input, textarea {
   -webkit-user-select: text;

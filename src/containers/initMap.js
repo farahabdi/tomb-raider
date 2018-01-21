@@ -140,35 +140,47 @@ export default function initApp () {
       },
       onAdd: function (map) {
         // happens after added to map
-        console.error('added')
          /* Blue Options */
          var optionsContainer = L.DomUtil.create('div', 'options__container');
-         optionsContainer.addEventListener("click", focusOptions, false); //work around for iOS need to capture click
+         optionsContainer.addEventListener("click", showOptions, false); //work around for iOS need to capture click
 
-         this.optionsWrapper = L.DomUtil.create('div', 'options__wrapper', optionsContainer );
+         this.optionsWrapper = L.DomUtil.create('div', 'options__wrapper options__wrapper_closed', optionsContainer );
          this.optionsWrapper.setAttribute("tabindex", "1")
          self = this;
 
-         function focusOptions(event){
-           //manually set focus for iOS to work
-           self.optionsWrapper.focus()
+         function showOptions(event){
+           //toggle the css class name manually to open or close the tab
+           if(self.optionsWrapper.className === 'options__wrapper options__wrapper_opened'){
+              self.optionsWrapper.className = 'options__wrapper options__wrapper_closed'
+           } else {
+              self.optionsWrapper.className = 'options__wrapper options__wrapper_opened'
+           }
         }
 
-         let optionsElement = document.getElementsByClassName('options__wrapper')
-         this.optionsBox = L.DomUtil.create('div', 'fb_post_container', optionsContainer );
-         this.optionsBox.id ='fb-posts-here';
-         this.optionsBox.innerHTML = '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
-         this.optionsBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
-         this.optionsBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
-         this.optionsBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
+        //let optionsElement = document.getElementsByClassName('options__wrapper')
 
+        // TODO put this facebook stuff in the OTHER folder, not the options folder
+        const fbBox = L.DomUtil.create('div', 'fb_post_container', optionsContainer );
+        fbBox.id ='fb-posts-here';
+        // placeholder FB posts - TODO read these from firebase
+        fbBox.innerHTML = '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350" mobile="true"></div>';
+        fbBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
+        fbBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
+        fbBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
+        L.DomEvent.disableClickPropagation(fbBox);
+        L.DomEvent.on(fbBox, 'mouseover', function(){
+            map.scrollWheelZoom.disable();
+        });
+        L.DomEvent.on(fbBox, 'mouseout', function(){
+            map.scrollWheelZoom.enable();
+        });
 
          //TODO - this should happen in an event after elements have been added
          // which event though? Timeout is a hack but does the trick
+         // actually this can probable just be handled in the callback from firebase on fetching from the facebookpost table
          setTimeout(()=>{
           const element = document.getElementById('fb-posts-here')
-          console.error(element)
-          FB.XFBML.parse(element); 
+          FB.XFBML.parse(element); //this is the important magic call that makes facebook render all the posts out!
          }, 1000)
 
         return optionsContainer;
