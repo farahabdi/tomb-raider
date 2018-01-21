@@ -140,7 +140,7 @@ export default function initApp () {
       },
       onAdd: function (map) {
         // happens after added to map
-
+        console.error('added')
          /* Blue Options */
          var optionsContainer = L.DomUtil.create('div', 'options__container');
          optionsContainer.addEventListener("click", focusOptions, false); //work around for iOS need to capture click
@@ -155,7 +155,21 @@ export default function initApp () {
         }
 
          let optionsElement = document.getElementsByClassName('options__wrapper')
-         this.optionsBox = L.DomUtil.create('div', 'options__box', optionsContainer );
+         this.optionsBox = L.DomUtil.create('div', 'fb_post_container', optionsContainer );
+         this.optionsBox.id ='fb-posts-here';
+         this.optionsBox.innerHTML = '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
+         this.optionsBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
+         this.optionsBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
+         this.optionsBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
+
+
+         //TODO - this should happen in an event after elements have been added
+         // which event though? Timeout is a hack but does the trick
+         setTimeout(()=>{
+          const element = document.getElementById('fb-posts-here')
+          console.error(element)
+          FB.XFBML.parse(element); 
+         }, 1000)
 
         return optionsContainer;
       },

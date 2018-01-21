@@ -188,23 +188,23 @@ div.leaflet-top.leaflet-left {
   height: 570px;
   padding-bottom: -5px;
   padding-left: 48px;
-  padding-top: 51px;
+  // padding-top: 51px;
   padding-right: 49px;
-  transition: 1.5s all ease;
+  transition: 0.5s all ease;
 }
 
 .options__wrapper:focus {
  
   padding-left: 299px;
-  transition: 1.5s all ease;
+  transition: 0.5s all ease;
 }
 
 .options__container:focus {
   padding-left: 299px;
-  -webkit-transition: width 1s ease-in-out;
-  -moz-transition: width 1s ease-in-out;
-  -o-transition: width 1s ease-in-out;
-  transition: width 1s ease-in-out;
+  -webkit-transition: width 0.5s ease-in-out;
+  -moz-transition: width 0.5s ease-in-out;
+  -o-transition: width 0.5s ease-in-out;
+  transition: width 0.5s ease-in-out;
 }
 
 
@@ -220,11 +220,19 @@ div.leaflet-top.leaflet-left {
   height: 570px;
   padding-bottom: -5px;
   padding-left: 148px;
-  padding-top: 51px;
+  // padding-top: 51px;
   padding-right: 49px;
   transition: 2.15s all ease;
 }
 
+.fb_post_container {
+  position: absolute;
+  top: 0px;
+  width: 280px;
+  height: auto;
+  padding-left: 170px;
+  overflow: scroll;
+}
 
 
 
