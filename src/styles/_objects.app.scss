@@ -164,6 +164,10 @@ html, body, #map {
   display: none;
 }
 
+div.leaflet-top.leaflet-left {
+  z-index: 5000 !important;
+}
+
 .leaflet-left .leaflet-control {
   margin-left: 12px;
 }
@@ -202,8 +206,6 @@ html, body, #map {
   -o-transition: width 1s ease-in-out;
   transition: width 1s ease-in-out;
 }
-
-
 
 
 .fieldNotes1__container {
