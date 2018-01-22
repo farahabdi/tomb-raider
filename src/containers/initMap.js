@@ -70,12 +70,14 @@ export default function initApp () {
 
       /* Header */  
       this.headerWrapper  = L.DomUtil.create('div', 'header__wrapper', this.headerContainer);
-      this.searchInput = L.DomUtil.create('input', 'search__input', this.headerWrapper);
+      this.searchInputContainer = L.DomUtil.create('div', 'search__container', this.headerWrapper);
+      this.searchWrapper = L.DomUtil.create('div', 'search__wrapper', this.searchInputContainer);
+      this.searchInput = L.DomUtil.create('input', 'search__input', this.searchWrapper);
       this.searchInput.setAttribute("autocomplete", "off")
       this.searchInput.setAttribute("spellcheck", "false")
       this.searchInput.setAttribute("autocorrect", "false")
       this.searchInput.setAttribute("placeholder", "Enter the landmark.")
-      this.searchIcon = L.DomUtil.create('div', 'search__icon', this.headerWrapper);
+      this.searchIcon = L.DomUtil.create('div', 'search__icon', this.searchWrapper);
       this.headerWrapper.addEventListener("click", focusSearch, false); //see focusSearch() function
       this.container= L.DomUtil.create('div', 'container', this.headerWrapper);
       this.profile= L.DomUtil.create('div', 'profile', this.container);

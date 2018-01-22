@@ -141,8 +141,7 @@ html, body, #map {
 }
 
 .search__wrapper {
-  margin-top: -79px;
-  margin-left: -224px;
+
 }
 
 .challenges {
@@ -188,11 +187,11 @@ div.leaflet-top.leaflet-left {
 }
 
 .leaflet-left .leaflet-control {
-  margin-left: 12px;
+  margin-left: 0px;
 }
 
 .leaflet-top .leaflet-control {
-
+  margin-top: 1px;
 }
 
 
@@ -200,7 +199,7 @@ div.leaflet-top.leaflet-left {
   position: absolute;
   margin-top: 2px;
   height: 340px;
-  margin-left: -402px;
+  margin-left: -375px;
   height: 515px;
   z-index: 1;
 }
@@ -241,7 +240,7 @@ div.leaflet-top.leaflet-left {
 
 .fieldNotes__container {
   position: absolute;
-  margin-left: -402px;
+  margin-left: -374px;
   z-index: 3;
 
 }
@@ -319,6 +318,10 @@ div.leaflet-top.leaflet-left {
 
 .challenge__container {
 
+}
+
+.tab__container  {
+  margin-top: -54px !important;
 }
 
  input, textarea {
