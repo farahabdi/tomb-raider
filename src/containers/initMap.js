@@ -70,10 +70,8 @@ export default function initApp () {
 
         /* Search */  
         this.searchContainer  = L.DomUtil.create('div', 'search__container', this.headerWrapper);
-
         this.searchWrapper= L.DomUtil.create('div', 'search__wrapper', this.searchContainer);
         this.searchInput = L.DomUtil.create('input', 'search__input', this.searchWrapper);
-
         this.searchInput.setAttribute("autocomplete", "off")
         this.searchInput.setAttribute("spellcheck", "false")
         this.searchInput.setAttribute("autocorrect", "false")
@@ -127,12 +125,12 @@ export default function initApp () {
     });
     // End Search control
 
-    //Options Control
-    L.Control.Options = L.Control.extend({
+    //Field Notes Control
+    L.Control.fieldNotes= L.Control.extend({
       options: {
         // topright, topleft, bottomleft, bottomright
         position: 'topright',
-        placeholder: 'Folder...'
+        placeholder: 'Field notes tab...'
       },
       initialize: function (options /*{ data: {...}  }*/) {
         // constructor
@@ -140,27 +138,62 @@ export default function initApp () {
       },
       onAdd: function (map) {
         // happens after added to map
-         /* Blue Options */
-         var optionsContainer = L.DomUtil.create('div', 'options__container');
-         optionsContainer.addEventListener("click", showOptions, false); //work around for iOS need to capture click
+         /* Blue Options fb_post_container */
+         var fieldNotesContainer = L.DomUtil.create('div', 'fieldNotes__container');
 
-         this.optionsWrapper = L.DomUtil.create('div', 'options__wrapper options__wrapper_closed', optionsContainer );
-         this.optionsWrapper.setAttribute("tabindex", "1")
+
+                 // TODO put this facebook stuff in the OTHER folder, not the options folder     
+        const fbBox = L.DomUtil.create('div', 'fb_post_container', fieldNotesContainer );
+
+         fbBox.addEventListener("click", showfieldNotes, false); //work around for iOS need to capture click
+         fieldNotesContainer.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
+
+
+         this.fieldNotesWrapper = L.DomUtil.create('div', 'fieldNotes__wrapper fieldNotes__wrapper_closed', fieldNotesContainer );
+         this.fieldNotesWrapper.setAttribute("tabindex", "1")
          self = this;
 
-         function showOptions(event){
+         function showfieldNotes(event){
            //toggle the css class name manually to open or close the tab
-           if(self.optionsWrapper.className === 'options__wrapper options__wrapper_opened'){
-              self.optionsWrapper.className = 'options__wrapper options__wrapper_closed'
+           if(self.fieldNotesWrapper.className === 'fieldNotes__wrapper fieldNotes__wrapper_opened'){
+              self.fieldNotesWrapper.className = 'fieldNotes__wrapper fieldNotes__wrapper_closed'
+              fbBox.className = 'fb_post_container fb_post_container__closed'
+              
+
            } else {
-              self.optionsWrapper.className = 'options__wrapper options__wrapper_opened'
+              self.fieldNotesWrapper.className = 'fieldNotes__wrapper fieldNotes__wrapper_opened'
+              fbBox.className = 'fb_post_container fb_post_container__opened onTop'
            }
         }
 
-        //let optionsElement = document.getElementsByClassName('options__wrapper')
+        function showOptionsTab(event){
+          let optionsWrapper = document.getElementsByClassName('options__wrapper')[0]
 
-        // TODO put this facebook stuff in the OTHER folder, not the options folder
-        const fbBox = L.DomUtil.create('div', 'fb_post_container', optionsContainer );
+          let optionsContainer = document.getElementsByClassName('options__container')[0]
+          debugger
+          
+
+          if(optionsWrapper.className === 'options__wrapper options__wrapper_opened'){
+            optionsWrapper.className = 'options__wrapper options__wrapper_closed'
+            optionsContainer.className = "options__container leaflet-control"
+         } else {
+            optionsWrapper.className = 'options__wrapper options__wrapper_opened'
+            optionsContainer.className = "options__container leaflet-control onTop"
+         }
+
+            debugger
+       }
+
+        
+       // this.fieldNotesWrapper.addEventListener("click", showFB, false); //work around for iOS need to capture click
+       // fieldNotesContainer.addEventListener("click", showFB, false); //work around for iOS need to capture click
+        function showFB(event){
+          alert('ddd')
+       }
+
+ 
+
+
         fbBox.id ='fb-posts-here';
         // placeholder FB posts - TODO read these from firebase
         fbBox.innerHTML = '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350" mobile="true"></div>';
@@ -183,21 +216,21 @@ export default function initApp () {
           FB.XFBML.parse(element); //this is the important magic call that makes facebook render all the posts out!
          }, 1000)
 
-        return optionsContainer;
+        return fieldNotesContainer;
       },
 
 
 
     });
-    // End Options control
+    // End Field Notes control
 
 
-    //FieldNotes Control
-    L.Control.FieldNotes= L.Control.extend({
+    //Options Control
+    L.Control.Options= L.Control.extend({
       options: {
-        // topright, topleft, bottomleft, bottomright
+        // topright, topleft, bottomleft, bottomright     margin-right: 280px;
         position: 'topright',
-        placeholder: 'FieldNotes...'
+        placeholder: 'Options...'
       },
       initialize: function (options /*{ data: {...}  }*/) {
         // constructor
@@ -205,11 +238,43 @@ export default function initApp () {
       },
       onAdd: function (map) {
         // happens after added to map
-          /* Field Notes */
-          var fieldNotesContainer = L.DomUtil.create('div', 'fieldNotes__container');
- 
+          /* Options tab */
+        var optionsContainer = L.DomUtil.create('div', 'options__container');
+        this.optionsWrapper = L.DomUtil.create('div', 'options__wrapper options__wrapper_closed', optionsContainer );
 
-        return fieldNotesContainer;
+
+     //   optionsContainer.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
+
+        optionsContainer.setAttribute("tabindex", "1")
+
+//        optionsContainer.addEventListener("click", showFB, false); //work around for iOS need to capture click
+
+        function showFB(event){
+          alert('OPTIONS')
+       }
+
+
+
+
+
+        
+
+        let self1 = this;
+
+        function showOptionsTab(event){
+
+
+
+          //toggle the css class name manually to open or close the tab
+          if(self1.optionsWrapper.className === 'options__wrapper options__wrapper_opened'){
+            self1.optionsWrapper.className = 'options__wrapper options__wrapper_closed'
+          } else {
+            self1.optionsWrapper.className = 'options__wrapper options__wrapper_opened'
+          }
+       }
+
+
+        return optionsContainer;
       },
 
 
@@ -259,7 +324,7 @@ export default function initApp () {
     }
 
     L.control.fieldNotes = function(id, options) {
-      return new L.Control.FieldNotes(id, options);
+      return new L.Control.fieldNotes(id, options);
     }
 
     L.control.challenge = function(id, options) {

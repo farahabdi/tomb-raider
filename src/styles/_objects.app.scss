@@ -160,6 +160,14 @@ html, body, #map {
   
 }
 
+.popup__correct {
+  width: 325px;
+
+  &.leaflet-popup-content-wrapper {
+    height: 350px;
+  }
+}
+
 .leaflet-control-zoom {
   display: none;
 }
@@ -176,16 +184,54 @@ div.leaflet-top.leaflet-left {
   margin-top: 84px;
 }
 
+
 .options__container {
   margin-top: -33px;
   margin-right: 292px;
+  height: 515px;
+  z-index: 1;
 }
 
 .options__wrapper {
   background-image: url("../assets/options.png") !important;
   background-repeat: no-repeat !important;
   width: 400px;
-  height: 570px;
+  height: 873px;
+  padding-bottom: -5px;
+  // padding-left: 48px;
+  // padding-top: 51px;
+  //padding-right: 49px;
+  transition: 0.5s all ease;
+}
+.options__container.leaflet-control {
+  transition: 1.5s all ease;
+}
+
+
+.options__wrapper.options__wrapper_opened {
+  margin-right: 280px;
+}
+.fieldNotes__container {
+  position: absolute;
+  margin-top: -33px;
+  margin-right: 292px;
+}
+
+.onTop {
+  z-index: 3;
+}
+
+.fieldNotes__wrapper_opened { 
+  padding-left: 330px;
+  transition: 0.5s all ease;
+  margin-left: -165px;
+}
+
+.fieldNotes__wrapper {
+  background-image: url("../assets/fieldNotes.png") !important;
+  background-repeat: no-repeat !important;
+  width: 400px;
+  height: 852px;
   padding-bottom: -5px;
   // padding-left: 48px;
   // padding-top: 51px;
@@ -193,57 +239,40 @@ div.leaflet-top.leaflet-left {
   transition: 0.5s all ease;
 }
 
-.options__wrapper_opened { 
-  padding-left: 330px;
-  transition: 0.5s all ease;
-}
 
 @media (max-width: 768px) {
   //extend less on a phone / iPad protrait etc
-  .options__wrapper_opened { 
+  .fieldNotes__wrapper_opened { 
     padding-left: 260px;
     transition: 0.5s all ease;
   }
 }
 
-.options__wrapper_closed { 
+.fieldNotes__wrapper_closed { 
   padding-left: 0px;
+  transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 
-// .options__container:focus {
-//   padding-left: 299px;
-//   -webkit-transition: width 0.5s ease-in-out;
-//   -moz-transition: width 0.5s ease-in-out;
-//   -o-transition: width 0.5s ease-in-out;
-//   transition: width 0.5s ease-in-out;
-// }
 
-
-.fieldNotes1__container {
-  margin-top: -33px;
-  margin-right: 292px;
-}
-
-.fieldNotes1__wrapper {
-  background-image: url("../assets/options.png") !important;
-  background-repeat: no-repeat !important;
-  width: 280px;
-  height: 570px;
-  padding-bottom: -5px;
-  padding-left: 148px;
-  // padding-top: 51px;
-  padding-right: 49px;
-  transition: 2.15s all ease;
-}
 
 .fb_post_container {
   position: absolute;
-  top: 0px;
+  top: 25px;
   padding-left: 170px;
-  overflow: scroll;
-  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 89%;
   width: 350px;
+}
+
+.fb_post_container.fb_post_container__opened {
+  transition: 0.5s all ease;
+  margin-left: -196px;
+}
+.fb_post_container.fb_post_container__closed {
+  transition: 0.5s all ease;
+  margin-left: 0px;
 }
 
 @media (max-width: 768px) {
@@ -256,7 +285,7 @@ div.leaflet-top.leaflet-left {
 }
 
 .leaflet-right .leaflet-control {
-  margin-right: -254px !important;
+  margin-right: -305px !important;
 }
 
 .challenge__container {
