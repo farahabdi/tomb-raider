@@ -81,10 +81,11 @@ export default function initApp () {
       this.headerWrapper.addEventListener("click", focusSearch, false); //see focusSearch() function
       this.container= L.DomUtil.create('div', 'container', this.headerWrapper);
       this.profile= L.DomUtil.create('div', 'profile', this.container);
+      this.profileContainer= L.DomUtil.create('div', 'profile__container', this.profile);
       this.challenges= L.DomUtil.create('div', 'challenges', this.container);
 
       /* Profile */
-      this.profilePicture= L.DomUtil.create('img', 'profile__picture',this.profile);
+      this.profilePicture= L.DomUtil.create('img', 'profile__picture',this.profileContainer);
       this.profilePicture.addEventListener("touchstart", logout, false);
       this.profilePicture.addEventListener("click", logout, false);
 

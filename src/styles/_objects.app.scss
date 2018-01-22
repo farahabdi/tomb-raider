@@ -108,7 +108,7 @@ html, body, #map {
 .header__container {
   text-decoration: white;
   padding-left: 206px;
-  height: 135px;
+  height: 122px;
 }
 
 .header__wrapper {
@@ -146,6 +146,9 @@ html, body, #map {
 
 .challenges {
   display: flex;
+
+  margin-left: -16px;
+  margin-top: -6px;
 }
 
 .profile {
@@ -153,7 +156,7 @@ html, body, #map {
   background-repeat: no-repeat;
   background-size: contain;
   padding: 17px;
-  margin-top: 30px;
+  margin-top: 16px;
   margin-left: -3px;
 }
 
