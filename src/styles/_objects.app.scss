@@ -97,22 +97,26 @@ html, body, #map {
   z-index: 3333;
 }
 
-.header__wrapper {
-  text-decoration: white;
+.header {
+  display: flex;
+  /* justify-content: right; */
+  flex-direction: column-reverse;
   background-image: url("../assets/headerTexture.png");
   background-repeat: no-repeat;
-  padding: 95px 199px;
-  margin-top: -83px;
-  margin-left: -10px;
 }
 
-.search__container {
+.header__container {
   text-decoration: white;
-  background-image: url("../assets/searchTexture.png");
+  padding-left: 206px;
+  height: 135px;
+}
+
+.header__wrapper {
+  text-decoration: white;
+  background-image: url(/static/media/searchTexture.d62fb86d.png);
   background-repeat: no-repeat;
-  padding: 91px 248px;
-  margin-top: -65px;
-  margin-left: -195px;
+  margin-left: -203px;
+  margin-top: 1px;
 }
 
 .search__input {
@@ -123,6 +127,8 @@ html, body, #map {
   border: none !important;
   font-size: 26px;
   text-decoration: none;
+  margin-top: 10px;
+    margin-left: 22px;
 }
 
 .search__icon {
@@ -139,25 +145,30 @@ html, body, #map {
   margin-left: -224px;
 }
 
-.profile {
-  background-image: url("../assets/profileTexture.png");
-  background-repeat: no-repeat;
-  margin-top: 40px;
-  background-size: contain;
-  padding: 19px;
-  margin-top: -216px;
-  margin-left: -13px;
+.challenges {
+  display: flex;
+}
 
+.profile {
+  background-image: url(/static/media/profileTexture.65bcc8df.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 17px;
+  margin-top: 30px;
+  margin-left: -3px;
+}
+
+.container {
+  display: flex;
 }
 
 .profile__picture {
   background-repeat: no-repeat;
   background-size: contain;
+  width: 53px;
+  margin-top: -9px;
+  margin-left: -4px;
   transform: rotate(-9deg);
-  padding: 22px;
-  margin-top: -21px;
-  margin-left: -9px;
-  
 }
 
 .popup__correct {
@@ -181,22 +192,27 @@ div.leaflet-top.leaflet-left {
 }
 
 .leaflet-top .leaflet-control {
-  margin-top: 84px;
+
 }
 
 
 .options__container {
-  margin-top: -33px;
-  margin-right: 292px;
+  position: absolute;
+  margin-top: 2px;
+  height: 340px;
+  margin-left: -402px;
   height: 515px;
   z-index: 1;
 }
-
+.options__wrapper.options__wrapper_opened {
+  margin-left: -10px;
+}
 .options__wrapper {
   background-image: url("../assets/options.png") !important;
   background-repeat: no-repeat !important;
   width: 400px;
   height: 873px;
+
   padding-bottom: -5px;
   // padding-left: 48px;
   // padding-top: 51px;
@@ -208,23 +224,36 @@ div.leaflet-top.leaflet-left {
 }
 
 
-.options__wrapper.options__wrapper_opened {
-  margin-right: 280px;
+.leaflet-top.leaflet-left {
+  display: flex;
+  flex-direction: column;
 }
-.fieldNotes__container {
-  position: absolute;
-  margin-top: -33px;
-  margin-right: 292px;
+
+.options__wrapper:focus {
+ 
+  padding-left: 299px;
+  transition: 2.15s all ease;
 }
 
 .onTop {
+ // z-index: 3;
+}
+
+.fieldNotes__container {
+  position: absolute;
+  margin-left: -402px;
   z-index: 3;
+
+}
+
+.options__container.leaflet-control.onTop {
+  margin-left: -677px;
 }
 
 .fieldNotes__wrapper_opened { 
   padding-left: 330px;
   transition: 0.5s all ease;
-  margin-left: -165px;
+  margin-left: -300px;
 }
 
 .fieldNotes__wrapper {
@@ -258,17 +287,17 @@ div.leaflet-top.leaflet-left {
 
 .fb_post_container {
   position: absolute;
-  top: 25px;
+  top: 517px;
   padding-left: 170px;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 89%;
+  height: 38%;
   width: 350px;
 }
 
 .fb_post_container.fb_post_container__opened {
   transition: 0.5s all ease;
-  margin-left: -196px;
+      margin-left: -373px;
 }
 .fb_post_container.fb_post_container__closed {
   transition: 0.5s all ease;
@@ -289,7 +318,7 @@ div.leaflet-top.leaflet-left {
 }
 
 .challenge__container {
-  padding: 20px;
+
 }
 
  input, textarea {
@@ -301,9 +330,11 @@ div.leaflet-top.leaflet-left {
 }
 
 .challenge__wrapper {
-  display: flex;
-  margin-top: -267px;
-  margin-left: 125px;
+
+  margin-left: 31px;
+  margin-top: 9px;
+  /* margin-right: -2px; */
+  padding-right: 28px;
 }
 
 .challenge__1 {
