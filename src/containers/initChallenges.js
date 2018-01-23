@@ -12,6 +12,7 @@ import code5 from '../assets/code5_complete.png'
 export async function initChallenges() {
     let searchInput = document.getElementsByClassName('search__input')
     let challenges = await fetchChallenges()
+    
 
 
     var CustomIcon = L.Icon.extend({

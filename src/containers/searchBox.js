@@ -2,7 +2,7 @@
 /* eslint-disable */
 import { firebaseAuth } from '../utils/config'
 import { db } from '../utils/config';
-import { updateChallenge, checkAnswer, fetchChallenges } from '../api/index'
+import { updateChallenge, checkAnswer, fetchChallenges, fetchCompletedChallenges } from '../api/index'
 import initApp from './initMap'
 import { pathChallenge_1, pathChallenge_2, pathChallenge_3, pathChallenge_4 } from '../utils'
 
@@ -18,7 +18,7 @@ export default function initSearch() {
     for (let i = 0; i < searchElement.length; i++) {
         searchElement[i].addEventListener("click", handleSearch);
         searchInput[i].addEventListener('keyup', event => {
-            debugger
+     
             event.preventDefault();
             if (event.keyCode === 13) {
                 handleSearch()
@@ -50,6 +50,10 @@ export default function initSearch() {
         let answerInput = searchInput[0].value
         searchInput[0].blur()
         let answerKey = await checkAnswer(answerInput)
+        let challengespProgress = await fetchCompletedChallenges()
+
+
+
         const user = firebaseAuth.currentUser;
 
         if (answerKey === 'challenge1') {
@@ -72,23 +76,53 @@ export default function initSearch() {
 
             /* Show popop */
 
-            let customOptions = {
+            let viewCodeOptions = {
              'maxWidth': '400',
              'width': '320',
              'width': '450',
              'className' : 'popup__correct'
             }
+
+            let successOptions = {
+                'maxWidth': '400',
+                'width': '320',
+                'width': '450',
+                'className' : 'viewcode'
+               }
             
             let customPopup = "<b>My office</b><br/><img src='http://netdna.webdesignerdepot.com/uploads/2014/05/workspace_06_previo.jpg' alt='maptime logo gif' width='150px'/>";
             let marker = L.marker([-668, 1308]).addTo(map);
-            marker.bindPopup('<b>Hello world</b>', customOptions).openPopup();
+
+            let firstName = user.displayName.split(' ').slice(0, -1).join(' ');
+
+            let markup = `
+                <div class="note">
+                    <div class="note__header">Well done ${firstName} </div>
+                    <div class="note__message"> Find all landmarks to complete the code</div>
+                </div>
+            `
+
+            debugger
+
+            let markup2 = `
+            <div class="viewcode">
+                <div class="viewcode__header">Well done! </div>
+                <div class="viewcode__message"> I couldn't have done that better myself. Make sure you follow @CroftHoldingsAU on Facebook for intel on the next landmark</div>
+                <div class="view">
+                     <img src='markArrow.png' />
+                    <div class="text"> View code </div>
+                </div>
+                
+            </div>
+        `
+            marker.bindPopup(markup2, successOptions).openPopup();
 
 
             /* Update challenge */
             updateChallenge('challenge2')
         } else if (answerKey === 'challenge3') {
             document.getElementsByClassName('challenge__3')[0].src = 'https://i.imgur.com/zikZBt3.png'
-            // -474, 1683
+            // -474, 1683ß
             
             window.map.flyTo([-474, 1683], 1)
             updateChallenge('challenge3')

@@ -113,7 +113,7 @@ html, body, #map {
 
 .header__wrapper {
   text-decoration: white;
-  background-image: url(/static/media/searchTexture.d62fb86d.png);
+  background-image: url("../assets/searchTexture.png");
   background-repeat: no-repeat;
   margin-left: -203px;
   margin-top: 1px;
@@ -144,6 +144,11 @@ html, body, #map {
 
 }
 
+
+.markArrow {
+  background-image: url("../assets/markArrow.png") !important;
+  background-repeat: no-repeat !important;
+}
 .challenges {
   display: flex;
 
@@ -174,8 +179,9 @@ html, body, #map {
 }
 
 .popup__correct {
-  width: 325px;
-
+  bottom: -318px !important;
+  left: -171px !important;
+  width: 280px;
   &.leaflet-popup-content-wrapper {
     height: 350px;
   }
@@ -388,4 +394,74 @@ div.leaflet-top.leaflet-left {
 }
 .profile__picture {
   cursor: pointer;
+}
+
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: transparent;
+  color: none;
+  box-shadow: none
+}
+
+.popup__correct .leaflet-popup-content-wrapper {
+  background-image: url("../assets/codePage.png") !important;
+  background-repeat: no-repeat !important;
+  height: 400px;
+ 
+  left: -186px !important;
+}
+
+.leaflet-popup-content {
+  font-family: 'Caveat', cursive;
+}
+
+.note {
+  padding-top: 29px;
+  margin-left: 12px;
+  .note__header {
+    font-size: 25px;
+  }
+
+  .note__message {
+    font-size: 18px;
+    margin-top: 12px;
+  }
+}
+
+.view > img {
+  width: 58px;
+  margin-top: 11px;
+}
+
+.viewcode {
+  background-image: url("../assets/popup.png") !important;
+  background-repeat: no-repeat !important;
+  margin-left: 14px;
+  /* margin-top: 8px; */
+  padding-top: 9px;
+  padding-bottom: 8px;
+
+  .viewcode__header {
+    font-size: 25px;
+  }
+
+  .viewcode__message {
+    font-size: 18px;
+    margin-top: 12px;
+    width: 262px;
+  }
+
+  .text {
+    font-size: 18px;
+    margin-top: 11px;
+  }
+
+  .view {
+    display: -webkit-inline-box;
+    margin-left: 107px;
+  }
+}
+
+.leaflet-pane.leaflet-marker-pane{
+  display: none;
 }

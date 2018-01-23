@@ -13,24 +13,8 @@ export async function fetchUserExists() {
   return userExists;
 }
 
-/* export async function fetchChallengess() {
-  const user = firebase.auth().currentUser;
-  let challenges = {};
-  var x = await db.collection('users')
-    .doc(user.uid)
-    .collection('challenges')
-    .doc(user.uid)
-    .onSnapshot((querySnapshot) => { 
-      var x = 3
-      challenges = querySnapshot.data();
-      window.challenges = challenges;
-     });
-  return challenges;
-} */
-
 export async function fetchChallenges(text) {
   const user = firebaseAuth.currentUser;
-  let result = false
   return db.collection('users')
       .doc(user.uid)
       .collection('challenges')
@@ -40,6 +24,29 @@ export async function fetchChallenges(text) {
           return result.data();
       })
 }
+
+
+export async function fetchCompletedChallenges(text) {
+  const user = firebaseAuth.currentUser;
+  return db.collection('users')
+      .doc(user.uid)
+      .collection('challenges')
+      .doc(user.uid)
+      .get()
+      .then((result) => {
+        debugger
+        let data = result.data()
+        let num = 0
+        for (const prop in data) {
+          if (data[prop] == true) {
+            num = num + 1
+          }
+        }
+        
+        return num
+      })
+}
+
 
 export async function updateChallenge(challenge) {
   const user = firebase.auth().currentUser;
@@ -60,6 +67,7 @@ export async function checkAnswer(text) {
       .doc('challenges')
       .get()
       .then((getResult) => {
+     
           let answerKey = null
           const challenges = getResult.data()
           const keys = Object.keys(challenges)
