@@ -76,12 +76,7 @@ export default function initSearch() {
 
             /* Show popop */
 
-            let viewCodeOptions = {
-             'maxWidth': '400',
-             'width': '320',
-             'width': '450',
-             'className' : 'popup__correct'
-            }
+    
 
             let successOptions = {
                 'maxWidth': '400',
@@ -95,12 +90,7 @@ export default function initSearch() {
 
             let firstName = user.displayName.split(' ').slice(0, -1).join(' ');
 
-            let markup = `
-                <div class="note">
-                    <div class="note__header">Well done ${firstName} </div>
-                    <div class="note__message"> Find all landmarks to complete the code</div>
-                </div>
-            `
+
 
             debugger
 
@@ -110,12 +100,39 @@ export default function initSearch() {
                 <div class="viewcode__message"> I couldn't have done that better myself. Make sure you follow @CroftHoldingsAU on Facebook for intel on the next landmark</div>
                 <div class="view">
                      <img src='markArrow.png' />
-                    <div class="text"> View code </div>
+                    <div class="viewcode__button"> View code </div>
                 </div>
                 
             </div>
         `
             marker.bindPopup(markup2, successOptions).openPopup();
+
+            let element = document.getElementsByClassName('viewcode__button')[0]
+            element.addEventListener('click', showViewCodePopup, false)
+
+            function showViewCodePopup() {
+
+                let markup = `
+                <div class="note">
+                    <div class="note__header">Well done ${firstName} </div>
+                    <div class="note__message"> Find all landmarks to complete the code</div>
+                </div>
+            `
+
+                let viewCodeOptions = {
+                    'maxWidth': '400',
+                    'width': '320',
+                    'width': '450',
+                    'className' : 'popup__correct'
+                   }
+
+                  marker.bindPopup(markup, viewCodeOptions).openPopup();
+                   
+            }
+
+            debugger
+
+
 
 
             /* Update challenge */
