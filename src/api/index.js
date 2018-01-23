@@ -34,16 +34,17 @@ export async function fetchCompletedChallenges(text) {
       .doc(user.uid)
       .get()
       .then((result) => {
-        debugger
+
         let data = result.data()
-        let num = 0
+        let challenges = []
         for (const prop in data) {
+          debugger
           if (data[prop] == true) {
-            num = num + 1
+            challenges.push(prop)
           }
         }
         
-        return num
+        return challenges
       })
 }
 

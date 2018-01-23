@@ -6,9 +6,8 @@ import { updateChallenge, checkAnswer, fetchChallenges, fetchCompletedChallenges
 import initApp from './initMap'
 import { pathChallenge_1, pathChallenge_2, pathChallenge_3, pathChallenge_4 } from '../utils'
 
-let init = initApp
 
-let x = initApp().map
+
 
 export default function initSearch() {
 
@@ -22,7 +21,7 @@ export default function initSearch() {
             event.preventDefault();
             if (event.keyCode === 13) {
                 handleSearch()
-            }
+            } 
         })   
     }
 
@@ -50,7 +49,7 @@ export default function initSearch() {
         let answerInput = searchInput[0].value
         searchInput[0].blur()
         let answerKey = await checkAnswer(answerInput)
-        let challengespProgress = await fetchCompletedChallenges()
+        
 
 
 
@@ -90,10 +89,6 @@ export default function initSearch() {
 
             let firstName = user.displayName.split(' ').slice(0, -1).join(' ');
 
-
-
-            debugger
-
             let markup2 = `
             <div class="viewcode">
                 <div class="viewcode__header">Well done! </div>
@@ -110,14 +105,40 @@ export default function initSearch() {
             let element = document.getElementsByClassName('viewcode__button')[0]
             element.addEventListener('click', showViewCodePopup, false)
 
-            function showViewCodePopup() {
-
+            async function showViewCodePopup() {
+/*
                 let markup = `
                 <div class="note">
                     <div class="note__header">Well done ${firstName} </div>
                     <div class="note__message"> Find all landmarks to complete the code</div>
+
+                    <div class="code__container"> 
+                        <div class="code__text">I couldn't have done that better myself.</div>
+                    </div>
+                    
+                    <div class="code__container"> 
+                        <div class="code__text">I couldn't have done that better myself.</div>
+                    </div>   
+
+                    <div class="code__container"> 
+                        <div class="code__text">I couldn't have done that better myself.</div>
+                    </div>
+                    
+                    <div class="code__container"> 
+                        <div class="code__text">I couldn't have done that better myself.</div>
+                    </div>   
+
+                    <div class="code__container"><div class="code__text">I couldn't have done that better myself.</div></div>
+                     
                 </div>
-            `
+            ` */
+
+            var markup = document.createElement("div");
+            markup.className = "note"
+            markup.insertAdjacentHTML('afterbegin', `<div class="note__header">Well done ${firstName} </div>` )  
+             
+
+            debugger
 
                 let viewCodeOptions = {
                     'maxWidth': '400',
@@ -126,12 +147,25 @@ export default function initSearch() {
                     'className' : 'popup__correct'
                    }
 
+                let challengespProgress = await fetchCompletedChallenges()
+
+                let landmarkCodes = {
+                    'challenge1': 'lorem ipsum challenge.',
+                    'challenge2': 'lorem ipsum challenge.',
+                    'challenge3': 'lorem ipsum challenge.',
+                    'challenge4': 'lorem ipsum challenge.',
+                    'challenge5': 'lorem ipsum challenge.',
+                }
+
+               for (let i=0; i< challengespProgress.length; i++) {
+                    markup.firstElementChild.insertAdjacentHTML('afterend', `<div class="code__container"><div class="code__text">${landmarkCodes[challengespProgress[i]]}</div></div>` )    
+                } 
+                markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="note__message"> Find all landmarks to complete the code</div>' )   
                   marker.bindPopup(markup, viewCodeOptions).openPopup();
                    
             }
 
-            debugger
-
+      
 
 
 

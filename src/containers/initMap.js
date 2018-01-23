@@ -187,7 +187,7 @@ export default function initApp () {
               self.optionsContainer.className = "options__container leaflet-control onTop"
          }
 
-            debugger
+          
        }
 
         
