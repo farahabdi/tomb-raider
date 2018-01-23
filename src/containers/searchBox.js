@@ -106,46 +106,17 @@ export default function initSearch() {
             element.addEventListener('click', showViewCodePopup, false)
 
             async function showViewCodePopup() {
-/*
-                let markup = `
-                <div class="note">
-                    <div class="note__header">Well done ${firstName} </div>
-                    <div class="note__message"> Find all landmarks to complete the code</div>
 
-                    <div class="code__container"> 
-                        <div class="code__text">I couldn't have done that better myself.</div>
-                    </div>
-                    
-                    <div class="code__container"> 
-                        <div class="code__text">I couldn't have done that better myself.</div>
-                    </div>   
-
-                    <div class="code__container"> 
-                        <div class="code__text">I couldn't have done that better myself.</div>
-                    </div>
-                    
-                    <div class="code__container"> 
-                        <div class="code__text">I couldn't have done that better myself.</div>
-                    </div>   
-
-                    <div class="code__container"><div class="code__text">I couldn't have done that better myself.</div></div>
-                     
-                </div>
-            ` */
-
-            var markup = document.createElement("div");
-            markup.className = "note"
-            markup.insertAdjacentHTML('afterbegin', `<div class="note__header">Well done ${firstName} </div>` )  
-             
-
-            debugger
-
+                var markup = document.createElement("div");
+                markup.className = "note"
+                markup.insertAdjacentHTML('afterbegin', `<div class="note__header">Well done ${firstName} </div>` )  
+                
                 let viewCodeOptions = {
                     'maxWidth': '400',
                     'width': '320',
                     'width': '450',
                     'className' : 'popup__correct'
-                   }
+                }
 
                 let challengespProgress = await fetchCompletedChallenges()
 
@@ -157,11 +128,11 @@ export default function initSearch() {
                     'challenge5': 'lorem ipsum challenge.',
                 }
 
-               for (let i=0; i< challengespProgress.length; i++) {
-                    markup.firstElementChild.insertAdjacentHTML('afterend', `<div class="code__container"><div class="code__text">${landmarkCodes[challengespProgress[i]]}</div></div>` )    
-                } 
-                markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="note__message"> Find all landmarks to complete the code</div>' )   
-                  marker.bindPopup(markup, viewCodeOptions).openPopup();
+                for (let i=0; i< challengespProgress.length; i++) {
+                        markup.firstElementChild.insertAdjacentHTML('afterend', `<div class="code__container"><div class="code__text">${landmarkCodes[challengespProgress[i]]}</div></div>` )    
+                    } 
+                    markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="note__message"> Find all landmarks to complete the code</div>' )   
+                    marker.bindPopup(markup, viewCodeOptions).openPopup();
                    
             }
 
