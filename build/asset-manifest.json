@@ -1,6 +1,11 @@
 {
-  "main.js": "static/js/main.0eb7122d.js",
+  "main.js": "static/js/main.287f2fdd.js",
+  "static/media/boxShort.png": "static/media/boxShort.6946e399.png",
+  "static/media/codePage.png": "static/media/codePage.ef4111ee.png",
   "static/media/fieldNotes.png": "static/media/fieldNotes.1b0e525c.png",
   "static/media/headerTexture.png": "static/media/headerTexture.8fdad4a8.png",
-  "static/media/options.png": "static/media/options.946e8680.png"
+  "static/media/options.png": "static/media/options.946e8680.png",
+  "static/media/popup.png": "static/media/popup.02a36942.png",
+  "static/media/profileTexture.png": "static/media/profileTexture.65bcc8df.png",
+  "static/media/searchTexture.png": "static/media/searchTexture.d62fb86d.png"
 }
