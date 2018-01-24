@@ -2,11 +2,11 @@
 
 import { fetchChallenges } from '../api/index'
 
-import code1 from '../assets/code1_complete.png'
-import code2 from '../assets/code2_complete.png'
-import code3 from '../assets/code3_complete.png'
-import code4 from '../assets/code4_complete.png'
-import code5 from '../assets/code5_complete.png'
+import code1_c from '../assets/code1_complete.png'
+import code2_c from '../assets/code2_complete.png'
+import code3_c from '../assets/code3_complete.png'
+import code4_c from '../assets/code4_complete.png'
+import code5_c from '../assets/code5_complete.png'
 
 
 export async function initChallenges() {
@@ -30,7 +30,7 @@ export async function initChallenges() {
 
 
     if (challenges.challenge1 == true) {
-        document.getElementsByClassName('challenge__1')[0].src = code1
+        document.getElementsByClassName('challenge__1')[0].className = "challenge__1 challenge__1--complete"
  
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
@@ -38,7 +38,7 @@ export async function initChallenges() {
     } 
     
     if (challenges.challenge2 == true) {
-        document.getElementsByClassName('challenge__2')[0].src = code2
+        document.getElementsByClassName('challenge__2')[0].className = "challenge__2 challenge__2--complete"
 
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_2).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
@@ -49,14 +49,14 @@ export async function initChallenges() {
     }
     
     if (challenges.challenge3 == true) {
-        document.getElementsByClassName('challenge__3')[0].src = code3
+        document.getElementsByClassName('challenge__3')[0].className = "challenge__3 challenge__3--complete"
 
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_3).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
         L.marker([-594.5, 1998.5], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
     }
     if (challenges.challenge4 == true) {
-        document.getElementsByClassName('challenge__4')[0].src = code4
+        document.getElementsByClassName('challenge__4')[0].className = "challenge__4 challenge__4--complete"
 
  
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_4).replace('#','%23');
@@ -67,7 +67,7 @@ export async function initChallenges() {
     }
     
     if (challenges.challenge5 == true) {
-        document.getElementsByClassName('challenge__5')[0].src = code5
+        document.getElementsByClassName('challenge__5')[0].className = "challenge__5 challenge__5--complete"
 
  
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_4).replace('#','%23');

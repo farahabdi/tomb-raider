@@ -2,6 +2,7 @@
 
 import { firebaseAuth } from '../utils/config'
 import './searchBox'
+import mapJPG from '../assets/maps.jpg'
 
 
 export default function initApp () {
@@ -25,7 +26,7 @@ export default function initApp () {
     // dimensions of the image
     var w = 3860,
         h = 2180,
-        url = 'https://i.imgur.com/zXtbZ1H.jpgca';
+        url = mapJPG;
     
     // calculate the edges of the image, in coordinate space
     var southWest = map.unproject([0, h], map.getMaxZoom()-1);

@@ -6,6 +6,13 @@ import { updateChallenge, checkAnswer, fetchChallenges, fetchCompletedChallenges
 import initApp from './initMap'
 import { pathChallenge_1, pathChallenge_2, pathChallenge_3, pathChallenge_4 } from '../utils'
 
+import code1 from '../assets/code1_complete.png'
+import code2 from '../assets/code2_complete.png'
+import code3 from '../assets/code3_complete.png'
+import code4 from '../assets/code4_complete.png'
+import code5 from '../assets/code5_complete.png'
+
+
 export default function initSearch() {
     let searchElement = document.getElementsByClassName('search__icon')
     let searchInput = document.getElementsByClassName('search__input')
@@ -20,12 +27,6 @@ export default function initSearch() {
         })   
     }
 
-        
-    document.getElementsByClassName('challenge__1')[0].src = 'https://i.imgur.com/Q24mwMo.png'
-    document.getElementsByClassName('challenge__2')[0].src = 'https://i.imgur.com/FQfXCwv.png'
-    document.getElementsByClassName('challenge__3')[0].src = 'https://i.imgur.com/PPjvBQl.png'
-    document.getElementsByClassName('challenge__4')[0].src = 'https://i.imgur.com/sFfZ8DU.png'
-    document.getElementsByClassName('challenge__5')[0].src = 'https://i.imgur.com/sFfZ8DU.png'
 
     var CustomIcon = L.Icon.extend({
         options: {
@@ -59,7 +60,7 @@ export default function initSearch() {
 
         if (answerKey === 'challenge1') {
             /* Cross icon */
-            document.getElementsByClassName('challenge__1')[0].src = 'https://i.imgur.com/Tnzujx4.png'
+            document.getElementsByClassName('challenge__1')[0].className = "challenge__1 challenge__1--complete"
 
             /* Fly to Point */
             window.map.flyTo([-465, 1174], 1)    
@@ -80,7 +81,7 @@ export default function initSearch() {
             updateChallenge('challenge1')
         } else if (answerKey === 'challenge2') {
              /* Cross icon */
-            document.getElementsByClassName('challenge__2')[0].src = 'https://i.imgur.com/vp5VXcp.png'
+            document.getElementsByClassName('challenge__2')[0].className = "challenge__2 challenge__2--complete"
 
             /* Fly to location */
             window.map.flyTo([-668, 1308], 1)
@@ -91,10 +92,10 @@ export default function initSearch() {
             L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
 
             /* Show Polaroid */
+            let polaroidMarker = L.marker([-668, 1308]).addTo(map);
 
             /* Show popop */
             let marker = L.marker([-668, 1308]).addTo(map);
-            let firstName = user.displayName.split(' ').slice(0, -1).join(' ');
             let markup = await createMarkup()
             marker.bindPopup(markup, successOptions).openPopup();
             let element = document.getElementsByClassName('viewcode__button')[0]
@@ -104,7 +105,7 @@ export default function initSearch() {
             updateChallenge('challenge2')
         } else if (answerKey === 'challenge3') {
              /* Cross icon */
-            document.getElementsByClassName('challenge__3')[0].src = 'https://i.imgur.com/zikZBt3.png'
+            document.getElementsByClassName('challenge__3')[0].className = "challenge__3 challenge__3--complete"
 
             /* Fly to Point */
             window.map.flyTo([-474, 1683], 1)
@@ -125,7 +126,7 @@ export default function initSearch() {
             updateChallenge('challenge3')
         } else if (answerKey === 'challenge4') {
              /* Cross icon */
-            document.getElementsByClassName('challenge__4')[0].src = 'https://i.imgur.com/rdioy0g.png'
+            document.getElementsByClassName('challenge__4')[0].className = "challenge__4 challenge__4--complete"
 
             /* Fly to Point */
             window.map.flyTo([-585.7060241699219, 632.9839477539062], 1)
@@ -147,7 +148,7 @@ export default function initSearch() {
             updateChallenge('challenge4')
         } else if (answerKey === 'challenge5') {
              /* Cross icon */
-            document.getElementsByClassName('challenge__5')[0].src = 'https://i.imgur.com/lvhAJKO.png'
+            document.getElementsByClassName('challenge__5')[0].className = "challenge__5 challenge__5--complete"
 
             /* Fly to Point */
             window.map.flyTo([-617, 1419], 1)

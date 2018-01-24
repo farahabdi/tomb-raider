@@ -153,7 +153,7 @@ html, body, #map {
   display: flex;
 
   margin-left: -16px;
-  margin-top: -6px;
+  margin-top: 8px;
 }
 
 .profile {
@@ -367,43 +367,74 @@ div.leaflet-top.leaflet-left {
 }
 
 .challenge__1 {
+  background-image: url("../assets/code1.png") !important;
   background-repeat: no-repeat !important;
   padding-top: 18px;
-  padding-bottom: 10px;
+  width: 34px;
+  padding-bottom: 17px;
   padding-left: -3px;
   padding-right: 0px;
+
+  &.challenge__1--complete {
+    background-image: url("../assets/code1_complete.png") !important;
+  }
 }
 
 .challenge__2 {
+  background-image: url("../assets/code2.png") !important;
   background-repeat: no-repeat !important;
   padding-top: 18px;
-  padding-bottom: 10px;
+  width: 34px;
+  padding-bottom: 17px;
   padding-left: -3px;
   padding-right: 0px;
+
+  &.challenge__2--complete {
+    background-image: url("../assets/code2_complete.png") !important;
+  }
 }
 
 .challenge__3 {
+  background-image: url("../assets/code3.png") !important;
   background-repeat: no-repeat !important;
   padding-top: 18px;
-  padding-bottom: 10px;
+  width: 34px;
+  padding-bottom: 17px;
   padding-left: -3px;
   padding-right: 0px;
+
+  &.challenge__3--complete {
+    background-image: url("../assets/code3_complete.png") !important;
+    
+  }
 }
 
 .challenge__4 {
+  background-image: url("../assets/code4.png") !important;
   background-repeat: no-repeat !important;
   padding-top: 18px;
-  padding-bottom: 10px;
+  width: 34px;
+  padding-bottom: 17px;
   padding-left: -3px;
   padding-right: 0px;
+
+  &.challenge__4--complete {
+    background-image: url("../assets/code4_complete.png") !important;
+  }
 }
 
 .challenge__5 {
+  background-image: url("../assets/code5.png") !important;
   background-repeat: no-repeat !important;
   padding-top: 18px;
-  padding-bottom: 10px;
+  width: 34px;
+  padding-bottom: 17px;
   padding-left: -3px;
   padding-right: 0px;
+
+  &.challenge__5--complete {
+    background-image: url("../assets/code5_complete.png") !important;
+  }
 }
 
 .search__icon {
@@ -490,7 +521,9 @@ div.leaflet-top.leaflet-left {
   }
 }
 
-
+.leaflet-pane.leaflet-marker-pane{
+  display: none;
+}
 .leaflet-container a.leaflet-popup-close-button  {
 
 }
