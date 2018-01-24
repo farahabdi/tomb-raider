@@ -8,6 +8,12 @@ import code3_c from '../assets/code3_complete.png'
 import code4_c from '../assets/code4_complete.png'
 import code5_c from '../assets/code5_complete.png'
 
+import chinaIcon from '../assets/Polaroid_China.png'
+import italyIcon from '../assets/Polaroid_Italy.png'
+import kenyaIcon from '../assets/Polaroid_Kenya.png'
+import mexicoIcon from '../assets/Polaroid_Mexico.png'
+import niagraIcon from '../assets/Polaroid_Niagara.png'
+
 
 export async function initChallenges() {
     let searchInput = document.getElementsByClassName('search__input')
@@ -31,6 +37,19 @@ export async function initChallenges() {
 
     if (challenges.challenge1 == true) {
         document.getElementsByClassName('challenge__1')[0].className = "challenge__1 challenge__1--complete"
+
+
+        /* Show Polaroid */
+        let polaroidIcon = L.icon({
+            iconUrl: italyIcon,
+            className: "polaroid",
+            iconSize:     [38, 95], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+        L.marker([ -567, 1434], {icon: polaroidIcon}).addTo(map);
  
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
@@ -39,6 +58,18 @@ export async function initChallenges() {
     
     if (challenges.challenge2 == true) {
         document.getElementsByClassName('challenge__2')[0].className = "challenge__2 challenge__2--complete"
+
+        /* Show Polaroid */
+        let polaroidIcon = L.icon({
+            iconUrl: kenyaIcon,
+            className: "polaroid",
+            iconSize:     [38, 95], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+        L.marker([-827.5, 1599.5], {icon: polaroidIcon}).addTo(map);
 
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_2).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
@@ -51,12 +82,37 @@ export async function initChallenges() {
     if (challenges.challenge3 == true) {
         document.getElementsByClassName('challenge__3')[0].className = "challenge__3 challenge__3--complete"
 
+
+        /* Show Polaroid -- */
+        let polaroidIcon = L.icon({
+            iconUrl: chinaIcon,
+            className: "polaroid",
+            iconSize:     [38, 95], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+        L.marker([-547, 2042], {icon: polaroidIcon}).addTo(map);
+
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_3).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
         L.marker([-594.5, 1998.5], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
     }
     if (challenges.challenge4 == true) {
         document.getElementsByClassName('challenge__4')[0].className = "challenge__4 challenge__4--complete"
+
+        /* Show Polaroid */
+        let polaroidIcon = L.icon({
+            iconUrl: mexicoIcon,
+            className: "polaroid",
+            iconSize:     [38, 95], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+        L.marker([-706, 620], {icon: polaroidIcon}).addTo(map);
 
  
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_4).replace('#','%23');
@@ -68,6 +124,18 @@ export async function initChallenges() {
     
     if (challenges.challenge5 == true) {
         document.getElementsByClassName('challenge__5')[0].className = "challenge__5 challenge__5--complete"
+
+        /* Show Polaroid */
+        let polaroidIcon = L.icon({
+            iconUrl: niagraIcon,
+            className: "polaroid",
+            iconSize:     [38, 95], // size of the icon
+            shadowSize:   [50, 64], // size of the shadow
+            iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+            shadowAnchor: [4, 62],  // the same for the shadow
+            popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+        L.marker([-567.5, 851], {icon: polaroidIcon}).addTo(map);
 
  
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_4).replace('#','%23');

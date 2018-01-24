@@ -12,6 +12,12 @@ import code3 from '../assets/code3_complete.png'
 import code4 from '../assets/code4_complete.png'
 import code5 from '../assets/code5_complete.png'
 
+import chinaIcon from '../assets/Polaroid_China.png'
+import italyIcon from '../assets/Polaroid_Italy.png'
+import kenyaIcon from '../assets/Polaroid_Kenya.png'
+import mexicoIcon from '../assets/Polaroid_Mexico.png'
+import monasteryIcon from '../assets/Polaroid_Monastery.png'
+
 
 export default function initSearch() {
     let searchElement = document.getElementsByClassName('search__icon')
@@ -59,6 +65,8 @@ export default function initSearch() {
         const user = firebaseAuth.currentUser;
 
         if (answerKey === 'challenge1') {
+            /* Marcus Aurelius Column -- Italy */
+
             /* Cross icon */
             document.getElementsByClassName('challenge__1')[0].className = "challenge__1 challenge__1--complete"
 
@@ -68,7 +76,20 @@ export default function initSearch() {
             /* Show circle marker */
             var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
             var pathMarker = new CustomIcon({iconUrl: url})
-            L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+            L.marker([-726, 791], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+
+
+            /* Show Polaroid */
+            let polaroidIcon = L.icon({
+                iconUrl: italyIcon,
+            
+                iconSize:     [38, 95], // size of the icon
+                shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+            L.marker([ -706, 620], {icon: polaroidIcon}).addTo(map);
 
             /* Show popop */
             let marker = L.marker([-465, 1174]).addTo(map);
@@ -80,6 +101,10 @@ export default function initSearch() {
             /* Update challenge */
             updateChallenge('challenge1')
         } else if (answerKey === 'challenge2') {
+
+            /* Gedi Ruins -- Kenya */
+
+
              /* Cross icon */
             document.getElementsByClassName('challenge__2')[0].className = "challenge__2 challenge__2--complete"
 
@@ -92,7 +117,16 @@ export default function initSearch() {
             L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
 
             /* Show Polaroid */
-            let polaroidMarker = L.marker([-668, 1308]).addTo(map);
+            let polaroidIcon = L.icon({
+                iconUrl: kenyaIcon,
+                className: "polaroid",
+                iconSize:     [38, 95], // size of the icon
+                shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+            L.marker([-827.5, 1599.5], {icon: polaroidIcon}).addTo(map);
 
             /* Show popop */
             let marker = L.marker([-668, 1308]).addTo(map);
@@ -104,6 +138,8 @@ export default function initSearch() {
             /* Update challenge */
             updateChallenge('challenge2')
         } else if (answerKey === 'challenge3') {
+            /* Forbidden City -- China */
+
              /* Cross icon */
             document.getElementsByClassName('challenge__3')[0].className = "challenge__3 challenge__3--complete"
 
@@ -115,6 +151,19 @@ export default function initSearch() {
             var pathMarker = new CustomIcon({iconUrl: url})
             L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
 
+
+            /* Show Polaroid -- */
+            let polaroidIcon = L.icon({
+                iconUrl: chinaIcon,
+            
+                iconSize:     [38, 95], // size of the icon
+                shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+            L.marker([-547, 2042], {icon: polaroidIcon}).addTo(map);
+
             /* Show popop */
             let marker = L.marker([-474, 1683]).addTo(map);
             let markup = await createMarkup()
@@ -125,6 +174,9 @@ export default function initSearch() {
             /* Update challenge */
             updateChallenge('challenge3')
         } else if (answerKey === 'challenge4') {
+
+            /* Pyramid of the Suns -- Mexico */
+
              /* Cross icon */
             document.getElementsByClassName('challenge__4')[0].className = "challenge__4 challenge__4--complete"
 
@@ -135,6 +187,19 @@ export default function initSearch() {
             var url = encodeURI("data:image/svg+xml," +  pathChallenge_4).replace('#','%23');
             var pathMarker = new CustomIcon({iconUrl: url})
             L.marker([-739, 747], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+
+
+            /* Show Polaroid */
+            let polaroidIcon = L.icon({
+                iconUrl: mexicoIcon,
+            
+                iconSize:     [38, 95], // size of the icon
+                shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+            L.marker([-522, 1971], {icon: polaroidIcon}).addTo(map);
             
 
            /* Show popop */
@@ -147,6 +212,8 @@ export default function initSearch() {
              /* Update challenge */
             updateChallenge('challenge4')
         } else if (answerKey === 'challenge5') {
+            /* Niagra Falls  -- USA */
+
              /* Cross icon */
             document.getElementsByClassName('challenge__5')[0].className = "challenge__5 challenge__5--complete"
 
@@ -157,6 +224,20 @@ export default function initSearch() {
             var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
             var pathMarker = new CustomIcon({iconUrl: url})
             L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+            
+
+            /* Show Polaroid */
+            let polaroidIcon = L.icon({
+                iconUrl: monasteryIcon,
+                className: "polaroid",
+                iconSize:     [38, 95], // size of the icon
+                shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+            L.marker([-567.5, 851], {icon: polaroidIcon}).addTo(map);
+
 
             /* Show popop */
             let marker = L.marker([-617, 1419]).addTo(map);
