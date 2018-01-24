@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { createSelector } from 'reselect';
 
 export const getAuth = createSelector(
@@ -5,8 +6,12 @@ export const getAuth = createSelector(
   auth => auth.toJS(),
 );
 
+
+/*
 export function isAuthenticated(state) {
   return getAuth(state).authenticated;
 }
 
 window.isAuthenticated = isAuthenticated;
+
+*/
