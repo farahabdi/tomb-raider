@@ -6,8 +6,21 @@ import PropTypes from 'prop-types';
 import { authActions } from '../actions';
 
 class PublicPage extends Component {
+
+  constructor(){
+    super()
+    this.state = {
+      isDisabled: true
+    }
+}
+
+  toggle() {
+    this.setState({ isDisabled: !this.state.isDisabled })
+  }
   componentWillMount() { }
   render() {
+    const { signInWithFacebook } = this.props;
+    const { isDisabled } = this.state;
 
     return (
       <main class="landing">
@@ -88,21 +101,36 @@ class PublicPage extends Component {
           <div class="terms-and-conditions__container">
             <div class="terms-and-conditions__wrapper">
               <div class="terms-and-conditions__content">
-                <input class="terms-and-conditions__checkbox" id="checkBox" type="checkbox"/>
+                <input class="terms-and-conditions__checkbox" id="checkBox" type="checkbox" onChange={()=>this.toggle()}/>
                 <div class="terms-and-conditions__message"> I have read and accept T&C's</div>
               </div>
             </div>
           </div>
         </div>
 
-
-        <div class="fb-login">
-            <div class="fb-login__container">
-                <div class="fb-login__wrapper"> 
-                
+      <div class="fb-login">
+        <div class="fb-login__container"  role="button" tabindex="0">
+          <table cellspacing="0" cellpadding="0">
+            <tbody>
+              <tr>
+                <td class="fb-login__icon">
+                  <div>
+                  <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216" class="_5h0m" color="#ffffff"><path fill="#ffffff" d="M204.1 0H11.9C5.3 0 0 5.3 0 11.9v192.2c0 6.6 5.3 11.9 11.911.9h103.5v-83.6H87.2V99.8h28.1v-24c0-27.9 17-43.1 41.9-43.111.9 0 22.2.9 25.2 1.3v29.2h-17.3c-13.5 0-16.2 6.4-16.215.9v20.8h32.3l-4.2 32.6h-28V216h55c6.6 0 11.9-5.311.9-11.9V11.9C216 5.3 210.7 0 204.1 0z"></path></svg><img class="_5h0l img" src="https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/lF-L3veiXx9.png" alt="app-facebook" width="24" height="24"/>
+                  </span>
                 </div>
-            </div>
+                </td>
+                <td class="fb-login__button">
+                    <button id="fb-button" disabled={isDisabled} onClick={signInWithFacebook}>Continue with Facebook</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
+
+
+
       </main>
     );
   }

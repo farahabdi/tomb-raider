@@ -129,7 +129,9 @@
 
 .terms-and-conditions {
     font-family: 'Caveat', cursive;
+    font-size: 20px;
     letter-spacing: 1.5px;
+    margin-top: 65px;
     .terms-and-conditions__container {
         display: flex;
         justify-content: center;
@@ -146,9 +148,10 @@
                 margin-right: 26px;
 
                 .terms-and-conditions__checkbox {
-                    margin-left: 25px;
-                    margin-top: -1px;
-
+                    margin-left: 35px;
+                    margin-top: -3px;
+                    width: 30px;
+                    height: 30px;
                 }
             }
 
@@ -160,20 +163,83 @@
     }
 }
 
+/* Facebook button */
 
 .fb-login {
-    .fb-login__container {
-        border-radius: 4px;
-        max-width: 400px;
-        min-width: 240px;
-        background-color: #4267b2;
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+.fb-login__container {
+    height: 40px;
+    border-radius: 4px;
+    max-width: 400px;
+    min-width: initial;
+    background-color: #4267b2;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    >table {
+        max-width: 272px;
+        min-width: initial;
+        width: auto;
+        height: 40px;
+        table-layout: fixed;
+        border: 0;
+        border-collapse: collapse;
+        border-spacing: 0;
         color: #fff;
         cursor: pointer;
-        display: inline-block;
-        vertical-align: top;
+        tbody {
+            tr {
+                .fb-login__icon {
+                    width: 40px;
+                    height: 40px;
+                    padding-left: 0;
+                    padding-bottom: 0;
+                    padding-top: 0;
+                    >div {
+                        white-space: nowrap;
+                        text-align: left;
+                        span {
+                            height: 24px;
+                            margin: 8px;
+                            float: left;
+                            >svg {
+                                height: 24px;
+                                width: 24px;
+                            }
+                            >img {
+                                display: none;
+                                border: 0;
+                                height: 24px;
+                                width: 24px;
+                            }
+                        }
+                    }
+                }
 
-        .fb-login__wrapper {
-            
+                .fb-login__button {
+                    padding-right: 0;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    >button {
+                        margin: 0 24px 0 12px;
+                        font-size: 16px;
+                        border: none;
+                        font-family: Helvetica, Arial, sans-serif;
+                        letter-spacing: .25px;
+                        overflow: hidden;
+                        text-align: center;
+                        text-overflow: clip;
+                        white-space: nowrap;
+                        background-color: #4267b2;
+                        color: white;
+                    }
+                }
+
+            }
         }
     }
 
