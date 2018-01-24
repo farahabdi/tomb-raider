@@ -29,12 +29,12 @@ export default function initSearch() {
 
 
     // Icon markers
-    var CustomIcon = L.Icon.extend({
-        options: {
-          iconSize:     [160, 160],
-
+    let successOptions = {
+        'maxWidth': '400',
+        'width': '320',
+        'width': '450',
+        'className' : 'viewcode'
         }
-      });
     
     async function handleSearch() {
         let searchInput = document.getElementsByClassName('search__input')
@@ -52,49 +52,39 @@ export default function initSearch() {
         const user = firebaseAuth.currentUser;
 
         if (answerKey === 'challenge1') {
+            /* Cross icon */
             document.getElementsByClassName('challenge__1')[0].src = 'https://i.imgur.com/Tnzujx4.png'
-            
 
+            /* Fly to Point */
+            window.map.flyTo([-465, 1174], 1)    
+
+            /* Show circle marker */
+            var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
+            var pathMarker = new CustomIcon({iconUrl: url})
+            L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+
+            /* Show popop */
             let marker = L.marker([-465, 1174]).addTo(map);
-            let firstName = user.displayName.split(' ').slice(0, -1).join(' ');
             let markup = await createMarkup()
             marker.bindPopup(markup, successOptions).openPopup();
             let element = document.getElementsByClassName('viewcode__button')[0]
             element.addEventListener('click', showViewCodePopup, false)
 
-
-            
-            window.map.flyTo([-465, 1174], 1)    
-
-
+            /* Update challenge */
             updateChallenge('challenge1')
         } else if (answerKey === 'challenge2') {
+             /* Cross icon */
             document.getElementsByClassName('challenge__2')[0].src = 'https://i.imgur.com/vp5VXcp.png'
 
             /* Fly to location */
             window.map.flyTo([-668, 1308], 1)
-       /*
-            let url = encodeURI("data:image/svg+xml," +  pathChallenge_2).replace('#','%23');
-            let pathMarker = new CustomIcon({iconUrl: url})
-            L.marker([-575, 1140], {icon: pathMarker }).addTo(window.map);
 
-            */
+            /* Show circle marker */
+            var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
+            var pathMarker = new CustomIcon({iconUrl: url})
+            L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
 
-            var firefoxIcon = L.icon({
-                iconUrl: 'http://joshuafrazier.info/images/firefox.svg',
-                iconSize: [38, 95], // size of the icon
-                });
-                L.marker([-668, 1308], {icon: firefoxIcon}).addTo(map);
             /* Show popop */
-            let successOptions = {
-                'maxWidth': '400',
-                'width': '320',
-                'width': '450',
-                'className' : 'viewcode'
-               }
-
-            
-            
             let marker = L.marker([-668, 1308]).addTo(map);
             let firstName = user.displayName.split(' ').slice(0, -1).join(' ');
             let markup = await createMarkup()
@@ -105,33 +95,68 @@ export default function initSearch() {
             /* Update challenge */
             updateChallenge('challenge2')
         } else if (answerKey === 'challenge3') {
+             /* Cross icon */
             document.getElementsByClassName('challenge__3')[0].src = 'https://i.imgur.com/zikZBt3.png'
 
+            /* Fly to Point */
+            window.map.flyTo([-474, 1683], 1)
 
+            /* Show circle marker */
+            var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
+            var pathMarker = new CustomIcon({iconUrl: url})
+            L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+
+            /* Show popop */
             let marker = L.marker([-474, 1683]).addTo(map);
-
             let markup = await createMarkup()
             marker.bindPopup(markup, successOptions).openPopup();
             let element = document.getElementsByClassName('viewcode__button')[0]
             element.addEventListener('click', showViewCodePopup, false)
 
-            window.map.flyTo([-474, 1683], 1)
+            /* Update challenge */
             updateChallenge('challenge3')
         } else if (answerKey === 'challenge4') {
+             /* Cross icon */
             document.getElementsByClassName('challenge__4')[0].src = 'https://i.imgur.com/rdioy0g.png'
 
+            /* Fly to Point */
+            window.map.flyTo([-585.7060241699219, 632.9839477539062], 1)
+
+            /* Show circle marker */
+            var url = encodeURI("data:image/svg+xml," +  pathChallenge_4).replace('#','%23');
+            var pathMarker = new CustomIcon({iconUrl: url})
+            L.marker([-739, 747], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+            
+
+           /* Show popop */
             let marker = L.marker([-585.7060241699219, 632.9839477539062]).addTo(map);
-            let firstName = user.displayName.split(' ').slice(0, -1).join(' ');
             let markup = await createMarkup()
             marker.bindPopup(markup, successOptions).openPopup();
             let element = document.getElementsByClassName('viewcode__button')[0]
             element.addEventListener('click', showViewCodePopup, false)
 
-
-            window.map.flyTo([-585.7060241699219, 632.9839477539062], 1)
+             /* Update challenge */
             updateChallenge('challenge4')
         } else if (answerKey === 'challenge5') {
+             /* Cross icon */
             document.getElementsByClassName('challenge__5')[0].src = 'https://i.imgur.com/lvhAJKO.png'
+
+            /* Fly to Point */
+            window.map.flyTo([-617, 1419], 1)
+
+            /* Show circle marker */
+            var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
+            var pathMarker = new CustomIcon({iconUrl: url})
+            L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+
+            /* Show popop */
+            let marker = L.marker([-617, 1419]).addTo(map);
+            let markup = await createMarkup()
+            marker.bindPopup(markup, successOptions).openPopup();
+            let element = document.getElementsByClassName('viewcode__button')[0]
+            element.addEventListener('click', showViewCodePopup, false)
+
+            /* Update challenge */
             updateChallenge('challenge5')
         }
       }

@@ -18,10 +18,8 @@ export async function initChallenges() {
     var CustomIcon = L.Icon.extend({
         options: {
           iconSize:     [60, 60],
-          shadowSize:   [50, 64],
-          iconAnchor:   [22, 94],
-          shadowAnchor: [4, 62],
-          popupAnchor:  [-3, -76]
+
+          iconAnchor:     [60, 60],
         }
       });
 
@@ -36,7 +34,7 @@ export async function initChallenges() {
  
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
-        L.marker([-465, 1174], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+        L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
     } 
     
     if (challenges.challenge2 == true) {
@@ -44,7 +42,7 @@ export async function initChallenges() {
 
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_2).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
-        L.marker([-668, 1308], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+        L.marker([-847, 1553], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
      //   window.map.flyTo([13.87992, 45.9791], 1)
 
         
@@ -55,7 +53,7 @@ export async function initChallenges() {
 
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_3).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
-        L.marker([-474, 1683], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+        L.marker([-594.5, 1998.5], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
     }
     if (challenges.challenge4 == true) {
         document.getElementsByClassName('challenge__4')[0].src = code4
@@ -63,16 +61,18 @@ export async function initChallenges() {
  
         var url = encodeURI("data:image/svg+xml," +  pathChallenge_4).replace('#','%23');
         var pathMarker = new CustomIcon({iconUrl: url})
-        L.marker([-585.7060241699219, 632.9839477539062], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+        L.marker([-739, 747], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
 
-
+//
     }
     
     if (challenges.challenge5 == true) {
         document.getElementsByClassName('challenge__5')[0].src = code5
 
  
- 
+        var url = encodeURI("data:image/svg+xml," +  pathChallenge_4).replace('#','%23');
+        var pathMarker = new CustomIcon({iconUrl: url})
+        L.marker([-604, 835], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
 
 
     }
