@@ -27,6 +27,12 @@ export default function initSearch() {
     document.getElementsByClassName('challenge__4')[0].src = 'https://i.imgur.com/sFfZ8DU.png'
     document.getElementsByClassName('challenge__5')[0].src = 'https://i.imgur.com/sFfZ8DU.png'
 
+    var CustomIcon = L.Icon.extend({
+        options: {
+          iconSize:     [60, 60],
+          iconAnchor:     [60, 60],
+        }
+      });
 
     // Icon markers
     let successOptions = {
@@ -83,6 +89,8 @@ export default function initSearch() {
             var url = encodeURI("data:image/svg+xml," +  pathChallenge_1).replace('#','%23');
             var pathMarker = new CustomIcon({iconUrl: url})
             L.marker([ -617, 1419], {icon: pathMarker }).bindPopup("I am data URI SVG icon.").addTo(window.map);
+
+            /* Show Polaroid */
 
             /* Show popop */
             let marker = L.marker([-668, 1308]).addTo(map);
@@ -224,9 +232,9 @@ const text = {
         'heading': 'Good job',
         'message': 'I still can’t make sense of this blasted riddle. One more piece should do it.'
     },
-'   5': {
+    '5': {
         'heading': 'You’ve done it!',
-    '   message': 'The code is complete, now we have to figure out what it means. Ready for one last adventure?'
+        'message': 'The code is complete, now we have to figure out what it means. Ready for one last adventure?'
     }
 }
 
