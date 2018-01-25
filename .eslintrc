@@ -19,6 +19,7 @@
       "no-mixed-operators": "off",
       "no-unused-expressions": "off",
       "class-methods-use-this": "off",
-      "jsx-a11y/alt-text": "off"
+      "jsx-a11y/alt-text": "off",
+      "linebreak-style": "off"
     }
   }

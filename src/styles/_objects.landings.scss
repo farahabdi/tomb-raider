@@ -191,6 +191,12 @@
     cursor: pointer;
     display: inline-block;
     vertical-align: top;
+    .fb-login--disabled & {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+
     >table {
         max-width: 272px;
         min-width: initial;
@@ -201,7 +207,6 @@
         border-collapse: collapse;
         border-spacing: 0;
         color: #fff;
-        cursor: pointer;
         tbody {
             tr {
                 .fb-login__icon {
