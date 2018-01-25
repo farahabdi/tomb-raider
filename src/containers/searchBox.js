@@ -256,6 +256,7 @@ export default function initSearch() {
     let challenges = await fetchChallenges()
     let num = 0
     Object.values(challenges).forEach((value) =>{ if (value == true) { num = num + 1 } })
+    num++
     /* Success popup */   
     let markup = document.createElement("div");
     debugger

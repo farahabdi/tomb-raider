@@ -6,7 +6,7 @@ import mapJPG from '../assets/maps.jpg'
 
 
 export default function initApp () {
-  function init() {
+
     var img = [
       3840,  // original width of image
       2160   // original height of image
@@ -254,11 +254,8 @@ export default function initApp () {
 
     // tell leaflet that the map is exactly as big as the image
     map.setMaxBounds(bounds);
-  }
+  
 
-    return {
-      init: init,
- 
-    }
+
   }
   

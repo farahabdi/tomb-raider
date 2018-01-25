@@ -22,7 +22,7 @@ class AuthenticatedPage extends Component {
 
   componentDidMount() { 
     initApp()
-    initApp().init()
+   
     initSearch()
     initChallenges()
   
