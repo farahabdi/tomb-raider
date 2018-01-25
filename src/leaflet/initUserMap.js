@@ -15,7 +15,7 @@ import mexicoIcon from '../assets/Polaroid_Mexico.png'
 import niagraIcon from '../assets/Polaroid_Niagara.png'
 
 
-export async function initChallenges() {
+export default async function initUserData() {
     let searchInput = document.getElementsByClassName('search__input')
     let challenges = await fetchChallenges()
     

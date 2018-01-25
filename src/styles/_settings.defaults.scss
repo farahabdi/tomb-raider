@@ -128,3 +128,12 @@ $hover-text-color: #000 !default;
 $placeholder-text-color: #aaa !default;
 $border-color: rgba(0, 0, 0, 0.15) !default;
 $heading-text-color: $text-color !default;
+
+input, textarea {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  

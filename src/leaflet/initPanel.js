@@ -3,7 +3,6 @@
 import { firebaseAuth } from '../utils/config'
 import { db } from '../utils/config';
 import { updateChallenge, checkAnswer, fetchChallenges, fetchCompletedChallenges } from '../api/index'
-import initApp from './initMap'
 import { pathChallenge_1, pathChallenge_2, pathChallenge_3, pathChallenge_4 } from '../utils'
 
 import code1 from '../assets/code1_complete.png'

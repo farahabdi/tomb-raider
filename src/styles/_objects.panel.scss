@@ -1,0 +1,134 @@
+.header {
+  display: flex;
+  /* justify-content: right; */
+  flex-direction: column-reverse;
+  background-image: url("../assets/headerTexture.png");
+  background-repeat: no-repeat;
+}
+
+.header__container {
+  text-decoration: white;
+  padding-left: 206px;
+  height: 122px;
+}
+
+.header__wrapper {
+  text-decoration: white;
+  background-image: url("../assets/searchTexture.png");
+  background-repeat: no-repeat;
+  margin-left: -203px;
+  margin-top: 1px;
+}
+
+.search__input {
+  height: 31px;
+  width: 289px;
+  background: transparent;
+  outline: none;
+  border: none !important;
+  font-size: 26px;
+  text-decoration: none;
+  margin-top: 10px;
+    margin-left: 22px;
+}
+
+.search__icon {
+  background-image: url("../assets/searchIcon.png");
+  background-repeat: no-repeat;
+
+  padding: 20px;
+  margin-top: -33px;
+  margin-left: 292px;
+}
+
+.search__wrapper {
+
+}
+
+
+
+.challenges {
+    display: flex;
+    margin-left: -16px;
+    margin-top: 8px;
+  }
+  
+
+.challenge__wrapper {
+
+    margin-left: 31px;
+    margin-top: 9px;
+    /* margin-right: -2px; */
+    padding-right: 28px;
+  }
+  
+  .challenge__1 {
+    background-image: url("../assets/code1.png") !important;
+    background-repeat: no-repeat !important;
+    padding-top: 18px;
+    width: 34px;
+    padding-bottom: 17px;
+    padding-left: -3px;
+    padding-right: 0px;
+  
+    &.challenge__1--complete {
+      background-image: url("../assets/code1_complete.png") !important;
+    }
+  }
+  
+  .challenge__2 {
+    background-image: url("../assets/code2.png") !important;
+    background-repeat: no-repeat !important;
+    padding-top: 18px;
+    width: 34px;
+    padding-bottom: 17px;
+    padding-left: -3px;
+    padding-right: 0px;
+  
+    &.challenge__2--complete {
+      background-image: url("../assets/code2_complete.png") !important;
+    }
+  }
+  
+  .challenge__3 {
+    background-image: url("../assets/code3.png") !important;
+    background-repeat: no-repeat !important;
+    padding-top: 18px;
+    width: 34px;
+    padding-bottom: 17px;
+    padding-left: -3px;
+    padding-right: 0px;
+  
+    &.challenge__3--complete {
+      background-image: url("../assets/code3_complete.png") !important;
+      
+    }
+  }
+  
+  .challenge__4 {
+    background-image: url("../assets/code4.png") !important;
+    background-repeat: no-repeat !important;
+    padding-top: 18px;
+    width: 34px;
+    padding-bottom: 17px;
+    padding-left: -3px;
+    padding-right: 0px;
+  
+    &.challenge__4--complete {
+      background-image: url("../assets/code4_complete.png") !important;
+    }
+  }
+  
+  .challenge__5 {
+    background-image: url("../assets/code5.png") !important;
+    background-repeat: no-repeat !important;
+    padding-top: 18px;
+    width: 34px;
+    padding-bottom: 17px;
+    padding-left: -3px;
+    padding-right: 0px;
+  
+    &.challenge__5--complete {
+      background-image: url("../assets/code5_complete.png") !important;
+    }
+  }
