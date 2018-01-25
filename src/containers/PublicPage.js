@@ -129,8 +129,6 @@ class PublicPage extends Component {
         </div>
       </div>
 
-
-
       </main>
     );
   }

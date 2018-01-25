@@ -1,10 +1,16 @@
-
-
 .landing {
     background-image: url("../assets/landingBg@mobile.jpg");
     background-repeat: no-repeat;
     height: 2276px;
 }
+
+@include media-query(lap-and-up) {
+    .landing {
+        background-image: url("../assets/landingBg@desktop.png");
+        background-repeat: no-repeat;
+        height: 2276px;
+    }
+  }
 
 .logo {
     display: flex;
@@ -58,64 +64,46 @@
 
 .notepad__container {
     font-family: 'Caveat', cursive;
-    
-
     .notepad__wrapper {
-
         height: 205px;
         padding-top: 33px;
-
         &.notepad__wrapper-1 {
             width: 285px;
             background-image: url("../assets/postit_1.png");
             background-repeat: no-repeat;
         }
-
         &.notepad__wrapper-2 {
             width: 285px;
             background-image: url("../assets/postit_2.png");
             background-repeat: no-repeat;
         }
-
-
         &.notepad__wrapper-3 {
             width: 227px;
             background-image: url("../assets/postit_3.png");
             background-repeat: no-repeat;
         }
-
-
         &.notepad__wrapper-4 {
             width: 285px;
           //  padding-top: 17px !important;
             background-image: url("../assets/postit_5.png");
             background-repeat: no-repeat;
         }
-
-
         &.notepad__wrapper-5 {
             width: 285px;
             background-image: url("../assets/postit_5.png");
             background-repeat: no-repeat;
         }
-
-
         &.notepad__wrapper-6 {
             width: 242px;
             background-image: url("../assets/postit_7.png");
             background-repeat: no-repeat;
         }
-
-
         .notepad__text {
             width: 91%;
             /* margin-top: 7px; */
-       
             transform: rotate(-4deg);
             margin-left: 20px;
             font-size: 24px;
-
-
             &.notepad__text-6 {
                 width: 81%;
                 margin-top: -16px;
@@ -125,7 +113,6 @@
     }
 
 }
-
 
 .terms-and-conditions {
     font-family: 'Caveat', cursive;
@@ -140,13 +127,11 @@
             background-repeat: no-repeat;
             width: 367px;
             height: 63px;
-
             .terms-and-conditions__content {
                 display: flex;
                 justify-content: space-around;
                 margin-top: 23px;
                 margin-right: 26px;
-
                 .terms-and-conditions__checkbox {
                     margin-left: 35px;
                     margin-top: -3px;
@@ -154,14 +139,25 @@
                     height: 30px;
                 }
             }
-
-            .terms-and-conditions__message {
-
-            }
-
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Facebook button */
 
