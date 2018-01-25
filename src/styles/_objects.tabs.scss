@@ -1,0 +1,168 @@
+.options {
+    font-family: 'Caveat', cursive;
+    font-size: 19px;
+    position: absolute;
+    margin-top: 2px;
+    height: 340px;
+    margin-left: -375px;
+    height: 515px;
+    z-index: 1;
+
+    .options__container {
+        background-image: url("../assets/options.png") !important;
+        background-repeat: no-repeat !important;
+        width: 400px;
+        height: 873px;
+        padding-bottom: -5px;
+        // padding-left: 48px;
+        // padding-top: 51px;
+        //padding-right: 49px;
+        transition: 0.5s all ease;
+
+        .options__wrapper {
+
+            .instructions {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 39%;
+                padding-top: 193px;
+                margin: auto;
+
+                .cross__wrapper {
+                    display: flex;
+                    justify-content: flex-end;
+
+                    .cross {
+                        background-image: url("../assets/cross.png") !important;
+                        background-repeat: no-repeat !important;
+                        width: 20px;
+                        padding-top: 21px;
+    
+                        display: flex;
+                        justify-content: flex-end;
+                        height: 20px;
+                        background-repeat: no-repeat !important;
+                    }
+                }
+
+
+                .instructions__header {
+
+                }
+
+                .instructions__signout {
+                    margin-top: 12px;
+
+                }
+
+                .instructions__terms {
+                    margin-top: 12px;
+
+                }
+            }
+
+        }
+    }
+  }
+
+.options__header {
+    padding-top: 181px;
+    margin-left: 121px;
+}
+
+
+
+.options__container.options__container-open {
+    margin-left: -10px;
+}
+
+.options__container:focus {
+    padding-left: 299px;
+    transition: 2.15s all ease;
+}
+
+.options.leaflet-control.onTop {
+    margin-left: -677px;
+}
+
+.options.leaflet-control {
+    transition: 1.5s all ease;
+}
+  
+.leaflet-top.leaflet-left {
+    display: flex;
+    flex-direction: column;
+}
+  
+/* Field Tab */  
+.field {
+    position: absolute;
+    margin-left: -374px;
+    z-index: 3;
+}
+  
+.field__wrapper-open { 
+    padding-left: 330px;
+    transition: 0.5s all ease;
+    margin-left: -300px;
+}
+  
+.field__wrapper {
+    background-image: url("../assets/fieldNotes.png") !important;
+    background-repeat: no-repeat !important;
+    width: 400px;
+    height: 852px;
+    padding-bottom: -5px;
+    // padding-left: 48px;
+    // padding-top: 51px;
+    //padding-right: 49px;
+    transition: 0.5s all ease;
+  }
+  
+
+  @media (max-width: 768px) {
+    //extend less on a phone / iPad protrait etc
+    .field__wrapper-open { 
+      padding-left: 260px;
+      transition: 0.5s all ease;
+    }
+  }
+  
+  .field__wrapper-close{ 
+    padding-left: 0px;
+    transition: 0.5s all ease;
+    transition: 0.5s all ease;
+  }
+  
+  
+  
+
+  /* Facebook Tab */
+  .fb_post_container {
+    position: absolute;
+    top: 517px;
+    padding-left: 170px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 38%;
+    width: 350px;
+  }
+  
+  .fb_post_container.fb_post_container__opened {
+    transition: 0.5s all ease;
+        margin-left: -373px;
+  }
+  .fb_post_container.fb_post_container__closed {
+    transition: 0.5s all ease;
+    margin-left: 0px;
+  }
+  
+  @media (max-width: 768px) {
+    .fb_post_container {
+      // the minimum size FB supports rendering is 350
+      // but this just doesnt fit on most phones with the tabs (esp iph5 only 320px!)
+      // so we'll also use zoom to shrink it down
+      zoom: 0.8; 
+    }
+  }

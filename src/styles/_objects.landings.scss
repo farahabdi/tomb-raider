@@ -25,7 +25,22 @@
         //height: 40px;
         //width: 40px;
     }
+
+
+    @include media-query(lap-and-up) {
+        .logo__image {
+            background-image: url("../assets/logo@desktop.png");
+            background-repeat: no-repeat;
+            width: 328px;
+            height: 82px;
+            margin-top: 17px;
+            //height: 40px;
+            //width: 40px;
+        }
+    }
 }
+
+
 
 .notepad-1 {
     display: flex;

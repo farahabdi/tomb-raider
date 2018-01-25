@@ -52,7 +52,7 @@ export default function initApp () {
     // so that it covers the entire map
     L.imageOverlay(url, bounds).addTo(map);
 
-    let items = []
+    
     // Search Control
     L.Control.Search = L.Control.extend({
       options: {
@@ -127,8 +127,9 @@ export default function initApp () {
     });
     // End Search control
 
+
     //Field Notes Control
-    L.Control.fieldNotes= L.Control.extend({
+    L.Control.field= L.Control.extend({
       options: {
         // topright, topleft, bottomleft, bottomright
         position: 'topright',
@@ -139,68 +140,77 @@ export default function initApp () {
         L.Util.setOptions(this, options);
       },
       onAdd: function (map) {
-        // happens after added to map
-         /* Blue Options fb_post_container */
 
-         var tabContainer = L.DomUtil.create('div', 'tab__container');
-
-         this.fieldNotesContainer = L.DomUtil.create('div', 'fieldNotes__container', tabContainer);
+        let tabContainer = L.DomUtil.create('div', 'tab__container');
+        this.field = L.DomUtil.create('div', 'field', tabContainer);
 
         /* Options tab */
-        this.optionsContainer = L.DomUtil.create('div', 'options__container', tabContainer);
-        this.optionsWrapper = L.DomUtil.create('div', 'options__wrapper options__wrapper_closed', this.optionsContainer );
+        this.optionsElement = L.DomUtil.create('div', 'options', tabContainer);
+        this.optionsContainerElement= L.DomUtil.create('div', 'options__container options__container_closed', this.optionsElement );
 
+        /* Text in options Tab */
+        this.optionsText = L.DomUtil.create('div', 'options__wrapper', this.optionsContainerElement);
+        this.optionsText.insertAdjacentHTML('afterbegin', `
+          <div class="instructions">
+            <div class="cross__wrapper">
+              <div class="cross"> </div>
+            </div>
+            
+            <div class="instructions__header"> 
+              <div> Options </div>
+            </div>
+            <div class="instructions__signout">
+              <div> Sign out </div>
+              <div class="tick"></div>
+            </div>
+            <div class="instructions__terms">
+              <div class="tick"></div>
+              <div> Terms and conditions </div>
+            </div>
+          </div>
+        ` )  
 
-                 // TODO put this facebook stuff in the OTHER folder, not the options folder     
-        const fbBox = L.DomUtil.create('div', 'fb_post_container', this.fieldNotesContainer );
+        // TODO put this facebook stuff in the OTHER folder, not the options folder     
+        const fbBox = L.DomUtil.create('div', 'fb_post_container', this.field );
 
-         fbBox.addEventListener("click", showfieldNotes, false); //work around for iOS need to capture click
-         this.optionsContainer.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
+        fbBox.addEventListener("click", showfield, false); //work around for iOS need to capture click
+        this.optionsElement.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
    
 
-         this.fieldNotesWrapper = L.DomUtil.create('div', 'fieldNotes__wrapper fieldNotes__wrapper_closed', this.fieldNotesContainer );
-         this.fieldNotesWrapper.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
-         this.fieldNotesWrapper.setAttribute("tabindex", "1")
-         self = this;
+        this.fieldWrapper = L.DomUtil.create('div', 'field__wrapper field__wrapper-closed', this.field );
+        this.fieldWrapper.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
+        this.fieldWrapper.setAttribute("tabindex", "1")
 
-         function showfieldNotes(event){
-           //toggle the css class name manually to open or close the tab
-           if(self.fieldNotesWrapper.className === 'fieldNotes__wrapper fieldNotes__wrapper_opened'){
-              self.fieldNotesWrapper.className = 'fieldNotes__wrapper fieldNotes__wrapper_closed'
-              fbBox.className = 'fb_post_container fb_post_container__closed'
-              
 
-           } else {
-              self.fieldNotesWrapper.className = 'fieldNotes__wrapper fieldNotes__wrapper_opened'
-              fbBox.className = 'fb_post_container fb_post_container__opened onTop'
-           }
-        }
+
+        self = this;
+
+        function showfield(event){
+          //toggle the css class name manually to open or close the tab
+          if(self.fieldWrapper.className === 'field__wrapper field__wrapper-open'){
+            self.fieldWrapper.className = 'field__wrapper field__wrapper-close'
+            fbBox.className = 'fb_post_container fb_post_container__closed'
+            
+
+          } else {
+            self.fieldWrapper.className = 'field__wrapper field__wrapper-open'
+            fbBox.className = 'fb_post_container fb_post_container__opened onTop'
+          }
+      }
 
         function showOptionsTab(event){
 
-          if(self.optionsContainer.className === 'options__wrapper options__wrapper_opened'){
-              self.optionsContainer.className = 'options__wrapper options__wrapper_closed'
-              self.optionsContainer.className = "options__container leaflet-control"
-         } else if (self.optionsContainer.className == "options__container leaflet-control onTop") {
-              self.optionsContainer.className = 'options__container leaflet-control'
+          if(self.optionsElement.className === 'options__container options__container-open'){
+              self.optionsElement.className = 'options__container options__container_close'
+              self.optionsElement.className = "options leaflet-control"
+         } else if (self.optionsElement.className == "options leaflet-control onTop") {
+              self.optionsElement.className = 'options leaflet-control'
          } else {
-              self.optionsContainer.className = 'options__wrapper options__wrapper_opened'
-              self.optionsContainer.className = "options__container leaflet-control onTop"
+              self.optionsElement.className = 'options__container options__container-open'
+              self.optionsElement.className = "options leaflet-control onTop"
          }
-
-          
        }
-
-        
-       // this.fieldNotesWrapper.addEventListener("click", showFB, false); //work around for iOS need to capture click
-       // fieldNotesContainer.addEventListener("click", showFB, false); //work around for iOS need to capture click
-        function showFB(event){
-          alert('ddd')
-       }
-
  
-
-
         fbBox.id ='fb-posts-here';
         // placeholder FB posts - TODO read these from firebase
         fbBox.innerHTML = '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350" mobile="true"></div>';
@@ -227,35 +237,22 @@ export default function initApp () {
       },
 
 
-
     });
     // End Field Notes control
 
-
-  
     L.control.search = function(id, options) {
       return new L.Control.Search(id, options);
     }
 
-
-    L.control.fieldNotes = function(id, options) {
-      return new L.Control.fieldNotes(id, options);
+    L.control.field = function(id, options) {
+      return new L.Control.field(id, options);
     }
 
-    L.control.search({
-      data: items
-    }).addTo(map)
+    L.control.search().addTo(map)
 
-
-    L.control.fieldNotes({
-      data: items
-    }).addTo(map)
-
+    L.control.field().addTo(map)
 
     // tell leaflet that the map is exactly as big as the image
     map.setMaxBounds(bounds);
-  
-
-
   }
   
