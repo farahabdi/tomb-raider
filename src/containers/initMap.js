@@ -108,7 +108,7 @@ export default function initApp () {
         //bed - 19 Jan 2018 - have to manually tell this to focus for iOS. 
         //I suspect this is due to iOS prevention of focus() events outside of the user manually doing it, and outside of an originating 'click' event - security reasons
         //I think leaflet may be propogating touch events up? maybe. ¯\_(ツ)_/¯ This seems to work though as we start from a click event
-        event.srcElement.focus()
+        event.target.focus()
       }
 
         /* Image */
