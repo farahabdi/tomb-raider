@@ -190,11 +190,13 @@ export default function initApp () {
           if(self.fieldWrapper.className === 'field__wrapper field__wrapper-open'){
             self.fieldWrapper.className = 'field__wrapper field__wrapper-close'
             fbBox.className = 'fb_post_container fb_post_container__closed'
-            
-
+            map.scrollWheelZoom.enable();
+            map.dragging.enable();
           } else {
             self.fieldWrapper.className = 'field__wrapper field__wrapper-open'
             fbBox.className = 'fb_post_container fb_post_container__opened onTop'
+            map.scrollWheelZoom.disable();
+            map.dragging.disable();
           }
       }
 
