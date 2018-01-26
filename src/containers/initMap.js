@@ -3,7 +3,7 @@
 import { firebaseAuth } from '../utils/config'
 import './searchBox'
 import mapJPG from '../assets/maps.jpg'
-
+import { fetchFacebookPosts } from '../api/index'
 
 export default function initApp () {
 
@@ -214,11 +214,6 @@ export default function initApp () {
        }
  
         fbBox.id ='fb-posts-here';
-        // placeholder FB posts - TODO read these from firebase
-        fbBox.innerHTML = '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350" mobile="true"></div>';
-        fbBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
-        fbBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
-        fbBox.innerHTML += '<div class="fb-post" data-href="https://www.facebook.com/20531316728/posts/10154009990506729/" data-width="350"></div>';
         L.DomEvent.disableClickPropagation(fbBox);
         L.DomEvent.on(fbBox, 'mouseover', function(){
             map.scrollWheelZoom.disable();
@@ -227,13 +222,16 @@ export default function initApp () {
             map.scrollWheelZoom.enable();
         });
 
-         //TODO - this should happen in an event after elements have been added
-         // which event though? Timeout is a hack but does the trick
-         // actually this can probable just be handled in the callback from firebase on fetching from the facebookpost table
-         setTimeout(()=>{
+        let posts = fetchFacebookPosts().then((posts)=> {
+          // console.warn(posts);
+          posts.forEach(post => {
+            fbBox.innerHTML += '<div class="fb-post" data-href="' + post + '" data-width="350"></div>';
+            console.warn(post)
+          })
+          //tell FB to render this
           const element = document.getElementById('fb-posts-here')
           FB.XFBML.parse(element); //this is the important magic call that makes facebook render all the posts out!
-         }, 1000)
+        })
 
         return tabContainer;
       },
