@@ -23,18 +23,7 @@ class AuthenticatedPage extends Component {
     initUserMap()
   }
 
-  getContainerStyle(ratio) {
-    return {
-      paddingTop: ratio.toFixed(2) + '%',
-      overflow: 'hidden',
-      position: 'relative'
-    }
-  }
-
   render() {
-    const { scale, handleZoomChange } = this.props;
-  
-
     return (
      <div id="map" className="map"></div>
     );

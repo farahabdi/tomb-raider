@@ -3,7 +3,9 @@
       "airbnb"
     ],
     "globals": {
-      "document": true
+      "document": true,
+      "L": true,
+      "FB": true
     },
     "env": {
       "browser": true,
@@ -13,13 +15,17 @@
     "rules": {
       "react/react-in-jsx-scope": ["off"],
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-      "no-use-before-define": ["error", { "functions": false, "classes": false }],
       "global-require": "off",
       "import/no-dynamic-require": "off",
       "no-mixed-operators": "off",
       "no-unused-expressions": "off",
       "class-methods-use-this": "off",
       "jsx-a11y/alt-text": "off",
-      "linebreak-style": "off"
+      "linebreak-style": "off",
+      "no-restricted-globals": "off",
+      "no-global-assign": "off",
+      "no-plusplus": "off",
+      "no-console": "off",
+      "no-use-before-define": "off"
     }
   }
