@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { updateChallenge, checkAnswer, fetchChallenges, fetchCompletedChallenges } from '../api/index';
 import chinaIcon from '../assets/Polaroid_China.png';
 import italyIcon from '../assets/Polaroid_Italy.png';

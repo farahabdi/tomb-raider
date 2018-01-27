@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { firebaseAuth } from '../utils/config';
 
 export default function searchControl() {

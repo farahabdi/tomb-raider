@@ -1,3 +1,4 @@
+/* eslint-disable */
 import mapJPG from '../assets/maps.jpg';
 import searchControl from './searchControl';
 import tabsControl from './tabsControl';
