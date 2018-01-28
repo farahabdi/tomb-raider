@@ -13,51 +13,55 @@ export default function tabsControl() {
     onAdd() {
       // const { map } = window;
       const tabContainer = L.DomUtil.create('div', 'tab__container');
-      this.field = L.DomUtil.create('div', 'field', tabContainer);
-      /* Options tab */
-      this.optionsElement = L.DomUtil.create('div', 'options', tabContainer);
-      this.optionsContainerElement = L.DomUtil.create('div', 'options__container options__container_closed', this.optionsElement);
+      this.tabTitle = L.DomUtil.create('ul', 'nav nav-tabs', tabContainer);
 
-      /* Text in options Tab */
-      this.optionsText = L.DomUtil.create('div', 'options__wrapper', this.optionsContainerElement);
-      this.optionsText.insertAdjacentHTML('afterbegin', `
-            <div class="instructions">
-              <div class="cross__wrapper">
-                <div class="cross"> </div>
-              </div>     
-              <div class="instructions__header"> 
-                <div> Options </div>
-              </div>
-              <div class="instructions__signout">
-                <div> Sign out </div>
-                <div class="tick"></div>
-              </div>
-              <div class="instructions__terms">
-                <div class="tick"></div>
-                <div> Terms and conditions </div>
-              </div>
-            </div>
-          `);
+      this.optionsTabTitle = L.DomUtil.create('li', 'options-tab active', this.tabTitle);
+      this.optionsTabAnchor = L.DomUtil.create('a', '', this.optionsTabTitle);
+      this.optionsTabAnchor.innerHTML = 'Options'
+
+      this.fieldTabTitle = L.DomUtil.create('li', 'field-tab', this.tabTitle);
+      this.fieldTabAnchor = L.DomUtil.create('a', '', this.fieldTabTitle);
+      this.fieldTabAnchor.innerHTML = 'Field'
+
+      this.tabContent = L.DomUtil.create('div', 'tab-content', tabContainer);
+      this.optionsContent = L.DomUtil.create('div', 'tab-pane options-content active', this.tabContent);
+      this.optionsContent.innerHTML = 'OPTIONS CONTENT'
+      this.fieldContent = L.DomUtil.create('div', 'tab-pane field-content', this.tabContent);
+      this.fieldContent.innerHTML = 'FIELD NOTES'
 
 
-      this.fieldWrapper = L.DomUtil.create('div', 'field__wrapper field__wrapper-closed', this.field);
-      this.field.addEventListener('click', showFieldsTab, false);
-      this.optionsContainerElement.addEventListener('click',showOptionsTab, false);
-      // work around for iOS need to capture click
-      this.fieldWrapper.setAttribute('tabindex', '1');
+      // Event handlers
 
-      self = this;
-      function showFieldsTab(event) {
+      this.fieldTabTitle.addEventListener('click', handleFieldnotes, false)
+      this.optionsTabTitle.addEventListener('click', handleOptions, false)
 
-        var x = 3
-        debugger
+      function handleOptions(event) {
+        let optionsTab = document.getElementsByClassName('options-tab')[0]
+        let fieldTab = document.getElementsByClassName('field-tab')[0]
+
+        let optionsContent = document.getElementsByClassName('options-content')[0]
+        let fieldContent = document.getElementsByClassName('field-content')[0]
+
+        optionsTab.className = 'options-tab active'
+        fieldTab.className = 'field-tab'
+
+        optionsContent.className = 'tab-pane options-content active'
+        fieldContent.className = 'tab-pane field-content'
       }
 
-      function showOptionsTab() {
-        var x = 3
-        debugger
-      }
+      function handleFieldnotes(event) {
+        let optionsTab = document.getElementsByClassName('options-tab')[0]
+        let fieldTab = document.getElementsByClassName('field-tab')[0]
 
+        let optionsContent = document.getElementsByClassName('options-content')[0]
+        let fieldContent = document.getElementsByClassName('field-content')[0]
+
+        optionsTab.className = 'options-tab'
+        fieldTab.className = 'field-tab active'
+
+        optionsContent.className = 'tab-pane options-content'
+        fieldContent.className = 'tab-pane field-content active'
+      }
 
       return tabContainer;
     },

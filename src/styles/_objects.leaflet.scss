@@ -17,9 +17,15 @@
   
   
   .leaflet-right .leaflet-control {
-    margin-right: -305px !important;
+    //margin-right: -305px !important;
   }
-  
+  .tab__container.leaflet-control {
+
+    transform: rotate(-90deg);
+    top: 500px;
+    /* margin-left: 300px; */
+    right: -94px;
+  }
   
   .leaflet-container {
     background: #D6CDCA !important;
