@@ -19,10 +19,7 @@
 
 .header__wrapper {
   position: absolute;
-
   text-decoration: white;
-  background-image: url("../assets/searchTexture.png");
-  background-repeat: no-repeat;
   margin-left: -203px;
   margin-top: 1px;
 }
@@ -36,20 +33,23 @@
   font-size: 26px;
   text-decoration: none;
   margin-top: 10px;
-    margin-left: 22px;
+  margin-left: 22px;
 }
 
 .search__icon {
   background-image: url("../assets/searchIcon.png");
   background-repeat: no-repeat;
-
-  padding: 20px;
-  margin-top: -33px;
-  margin-left: 292px;
+  margin-left: -16px;
+  padding-right: 9px;
+  width: 30px;
+  margin-top: 8px;
 }
 
 .search__wrapper {
-
+  display: flex;
+  background-image: url("../assets/searchTexture.png");
+  background-repeat: no-repeat;
+  height: 59px;
 }
 
 
