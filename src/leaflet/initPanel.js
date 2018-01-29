@@ -45,6 +45,11 @@ export default function initSearch() {
     },
   });
 
+
+  let challengeElement = document.getElementsByClassName('challenge__wrapper')[0]
+  challengeElement.addEventListener('click', showViewCodePopup, false)
+
+
   async function handleSearch() {
     const answerInput = searchInput[0].value;
     searchInput[0].blur();
