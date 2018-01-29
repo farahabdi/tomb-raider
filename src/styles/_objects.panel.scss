@@ -1,3 +1,6 @@
+.container {
+  display: flex;
+}
 .header {
   display: flex;
   /* justify-content: right; */
@@ -10,9 +13,13 @@
   text-decoration: white;
   padding-left: 206px;
   height: 122px;
+  width: 140px;
+
 }
 
 .header__wrapper {
+  position: absolute;
+
   text-decoration: white;
   background-image: url("../assets/searchTexture.png");
   background-repeat: no-repeat;

@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { fetchChallenges } from '../api/index';
 import chinaIcon from '../assets/Polaroid_China.png';
-import italyIcon from '../assets/Polaroid_Italy.png';
+import stonehengeIcon from '../assets/Polaroid_Stonehenge.png';
 import kenyaIcon from '../assets/Polaroid_Kenya.png';
 import mexicoIcon from '../assets/Polaroid_Mexico.png';
 import niagraIcon from '../assets/Polaroid_Niagara.png';
@@ -24,9 +24,10 @@ export default async function initUserData() {
 
   if (challenges.challenge1 === true) {
     document.getElementsByClassName('challenge__1')[0].className = 'challenge__1 challenge__1--complete';
+
     /* Show Polaroid */
     const polaroidIcon = L.icon({
-      iconUrl: italyIcon,
+      iconUrl: stonehengeIcon,
       className: 'polaroid',
       iconSize: [38, 95], // size of the icon
       shadowSize: [50, 64], // size of the shadow
@@ -34,9 +35,11 @@ export default async function initUserData() {
       shadowAnchor: [4, 62], // the same for the shadow
       popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
     });
-    L.marker([-567, 1434], { icon: polaroidIcon }).addTo(window.map);
 
-    const url = encodeURI(`data:image/svg+xml,${pathChallenge1}`).replace('#', '%23');
+    L.marker([-586, 1439], { icon: polaroidIcon }).addTo(window.map);
+
+    /* Show circle marker */
+    const url = encodeURI(`data:image/svg+xml, ${pathChallenge2}`).replace('#', '%23');
     const pathMarker = new CustomIcon({ iconUrl: url });
     L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
   }
@@ -92,7 +95,7 @@ export default async function initUserData() {
       shadowAnchor: [4, 62], // the same for the shadow
       popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
     });
-    L.marker([-706, 620], { icon: polaroidIcon }).addTo(window.map);
+    L.marker([-706, 550], { icon: polaroidIcon }).addTo(window.map);
 
     const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
     const pathMarker = new CustomIcon({ iconUrl: url });
