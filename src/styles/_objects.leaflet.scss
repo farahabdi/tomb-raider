@@ -8,7 +8,12 @@ div.leaflet-top.leaflet-left {
 }
 
 .leaflet-left .leaflet-control {
-  margin-left: 0px;
+  margin-left: 108px;
+}
+@include media-query(palm) {
+  .leaflet-left .leaflet-control {
+    margin-left: 0px;
+  }
 }
 
 .leaflet-top .leaflet-control {

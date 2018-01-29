@@ -1,5 +1,5 @@
 {
-  "main.js": "static/js/main.a0e8c39f.js",
+  "main.js": "static/js/main.55995d31.js",
   "static/media/Polaroid_China.png": "static/media/Polaroid_China.62df27df.png",
   "static/media/Polaroid_Kenya.png": "static/media/Polaroid_Kenya.5802aa90.png",
   "static/media/Polaroid_Mexico.png": "static/media/Polaroid_Mexico.436cb843.png",
@@ -26,6 +26,8 @@
   "static/media/postit_5.png": "static/media/postit_5.495ee3ee.png",
   "static/media/postit_7.png": "static/media/postit_7.a51f623c.png",
   "static/media/profileTexture.png": "static/media/profileTexture.65bcc8df.png",
+  "static/media/profileTexture@desktop.png": "static/media/profileTexture@desktop.45150352.png",
   "static/media/searchTexture.png": "static/media/searchTexture.d62fb86d.png",
+  "static/media/searchTexture@desktop.png": "static/media/searchTexture@desktop.a7ab0739.png",
   "static/media/tc_bar.png": "static/media/tc_bar.5cc39e2d.png"
 }
