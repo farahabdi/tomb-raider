@@ -13,7 +13,7 @@ export async function fetchUserExists() {
   return userExists;
 }
 
-export async function fetchChallenges(text) {
+export async function fetchChallenges() {
   const user = firebaseAuth.currentUser;
   return db.collection('users')
       .doc(user.uid)
@@ -24,6 +24,7 @@ export async function fetchChallenges(text) {
           return result.data();
       })
 }
+
 
 
 export async function fetchCompletedChallenges(text) {

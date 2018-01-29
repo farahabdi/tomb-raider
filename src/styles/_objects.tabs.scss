@@ -141,14 +141,12 @@
     transition: 0.5s all ease;
   }
   
-  
-  
-
   /* Facebook Tab */
   .fb_post_container {
     position: absolute;
     top: 517px;
     padding-left: 170px;
+    -webkit-overflow-scrolling: touch;
     overflow-y: scroll;
     overflow-x: hidden;
     height: 38%;
