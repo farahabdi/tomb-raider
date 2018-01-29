@@ -48,6 +48,15 @@ export async function fetchCompletedChallenges(text) {
       })
 }
 
+export async function fetchFacebookPosts() {
+  return db.collection('content')
+      .doc('facebook')
+      .get()
+      .then((result) => {
+          return result.data().posts;
+      })
+}
+
 
 export async function updateChallenge(challenge) {
   const user = firebase.auth().currentUser;
