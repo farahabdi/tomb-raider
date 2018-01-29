@@ -26,6 +26,7 @@ const coordinates = {
 export default function initSearch() {
   const searchElement = document.getElementsByClassName('search__icon');
   const searchInput = document.getElementsByClassName('search__input');
+  
 
   for (let i = 0; i < searchElement.length; i++) {
     searchElement[i].addEventListener('click', handleSearch);
@@ -53,13 +54,28 @@ export default function initSearch() {
   async function handleSearch() {
     const answerInput = searchInput[0].value;
     searchInput[0].blur();
+    const challenges = await fetchChallenges();
     const answerKey = await checkAnswer(answerInput);
+
 
     const successOptions = {
       maxWidth: '400',
       width: '450',
       className: 'viewcode',
     };
+
+    if (challenges[answerKey]) {
+      
+
+      const marker = L.marker([-465, 1174]).addTo(window.map);
+      const markup = await showAlreadyCompletedPopUp()
+      marker.bindPopup(markup, successOptions).openPopup();
+      
+      return
+    }
+    debugger
+
+
 
     if (answerKey === 'challenge1') {
     /* Stonehenge - UK */
@@ -299,6 +315,16 @@ async function showSuccessPopUp() {
   markup.insertAdjacentHTML('afterbegin', `<div class="view"> <img src="markArrow.png"><div class="viewcode__button"> View code </div></div>`);
   markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__message">${text[num].message}</div>`);
   markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__header">${text[num].heading}</div>`);
+
+  return markup;
+}
+
+async function showAlreadyCompletedPopUp() {
+  /* Already completed popup */
+  const markup = document.createElement('div');
+  markup.className = 'viewcode';
+  markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__message">You’ve already uncovered that one. Check out my Field Notes for intel on the other landmarks.</div>`);
+  markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__header">Nice try!</div>`);
 
   return markup;
 }
