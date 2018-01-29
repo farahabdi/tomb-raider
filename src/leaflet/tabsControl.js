@@ -1,6 +1,5 @@
 /* eslint-disable */
 import { fetchFacebookPosts } from '../api/index'
-
 export default function tabsControl() {
   // Field Notes Control
   L.Control.Tabs = L.Control.extend({
@@ -43,10 +42,11 @@ export default function tabsControl() {
         </div>
       ` )  
 
-      // TODO put this facebook stuff in the OTHER folder, not the options folder     
-      const fbBox = L.DomUtil.create('div', 'fb_post_container', this.field );
 
-      fbBox.addEventListener("click", showfield, false); //work around for iOS need to capture click
+      // TODO put this facebook stuff in the OTHER folder, not the options folder     
+      const fbBoxc = L.DomUtil.create('div', 'fb_post_container',  this.field );
+      
+
       this.optionsElement.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
  
 
@@ -54,17 +54,26 @@ export default function tabsControl() {
       this.fieldWrapper.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
       this.fieldWrapper.setAttribute("tabindex", "1")
 
+      // TODO put this facebook stuff in the OTHER folder, not the options folder     
+      this.fbBox = L.DomUtil.create('div', 'fb_post_container',  this.fieldWrapper  );
+      this.fieldTabClick =  L.DomUtil.create('div', 'field__tab-click',  this.fieldWrapper  );
+    //  this.fbBox.addEventListener("click", showfield, false); //work around for iOS need to capture click
+
+      this.fieldTabClick.addEventListener("click", showfield, false); //work around for iOS need to capture click
 
 
       self = this;
 
       function showfield(event){
+
+        debugger
         //toggle the css class name manually to open or close the tab
         if(self.fieldWrapper.className === 'field__wrapper field__wrapper-open'){
-          self.fieldWrapper.className = 'field__wrapper field__wrapper-close'
+          self.fieldWrapper.className = 'field__wrapper field__wrapper-closed'
           fbBox.className = 'fb_post_container fb_post_container__closed'
           map.scrollWheelZoom.enable();
           map.dragging.enable();
+          event.stopPropagation()
         } else {
           self.fieldWrapper.className = 'field__wrapper field__wrapper-open'
           fbBox.className = 'fb_post_container fb_post_container__opened onTop'
@@ -74,6 +83,14 @@ export default function tabsControl() {
     }
 
       function showOptionsTab(event){
+        debugger
+
+        let element = document.getElementsByClassName('field__wrapper')[0]
+
+        if (element.className == "field__wrapper field__wrapper-open") {
+          event.stopPropagation()
+          return
+        }
 
         if(self.optionsElement.className === 'options__container options__container-open'){
             self.optionsElement.className = 'options__container options__container_close'
@@ -86,6 +103,7 @@ export default function tabsControl() {
        }
      }
 
+     let fbBox = this.fbBox
       fbBox.id ='fb-posts-here';
       L.DomEvent.disableClickPropagation(fbBox);
       L.DomEvent.on(fbBox, 'mouseover', function(){

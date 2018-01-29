@@ -1,58 +1,116 @@
-.container {
-  display: flex;
+
+  .container {
+    display: flex;
+  }
+  .header {
+    display: flex;
+    /* justify-content: right; */
+
+  }
+
+  .header__container {
+    text-decoration: white;
+    padding-left: 206px;
+    background-image: url("../assets/panelTexture@desktop.png");
+    background-repeat: no-repeat;
+    width: 431px;
+    height: 235px;
+
+
+  }
+
+  .header__wrapper {
+    position: absolute;
+    text-decoration: white;
+    margin-left: -152px;
+    margin-top: 11px;
+  }
+
+  .search__input {
+    height: 31px;
+    width: 289px;
+    background: transparent;
+    outline: none;
+    border: none !important;
+    font-size: 26px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 22px;
+  }
+
+  .search__icon {
+    background-image: url("../assets/searchIcon.png");
+    background-repeat: no-repeat;
+    margin-left: -16px;
+    padding-right: 9px;
+    width: 30px;
+    margin-top: 8px;
+  }
+
+  .search__wrapper {
+    display: flex;
+    background-image: url("../assets/searchTexture.png");
+    background-repeat: no-repeat;
+    height: 59px;
+  }
+
+
+@include media-query(palm) {
+  .container {
+    display: flex;
+  }
+  .header {
+    display: flex;
+    /* justify-content: right; */
+    flex-direction: column-reverse;
+    background-image: url("../assets/headerTexture.png");
+    background-repeat: no-repeat;
+  }
+
+  .header__container {
+    text-decoration: white;
+    padding-left: 206px;
+    height: 122px;
+    width: 140px;
+
+  }
+
+  .header__wrapper {
+    position: absolute;
+
+    text-decoration: white;
+    background-image: url("../assets/searchTexture.png");
+    background-repeat: no-repeat;
+    margin-left: -203px;
+    margin-top: 1px;
+  }
+
+  .search__input {
+    height: 31px;
+    width: 289px;
+    background: transparent;
+    outline: none;
+    border: none !important;
+    font-size: 26px;
+    text-decoration: none;
+    margin-top: 10px;
+      margin-left: 22px;
+  }
+
+  .search__icon {
+    background-image: url("../assets/searchIcon.png");
+    background-repeat: no-repeat;
+
+    padding: 20px;
+    margin-top: -33px;
+    margin-left: 292px;
+  }
+
+  .search__wrapper {
+
+  }
+
 }
-.header {
-  display: flex;
-  /* justify-content: right; */
-  flex-direction: column-reverse;
-  background-image: url("../assets/headerTexture.png");
-  background-repeat: no-repeat;
-}
-
-.header__container {
-  text-decoration: white;
-  padding-left: 206px;
-  height: 122px;
-  width: 140px;
-
-}
-
-.header__wrapper {
-  position: absolute;
-  text-decoration: white;
-  margin-left: -203px;
-  margin-top: 1px;
-}
-
-.search__input {
-  height: 31px;
-  width: 289px;
-  background: transparent;
-  outline: none;
-  border: none !important;
-  font-size: 26px;
-  text-decoration: none;
-  margin-top: 10px;
-  margin-left: 22px;
-}
-
-.search__icon {
-  background-image: url("../assets/searchIcon.png");
-  background-repeat: no-repeat;
-  margin-left: -16px;
-  padding-right: 9px;
-  width: 30px;
-  margin-top: 8px;
-}
-
-.search__wrapper {
-  display: flex;
-  background-image: url("../assets/searchTexture.png");
-  background-repeat: no-repeat;
-  height: 59px;
-}
-
-
 
 .challenges {
     display: flex;

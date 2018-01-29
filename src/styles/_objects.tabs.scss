@@ -1,81 +1,312 @@
+.field__wrapper-open .field__tab-click {
+    margin-left: -330px;
+    position: absolute;
+    top: 517px;
+    padding-left: 98px;
 
+    height: 38%;
+    width: -10px;
+}
+
+.field__wrapper-open { 
+    padding-left: 330px;
+    transition: 0.5s all ease;
+    margin-left: -656px;
+}
+  
+
+
+.field__wrapper-closed .field__tab-click {
+    margin-left: -2px;
+    position: absolute;
+    top: 666px;
+    padding-left: 91px;
+    height: 22%;
+    width: -10px;
+}
+.field__wrapper .field__wrapper-close .field__tab-click {
+    text-decoration: none;
+}
 
 .tab__container  {
     margin-top: -54px !important;
-  }
-  
-.options {
-    font-family: 'Caveat', cursive;
-    font-size: 19px;
-    position: absolute;
-    margin-top: 2px;
-    height: 340px;
-    margin-left: -375px;
-    height: 515px;
-    z-index: 1;
+    outline: none;
 
-    .options__container {
-        background-image: url("../assets/options.png") !important;
-        background-repeat: no-repeat !important;
-        width: 400px;
-        height: 873px;
-        padding-bottom: -5px;
-        // padding-left: 48px;
-        // padding-top: 51px;
-        //padding-right: 49px;
-        transition: 0.5s all ease;
+    .field {
+        position: absolute;
+        margin-left: -374px;
+        z-index: 3;
 
-        .options__wrapper {
+        .field__wrapper {
+            background-image: url("../assets/fieldnotes@desktop.png") !important;
+            background-repeat: no-repeat !important;
+            width: 400px;
+                height: 968px;
+            padding-bottom: -5px;
+            // padding-left: 48px;
+            // padding-top: 51px;
+            //padding-right: 49px;
+            transition: 0.5s all ease;
+            outline: none;
+          }
+    }
 
-            .instructions {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                width: 39%;
-                padding-top: 193px;
-                margin: auto;
-
-                .cross__wrapper {
-                    display: flex;
-                    justify-content: flex-end;
-
-                    .cross {
-                        background-image: url("../assets/cross.png") !important;
-                        background-repeat: no-repeat !important;
-                        width: 20px;
-                        padding-top: 21px;
+    .options {
+        font-family: 'Caveat', cursive;
+        font-size: 22px;
+        position: absolute;
+        margin-top: 2px;
+        height: 340px;
+        margin-left: -375px;
+        height: 515px;
+        z-index: 1;
     
+        .options__container {
+            background-image: url("../assets/options@desktop.png") !important;
+            background-repeat: no-repeat !important;
+            width: 400px;
+            height: 873px;
+            padding-bottom: -5px;
+            // padding-left: 48px;
+            // padding-top: 51px;
+            //padding-right: 49px;
+            transition: 0.5s all ease;
+
+            .options__wrapper {
+    
+                .instructions {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 45%;
+                    padding-top: 193px;
+                    margin: auto;
+    
+                    .cross__wrapper {
                         display: flex;
                         justify-content: flex-end;
-                        height: 20px;
-                        background-repeat: no-repeat !important;
+    
+                        .cross {
+                            background-image: url("../assets/cross.png") !important;
+                            background-repeat: no-repeat !important;
+                            width: 20px;
+                            padding-top: 21px;
+        
+                            display: flex;
+                            justify-content: flex-end;
+                            height: 20px;
+                            background-repeat: no-repeat !important;
+                        }
+                    }
+    
+
+                    .instructions__header {
+    
+                    }
+    
+                    .instructions__signout {
+                        margin-top: 12px;
+    
+                    }
+    
+                    .instructions__terms {
+                        margin-top: 12px;
+    
                     }
                 }
-
-
-                .instructions__header {
-
-                }
-
-                .instructions__signout {
-                    margin-top: 12px;
-
-                }
-
-                .instructions__terms {
-                    margin-top: 12px;
-
-                }
+    
             }
-
         }
+      }
+      
+  }
+  
+@include media-query(palm) {
+  .tab__container  {
+    margin-top: -126px !important;
+
+    .field {
+        position: absolute;
+        margin-left: -374px;
+        z-index: 3;
+
+        .field__wrapper {
+            background-image: url("../assets/fieldNotes.png") !important;
+            background-repeat: no-repeat !important;
+            width: 332px;
+            height: 852px;
+            padding-bottom: -5px;
+            // padding-left: 48px;
+            // padding-top: 51px;
+            //padding-right: 49px;
+            transition: 0.5s all ease;
+          }
+    }
+
+    .options {
+        font-family: 'Caveat', cursive;
+        font-size: 19px;
+        position: absolute;
+        margin-top: 2px;
+        height: 340px;
+        margin-left: -375px;
+        height: 515px;
+        z-index: 1;
+    
+        .options__container {
+            background-image: url("../assets/options.png") !important;
+            background-repeat: no-repeat !important;
+            width: 400px;
+            height: 873px;
+            padding-bottom: -5px;
+            // padding-left: 48px;
+            // padding-top: 51px;
+            //padding-right: 49px;
+            transition: 0.5s all ease;
+
+            .options__wrapper {
+    
+                .instructions {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 39%;
+                    padding-top: 272px;
+                    margin: auto;
+    
+                    .cross__wrapper {
+                        display: flex;
+                        justify-content: flex-end;
+    
+                        .cross {
+                            background-image: url("../assets/cross.png") !important;
+                            background-repeat: no-repeat !important;
+                            width: 20px;
+                            padding-top: 21px;
+        
+                            display: flex;
+                            justify-content: flex-end;
+                            height: 20px;
+                            background-repeat: no-repeat !important;
+                        }
+                    }
+    
+
+                    .instructions__header {
+    
+                    }
+    
+                    .instructions__signout {
+                        margin-top: 12px;
+    
+                    }
+    
+                    .instructions__terms {
+                        margin-top: 12px;
+    
+                    }
+                }
+    
+            }
+        }
+      }
+      
+  }
+
+  .field__wrapper-open { 
+    padding-left: 189px;
+    transition: 0.5s all ease;
+    margin-left: -303px !important;
+    }
+    
+  
+    .field__wrapper-close{ 
+        padding-left: 0px;
+        transition: 0.5s all ease;
+        transition: 0.5s all ease;
+    }
+  
+  /* Facebook Tab */
+  .fb_post_container {
+    position: absolute;
+    top: 517px;
+    padding-left: 170px;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 38%;
+    width: 350px;
+  }
+  
+  .fb_post_container.fb_post_container__opened {
+    transition: 0.5s all ease;
+        margin-left: -373px;
+  }
+  .fb_post_container.fb_post_container__closed {
+    transition: 0.5s all ease;
+    margin-left: 0px;
+  }
+
+  .field__wrapper-open .field__tab-click {
+    margin-left: -266px;
+    position: absolute;
+    top: 517px;
+    padding-left: 128px;
+    height: 38%;
+  }
+
+    .field__wrapper-closed .field__tab-click {
+        margin-left: -2px;
+        position: absolute;
+        top: 517px;
+        padding-left: 91px;
+        height: 38%;
+        width: -10px;
+    }
+
+    .field__wrapper .field__wrapper-close .field__tab-click {
+        text-decoration: none;
+    }
+}  
+
+@include media-query(palm) {
+    .options__container.options__container-open {
+        margin-left: -10px;
+    }
+    
+    .options__container:focus {
+        padding-left: 299px;
+        transition: 2.15s all ease;
+    }
+    
+    .options.leaflet-control.onTop {
+        margin-left: -677px;
+    }
+    
+    .options.leaflet-control {
+        transition: 0.5s all ease;
+    }
+      
+    .leaflet-top.leaflet-left {
+        display: flex;
+        flex-direction: column;
+    }
+      
+    /* Field Tab */  
+    
+   
+
+}
+
+@media (max-width: 450px) {
+    //extend less on a phone / iPad protrait etc
+    .field__wrapper-open { 
+      padding-left: 260px;
+      transition: 0.5s all ease;
     }
   }
 
-.options__header {
-    padding-top: 181px;
-    margin-left: 121px;
-}
+
 
 
 
@@ -93,7 +324,7 @@
 }
 
 .options.leaflet-control {
-    transition: 1.5s all ease;
+    transition: 0.5s all ease;
 }
   
 .leaflet-top.leaflet-left {
@@ -102,30 +333,42 @@
 }
   
 /* Field Tab */  
-.field {
-    position: absolute;
-    margin-left: -374px;
-    z-index: 3;
-}
-  
-.field__wrapper-open { 
-    padding-left: 330px;
-    transition: 0.5s all ease;
-    margin-left: -300px;
-}
-  
-.field__wrapper {
-    background-image: url("../assets/fieldNotes.png") !important;
-    background-repeat: no-repeat !important;
-    width: 400px;
-    height: 852px;
-    padding-bottom: -5px;
-    // padding-left: 48px;
-    // padding-top: 51px;
-    //padding-right: 49px;
-    transition: 0.5s all ease;
-  }
-  
+
+
+
+@include media-query(palm) {
+    /* Facebook Tab */
+    .fb_post_container {
+        position: absolute;
+        top: 517px;
+        padding-left: 170px;
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 38%;
+        width: 350px;
+      }
+      
+      .fb_post_container.fb_post_container__opened {
+        transition: 0.5s all ease;
+        margin-left: -373px;
+        position: absolute;
+        top: 77px;
+        /* padding-left: 170px; */
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 80%;
+        width: 366px;
+        /* padding-right: 5px; */
+        right: 280px;
+      }
+      .fb_post_container.fb_post_container__closed {
+        transition: 0.5s all ease;
+        margin-left: 0px;
+      }
+      
+    }
 
   @media (max-width: 768px) {
     //extend less on a phone / iPad protrait etc
@@ -140,7 +383,9 @@
     transition: 0.5s all ease;
     transition: 0.5s all ease;
   }
-  
+
+
+
   /* Facebook Tab */
   .fb_post_container {
     position: absolute;
@@ -155,7 +400,17 @@
   
   .fb_post_container.fb_post_container__opened {
     transition: 0.5s all ease;
-        margin-left: -373px;
+    margin-left: -361px;
+    position: absolute;
+    top: 141px;
+    /* padding-left: 170px; */
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 80%;
+    width: 367px;
+    /* padding-right: 5px; */
+    right: 157px;
   }
   .fb_post_container.fb_post_container__closed {
     transition: 0.5s all ease;
