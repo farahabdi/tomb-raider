@@ -1,5 +1,5 @@
 {
-  "main.js": "static/js/main.55995d31.js",
+  "main.js": "static/js/main.e35487a6.js",
   "static/media/Polaroid_China.png": "static/media/Polaroid_China.62df27df.png",
   "static/media/Polaroid_Kenya.png": "static/media/Polaroid_Kenya.5802aa90.png",
   "static/media/Polaroid_Mexico.png": "static/media/Polaroid_Mexico.436cb843.png",
@@ -8,7 +8,7 @@
   "static/media/Polaroid_Stonehenge.png": "static/media/Polaroid_Stonehenge.ba1d40de.png",
   "static/media/TombRaider_logo_mobile.png": "static/media/TombRaider_logo_mobile.514f688b.png",
   "static/media/boxShort.png": "static/media/boxShort.6946e399.png",
-  "static/media/codePage.png": "static/media/codePage.ef4111ee.png",
+  "static/media/codeTexture@2x.png": "static/media/codeTexture@2x.cbfa1377.png",
   "static/media/fieldNotes.png": "static/media/fieldNotes.1b0e525c.png",
   "static/media/fieldnotes@desktop.png": "static/media/fieldnotes@desktop.98abdfc3.png",
   "static/media/headerTexture.png": "static/media/headerTexture.8fdad4a8.png",
@@ -20,6 +20,7 @@
   "static/media/options@desktop.png": "static/media/options@desktop.ef629195.png",
   "static/media/panelTexture@desktop.png": "static/media/panelTexture@desktop.39df7254.png",
   "static/media/popup.png": "static/media/popup.02a36942.png",
+  "static/media/popup@2x.png": "static/media/popup@2x.14f98541.png",
   "static/media/postit_1.png": "static/media/postit_1.bc3969ce.png",
   "static/media/postit_2.png": "static/media/postit_2.5a19653f.png",
   "static/media/postit_3.png": "static/media/postit_3.742fcc0b.png",
