@@ -1,0 +1,29 @@
+#animation_container {
+  background: transparent;
+  width:100%;
+  height:100%;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  background: rgba(0,0,0,0.5);
+}
+
+#canvas {
+  position: absolute;
+  display: block;
+  background-color: transparent;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+}
+#dom_overlay_container {
+  pointer-events:none;
+  overflow:hidden;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
