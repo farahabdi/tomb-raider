@@ -23,7 +23,7 @@ export default async function initUserData() {
 
 
   if (challenges.challenge1 === true) {
-    document.getElementsByClassName('challenge__1')[0].className = 'challenge__1 challenge__1--complete';
+    document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon challenge__1 challenge__1--complete';
 
     /* Show Polaroid */
     const polaroidIcon = L.icon({
@@ -44,7 +44,7 @@ export default async function initUserData() {
     L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
   }
   if (challenges.challenge2 === true) {
-    document.getElementsByClassName('challenge__2')[0].className = 'challenge__2 challenge__2--complete';
+    document.getElementsByClassName('challenge__icon challenge__2')[0].className = 'challenge__icon challenge__2 challenge__2--complete';
     /* Show Polaroid */
     const polaroidIcon = L.icon({
       iconUrl: kenyaIcon,
@@ -64,7 +64,7 @@ export default async function initUserData() {
   }
 
   if (challenges.challenge3 === true) {
-    document.getElementsByClassName('challenge__3')[0].className = 'challenge__3 challenge__3--complete';
+    document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
 
     /* Show Polaroid -- */
     const polaroidIcon = L.icon({
@@ -103,7 +103,7 @@ export default async function initUserData() {
   }
 
   if (challenges.challenge5 === true) {
-    document.getElementsByClassName('challenge__5')[0].className = 'challenge__5 challenge__5--complete';
+    document.getElementsByClassName('challenge__icon challenge__5')[0].className = 'challenge__icon challenge__5 challenge__5--complete';
 
     /* Show Polaroid */
     const polaroidIcon = L.icon({

@@ -11,7 +11,9 @@
       background-image: url("../assets/panelTexture@desktop.png");
       background-repeat: no-repeat;
       width: 431px;
-      height: 235px;
+      height: 185px;
+      background-size: contain;
+
       .header__wrapper {
         position: absolute;
         text-decoration: white;
@@ -23,8 +25,10 @@
             display: flex;
             background-image: url("../assets/searchTexture@desktop.png");
             background-repeat: no-repeat;
-            width: 551px;
-            height: 77px;
+            background-size: contain;
+            width: 416px;
+            height: 61px;
+
             .search__input {
               font-family: 'PT Serif', serif;
               height: 31px;
@@ -40,10 +44,11 @@
             .search__icon {
               background-image: url("../assets/searchIcon@desktop.png");
               background-repeat: no-repeat;
-              margin-left: -16px;
+              margin-left: -27px;
+              background-size: contain;
               padding-right: 9px;
-              width: 49px;
-              margin-top: -2px;
+              width: 56px;
+              margin-top: 2px;
               cursor: pointer;
             }
           }
@@ -76,10 +81,11 @@
             display: flex;
             background-image: url("../assets/searchTexture.png");
             background-repeat: no-repeat;
-            width: 551px;
-            height: 77px;
+            background-size: contain;
+            width: 362px;
+            height: 71px;
             .search__input {
-              font-family: 'Caveat', cursive;
+              font-family: 'PT Serif', serif;
               font-size: 33px;
               height: 31px;
               width: 289px;
@@ -94,8 +100,9 @@
             .search__icon {
               background-image: url("../assets/searchIcon.png");
               background-repeat: no-repeat;
-              padding: 20px;
-              margin-top: 9px;
+              background-size: contain;
+              /* padding: 20px; */
+              margin-top: -1px;
               cursor: pointer;
             }
           }
@@ -110,17 +117,17 @@
   background-image: url("../assets/profileTexture@desktop.png") !important;
   background-repeat: no-repeat;
   background-size: contain;
-  padding: 28px;
-  margin-top: 44px;
+  padding: 22px;
+  margin-top: 16px;
   margin-left: -3px;
     .profile__container {
       .profile__picture {
         background-repeat: no-repeat;
         background-size: contain;
         width: 85px;
-        margin-top: -9px;
-        margin-left: -4px;
-        transform: rotate(-9deg);
+        margin-top: -13px;
+        margin-left: -5px;
+        transform: rotate(-6deg);
       }
     }
   }
@@ -159,81 +166,82 @@
   .challenge__wrapper {
     height: 45px;
     margin-left: 31px;
-    margin-top: -14px;
+    margin-top: -21px;
     /* margin-right: -2px; */
     padding-right: 28px;
-      .challenge__1 {
-        background-image: url("../assets/code1@2x.png") !important;
-        background-repeat: no-repeat !important;
+      .challenge__icon {
         padding-top: 18px;
-        width: 70px;
-        height: 36px;
+        width: 52px;
+
+        height: 25px;
         padding-bottom: 17px;
         padding-left: -3px;
         padding-right: 0px;
+
+        &.challenge__1 {
+          background-image: url("../assets/code1@2x.png") !important;
+          background-repeat: no-repeat !important;
+          background-size: contain;
+
+      
+          &.challenge__1--complete {
+            background-image: url("../assets/code1_complete@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+          }
+        }
     
-        &.challenge__1--complete {
-          background-image: url("../assets/code1_complete@2x.png") !important;
+        &.challenge__2 {
+          background-image: url("../assets/code2@2x.png") !important;
+          background-repeat: no-repeat !important;
+          background-size: contain;
+
+          &.challenge__2--complete {
+            background-image: url("../assets/code2_complete@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+          }
+        }
+        
+        &.challenge__3 {
+          background-image: url("../assets/code3@2x.png") !important;
+          background-repeat: no-repeat !important;
+          background-size: contain;
+
+        
+          &.challenge__3--complete {
+            background-image: url("../assets/code3_complete@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            
+          }
+        }
+        
+        &.challenge__4 {
+          background-image: url("../assets/code4@2x.png") !important;
+          background-repeat: no-repeat !important;
+          background-size: contain;
+
+          &.challenge__4--complete {
+            background-image: url("../assets/code4_complete@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+          }
+        }
+        
+        &.challenge__5 {
+          background-image: url("../assets/code5@2x.png") !important;
+          background-repeat: no-repeat !important;
+          background-size: contain;
+
+          &.challenge__5--complete {
+            background-image: url("../assets/code5_complete@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+          }
         }
       }
-  
-      .challenge__2 {
-        background-image: url("../assets/code2@2x.png") !important;
-        background-repeat: no-repeat !important;
-        padding-top: 18px;
-        width: 70px;
-        height: 36px;
-        padding-bottom: 17px;
-        padding-left: -3px;
-        padding-right: 0px;
-        &.challenge__2--complete {
-          background-image: url("../assets/code2_complete@2x.png") !important;
-        }
-      }
-      
-      .challenge__3 {
-        background-image: url("../assets/code3@2x.png") !important;
-        background-repeat: no-repeat !important;
-        padding-top: 18px;
-        width: 70px;
-        height: 36px;
-        padding-bottom: 17px;
-        padding-left: -3px;
-        padding-right: 0px;
-      
-        &.challenge__3--complete {
-          background-image: url("../assets/code3_complete@2x.png") !important;
-          
-        }
-      }
-      
-      .challenge__4 {
-        background-image: url("../assets/code4@2x.png") !important;
-        background-repeat: no-repeat !important;
-        padding-top: 18px;
-        width: 70px;
-        height: 36px;
-        padding-bottom: 17px;
-        padding-left: -3px;
-        padding-right: 0px;
-        &.challenge__4--complete {
-          background-image: url("../assets/code4_complete@2x.png") !important;
-        }
-      }
-      
-      .challenge__5 {
-        background-image: url("../assets/code5@2x.png") !important;
-        background-repeat: no-repeat !important;
-        padding-top: 18px;
-        width: 70px;
-        height: 36px;
-        padding-bottom: 17px;
-        padding-left: -3px;
-        padding-right: 0px;
-        &.challenge__5--complete {
-          background-image: url("../assets/code5_complete@2x.png") !important;
-        }
-      }
+
     }
 
   

@@ -102,7 +102,7 @@ export default function initSearch() {
     /* Stonehenge - UK */
 
     /* Cross icon */
-      document.getElementsByClassName('challenge__1')[0].className = 'challenge__1 challenge__1--complete';
+      document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon  challenge__1 challenge__1--complete';
 
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml,${pathChallenge1}`).replace('#', '%23');
@@ -126,10 +126,11 @@ export default function initSearch() {
       window.map.flyTo([-465, 1174], 1);
 
       /* Show popop */
-      let currentViewCenter = window.map.getCenter();
-      var marker = L.marker(currentViewCenter).addTo(window.map);
+
+
+      const marker = L.marker([-465, 1174]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup,  codePopupOptions).openPopup();
+      marker.bindPopup(markup, correctPopupOptions).openPopup();
 
 
       
@@ -143,7 +144,7 @@ export default function initSearch() {
     } else if (answerKey === 'challenge2') {
     /* Gedi Ruins -- Kenya */
     /* Cross icon */
-      document.getElementsByClassName('challenge__2')[0].className = 'challenge__2 challenge__2--complete';
+      document.getElementsByClassName('challenge__icon challenge__2')[0].className = 'challenge__icon challenge__2 challenge__2--complete';
 
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml, ${pathChallenge2}`).replace('#', '%23');
@@ -179,7 +180,7 @@ export default function initSearch() {
     /* Forbidden City -- China */
 
     /* Cross icon */
-      document.getElementsByClassName('challenge__3')[0].className = 'challenge__3 challenge__3--complete';
+      document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
 
       /* Fly to Point */
       window.map.flyTo([-474, 1683], 1);
@@ -215,7 +216,7 @@ export default function initSearch() {
     /* Pyramid of the Suns -- Mexico */
 
     /* Cross icon */
-      document.getElementsByClassName('challenge__4')[0].className = 'challenge__4 challenge__4--complete';
+      document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
 
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
@@ -252,7 +253,7 @@ export default function initSearch() {
     /* Niagra Falls  -- USA */
 
     /* Cross icon */
-      document.getElementsByClassName('challenge__5')[0].className = 'challenge__5 challenge__5--complete';
+      document.getElementsByClassName('challenge__icon challenge__5')[0].className = 'challenge__icon challenge__5 challenge__5--complete';
 
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
