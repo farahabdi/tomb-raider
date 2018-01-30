@@ -107,8 +107,8 @@ export default function initSearch() {
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml,${pathChallenge1}`).replace('#', '%23');
       const pathMarker = new CustomIcon({ iconUrl: url });
-      L.marker([-522, 1295], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-
+      let circleMarker = L.marker([-522, 1295], { icon: pathMarker, className: 'circleMarker' }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
       /* Show Polaroid */
       const polaroidIcon = L.icon({
@@ -141,6 +141,8 @@ export default function initSearch() {
 
       /* Update challenge */
       updateChallenge('challenge1');
+
+      
     } else if (answerKey === 'challenge2') {
     /* Gedi Ruins -- Kenya */
     /* Cross icon */
@@ -148,8 +150,11 @@ export default function initSearch() {
 
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml, ${pathChallenge2}`).replace('#', '%23');
-      const pathMarker = new CustomIcon({ iconUrl: url });
-      L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      const pathMarker = new CustomIcon({ iconUrl: url, className: 'circleMarker'})
+      debugger
+      let circleMarker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+
+      circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
       /* Show Polaroid */
       const polaroidIcon = L.icon({
@@ -176,6 +181,8 @@ export default function initSearch() {
 
       /* Update challenge */
       updateChallenge('challenge2');
+
+
     } else if (answerKey === 'challenge3') {
     /* Forbidden City -- China */
 
@@ -187,8 +194,12 @@ export default function initSearch() {
 
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml,${pathChallenge3}`).replace('#', '%23');
-      const pathMarker = new CustomIcon({ iconUrl: url });
-      L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      const pathMarker = new CustomIcon({ iconUrl: url, className: 'cirlceMarker'});
+
+
+      let circleMarker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+
+      circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
       /* Show Polaroid -- */
       const polaroidIcon = L.icon({
@@ -218,10 +229,14 @@ export default function initSearch() {
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
 
+      /* Fly to Point */
+      window.map.flyTo([-585.7060241699219, 632.9839477539062], 1);
+
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
       const pathMarker = new CustomIcon({ iconUrl: url });
-      L.marker([-739, 747], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      let circleMarker = L.marker([-739, 747], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
       /* Show Polaroid */
       const polaroidIcon = L.icon({
@@ -234,7 +249,7 @@ export default function initSearch() {
         popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
       });
 
-      L.marker([-522, 1971], { icon: polaroidIcon }).addTo(window.map);
+      L.marker([-769.208961825107, 813.0431918688164], { icon: polaroidIcon }).addTo(window.map);
 
       /* Show popop */
       const marker = L.marker([-585.7060241699219, 632.9839477539062]).addTo(window.map);
@@ -244,11 +259,12 @@ export default function initSearch() {
       element.addEventListener('click', showViewCodePopup, false);
 
 
-      /* Fly to Point */
-      window.map.flyTo([-585.7060241699219, 632.9839477539062], 1);
+
 
       /* Update challenge */
       updateChallenge('challenge4');
+
+
     } else if (answerKey === 'challenge5') {
     /* Niagra Falls  -- USA */
 
@@ -258,7 +274,8 @@ export default function initSearch() {
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
       const pathMarker = new CustomIcon({ iconUrl: url });
-      L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      let circleMarker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
       /* Show Polaroid */
       const polaroidIcon = L.icon({
@@ -270,7 +287,7 @@ export default function initSearch() {
         shadowAnchor: [4, 62], // the same for the shadow
         popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
       });
-      L.marker([-567.5, 851], { icon: polaroidIcon }).addTo(window.map);
+      letL.marker([-567.5, 851], { icon: polaroidIcon }).addTo(window.map);
 
 
       /* Show popop */
@@ -287,6 +304,8 @@ export default function initSearch() {
 
       /* Update challenge */
       updateChallenge('challenge5');
+
+      
     } else {
 
       /* Show popop */
@@ -337,7 +356,7 @@ async function showFailPopUp() {
 async function showSuccessPopUp() {
   const challenges = await fetchChallenges();
 
-  debugger
+
   let num = 0;
   Object.values(challenges).forEach((value) => { if (value === true) { num += 1; } });
   num++;

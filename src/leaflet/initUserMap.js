@@ -41,7 +41,8 @@ export default async function initUserData() {
     /* Show circle marker */
     const url = encodeURI(`data:image/svg+xml, ${pathChallenge2}`).replace('#', '%23');
     const pathMarker = new CustomIcon({ iconUrl: url });
-    L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+    let marker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
   }
   if (challenges.challenge2 === true) {
     document.getElementsByClassName('challenge__icon challenge__2')[0].className = 'challenge__icon challenge__2 challenge__2--complete';
@@ -59,7 +60,8 @@ export default async function initUserData() {
 
     const url = encodeURI(`data:image/svg+xml,${pathChallenge2}`).replace('#', '%23');
     const pathMarker = new CustomIcon({ iconUrl: url });
-    L.marker([-847, 1553], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+    let marker = L.marker([-847, 1553], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
     //   window.map.flyTo([13.87992, 45.9791], 1)
   }
 
@@ -80,10 +82,14 @@ export default async function initUserData() {
 
     const url = encodeURI(`data:image/svg+xml,${pathChallenge3}`).replace('#', '%23');
     const pathMarker = new CustomIcon({ iconUrl: url });
-    L.marker([-594.5, 1998.5], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+
+    debugger
+    let marker = L.marker([-594.5, 1998.5], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+    debugger
   }
   if (challenges.challenge4 === true) {
-    document.getElementsByClassName('challenge__4')[0].className = 'challenge__4 challenge__4--complete';
+    document.getElementsByClassName('challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
 
     /* Show Polaroid */
     const polaroidIcon = L.icon({
@@ -99,7 +105,8 @@ export default async function initUserData() {
 
     const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
     const pathMarker = new CustomIcon({ iconUrl: url });
-    L.marker([-739, 747], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+    let marker = L.marker([-739, 747], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
   }
 
   if (challenges.challenge5 === true) {
@@ -119,7 +126,8 @@ export default async function initUserData() {
 
     const url = encodeURI(`data:image/svg+xml, ${pathChallenge4}`).replace('#', '%23');
     const pathMarker = new CustomIcon({ iconUrl: url });
-    L.marker([-604, 835], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+    let marker = L.marker([-604, 835], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
   }
 }
 
