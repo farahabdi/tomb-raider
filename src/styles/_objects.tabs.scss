@@ -9,12 +9,14 @@
 }
 
 .field__wrapper-open { 
-    padding-left: 330px;
+    padding-left: 399px;
     transition: 0.5s all ease;
     margin-left: -656px;
 }
   
-
+iframe {
+    width: 436px !important;
+}
 
 .field__wrapper-closed .field__tab-click {
     margin-left: -2px;
@@ -213,18 +215,18 @@
       
   }
 
-  .field__wrapper-open { 
+.field__wrapper-open { 
     padding-left: 189px;
     transition: 0.5s all ease;
     margin-left: -303px !important;
-    }
+}
     
   
-    .field__wrapper-close{ 
-        padding-left: 0px;
-        transition: 0.5s all ease;
-        transition: 0.5s all ease;
-    }
+.field__wrapper-close{ 
+    padding-left: 0px;
+    transition: 0.5s all ease;
+    transition: 0.5s all ease;
+}
   
   /* Facebook Tab */
   .fb_post_container {
@@ -408,7 +410,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     height: 80%;
-    width: 367px;
+    width: 460px;
     /* padding-right: 5px; */
     right: 157px;
   }

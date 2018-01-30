@@ -30,4 +30,16 @@ div.leaflet-top.leaflet-left {
   background: #D6CDCA !important;
 }
 
-.leaflet-marker-icon.leaflet-zoom-animated.leaflet-interactive {}
+.leaflet-marker-icon.leaflet-zoom-animated.leaflet-interactive {
+  transform: none !important;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: transparent;
+  color: none;
+  box-shadow: none
+}
+
+.leaflet-popup-content {
+  font-family: 'Caveat', cursive;
+}

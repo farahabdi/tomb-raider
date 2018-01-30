@@ -15,6 +15,9 @@ const pathChallenge4 = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102
 
 
 
+
+
+
 const coordinates = {
   1: [-706, 620],
   2: [-668, 1308],
@@ -64,10 +67,28 @@ export default function initSearch() {
       className: 'viewcode',
     };
 
+    const codePopupOptions = {
+      maxWidth: '400',
+      width: '450',
+      className: 'popup__codes',
+    };
+
+    const correctPopupOptions = {
+      maxWidth: '400',
+      width: '450',
+      className: 'popup__correct',
+    };
+
+    const failPopupOptions = {
+      maxWidth: '400',
+      width: '450',
+      className: 'popup__fail',
+    };
+
     if (challenges[answerKey]) {
       
 
-      const marker = L.marker([-465, 1174]).addTo(window.map);
+      const marker = L.marker([-465, 1174])
       const markup = await showAlreadyCompletedPopUp()
       marker.bindPopup(markup, successOptions).openPopup();
       
@@ -101,16 +122,21 @@ export default function initSearch() {
       });
       L.marker([-522, 1295], { icon: polaroidIcon }).addTo(window.map);
 
+      /* Fly to Point */
+      window.map.flyTo([-465, 1174], 1);
+
       /* Show popop */
-      const marker = L.marker([-465, 1174]).addTo(window.map);
+      let currentViewCenter = window.map.getCenter();
+      var marker = L.marker(currentViewCenter).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup, successOptions).openPopup();
-      const element = document.getElementsByClassName('viewcode__button')[0];
+      marker.bindPopup(markup,  codePopupOptions).openPopup();
+
+
+      
+      const element = document.getElementsByClassName('popup_correct button')[0];
       element.addEventListener('click', showViewCodePopup, false);
 
 
-      /* Fly to Point */
-      window.map.flyTo([-465, 1174], 1);
 
       /* Update challenge */
       updateChallenge('challenge1');
@@ -140,8 +166,8 @@ export default function initSearch() {
       /* Show popop */
       const marker = L.marker([-668, 1308]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup, successOptions).openPopup();
-      const element = document.getElementsByClassName('viewcode__button')[0];
+      marker.bindPopup(markup, correctPopupOptions).openPopup();
+      const element = document.getElementsByClassName('popup_correct button')[0];
       element.addEventListener('click', showViewCodePopup, false);
 
       /* Fly to location */
@@ -179,8 +205,8 @@ export default function initSearch() {
       /* Show popop */
       const marker = L.marker([-474, 1683]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup, successOptions).openPopup();
-      const element = document.getElementsByClassName('viewcode__button')[0];
+      marker.bindPopup(markup, correctPopupOptions).openPopup();
+      const element = document.getElementsByClassName('popup_correct button')[0];
       element.addEventListener('click', showViewCodePopup, false);
 
       /* Update challenge */
@@ -212,8 +238,8 @@ export default function initSearch() {
       /* Show popop */
       const marker = L.marker([-585.7060241699219, 632.9839477539062]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup, successOptions).openPopup();
-      const element = document.getElementsByClassName('viewcode__button')[0];
+      marker.bindPopup(markup, correctPopupOptions).openPopup();
+      const element = document.getElementsByClassName('popup_correct button')[0];
       element.addEventListener('click', showViewCodePopup, false);
 
 
@@ -249,8 +275,8 @@ export default function initSearch() {
       /* Show popop */
       const marker = L.marker([-617, 1419]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup, successOptions).openPopup();
-      const element = document.getElementsByClassName('viewcode__button')[0];
+      marker.bindPopup(markup,correctPopupOptions).openPopup();
+      const element = document.getElementsByClassName('popup_correct button')[0];
       element.addEventListener('click', showViewCodePopup, false);
 
 
@@ -263,12 +289,21 @@ export default function initSearch() {
     } else {
 
       /* Show popop */
-      const marker = L.marker([-276, 2222]).addTo(window.map);
+      window.map.flyTo([-276, 2222], 1.5);
+
+
       const markup = await showFailPopUp();
-      marker.bindPopup(markup, successOptions).openPopup();
+
+
+      setTimeout(function() {
+
+      var currentViewCenter = window.map.getCenter();
+      var marker = L.marker(currentViewCenter).addTo(window.map);
+        marker.bindPopup(markup, failPopupOptions).openPopup();
+      }, 1500);
 
       /* Fly to Point */
-      window.map.flyTo([-276, 2222], 1);
+  
 
     }
   }
@@ -288,11 +323,11 @@ async function showFailPopUp() {
     count = window.numTries
   }
 
-  /* Success popup */
+  /* Fail popup */
   const markup = document.createElement('div');
-  markup.className = 'viewcode';
-  markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__message">${failText[count].message}</div>`);
-  markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__header">${failText[count].heading}</div>`);
+  markup.className = 'popup__incorrect';
+  markup.insertAdjacentHTML('afterbegin', `<div class="message">${failText[count].message}</div>`);
+  markup.insertAdjacentHTML('afterbegin', `<div class="header">${failText[count].heading}</div>`);
 
   return markup;
 }
@@ -311,10 +346,10 @@ async function showSuccessPopUp() {
   }
   /* Success popup */
   const markup = document.createElement('div');
-  markup.className = 'viewcode';
-  markup.insertAdjacentHTML('afterbegin', `<div class="view"> <img src="markArrow.png"><div class="viewcode__button"> View code </div></div>`);
-  markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__message">${text[num].message}</div>`);
-  markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__header">${text[num].heading}</div>`);
+  markup.className = 'popup__correct';
+  markup.insertAdjacentHTML('afterbegin', `<div class="content"> <img src="markArrow.png"><div class="popup_correct button"> View code </div></div>`);
+  markup.insertAdjacentHTML('afterbegin', `<div class="message">${text[num].message}</div>`);
+  markup.insertAdjacentHTML('afterbegin', `<div class="header">${text[num].heading}</div>`);
 
   return markup;
 }
@@ -322,25 +357,35 @@ async function showSuccessPopUp() {
 async function showAlreadyCompletedPopUp() {
   /* Already completed popup */
   const markup = document.createElement('div');
-  markup.className = 'viewcode';
-  markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__message">You’ve already uncovered that one. Check out my Field Notes for intel on the other landmarks.</div>`);
-  markup.insertAdjacentHTML('afterbegin', `<div class="viewcode__header">Nice try!</div>`);
+  markup.className = 'popup__duplicate';
+  markup.insertAdjacentHTML('afterbegin', `<div class="message">You’ve already uncovered that one. Check out my Field Notes for intel on the other landmarks.</div>`);
+  markup.insertAdjacentHTML('afterbegin', `<div class="header">Nice try!</div>`);
 
   return markup;
 }
 
 async function showViewCodePopup() {
-  const marker = L.marker([-668, 1308]).addTo(window.map);
+ // const marker = L.marker([-668, 1308]).addTo(window.map);
+
+
+
+
+
   const markup = document.createElement('div');
-  markup.className = 'note';
-  markup.insertAdjacentHTML('afterbegin', '<div class="note__header">Well done</div>');
+  markup.className = 'popup__code';
+  markup.insertAdjacentHTML('afterbegin', '<div class="header">Well done</div>');
 
   const viewCodeOptions = {
     maxWidth: '400',
     width: '450',
-    className: 'popup__correct',
+    className: 'popup__code popup__wrapper',
   };
 
+  const codePopupOptions = {
+    maxWidth: '400',
+    width: '450',
+    className: 'popup__codes',
+  };
   const challengespProgress = await fetchCompletedChallenges();
   const landmarkCodes = {
     challenge1: 'lorem ipsum challenge.',
@@ -351,10 +396,15 @@ async function showViewCodePopup() {
   };
 
   for (let i = 0; i < challengespProgress.length; i++) {
-    markup.firstElementChild.insertAdjacentHTML('afterend', `<div class="code__container"><div class="code__text">${landmarkCodes[challengespProgress[i]]}</div></div>`);
+    markup.firstElementChild.insertAdjacentHTML('afterend', `<div class="popup__container"><div class="text">${landmarkCodes[challengespProgress[i]]}</div></div>`);
   }
-  markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="note__message"> Find all landmarks to complete the code</div>');
-  marker.bindPopup(markup, viewCodeOptions).openPopup();
+  markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="message"> Find all landmarks to complete the code</div>');
+
+  var currentViewCenter = window.map.getCenter();
+  var marker = L.marker(currentViewCenter).addTo(window.map);
+  marker.bindPopup(markup,  codePopupOptions).openPopup();
+
+ 
 }
 
 const text = {
