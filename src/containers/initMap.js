@@ -47,11 +47,22 @@ export default function initApp () {
     map.on('click', function(e) {
       console.log("Lat, Lon : " + e.latlng.lat + ", " + e.latlng.lng)
     });
-    
-    // add the image overlay, 
-    // so that it covers the entire map
-    L.imageOverlay(url, bounds).addTo(map);
 
+    var preloadImg = new Image();
+    
+    preloadImg.onload = () => {
+      let loaderEl = document.getElementById('animation_container');
+      if (loaderEl && loaderEl.parentNode) {
+        loaderEl.parentNode.removeChild(loaderEl);
+      }
+      // add the image overlay, 
+      // so that it covers the entire map
+      L.imageOverlay(url, bounds).addTo(map);
+      L.control.search().addTo(map)
+      L.control.field().addTo(map)
+    }
+
+    preloadImg.src = mapJPG;
     
     // Search Control
     L.Control.Search = L.Control.extend({
@@ -247,10 +258,6 @@ export default function initApp () {
     L.control.field = function(id, options) {
       return new L.Control.field(id, options);
     }
-
-    L.control.search().addTo(map)
-
-    L.control.field().addTo(map)
 
     // tell leaflet that the map is exactly as big as the image
     map.setMaxBounds(bounds);
