@@ -83,10 +83,9 @@ export default async function initUserData() {
     const url = encodeURI(`data:image/svg+xml,${pathChallenge3}`).replace('#', '%23');
     const pathMarker = new CustomIcon({ iconUrl: url });
 
-    debugger
     let marker = L.marker([-594.5, 1998.5], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
     marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
-    debugger
+
   }
   if (challenges.challenge4 === true) {
     document.getElementsByClassName('challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';

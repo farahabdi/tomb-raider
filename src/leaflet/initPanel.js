@@ -67,6 +67,12 @@ export default function initSearch() {
       className: 'viewcode',
     };
 
+    const duplicateOptions = {
+      maxWidth: '400',
+      width: '450',
+      className: 'popup__duplicate',
+    };
+
     const codePopupOptions = {
       maxWidth: '400',
       width: '450',
@@ -84,13 +90,14 @@ export default function initSearch() {
       width: '450',
       className: 'popup__fail',
     };
-
+debugger
     if (challenges[answerKey]) {
       
+      var currentViewCenter = window.map.getCenter();
+      var marker = L.marker(currentViewCenter).addTo(window.map);
 
-      const marker = L.marker([-465, 1174])
       const markup = await showAlreadyCompletedPopUp()
-      marker.bindPopup(markup, successOptions).openPopup();
+      marker.bindPopup(markup, duplicateOptions ).openPopup();
       
       return
     }
