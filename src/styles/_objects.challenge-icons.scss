@@ -1,0 +1,83 @@
+.challenges {
+    display: flex;
+    margin-left: -16px;
+    margin-top: 8px;
+    @include mq($from: tablet) {
+        margin-left: -30px;
+        margin-top: 37px;
+    }
+}   
+
+.challenge__wrapper {
+    height: 45px;
+    margin-left: 31px;
+    margin-top: -14px;
+    /* margin-right: -2px; */
+    padding-right: 28px;
+    .challenge__icon {
+        padding-top: 18px;
+        width: 37px;
+        height: 25px;
+        padding-bottom: 17px;
+        padding-left: -3px;
+        padding-right: 0px;
+        @include mq($from: tablet) {
+            padding-top: 18px;
+            width: 52px;
+            height: 25px;
+            padding-bottom: 17px;
+            padding-left: -3px;
+            padding-right: 0px;
+        }
+        &.challenge__1 {
+            background-image: url("../assets/code1@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            &.challenge__1--complete {
+                background-image: url("../assets/code1_complete@2x.png") !important;
+                background-repeat: no-repeat !important;
+                background-size: contain;
+            }
+        }
+        &.challenge__2 {
+            background-image: url("../assets/code2@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            &.challenge__2--complete {
+                background-image: url("../assets/code2_complete@2x.png") !important;
+                background-repeat: no-repeat !important;
+                background-size: contain;
+            }
+        }
+        &.challenge__3 {
+            background-image: url("../assets/code3@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            &.challenge__3--complete {
+                background-image: url("../assets/code3_complete@2x.png") !important;
+                background-repeat: no-repeat !important;
+                background-size: contain;
+            }
+        }
+        &.challenge__4 {
+            background-image: url("../assets/code4@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            &.challenge__4--complete {
+                background-image: url("../assets/code4_complete@2x.png") !important;
+                background-repeat: no-repeat !important;
+                background-size: contain;
+            }
+        }
+        &.challenge__5 {
+            background-image: url("../assets/code5@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            &.challenge__5--complete {
+                background-image: url("../assets/code5_complete@2x.png") !important;
+                background-repeat: no-repeat !important;
+                background-size: contain;
+            }
+        }
+    }
+}
