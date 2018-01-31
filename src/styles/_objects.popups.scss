@@ -143,7 +143,7 @@
   /* margin-top: 8px; */
   padding-top: 9px;
   padding-bottom: 8px;
-  width: 740px;
+  width: 579px;
   bottom: -188px !important;
   left: -205px !important;
 
@@ -157,11 +157,14 @@
   .leaflet-popup-content-wrapper {
     display: flex;
     justify-content: center;
-    height: 706px;
+
     left: -186px !important;
 }
 
   .popup__container {
+    display: flex;
+    justify-content: center;
+
     background-image: url("../assets/boxShort.png") !important;
     background-repeat: no-repeat;
     padding: 10px;
@@ -172,18 +175,20 @@
   
     .text {
       margin-top: 7px;
-      font-size: 16px;
+      font-size: 25px;
     }
   }
   
   .header {
+    display: flex;
+    justify-content: center;
     font-size: 38px
   }
 
   .message {
-    font-size: 24px;
-    margin-top: 12px;
-    width: 323px;
+    font-size: 26px;
+    margin-top: 15px;
+    width: 351px;
   }
 
   .button {
