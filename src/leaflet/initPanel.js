@@ -4,7 +4,7 @@ import chinaIcon from '../assets/Polaroid_China.png';
 import stonehengeIcon from '../assets/Polaroid_Stonehenge.png';
 import kenyaIcon from '../assets/Polaroid_Kenya.png';
 import mexicoIcon from '../assets/Polaroid_Mexico.png';
-import monasteryIcon from '../assets/Polaroid_Monastery.png';
+import niagaraIcon from '../assets/Polaroid_Niagara.png';
 import markArrow from '../assets/markArrow.png';
 
 const pathChallenge1 = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 139.26 133.91"><defs><style>.cls-1{fill:#8c0303;}</style></defs><title>Asset 1</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M95.36,32.16c-1-5.14-4.87-10.11-10.3-13.6a45,45,0,0,0-19-6.57,53.42,53.42,0,0,0-10.43-.22,52.44,52.44,0,0,0-10.32,1.77,47.65,47.65,0,0,0-31,26.39A65.55,65.55,0,0,0,8.73,60.77a82.58,82.58,0,0,0-.49,11c0,1.85,0,3.71.2,5.54l.19,2.76c0,.92.22,1.82.32,2.73a58.6,58.6,0,0,0,6.18,20.65A50.71,50.71,0,0,0,17.86,108a48.49,48.49,0,0,0,3.3,4.1,39.28,39.28,0,0,0,8,6.79,46.31,46.31,0,0,0,20,6.74,67.06,67.06,0,0,0,21.63-1.3,62.07,62.07,0,0,0,10.34-3.24,94.6,94.6,0,0,0,9.92-4.84,89.72,89.72,0,0,0,17.72-12.91,72.49,72.49,0,0,0,7.29-8,58.1,58.1,0,0,0,5.69-9,52.27,52.27,0,0,0,3.75-9.85,50.38,50.38,0,0,0,1.56-10.35,55.6,55.6,0,0,0-3.18-20.64,7.42,7.42,0,1,1,14-4.86,7.34,7.34,0,0,1,.34,1.44v0a88.81,88.81,0,0,1,.13,25.17,67.49,67.49,0,0,1-8.1,23.62,68.67,68.67,0,0,1-7,10.21,82.13,82.13,0,0,1-8.42,8.86,97.75,97.75,0,0,1-19.77,13.77,101,101,0,0,1-10.92,5,76.89,76.89,0,0,1-11.7,3.47,75,75,0,0,1-24.24,1.17,56.41,56.41,0,0,1-23.26-8,46.69,46.69,0,0,1-9.57-8.06,55.74,55.74,0,0,1-3.94-4.86,59.25,59.25,0,0,1-3.22-5.32A70.23,70.23,0,0,1,1.05,83.91c-.13-1-.32-2-.4-3l-.27-3c-.22-2-.24-4-.31-6a91.06,91.06,0,0,1,.33-12A76.81,76.81,0,0,1,6.26,36.3,58.58,58.58,0,0,1,20.64,16.06a59.4,59.4,0,0,1,21.6-12.6A66.8,66.8,0,0,1,67.09.09,59.86,59.86,0,0,1,92,6.67a43.63,43.63,0,0,1,11,8.27,35.57,35.57,0,0,1,7.81,12.49l.12.35A8.12,8.12,0,1,1,95.68,33.3,9.72,9.72,0,0,1,95.36,32.16Z"/></g></g></svg>';
@@ -162,7 +162,7 @@ export default function initSearch() {
       const url = encodeURI(`data:image/svg+xml, ${pathChallenge2}`).replace('#', '%23');
       const pathMarker = new CustomIcon({ iconUrl: url, className: 'circleMarker'})
       debugger
-      let circleMarker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      let circleMarker = L.marker([-830.0923638032468, 1554.33553663961], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
 
       circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
@@ -210,7 +210,7 @@ export default function initSearch() {
       const pathMarker = new CustomIcon({ iconUrl: url, className: 'cirlceMarker'});
 
 
-      let circleMarker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      let circleMarker = L.marker([-568.076913031732, 1995.321254295155], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
 
       circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
@@ -269,7 +269,8 @@ export default function initSearch() {
       /* Show popop */
       const marker = L.marker([-585.7060241699219, 632.9839477539062]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup, correctPopupOptions).openPopup();
+      let popup = marker.bindPopup(markup, correctPopupOptions).openPopup();
+      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
       const element = document.getElementsByClassName('popup_correct button')[0];
       element.addEventListener('click', showViewCodePopup, false);
 
@@ -294,7 +295,7 @@ export default function initSearch() {
 
       /* Show Polaroid */
       const polaroidIcon = L.icon({
-        iconUrl: monasteryIcon,
+        iconUrl: niagaraIcon,
         className: 'polaroid',
         iconSize: [38, 95], // size of the icon
         shadowSize: [50, 64], // size of the shadow
