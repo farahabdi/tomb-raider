@@ -61,7 +61,7 @@
   .container {
     display: flex;
   }
-  .header {
+  .header.leaflet-control {
     display: flex;
     /* justify-content: right; */
     flex-direction: column-reverse;

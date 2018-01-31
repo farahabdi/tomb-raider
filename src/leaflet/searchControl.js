@@ -74,7 +74,28 @@ export default function searchControl() {
   });
   // End Search control
 
-  L.control.search = () => new L.Control.Search();
+  // Logo control
+  L.Control.Logo = L.Control.extend({
+    options: {
+    // topright, topleft, bottomleft, bottomright
+      position: 'bottomleft',
+    },
+    initialize(options) {
+      L.Util.setOptions(this, options);
+    },
+    onAdd() {
+    // happens after added to map
+      const container = L.DomUtil.create('div', 'logo__control');
 
+      return container;
+    },
+  });
+
+  
+
+  L.control.search = () => new L.Control.Search();
+  L.control.logo = () => new L.Control.Logo();
   L.control.search().addTo(window.map);
+  L.control.logo().addTo(window.map);
 }
+

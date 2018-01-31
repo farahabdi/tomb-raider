@@ -47,3 +47,20 @@ div.leaflet-top.leaflet-left {
 .leaflet-popup-content {
   font-family: 'Caveat', cursive;
 }
+
+.logo__control {
+  background-image: url("../assets/logo.png") !important;
+  background-repeat: no-repeat !important;
+  width: 238px;
+  height: 61px;
+}
+
+@include media-query(palm) {
+  .logo__control {
+    background-image: url("../assets/logo.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain;
+    width: 138px;
+    height: 61px;
+}
+}
