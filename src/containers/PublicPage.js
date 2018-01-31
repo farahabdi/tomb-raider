@@ -25,7 +25,7 @@ class PublicPage extends Component {
     return (
       <main className="landing">
         <div className="logo">
-          <img className="logo__image" />
+          <div className="logo__image" />
         </div>
 
         <div className="notepad-1">
@@ -106,9 +106,8 @@ class PublicPage extends Component {
               </div>
             </div>
           </div>
-        </div>
 
-        <div className={`fb-login ${isDisabled ? 'fb-login--disabled' : ''}`}>
+          <div className={`fb-login ${isDisabled ? 'fb-login--disabled' : ''}`}>
           <div className="fb-login__container" role="button" tabIndex="0" onClick={isDisabled ? null : signInWithFacebook}>
             <table cellSpacing="0" cellPadding="0">
               <tbody>
@@ -128,6 +127,9 @@ class PublicPage extends Component {
             </table>
           </div>
         </div>
+        </div>
+
+
 
       </main>
     );
