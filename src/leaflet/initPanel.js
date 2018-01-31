@@ -100,8 +100,8 @@ export default function initSearch() {
       var marker = L.marker(currentViewCenter).addTo(window.map);
 
       const markup = await showAlreadyCompletedPopUp()
-      marker.bindPopup(markup, duplicateOptions ).openPopup();
-      
+      let popup = marker.bindPopup(markup, duplicateOptions ).openPopup();
+      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
       return
     }
 
@@ -331,12 +331,14 @@ export default function initSearch() {
 
       const markup = await showFailPopUp();
 
-
+debugger
       setTimeout(function() {
 
       var currentViewCenter = window.map.getCenter();
       var marker = L.marker(currentViewCenter).addTo(window.map);
-        marker.bindPopup(markup, failPopupOptions).openPopup();
+        let popup = marker.bindPopup(markup, failPopupOptions).openPopup();
+        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+
       }, 1500);
 
       /* Fly to Point */
@@ -368,6 +370,13 @@ async function showFailPopUp() {
     window.numTries= window.numTries + 1
     count = window.numTries
   }
+
+  const tabElement = document.getElementsByClassName('tab__container')[0];
+  tabElement.setAttribute("style", "display: none" )
+
+ const mapElement = document.getElementsByClassName('leaflet-overlay-pane')[0].className= "leaflet-pane leaflet-overlay-pane hide-map"
+
+ const popupElement = window.map._panes["popupPane"].className = "leaflet-pane leaflet-popup-pane unhide-map"
 
   /* Fail popup */
   const markup = document.createElement('div');
@@ -415,6 +424,13 @@ async function showAlreadyCompletedPopUp() {
   markup.className = 'popup__duplicate';
   markup.insertAdjacentHTML('afterbegin', `<div class="message">You’ve already uncovered that one. Check out my Field Notes for intel on the other landmarks.</div>`);
   markup.insertAdjacentHTML('afterbegin', `<div class="header">Nice try!</div>`);
+
+  const tabElement = document.getElementsByClassName('tab__container')[0];
+  tabElement.setAttribute("style", "display: none" )
+
+ const mapElement = document.getElementsByClassName('leaflet-overlay-pane')[0].className= "leaflet-pane leaflet-overlay-pane hide-map"
+
+ const popupElement = window.map._panes["popupPane"].className = "leaflet-pane leaflet-popup-pane unhide-map"
 
   return markup;
 }
