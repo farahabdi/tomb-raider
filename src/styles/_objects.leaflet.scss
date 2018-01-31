@@ -48,6 +48,10 @@ div.leaflet-top.leaflet-left {
   font-family: 'Caveat', cursive;
 }
 
+#map:not(.leaflet-popup) {
+ // opacity: 0.1 !important;
+}
+
 .logo__control {
   background-image: url("../assets/logo.png") !important;
   background-repeat: no-repeat !important;
@@ -63,4 +67,12 @@ div.leaflet-top.leaflet-left {
     width: 138px;
     height: 61px;
 }
+}
+
+.hide-map {
+  opacity: 0.2;
+}
+
+.unhide-map {
+  opacity: 1 !important;
 }

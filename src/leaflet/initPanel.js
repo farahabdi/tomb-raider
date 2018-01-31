@@ -68,18 +68,21 @@ export default function initSearch() {
     };
 
     const duplicateOptions = {
+      closeOnClick: false,
       maxWidth: '400',
       width: '450',
       className: 'popup__duplicate',
     };
 
     const codePopupOptions = {
+      closeOnClick: false,
       maxWidth: '400',
       width: '450',
       className: 'popup__codes',
     };
 
     const correctPopupOptions = {
+      closeOnClick: false,
       maxWidth: '400',
       width: '450',
       className: 'popup__correct',
@@ -90,7 +93,7 @@ export default function initSearch() {
       width: '450',
       className: 'popup__fail',
     };
-debugger
+
     if (challenges[answerKey]) {
       
       var currentViewCenter = window.map.getCenter();
@@ -101,7 +104,7 @@ debugger
       
       return
     }
-    debugger
+
 
 
 
@@ -137,8 +140,8 @@ debugger
 
       const marker = L.marker([-465, 1174]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup, correctPopupOptions).openPopup();
-
+      let popup = marker.bindPopup(markup, correctPopupOptions).openPopup();
+      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
 
       
       const element = document.getElementsByClassName('popup_correct button')[0];
@@ -176,10 +179,13 @@ debugger
 
       L.marker([-827.5, 1599.5], { icon: polaroidIcon }).addTo(window.map);
 
+
+
       /* Show popop */
       const marker = L.marker([-668, 1308]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup, correctPopupOptions).openPopup();
+      let popup = marker.bindPopup(markup, correctPopupOptions).openPopup();
+      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
       const element = document.getElementsByClassName('popup_correct button')[0];
       element.addEventListener('click', showViewCodePopup, false);
 
@@ -224,7 +230,9 @@ debugger
       /* Show popop */
       const marker = L.marker([-474, 1683]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup, correctPopupOptions).openPopup();
+      let popup = marker.bindPopup(markup, correctPopupOptions).openPopup();
+
+      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
       const element = document.getElementsByClassName('popup_correct button')[0];
       element.addEventListener('click', showViewCodePopup, false);
 
@@ -294,13 +302,14 @@ debugger
         shadowAnchor: [4, 62], // the same for the shadow
         popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
       });
-      letL.marker([-567.5, 851], { icon: polaroidIcon }).addTo(window.map);
+      L.marker([-567.5, 851], { icon: polaroidIcon }).addTo(window.map);
 
 
       /* Show popop */
       const marker = L.marker([-617, 1419]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      marker.bindPopup(markup,correctPopupOptions).openPopup();
+      let popup = marker.bindPopup(markup,correctPopupOptions).openPopup();
+      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
       const element = document.getElementsByClassName('popup_correct button')[0];
       element.addEventListener('click', showViewCodePopup, false);
 
@@ -336,7 +345,16 @@ debugger
   }
 }
 
+function handlePopupClose(event, popup) {
+  debugger
+  const tabElement = document.getElementsByClassName('tab__container')[0];
+  tabElement.setAttribute("style", "display: inherit" )
 
+  const layerElement = document.getElementsByClassName('leaflet-overlay-pane')[0].className = "leaflet-pane leaflet-overlay-pane"
+
+
+
+}
 
 async function showFailPopUp() {
 
@@ -362,6 +380,15 @@ async function showFailPopUp() {
 
 async function showSuccessPopUp() {
   const challenges = await fetchChallenges();
+
+  const tabElement = document.getElementsByClassName('tab__container')[0];
+   tabElement.setAttribute("style", "display: none" )
+
+  const mapElement = document.getElementsByClassName('leaflet-overlay-pane')[0].className= "leaflet-pane leaflet-overlay-pane hide-map"
+
+  const popupElement = window.map._panes["popupPane"].className = "leaflet-pane leaflet-popup-pane unhide-map"
+  
+
 
 
   let num = 0;
