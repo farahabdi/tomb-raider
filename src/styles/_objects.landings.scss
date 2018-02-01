@@ -88,274 +88,7 @@
 }
 
 
-.notes {
-    margin-top: 80%;
-    @include mq($from: tablet, $until: desktop) {
-        margin-top: 29%;
-        margin-left: 38%;
-    }
-    @include mq($from: desktop, $until: wide) {
-        margin-top: 51%;
-    }
-    @include mq($from: wide) {
-        margin-top: 57%;
-    }
-}
 
-.notepad-1 {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 28%;
-    
-    transform: rotate(-19deg);
-    @include mq($from: tablet, $until: desktop) {
-
-        margin-top: 19%;
-        margin-right: 41%;
-    }
-    @include mq($from: desktop, $until: wide) {
-        margin-top: 1%;
-        margin-right: 36%;
-    }
-
-    @include mq($from: wide) {
-        margin-top: -5%;
-        margin-right: 4%;
-    }
-
-
-
-}
-.notepad-2 {
-    display: flex;
-    justify-content: center;
-    margin-top: 172px;
-
-    @include mq($from: tablet, $until: desktop) {
-
-        margin-left: -123%;
-        margin-top: 16%;
-    }
-    @include mq($from: desktop, $until: wide) {
-        margin-top: 12%;
-        margin-right: 13%;
-    }
-    @include mq($from: wide) {
-        margin-top: 2%;
-        margin-right: 11%;
-    }
-
-}
-
-.notepad-3 {
-    display: flex;
-    justify-content: center;
-    margin-top: 167%;
-    @include mq($from: tablet, $until: desktop) {
-        margin-top: 51%;
-        margin-left: -9%;
-    }
-    @include mq($from: desktop, $until: wide) {
-        margin-top: 24%;
-        margin-left: 25%;
-    }
-    @include mq($from: wide) {
-        margin-top: 24%;
-        margin-left: 21%;
-    }
-}
-
- 
-.notepad-4 {
-    display: flex;
-    justify-content: center;
-    margin-top: 130%;
-
-    @include mq($from: tablet, $until: desktop) {
-        margin-top: 19%;
-
-    }
-
-    @include mq($from: desktop, $until: wide) {
-        margin-top: 13%;
-        margin-left: 65%;
-    }
-
-    @include mq($from: wide) {
-        margin-top: 7%;
-        margin-left: 38%;
-    }
-}
-
-.notepad-5 {
-    display: flex;
-    justify-content: center;
-    margin-top: 175%;
-    @include mq($from: tablet, $until: desktop) {
-        margin-top: 61%;
-        margin-left: -102%;
-    }
-    @include mq($from: desktop, $until: wide) {
-        margin-top: 2%;
-        margin-left: -34%;
-    }
-
-    @include mq($from: wide) {
-        margin-top: 2%;
-        margin-left: -34%;
-    }
-}
-
-.notepad-6 {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 79%;
-    margin-left: 13%;
-
-
-    @include mq($from: tablet, $until: desktop) {
-        margin-top: 20%;
-        margin-left: 11%;
-    }
-    @include mq($from: desktop, $until: wide) {
-        margin-left: 7%;
-        margin-top: 17%;
-    }
-
-    @include mq($from: wide) {
-            margin-top: 20%;
-    margin-left: 10%;
-    }
-}
-
-
-.notepad__container {
-    font-family: 'Caveat', cursive;
-    .notepad__wrapper {
-        height: 205px;
-        padding-top: 33px;
-        @include mq($from: tablet) {
-            height: 205px;
-            padding-top: 33px;
-        }
-        
-        &.notepad__wrapper-1 {
-            width: 285px;
-            background-image: url("../assets/Postit_1.png");
-            background-repeat: no-repeat;
-            transform: rotate(13deg);
-            @include mq($from: tablet) {
-                background-image: url("../assets/Postit_1@2x.png");
-            }
-
-            .notepad__text {
-                transform: rotate(-4deg);
-                margin-left: 40px;
-                font-size: 24px;
-                margin-top: 12px;
-                @include mq($from: tablet) {
-
-                }
-                
-            }
-
-        }
-        &.notepad__wrapper-2 {
-            width: 285px;
-            transform: rotate(-10deg);
-            background-image: url("../assets/Postit_2.png");
-            background-repeat: no-repeat;
-            @include mq($from: tablet) {
-                background-image: url("../assets/Postit_2@2x.png");
-            }
-
-            .notepad__text {
-                transform: rotate(1deg);
-                width: 84%;
-                margin-left: 34px;
-                margin-top: 11px;
-                @include mq($from: tablet) {
-
-                }
-            }
-
-        }
-        &.notepad__wrapper-3 {
-            width: 227px;
-            background-image: url("../assets/Postit_3.png");
-            background-repeat: no-repeat;
-            @include mq($from: tablet) {
-                background-image: url("../assets/Postit_3@2x.png");
-            }
-
-            .notepad__text {
-                transform: rotate(-1deg);
-                margin-left: 27px;
-                font-size: 24px;
-                margin-top: 4px;
-            }
-
-
-        }
-        &.notepad__wrapper-4 {
-            width: 285px;
-          //  padding-top: 17px !important;
-            background-image: url("../assets/Postit_5.png");
-            background-repeat: no-repeat;
-            @include mq($from: tablet) {
-                background-image: url("../assets/Postit_5@2x.png");
-            }
-
-            .notepad__text {
-                transform: rotate(0deg);
-                margin-left: 22px;
-                font-size: 22px;
-                width: 74%;
-                margin-top: -22px;
-            }
-
-        }
-        &.notepad__wrapper-5 {
-            width: 285px;
-            background-image: url("../assets/Postit_5.png");
-            background-repeat: no-repeat;
-            @include mq($from: tablet) {
-                background-image: url("../assets/Postit_5@2x.png");
-            }
-            .notepad__text {
-                width: 73%;
-                font-size: 24px;
-                margin-left: 23px;
-            }
-
-            
-        }
-        &.notepad__wrapper-6 {
-            width: 242px;
-            background-image: url("../assets/Postit_6.png");
-            background-repeat: no-repeat;
-            @include mq($from: tablet) {
-                background-image: url("../assets/Postit_6@2x.png");
-            }
-            .notepad__text {
-                transform: rotate(1deg);
-                font-size: 24px;
-                margin-top: -18px;
-                margin-left: 16px;
-                width: 87%;
-            }
-
-        }
-
-
-        .notepad__text {
-            font-size: 24px;
-        }
-
-    
-    }
-
-}
 
 .underline {
     background-repeat: repeat-x;
@@ -396,7 +129,7 @@ footer {
         margin-right: 37px;
     }
     @include mq($from: wide) {
-        margin-bottom: 126px;
+        margin-bottom: 179px;
         margin-left: -28px;
     }
 
@@ -440,22 +173,52 @@ footer {
 
 /* Facebook button */
 
-.fb-login {
-    display: flex;
-    justify-content: center;
-    margin-top: 56px;
 
 
-    @include mq($from: wide) {
-        margin-bottom: 20%;
-        margin-top: 5px;
+
+    .fb-login--disabled{
+        opacity: 0.5;
+        cursor: not-allowed;
     }
-}
+
 
 .fb-button__container {
     padding-top: 18px;
-    margin-left: 8px;
+    /* margin-left: 8px; */
+    /* width: 215px; */
+    display: flex;
+    margin-right: 14px;
+    justify-content: center;
+    @include mq($from: tablet, $until: desktop) {
+        //   margin-bottom: 12%;
+       }
+    @include mq($from: desktop, $until: wide) {
+        //margin-bottom: 14%;
+    }
+    @include mq($from: wide) {
+       
+    }
 }
+
+
+.fb-login--disabled  {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.btn-social > :first-child {
+    position: absolute;
+    left: 0;
+    top: 3px !important;
+    bottom: 0;
+    width: 32px;
+    line-height: 34px;
+    font-size: 1.6em;
+    text-align: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+
+// obsolete
 .fb-login__container {
     height: 40px;
     border-radius: 4px;
@@ -466,12 +229,14 @@ footer {
     cursor: pointer;
     display: inline-block;
     vertical-align: top;
-    @include mq($from: wide) {
-        margin-top: 18px;
+    @include mq($from: tablet, $until: desktop) {
+        //   margin-bottom: 12%;
+       }
+    @include mq($from: desktop, $until: wide) {
+        //margin-bottom: 14%;
     }
-    .fb-login--disabled & {
-        opacity: 0.5;
-        cursor: not-allowed;
+    @include mq($from: wide) {
+       
     }
 
 

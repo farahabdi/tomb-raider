@@ -110,9 +110,10 @@ class PublicPage extends Component {
    
               
               <div className="fb-button__container">
-                <div className="fb-button">
-                  <a onClick={isDisabled ? null : signInWithFacebook} className="btn btn-block btn-social btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social', 'click', 'btn-facebook']);">
-                  <span class="fa fa-facebook"></span> Sign in with Facebook
+              <div className={`fb-button ${isDisabled ? 'fb-login--disabled' : ''}`}>
+
+                  <a onClick={isDisabled ? null : signInWithFacebook} className="btn btn-block btn-social btn-facebook">
+                  <span className="fa fa-facebook"></span> <span className="signin__message">  Sign in with Facebook</span>
                   </a>
                 </div>
               </div>
