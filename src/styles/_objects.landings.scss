@@ -26,7 +26,7 @@
     @include mq($from: wide) {
         background-image: url("../assets/landing@2x.jpg");
         background-repeat: no-repeat;
-        height: 3053px;
+        height: 4000px;
     }
 }
 
@@ -91,14 +91,14 @@
 .notes {
     margin-top: 80%;
     @include mq($from: tablet, $until: desktop) {
-        margin-top: 47%;
+        margin-top: 29%;
         margin-left: 38%;
     }
     @include mq($from: desktop, $until: wide) {
         margin-top: 51%;
     }
     @include mq($from: wide) {
-        margin-top: 38%;
+        margin-top: 57%;
     }
 }
 
@@ -111,16 +111,16 @@
     @include mq($from: tablet, $until: desktop) {
 
         margin-top: 19%;
-        margin-right: 19%;
+        margin-right: 41%;
     }
     @include mq($from: desktop, $until: wide) {
         margin-top: 1%;
-        margin-right: 9%;
+        margin-right: 36%;
     }
 
     @include mq($from: wide) {
         margin-top: -5%;
-        margin-right: 14%;
+        margin-right: 4%;
     }
 
 
@@ -134,7 +134,7 @@
     @include mq($from: tablet, $until: desktop) {
 
         margin-left: -123%;
-        margin-top: 47%;
+        margin-top: 16%;
     }
     @include mq($from: desktop, $until: wide) {
         margin-top: 12%;
@@ -150,7 +150,7 @@
 .notepad-3 {
     display: flex;
     justify-content: center;
-    margin-top: 125%;
+    margin-top: 167%;
     @include mq($from: tablet, $until: desktop) {
         margin-top: 51%;
         margin-left: -9%;
@@ -169,7 +169,7 @@
 .notepad-4 {
     display: flex;
     justify-content: center;
-    margin-top: 6%;
+    margin-top: 130%;
 
     @include mq($from: tablet, $until: desktop) {
         margin-top: 19%;
@@ -190,9 +190,9 @@
 .notepad-5 {
     display: flex;
     justify-content: center;
-    margin-top: 137%;
+    margin-top: 175%;
     @include mq($from: tablet, $until: desktop) {
-        margin-top: 2%;
+        margin-top: 61%;
         margin-left: -102%;
     }
     @include mq($from: desktop, $until: wide) {
@@ -210,6 +210,7 @@
     display: flex;
     justify-content: flex-start;
     margin-top: 79%;
+    margin-left: 13%;
 
 
     @include mq($from: tablet, $until: desktop) {
@@ -382,55 +383,57 @@ footer {
 }
 
 .terms-and-conditions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 20px;
     letter-spacing: 1.5px;
-    /* padding-top: 1225px; */
-    display: flex;
-    /* margin-top: 4px; */
-    flex-direction: column;
-    /* margin-bottom: 56px; */
-    justify-content: center;
-    /* margin-left: -27px; */
-    /* margin-bottom: 25%; */
+    margin-bottom: 153px;
     @include mq($from: tablet, $until: desktop) {
-     //   margin-bottom: 12%;
+        margin-right: 37px;
     }
     @include mq($from: desktop, $until: wide) {
-        //margin-bottom: 14%;
+        margin-right: 37px;
     }
     @include mq($from: wide) {
-      //  margin-bottom: -12%;
+        margin-bottom: 126px;
+        margin-left: -28px;
     }
 
  
     .terms-and-conditions__container {
         display: flex;
         justify-content: center;
+        background-image: url("../assets/tc_bar.png");
+        background-repeat: no-repeat;
+        width: 367px;
+        height: 63px;
+        .terms-and-conditions__message {
+            margin-top: 24px;
+        }
+
+        #checkBox {
+
+            margin-top: 29px;
+            margin-right: 16px;
+            @include mq($from: tablet, $until: desktop) {
+                //   margin-bottom: 12%;
+               }
+            @include mq($from: desktop, $until: wide) {
+                //margin-bottom: 14%;
+            }
+            @include mq($from: wide) {
+               
+            }
+           
+        }
         @include mq($from: wide) {
             margin-top: -20px;
         }
 
-        .terms-and-conditions__wrapper {
-            background-image: url("../assets/tc_bar.png");
-            background-repeat: no-repeat;
-            width: 367px;
-            height: 63px;
-            .terms-and-conditions__content {
-                display: flex;
-                justify-content: space-around;
-                margin-top: 23px;
-                margin-right: 26px;
-                .terms-and-conditions__checkbox {
-                    margin-left: 35px;
-                    margin-top: -3px;
-                    width: 30px;
-                    height: 30px;
-                }
-            }
-        }
+
     }
 }
-
 
 
 
@@ -447,6 +450,11 @@ footer {
         margin-bottom: 20%;
         margin-top: 5px;
     }
+}
+
+.fb-button__container {
+    padding-top: 18px;
+    margin-left: 8px;
 }
 .fb-login__container {
     height: 40px;

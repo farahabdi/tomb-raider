@@ -101,39 +101,28 @@ class PublicPage extends Component {
           </div>
 
 
-          <div className="terms-and-conditions">
-            <div className="terms-and-conditions__container">
-              <div className="terms-and-conditions__wrapper">
-                <div className="terms-and-conditions__content">
+          <footer>
+            <div className="terms-and-conditions">
+              <div className="terms-and-conditions__container">
                   <input className="terms-and-conditions__checkbox" id="checkBox" type="checkbox" onChange={() => this.toggle()} />
-           
-                  <div className="terms-and-conditions__message">    I have read and accept <span class="underline underline--stars">T&C's</span>  </div>
+                  <div className="terms-and-conditions__message">  I have read and accept <span className="underline underline--bacon">T&C's</span></div>
+              </div>
+   
+              
+              <div className="fb-button__container">
+                <div className="fb-button">
+                  <a onClick={isDisabled ? null : signInWithFacebook} className="btn btn-block btn-social btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social', 'click', 'btn-facebook']);">
+                  <span class="fa fa-facebook"></span> Sign in with Facebook
+                  </a>
                 </div>
               </div>
-            </div>
 
-            <div className={`fb-login ${isDisabled ? 'fb-login--disabled' : ''}`}>
-            <div className="fb-login__container" role="button" tabIndex="0" onClick={isDisabled ? null : signInWithFacebook}>
-              <table cellSpacing="0" cellPadding="0">
-                <tbody>
-                  <tr>
-                    <td className="fb-login__icon">
-                      <div>
-                        <span>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216" className="_5h0m" color="#ffffff"><path fill="#ffffff" d="M204.1 0H11.9C5.3 0 0 5.3 0 11.9v192.2c0 6.6 5.3 11.9 11.911.9h103.5v-83.6H87.2V99.8h28.1v-24c0-27.9 17-43.1 41.9-43.111.9 0 22.2.9 25.2 1.3v29.2h-17.3c-13.5 0-16.2 6.4-16.215.9v20.8h32.3l-4.2 32.6h-28V216h55c6.6 0 11.9-5.311.9-11.9V11.9C216 5.3 210.7 0 204.1 0z"></path></svg><img className="_5h0l img" src="https://static.xx.fbcdn.net/rsrc.php/v3/yO/r/lF-L3veiXx9.png" alt="app-facebook" width="24" height="24" />
-                        </span>
-                      </div>
-                    </td>
-                    <td className="fb-login__button">
-                      <button id="fb-button">Continue with Facebook</button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
-          </div>
-          </div>
+          </footer>
 
+
+
+         
 
         </div>
       </main>

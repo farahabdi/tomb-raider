@@ -1,8 +1,19 @@
 .tab__container {
-    margin-top: -126px !important;
+    margin-top: -70px !important;
+
+    @include mq($from: tablet, $until: desktop) {
+        margin-left: -374px;
+        }
+    @include mq($from: desktop, $until: wide) {
+        margin-top: -54px !important;
+        outline: none;
+    }
+    @include mq($from: wide) {
+        margin-top: -54px !important;
+        outline: none;
+        }
     @include mq($from: tablet) {
-    margin-top: -54px !important;
-    outline: none;
+
     }
 }
 
@@ -10,36 +21,44 @@
 /* margin-bottom: 25%; */
     @include mq($from: tablet, $until: desktop) {
     //   margin-bottom: 12%;
+    top: -71px;
     }
     @include mq($from: desktop, $until: wide) {
         //margin-bottom: 14%;
+        margin-right: -13px;
+        top: -71px;
     }
     @include mq($from: wide) {
     margin-right: -13px;
+    top: -71px;
     }
     
 }
 
 .field {
     position: absolute;
-    margin-left: -316px;
-    //top: 79px;
+    margin-left: -317px;
     z-index: 3;
+    top: -202px;
+  
 
     @include mq($from: tablet, $until: desktop) {
         margin-left: -374px;
+        top: -14px;
         }
     @include mq($from: desktop, $until: wide) {
         margin-left: -374px;
+        top: -14px;
     }
     @include mq($from: wide) {
-        
+        margin-left: -370px;
+        top: -14px;
         }
     .field__wrapper {
-        background-image: url("../assets/fieldFolder.png") !important;
+        background-image: url("../assets/fieldFolder@2x.png") !important;
         background-repeat: no-repeat !important;
         width: 332px;
-        height: 852px;
+        height: 1033px;
         padding-bottom: -5px;
         transition: 0.5s all ease;
         @include mq($from: tablet, $until: desktop) {
@@ -87,20 +106,29 @@
     font-size: 19px;
     position: absolute;
     margin-top: 2px;
-    height: 340px;
+    height: 724px;
     margin-left: -375px;
-    height: 515px;
     z-index: 1;
-    @include mq($from: tablet) {
-        font-family: 'Caveat', cursive;
-        font-size: 22px;
-        position: absolute;
-        margin-top: 2px;
-        height: 340px;
-        margin-left: -375px;
-        height: 515px;
-        z-index: 1;
-    }
+        @include mq($from: tablet, $until: desktop) {
+        //   margin-bottom: 12%;
+        top: -71px;
+        }
+        @include mq($from: desktop, $until: wide) {
+            //margin-bottom: 14%;
+            margin-right: -13px;
+            top: -71px;
+        }
+        @include mq($from: wide) {
+            font-family: 'Caveat', cursive;
+            font-size: 22px;
+            position: absolute;
+            margin-top: 2px;
+            height: 340px;
+            margin-left: -375px;
+            height: 515px;
+            z-index: 1;
+        }
+
 }
 
 .options__container {
@@ -128,7 +156,8 @@
     flex-direction: column;
     justify-content: center;
     width: 39%;
-    padding-top: 272px;
+    padding-top: 193px;
+    padding-left: 62px;
     margin: auto;
     @include mq($from: tablet) {
         display: flex;
@@ -214,12 +243,16 @@
 
 .fb_post_container {
     position: absolute;
-    top: 517px;
+    top: 399px;
     right: -166px;
     -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
-    height: 38%;
-    width: 350px;
+    height: 50%;
+    width: 291px;
+    /* margin-bottom: 25%; */
+
+ 
+    background: white;
     @include mq($from: tablet) {
         zoom: 0.8; 
     }
@@ -280,11 +313,25 @@
 .field__wrapper-closed .field__tab-click {
     margin-left: -2px;
     position: absolute;
-    top: 517px;
+    top: 660px;
     padding-left: 91px;
-    height: 38%;
+    height: 31%;
     width: -10px;
-    @include mq($from: tablet) {
+    @include mq($from: tablet, $until: desktop) {
+        margin-right: -250px;
+        top: 636px;
+       }
+    @include mq($from: desktop, $until: wide) {
+
+        margin-left: -2px;
+        position: absolute;
+        top: 666px;
+        padding-left: 91px;
+        height: 22%;
+        width: -10px;
+
+        }
+    @include mq($from: wide) {
         margin-left: -2px;
         position: absolute;
         top: 666px;
@@ -292,13 +339,15 @@
         height: 22%;
         width: -10px;
     }
+
+
 }
 
 
 .fb_post_container.fb_post_container__opened {
     transition: 0.5s all ease;
     margin-left: -373px;
-
+    right: 107px;
 
 
     @include mq($from: tablet, $until: desktop) {
@@ -361,20 +410,31 @@
 }
 
 .options__container:focus {
+    transition: 2.15s all ease;
     @include mq($from: tablet) {
         padding-left: 299px;
         transition: 2.15s all ease;
     }
 }
 
+//  this is what brings options tab out when clicked
+
 .options.leaflet-control.onTop {
-    @include mq($from: tablet) {
+    margin-left: -604px;
+    @include mq($from: tablet, $until: desktop) {
         margin-left: -677px;
     }
+    @include mq($from: desktop, $until: wide) {
+        margin-left: -677px;
+    }
+    @include mq($from: wide) {
+        margin-left: -677px;
+    }
+
 }
 
 .options.leaflet-control {
-    
+    transition: 0.5s all ease;
     @include mq($from: tablet) {
         transition: 0.5s all ease;
     }

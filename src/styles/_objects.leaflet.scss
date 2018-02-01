@@ -8,7 +8,7 @@ div.leaflet-top.leaflet-left {
 }
 
 .leaflet-left .leaflet-control {
-  margin-left: 108px;
+
 }
 @include mq($from: tablet) {
   .leaflet-left .leaflet-control {
@@ -49,22 +49,38 @@ div.leaflet-top.leaflet-left {
  // opacity: 0.1 !important;
 }
 
-.logo__control {
+.leaflet-bottom.leaflet-left {
   background-image: url("../assets/logo.png") !important;
   background-repeat: no-repeat !important;
-  width: 238px;
-  height: 61px;
-}
+  background-size: contain;
+  width: 138px;
+  height: 50px;
+  margin-left: 28px;
 
-@include mq($from: tablet) {
-  .logo__control {
+  @include mq($from: tablet, $until: desktop) {
     background-image: url("../assets/logo.png") !important;
     background-repeat: no-repeat !important;
     background-size: contain;
-    width: 138px;
-    height: 61px;
+    width: 238px;
+    height: 80px;
+    }
+  @include mq($from: desktop, $until: wide) {
+    background-image: url("../assets/logo.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain;
+    width: 238px;
+    height: 80px;
+  }
+  @include mq($from: wide) {
+    background-image: url("../assets/logo.png") !important;
+    background-repeat: no-repeat !important;
+    background-size: contain;
+    width: 238px;
+    height: 80px;
+    }
+
 }
-}
+
 
 .hide-map {
   opacity: 0.2;
@@ -85,7 +101,17 @@ div.leaflet-top.leaflet-left {
 .btn-block + .btn-block {
   margin-top: 5px;
 }
-
+.btn-social>:first-child {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 32px;
+  line-height: 34px;
+  font-size: 1.6em;
+  text-align: center;
+  border-right: 1px solid rgba(0,0,0,0.2);
+}
 .btn-facebook {
   color: #fff;
   background-color: #3b5998;
@@ -106,10 +132,26 @@ div.leaflet-top.leaflet-left {
   width: 100%;
 }
 
+.fa-facebook-f:before, .fa-facebook:before {
+  content: "\f09a";
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 .btn {
+  display: flex;
+  font-family: sans-serif;
+  justify-content: space-between;
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
+  height: 26px;
   font-size: 14px;
   font-weight: normal;
   line-height: 1.42857143;
