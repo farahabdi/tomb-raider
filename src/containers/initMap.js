@@ -2,7 +2,7 @@
 
 import { firebaseAuth } from '../utils/config'
 import './searchBox'
-import mapJPG from '../assets/maps.jpg'
+// import mapJPG from '../assets/maps.jpg'
 import { fetchFacebookPosts } from '../api/index'
 
 export default function initApp () {
@@ -26,7 +26,9 @@ export default function initApp () {
     // dimensions of the image
     var w = 3860,
         h = 2180,
-        url = mapJPG;
+        url = "images/maps.jpg"
+        // url = mapJPG;
+
     
     // calculate the edges of the image, in coordinate space
     var southWest = map.unproject([0, h], map.getMaxZoom()-1);

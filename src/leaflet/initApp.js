@@ -1,8 +1,7 @@
 /* eslint-disable */
-import mapJPG from '../assets/maps.jpg';
+// import mapJPG from '../assets/maps.jpg';
 import searchControl from './searchControl';
 import tabsControl from './tabsControl';
-
 
 export default function initApp() {
   const map = L.map('map', {
@@ -17,7 +16,8 @@ export default function initApp() {
   window.map = map;
 
   // dimensions of the image
-  const url = mapJPG;
+  // const url = mapJPG;
+  const url = "images/maps.jpg"
 
   const southWest = { lat: -1400, lng: 10 };
   const northEast = { lat: -10, lng: 2600 };
