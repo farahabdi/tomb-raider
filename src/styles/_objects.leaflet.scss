@@ -10,7 +10,7 @@ div.leaflet-top.leaflet-left {
 .leaflet-left .leaflet-control {
   margin-left: 108px;
 }
-@include media-query(palm) {
+@include mq($from: tablet) {
   .leaflet-left .leaflet-control {
     margin-left: 0px;
   }
@@ -21,9 +21,6 @@ div.leaflet-top.leaflet-left {
 }
 
 
-.leaflet-right .leaflet-control {
-  margin-right: -305px !important;
-}
 
 
 .leaflet-container {
@@ -59,7 +56,7 @@ div.leaflet-top.leaflet-left {
   height: 61px;
 }
 
-@include media-query(palm) {
+@include mq($from: tablet) {
   .logo__control {
     background-image: url("../assets/logo.png") !important;
     background-repeat: no-repeat !important;
@@ -80,4 +77,67 @@ div.leaflet-top.leaflet-left {
 .markArrow {
   background-image: url("../assets/markArrow.png") !important;
   background-repeat: no-repeat !important;
+}
+
+
+//
+
+.btn-block + .btn-block {
+  margin-top: 5px;
+}
+
+.btn-facebook {
+  color: #fff;
+  background-color: #3b5998;
+  border-color: rgba(0,0,0,0.2);
+}
+
+.btn-social {
+  position: relative;
+  padding-left: 44px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.btn-facebook:hover {
+  color: #fff;
+  background-color: #2d4373;
+  border-color: rgba(0,0,0,0.2);
+}
+.fb-button {
+  width: 328px;
 }

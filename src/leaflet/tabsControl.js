@@ -66,17 +66,21 @@ export default function tabsControl() {
 
       function showfield(event){
 
+        let fbContainerElement = document.getElementsByClassName('fb_post_container')[0]
+
         debugger
         //toggle the css class name manually to open or close the tab
         if(self.fieldWrapper.className === 'field__wrapper field__wrapper-open'){
           self.fieldWrapper.className = 'field__wrapper field__wrapper-closed'
           fbBox.className = 'fb_post_container fb_post_container__closed'
+          fbContainerElement.className = 'fb_post_container fb_post_container--open'
           map.scrollWheelZoom.enable();
           map.dragging.enable();
           event.stopPropagation()
         } else {
           self.fieldWrapper.className = 'field__wrapper field__wrapper-open'
           fbBox.className = 'fb_post_container fb_post_container__opened onTop'
+          fbContainerElement.className = 'fb_post_container'
           map.scrollWheelZoom.disable();
           map.dragging.disable();
         }
@@ -86,6 +90,8 @@ export default function tabsControl() {
         debugger
 
         let element = document.getElementsByClassName('field__wrapper')[0]
+
+ 
 
         if (element.className == "field__wrapper field__wrapper-open") {
           event.stopPropagation()

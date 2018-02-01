@@ -6,6 +6,20 @@
     }
 }
 
+.leaflet-right {
+/* margin-bottom: 25%; */
+    @include mq($from: tablet, $until: desktop) {
+    //   margin-bottom: 12%;
+    }
+    @include mq($from: desktop, $until: wide) {
+        //margin-bottom: 14%;
+    }
+    @include mq($from: wide) {
+    margin-right: -13px;
+    }
+    
+}
+
 .field {
     position: absolute;
     margin-left: -374px;
@@ -16,23 +30,48 @@
         z-index: 3;
     }
     .field__wrapper {
-        background-image: url("../assets/fieldNotes.png") !important;
+        background-image: url("../assets/fieldFolder.png") !important;
         background-repeat: no-repeat !important;
         width: 332px;
         height: 852px;
         padding-bottom: -5px;
         transition: 0.5s all ease;
-        @include mq($from: tablet) {
-        background-image: url("../assets/fieldnotes@desktop.png") !important;
-        background-repeat: no-repeat !important;
-        width: 355px;
-            height: 968px;
-        padding-bottom: -5px;
-        // padding-left: 48px;
-        // padding-top: 51px;
-        //padding-right: 49px;
-        transition: 0.5s all ease;
-        outline: none;
+        @include mq($from: tablet, $until: desktop) {
+            background-image: url("../assets/fieldFolder@2x.png") !important;
+            background-repeat: no-repeat !important;
+            width: 600px;
+                height: 968px;
+            padding-bottom: -5px;
+            // padding-left: 48px;
+            // padding-top: 51px;
+            //padding-right: 49px;
+            transition: 0.5s all ease;
+            outline: none;
+        }
+        @include mq($from: desktop, $until: wide) {
+            background-image: url("../assets/fieldFolder@2x.png") !important;
+            background-repeat: no-repeat !important;
+            width: 600px;
+                height: 968px;
+            padding-bottom: -5px;
+            // padding-left: 48px;
+            // padding-top: 51px;
+            //padding-right: 49px;
+            transition: 0.5s all ease;
+            outline: none;
+        }
+
+        @include mq($from: wide) {
+            background-image: url("../assets/fieldFolder@2x.png") !important;
+            background-repeat: no-repeat !important;
+            width: 640px;
+                height: 968px;
+            padding-bottom: -5px;
+            // padding-left: 48px;
+            // padding-top: 51px;
+            //padding-right: 49px;
+            transition: 0.5s all ease;
+            outline: none;
         }
     }
 }
@@ -146,6 +185,8 @@
     }
 }
 
+
+
 .field__wrapper-close {
     padding-left: 0px;
     transition: 0.5s all ease;
@@ -163,14 +204,29 @@
 .fb_post_container {
     position: absolute;
     top: 517px;
-    padding-left: 170px;
+    right: -22px;
     -webkit-overflow-scrolling: touch;
-    overflow-y: scroll;
     overflow-x: hidden;
     height: 38%;
     width: 350px;
     @include mq($from: tablet) {
         zoom: 0.8; 
+    }
+    /* margin-bottom: 25%; */
+    @include mq($from: tablet, $until: desktop) {
+
+    }
+    @include mq($from: desktop, $until: wide) {
+
+    }
+    @include mq($from: wide) {
+        // padding-left: 473px;
+    }
+
+    &.fb_post_container--open {
+        padding: 20px;
+        margin-right: 415px;
+
     }
 }
 
@@ -188,13 +244,11 @@
     padding-left: 128px;
     height: 38%;
     @include mq($from: tablet) {
-        margin-left: -330px;
+        margin-left: -398px;
         position: absolute;
-        top: 517px;
+        top: 610px;
         padding-left: 98px;
-    
         height: 38%;
-        width: -10px;
     }
 }
 
@@ -231,7 +285,9 @@
         height: 80%;
         width: 531px;
         /* padding-right: 5px; */
-        right: 157px;
+        right: 600px;
+        padding: 33px;
+        background: white;
     }
 }
 
@@ -287,5 +343,14 @@
 iframe {
     @include mq($from: tablet) {
         width: 514px !important;
+    }
+}
+
+
+
+
+.leaflet-right .leaflet-control {
+    @include mq($from: desktop, $until: wide) {
+    margin-right: -71px !important;
     }
 }
