@@ -73,7 +73,7 @@ export default function tabsControl() {
         if(self.fieldWrapper.className === 'field__wrapper field__wrapper-open'){
           self.fieldWrapper.className = 'field__wrapper field__wrapper-closed'
           fbBox.className = 'fb_post_container fb_post_container__closed'
-          fbContainerElement.className = 'fb_post_container fb_post_container--open'
+          fbContainerElement.className = 'fb_post_container fb_post_container--closed'
           map.scrollWheelZoom.enable();
           map.dragging.enable();
           event.stopPropagation()

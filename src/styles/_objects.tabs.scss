@@ -22,13 +22,19 @@
 
 .field {
     position: absolute;
-    margin-left: -374px;
+    margin-left: -316px;
+    //top: 79px;
     z-index: 3;
-    @include mq($from: tablet) {
-        position: absolute;
+
+    @include mq($from: tablet, $until: desktop) {
         margin-left: -374px;
-        z-index: 3;
+        }
+    @include mq($from: desktop, $until: wide) {
+        margin-left: -374px;
     }
+    @include mq($from: wide) {
+        
+        }
     .field__wrapper {
         background-image: url("../assets/fieldFolder.png") !important;
         background-repeat: no-repeat !important;
@@ -176,13 +182,18 @@
     transition: 0.5s all ease;
     margin-left: -303px;
 
-    @include mq($from: tablet) {
 
-        padding-left: 399px;
-        transition: 0.5s all ease;
-        margin-left: -656px;
-
-    }
+        @include mq($from: tablet, $until: desktop) {
+        //   margin-bottom: 12%;
+        }
+        @include mq($from: desktop, $until: wide) {
+            //margin-bottom: 14%;
+        }
+        @include mq($from: wide) {
+            padding-left: 399px;
+            transition: 0.5s all ease;
+            margin-left: -656px;
+        }
 }
 
 
@@ -204,7 +215,7 @@
 .fb_post_container {
     position: absolute;
     top: 517px;
-    right: -22px;
+    right: -166px;
     -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
     height: 38%;
@@ -217,7 +228,7 @@
 
     }
     @include mq($from: desktop, $until: wide) {
-
+       // right: -80px;
     }
     @include mq($from: wide) {
         // padding-left: 473px;
@@ -228,6 +239,7 @@
         padding-left: 0px;
         padding-top: 0px;
         margin-right: 415px;
+        
 
     }
 }
@@ -239,13 +251,24 @@
     margin-left: 0px;
 }
 
+
+
+
 .field__wrapper-open .field__tab-click {
     margin-left: -266px;
     position: absolute;
     top: 517px;
     padding-left: 128px;
     height: 38%;
-    @include mq($from: tablet) {
+
+    @include mq($from: tablet, $until: desktop) {
+
+    }
+    @include mq($from: desktop, $until: wide) {
+        margin-left: -190px;
+        
+    }
+    @include mq($from: wide) {
         margin-left: -398px;
         position: absolute;
         top: 610px;
@@ -275,7 +298,30 @@
 .fb_post_container.fb_post_container__opened {
     transition: 0.5s all ease;
     margin-left: -373px;
-    @include mq($from: tablet) {
+
+
+
+    @include mq($from: tablet, $until: desktop) {
+        right: 515px;
+    }
+    @include mq($from: desktop, $until: wide) {
+        transition: 0.5s all ease;
+        margin-left: -361px;
+        position: absolute;
+        top: 141px;
+        /* padding-left: 170px; */
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 80%;
+        width: 531px;
+        /* padding-right: 5px; */
+        right: 253px;
+        padding: 33px;
+        background: white;
+
+    }
+    @include mq($from: wide) {
         transition: 0.5s all ease;
         margin-left: -361px;
         position: absolute;
@@ -350,9 +396,18 @@ iframe {
 
 
 
-
 .leaflet-right .leaflet-control {
+    /* margin-bottom: 25%; */
+    margin-right: -234px;
+    @include mq($from: tablet, $until: desktop) {
+         margin-right: -250px;
+        }
     @include mq($from: desktop, $until: wide) {
-    margin-right: -71px !important;
+
+        margin-right: -71px !important;
+
+        }
+    @include mq($from: wide) {
+        margin-right: -71px !important;
     }
 }
