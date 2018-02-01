@@ -11,8 +11,7 @@ class App extends Component {
     const { authenticated } = this.props;
     return (
       <div>
-        { }
-      { authenticated ? <AuthenticatedPage /> : <PublicPage /> }
+       { authenticated ? <AuthenticatedPage /> : <PublicPage /> }
       </div>
     );
   }

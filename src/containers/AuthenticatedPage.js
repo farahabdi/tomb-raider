@@ -2,17 +2,14 @@
 
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { authActions } from '../actions';
-import initApp from './initMap'
-import initSearch from './searchBox'
-import { fetchChallenges } from '../api/index'
-
-
+import { initialiseApp } from '../actions/authActions';
+import { initApp, initPanel, initUserMap } from '../leaflet';
 import { firebase } from '@firebase/app';
 import { firebaseAuth } from '../utils/config';
-import { initialiseApp } from '../actions/authActions';
-import { initChallenges } from './initChallenges'
+import { connect } from 'react-redux';
+import { authActions } from '../actions';
+import { fetchChallenges } from '../api/index'
+
 
 class AuthenticatedPage extends Component {
 
@@ -22,24 +19,11 @@ class AuthenticatedPage extends Component {
 
   componentDidMount() { 
     initApp()
-   
-    initSearch()
-    initChallenges()
-  
-  }
-
-  getContainerStyle(ratio) {
-    return {
-      paddingTop: ratio.toFixed(2) + '%',
-      overflow: 'hidden',
-      position: 'relative'
-    }
+    initPanel()
+    initUserMap()
   }
 
   render() {
-    const { scale, handleZoomChange } = this.props;
-  
-
     return (
      <div id="map" className="map"></div>
     );

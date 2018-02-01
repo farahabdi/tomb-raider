@@ -67,11 +67,14 @@ $size-xlarge: round($inuit-base-spacing-unit * 30) !default; // 720px
 $size-xxlarge: round($inuit-base-spacing-unit * 40) !default; // 960px
 
 $center-column-width: round($inuit-base-spacing-unit * 48) !default; // 1152px;
+
+$break-mobile-max-width: 44.93.9375em !default;
 $break-palm-max-width: 44.9375em !default;
 $break-lap-and-up-min-width: 45em !default;
 $break-portable-max-width: 63.9375em !default;
 
 $breakpoints: (
+    "mobile"        "screen and (max-width: #{$break-mobile-max-width})",
     "palm"          "screen and (max-width: #{$break-palm-max-width})",
     "lap-and-up"    "screen and (min-width: #{$break-lap-and-up-min-width})",
     "portable"      "screen and (max-width: #{$break-portable-max-width})"
@@ -128,3 +131,12 @@ $hover-text-color: #000 !default;
 $placeholder-text-color: #aaa !default;
 $border-color: rgba(0, 0, 0, 0.15) !default;
 $heading-text-color: $text-color !default;
+
+input, textarea {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+  }
+  

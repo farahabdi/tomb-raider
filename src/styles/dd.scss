@@ -1,0 +1,277 @@
+.landing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url("../assets/landing@2x.jpg");
+    background-repeat: no-repeat;
+    overflow-y: hidden;
+    height: 3006px;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: center;
+
+    .logo__image {
+        background-image: url("../assets/TombRaider_logo_mobile.png");
+        background-repeat: no-repeat;
+        width: 249px;
+        height: 66px;
+        margin-top: 17px;
+        //height: 40px;
+        //width: 40px;
+    }
+
+
+    @include media-query(lap-and-up) {
+        .logo__image {
+            background-image: url("../assets/logo@desktop.png");
+            background-repeat: no-repeat;
+            width: 328px;
+            height: 82px;
+            margin-top: 17px;
+            //height: 40px;
+            //width: 40px;
+        }
+    }
+}
+
+
+
+.notepad-1 {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 332px;
+    /* margin-left: -100px; */
+    /* margin-left: 1132px; */
+    margin-right: 133px;
+
+
+}
+.notepad-2 {
+    display: flex;
+    justify-content: center;
+    margin-left: -289px;
+    margin-top: 157px;
+
+}
+
+.notepad-3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    margin-left: 338px;
+}
+
+ 
+.notepad-4 {
+    display: flex;
+    justify-content: center;
+    margin-left: 510px;
+
+}
+
+.notepad-5 {
+    display: flex;
+    justify-content: center;
+    margin-right: 401px;
+    margin-top: 101px;
+
+}
+
+.notepad-6 {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 15%;
+    margin-top: 6.5%;
+
+}
+
+
+.notepad__container {
+    font-family: 'Caveat', cursive;
+    .notepad__wrapper {
+        height: 205px;
+        padding-top: 33px;
+        &.notepad__wrapper-1 {
+            width: 285px;
+            margin-right: 91px;
+            background-image: url("../assets/postit_1.png");
+            background-repeat: no-repeat;
+            transform: rotate(13deg);
+        }
+        &.notepad__wrapper-2 {
+            width: 285px;
+            transform: rotate(-18deg);
+            background-image: url("../assets/postit_2.png");
+            background-repeat: no-repeat;
+        }
+        &.notepad__wrapper-3 {
+            width: 227px;
+            background-image: url("../assets/postit_3.png");
+            background-repeat: no-repeat;
+        }
+        &.notepad__wrapper-4 {
+            width: 285px;
+          //  padding-top: 17px !important;
+            background-image: url("../assets/postit_5.png");
+            background-repeat: no-repeat;
+        }
+        &.notepad__wrapper-5 {
+            width: 285px;
+            background-image: url("../assets/postit_5.png");
+            background-repeat: no-repeat;
+        }
+        &.notepad__wrapper-6 {
+            width: 242px;
+            background-image: url("../assets/postit_7.png");
+            background-repeat: no-repeat;
+        }
+        .notepad__text {
+            width: 91%;
+            /* margin-top: 7px; */
+            transform: rotate(-4deg);
+            margin-left: 20px;
+            font-size: 24px;
+            &.notepad__text-6 {
+                width: 81%;
+                margin-top: -16px;
+            }
+        }
+    
+    }
+
+}
+
+.terms-and-conditions {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    margin-top: -55px;
+    /* padding-top: 1225px; */
+    display: flex;
+    /* margin-top: 4px; */
+    flex-direction: column;
+    /* margin-bottom: 56px; */
+    justify-content: center;
+    margin-left: -27px;
+    margin-bottom: 22px;
+    .terms-and-conditions__container {
+        display: flex;
+        justify-content: center;
+        .terms-and-conditions__wrapper {
+            background-image: url("../assets/tc_bar.png");
+            background-repeat: no-repeat;
+            width: 367px;
+            height: 63px;
+            .terms-and-conditions__content {
+                display: flex;
+                justify-content: space-around;
+                margin-top: 23px;
+                margin-right: 26px;
+                .terms-and-conditions__checkbox {
+                    margin-left: 35px;
+                    margin-top: -3px;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+/* Facebook button */
+
+.fb-login {
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+.fb-login__container {
+    height: 40px;
+    border-radius: 4px;
+    max-width: 400px;
+    min-width: initial;
+    background-color: #4267b2;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    .fb-login--disabled & {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+
+    >table {
+        max-width: 272px;
+        min-width: initial;
+        width: auto;
+        height: 40px;
+        table-layout: fixed;
+        border: 0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        color: #fff;
+        tbody {
+            tr {
+                .fb-login__icon {
+                    width: 40px;
+                    height: 40px;
+                    padding-left: 0;
+                    padding-bottom: 0;
+                    padding-top: 0;
+                    >div {
+                        white-space: nowrap;
+                        text-align: left;
+                        span {
+                            height: 24px;
+                            margin: 8px;
+                            float: left;
+                            >svg {
+                                height: 24px;
+                                width: 24px;
+                            }
+                            >img {
+                                display: none;
+                                border: 0;
+                                height: 24px;
+                                width: 24px;
+                            }
+                        }
+                    }
+                }
+
+                .fb-login__button {
+                    padding-right: 0;
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    >button {
+                        margin: 0 24px 0 12px;
+                        font-size: 16px;
+                        border: none;
+                        font-family: Helvetica, Arial, sans-serif;
+                        letter-spacing: .25px;
+                        overflow: hidden;
+                        text-align: center;
+                        text-overflow: clip;
+                        white-space: nowrap;
+                        background-color: #4267b2;
+                        color: white;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+// Mobile
+@include media-query(palm) {
+
+  }

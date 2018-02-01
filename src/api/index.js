@@ -26,14 +26,6 @@ export async function fetchChallenges() {
 }
 
 
-export async function fetchFacebookPosts() {
-  return db.collection('content')
-      .doc('facebook')
-      .get()
-      .then((result) => {
-          return result.data().posts;
-      })
-}
 
 export async function fetchCompletedChallenges(text) {
   const user = firebaseAuth.currentUser;
@@ -54,6 +46,15 @@ export async function fetchCompletedChallenges(text) {
         }
         
         return challenges
+      })
+}
+
+export async function fetchFacebookPosts() {
+  return db.collection('content')
+      .doc('facebook')
+      .get()
+      .then((result) => {
+          return result.data().posts;
       })
 }
 
