@@ -171,7 +171,7 @@ div.leaflet-top.leaflet-left {
 }
 
 a {
-  color: #337ab7;
+  color: black;
   text-decoration: none;
 }
 
@@ -182,4 +182,8 @@ a {
 }
 .fb-button {
   width: 328px;
+}
+
+.leaflet-container a {
+  color: black;
 }

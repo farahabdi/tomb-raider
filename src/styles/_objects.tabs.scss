@@ -170,6 +170,7 @@
     .cross__wrapper {
         display: flex;
         justify-content: flex-end;
+
         @include mq($from: tablet) {
             display: flex;
             justify-content: flex-end;
@@ -183,6 +184,7 @@
             justify-content: flex-end;
             height: 20px;
             background-repeat: no-repeat !important;
+            cursor: pointer;
             @include mq($from: tablet) {
                 background-image: url("../assets/cross.png") !important;
                 background-repeat: no-repeat !important;
@@ -196,14 +198,69 @@
             }
         }
     }
+    .instructions__header {
+
+        @include mq($from: tablet, $until: desktop) {
+            //   margin-bottom: 12%;
+            top: -71px;
+            }
+        @include mq($from: desktop, $until: wide) {
+            //margin-bottom: 14%;
+            margin-right: -13px;
+            top: -71px;
+        }
+        @include mq($from: wide) {
+            font-size: 30px;
+            margin-left: 22px;
+        }
+
+    }
+
+    .instructions__message {
+        margin-top: 12px;
+        cursor: pointer;
+        @include mq($from: tablet, $until: desktop) {
+            //   margin-bottom: 12%;
+            top: -71px;
+            }
+        @include mq($from: desktop, $until: wide) {
+            //margin-bottom: 14%;
+            margin-right: -13px;
+            top: -71px;
+        }
+        @include mq($from: wide) {
+
+ 
+        }
+
+    }
+
 
     .instructions__signout {
         margin-top: 12px;
+        cursor: pointer;
+        @include mq($from: tablet, $until: desktop) {
+
+        }
+        @include mq($from: desktop, $until: wide) {
+        }
+        @include mq($from: wide) {
+        }
     }
     .instructions__terms {
         margin-top: 12px;
+        @include mq($from: tablet, $until: desktop) {
+
+        }
+        @include mq($from: desktop, $until: wide) {
+        }
+        @include mq($from: wide) {
+        }
     }
 }
+
+
+
 
 .field__wrapper-open {
 
