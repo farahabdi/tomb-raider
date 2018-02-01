@@ -26,12 +26,26 @@ export default function initApp() {
   map.on('click', (e) => {
     console.log(`Lat, Lon : ${e.latlng.lat}, ${e.latlng.lng}`);
   });
-  // add the image overlay,
-  // so that it covers the entire map
-  L.imageOverlay(url, bounds).addTo(map);
 
+  var preloadImg = new Image();
+  preloadImg.onload = () => {
+    let loaderEl = document.getElementById('animation_container');
+    if (loaderEl && loaderEl.parentNode) {
+      loaderEl.parentNode.removeChild(loaderEl);
+    }
+    // add the image overlay, 
+    // so that it covers the entire map
+    L.imageOverlay(url, bounds).addTo(map);
+  }
+  preloadImg.src = url;
   searchControl();
   tabsControl();
+  
+  // add the image overlay,
+  // so that it covers the entire map
+  // L.imageOverlay(url, bounds).addTo(map);
+  // searchControl();
+  // tabsControl();
 
   // tell leaflet that the map is exactly as big as the image
   map.setMaxBounds(bounds);

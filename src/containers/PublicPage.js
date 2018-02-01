@@ -12,6 +12,16 @@ class PublicPage extends Component {
     this.state = {
       isDisabled: true
     }
+
+    var preloadImg = new Image();
+    preloadImg.onload = () => {
+      let loaderEl = document.getElementById('animation_container');
+      if (loaderEl && loaderEl.parentNode) {
+        loaderEl.parentNode.removeChild(loaderEl);
+      }
+    }
+    preloadImg.src = "images/landing@2x.jpg";
+    console.error(preloadImg.src)    
   }
 
   toggle() {
@@ -111,19 +121,15 @@ class PublicPage extends Component {
               
               <div className="fb-button__container">
                 <div className="fb-button">
-                  <a onClick={isDisabled ? null : signInWithFacebook} className="btn btn-block btn-social btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social', 'click', 'btn-facebook']);">
-                  <span class="fa fa-facebook"></span> Sign in with Facebook
+                  {/* <a onClick={isDisabled ? null : signInWithFacebook} className="btn btn-block btn-social btn-facebook" onclick="_gaq.push(['_trackEvent', 'btn-social', 'click', 'btn-facebook']);"> */}
+                  <a onClick={isDisabled ? null : signInWithFacebook} className="btn btn-block btn-social btn-facebook">
+                  <span className="fa fa-facebook"></span> Sign in with Facebook
                   </a>
                 </div>
               </div>
 
             </div>
-          </footer>
-
-
-
-         
-
+          </footer>         
         </div>
       </main>
     );

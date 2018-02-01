@@ -6,6 +6,7 @@ import './searchBox'
 import { fetchFacebookPosts } from '../api/index'
 
 export default function initApp () {
+  console.error('INIT APP')
 
     var img = [
       3840,  // original width of image
@@ -51,8 +52,8 @@ export default function initApp () {
     });
 
     var preloadImg = new Image();
-    
     preloadImg.onload = () => {
+      console.error('LOADED')
       let loaderEl = document.getElementById('animation_container');
       if (loaderEl && loaderEl.parentNode) {
         loaderEl.parentNode.removeChild(loaderEl);
@@ -63,9 +64,10 @@ export default function initApp () {
       L.control.search().addTo(map)
       L.control.field().addTo(map)
     }
-
     preloadImg.src = mapJPG;
-    
+    console.error(preloadImg.src)
+
+
     // Search Control
     L.Control.Search = L.Control.extend({
       options: {
