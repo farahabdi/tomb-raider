@@ -38,11 +38,11 @@ export default function searchControl() {
 
       /* Challenge container */
       this.challengeWrapper = L.DomUtil.create('div', 'challenge__wrapper', this.challenges);
-      this.challengeWrapper1 = L.DomUtil.create('img', 'challenge__icon  challenge__1', this.challengeWrapper);
-      this.challengeWrapper2 = L.DomUtil.create('img', 'challenge__icon  challenge__2', this.challengeWrapper);
-      this.challengeWrapper3 = L.DomUtil.create('img', 'challenge__icon  challenge__3 dsd', this.challengeWrapper);
-      this.challengeWrapper4 = L.DomUtil.create('img', 'challenge__icon  challenge__4', this.challengeWrapper);
-      this.challengeWrapper5 = L.DomUtil.create('img', 'challenge__icon  challenge__5', this.challengeWrapper);
+      this.challengeWrapper1 = L.DomUtil.create('div', 'challenge__icon  challenge__1', this.challengeWrapper);
+      this.challengeWrapper2 = L.DomUtil.create('div', 'challenge__icon  challenge__2', this.challengeWrapper);
+      this.challengeWrapper3 = L.DomUtil.create('div', 'challenge__icon  challenge__3 dsd', this.challengeWrapper);
+      this.challengeWrapper4 = L.DomUtil.create('div', 'challenge__icon  challenge__4', this.challengeWrapper);
+      this.challengeWrapper5 = L.DomUtil.create('div', 'challenge__icon  challenge__5', this.challengeWrapper);
 
 
       function logout() {
