@@ -29,8 +29,8 @@
         top: -71px;
     }
     @include mq($from: wide) {
-    margin-right: -13px;
-    top: -71px;
+        margin-right: -13px;
+        top: 108px;
     }
     
 }
@@ -57,8 +57,9 @@
     .field__wrapper {
         background-image: url("../assets/fieldFolder@2x.png") !important;
         background-repeat: no-repeat !important;
-        width: 332px;
-        height: 1033px;
+        background-size: contain;
+        width: 953px;
+        height: 1982px;
         padding-bottom: -5px;
         transition: 0.5s all ease;
         @include mq($from: tablet, $until: desktop) {
@@ -89,7 +90,7 @@
         @include mq($from: wide) {
             background-image: url("../assets/fieldFolder@2x.png") !important;
             background-repeat: no-repeat !important;
-            width: 640px;
+            
                 height: 968px;
             padding-bottom: -5px;
             // padding-left: 48px;
@@ -98,10 +99,32 @@
             transition: 0.5s all ease;
             outline: none;
         }
+
+        &.field__wrapper-open {
+
+            padding-left: 189px;
+            transition: 0.5s all ease;
+            margin-left: -303px;
+        
+        
+                @include mq($from: tablet, $until: desktop) {
+                //   margin-bottom: 12%;
+                }
+                @include mq($from: desktop, $until: wide) {
+                    //margin-bottom: 14%;
+                }
+                @include mq($from: wide) {
+                    padding-left: 399px;
+                    transition: 0.5s all ease;
+                    margin-left: -656px;
+                    height: 893px;
+                    
+                }
+        }
     }
 }
 
-.options {
+.options.leaflet-control {
     font-family: 'Caveat', cursive;
     font-size: 19px;
     position: absolute;
@@ -122,14 +145,26 @@
             font-family: 'Caveat', cursive;
             font-size: 22px;
             position: absolute;
-            margin-top: 2px;
+            margin-top: -30px !important;
             height: 340px;
-            margin-left: -375px;
+            margin-left: -386px;
             height: 515px;
             z-index: 1;
         }
+        &.onTop {
+            @include mq($from: tablet, $until: desktop) {
+
+            }
+            @include mq($from: desktop, $until: wide) {
+            }
+            @include mq($from: wide) {
+                margin-top: -15px !important;
+            }
+        }
 
 }
+
+
 
 .options__container {
     background-image: url("../assets/options.png") !important;
@@ -262,25 +297,7 @@
 
 
 
-.field__wrapper-open {
 
-    padding-left: 189px;
-    transition: 0.5s all ease;
-    margin-left: -303px;
-
-
-        @include mq($from: tablet, $until: desktop) {
-        //   margin-bottom: 12%;
-        }
-        @include mq($from: desktop, $until: wide) {
-            //margin-bottom: 14%;
-        }
-        @include mq($from: wide) {
-            padding-left: 399px;
-            transition: 0.5s all ease;
-            margin-left: -656px;
-        }
-}
 
 
 

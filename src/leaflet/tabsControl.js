@@ -21,7 +21,7 @@ export default function tabsControl() {
       this.field = L.DomUtil.create('div', 'field', tabContainer);
 
       /* Options tab */
-      this.optionsElement = L.DomUtil.create('div', 'options', tabContainer);
+      this.optionsElement = L.DomUtil.create('div', 'options leaflet-control', tabContainer);
       this.optionsContainerElement= L.DomUtil.create('div', 'options__container options__container_closed', this.optionsElement );
 
       /* Text in options Tab */
@@ -110,11 +110,11 @@ export default function tabsControl() {
           let instructionsElement = document.getElementsByClassName('instructions__message')[0]
           let termsAndCondotionsElement = document.getElementsByClassName('instructions__terms')[0]
 
-          debugger
+       
 
           signOutElement.addEventListener("click", logout, false);
           instructionsElement.addEventListener("click", logout, false); 
-          termsAndCondotionsElement.addEventListener("click", showOptionsTab, false); 
+          //termsAndCondotionsElement.addEventListener("click", showOptionsTab, false); 
 
 
         if (element.className == "field__wrapper field__wrapper-open") {
