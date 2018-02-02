@@ -102,11 +102,14 @@ export default function initSearch() {
       var marker = L.marker(currentViewCenter).addTo(window.map);
 
       const markup = await showAlreadyCompletedPopUp()
-      let popup = marker.bindPopup(markup, correctPopupOptions)
-      
-      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-      popup.on("popupopen", ()=> { handlePopupOpen() })
-      popup.openPopup();
+
+      setTimeout(function() {
+        let popup = marker.bindPopup(markup, correctPopupOptions)
+        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+        popup.on("popupopen", ()=> { handlePopupOpen() })
+        popup.openPopup();
+        }, 750);
+
       return
     }
 
@@ -145,14 +148,17 @@ export default function initSearch() {
 
       const marker = L.marker([-465, 1174]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      let popup = marker.bindPopup(markup, correctPopupOptions)
+
+      setTimeout(function() {
+        let popup = marker.bindPopup(markup, correctPopupOptions)
+        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+        popup.on("popupopen", ()=> { handlePopupOpen() })
+        popup.openPopup();
+        const element = document.getElementsByClassName('popup_correct button')[0];
+        element.addEventListener('click', showViewCodePopup, false);
+      }, 750);
       
-      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-      popup.on("popupopen", ()=> { handlePopupOpen() })
-      popup.openPopup();
-      
-      const element = document.getElementsByClassName('popup_correct button')[0];
-      element.addEventListener('click', showViewCodePopup, false);
+
 
 
 
@@ -191,15 +197,19 @@ export default function initSearch() {
       /* Show popop */
       const marker = L.marker([-668, 1308]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      let popup = marker.bindPopup(markup, correctPopupOptions)
 
-      
-      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-      popup.on("popupopen", ()=> { handlePopupOpen() })
-      popup.openPopup();
+      setTimeout(function() {
+        let popup = marker.bindPopup(markup, correctPopupOptions)
+        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+        popup.on("popupopen", ()=> { handlePopupOpen() })
+        popup.openPopup();
+        const element = document.getElementsByClassName('popup_correct button')[0];
+        element.addEventListener('click', showViewCodePopup, false);
+        }, 750);
 
-      const element = document.getElementsByClassName('popup_correct button')[0];
-      element.addEventListener('click', showViewCodePopup, false);
+
+
+
 
       /* Fly to location */
       window.map.flyTo([-668, 1308], 1);
@@ -242,16 +252,18 @@ export default function initSearch() {
       /* Show popop */
       const marker = L.marker([-474, 1683]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      let popup = marker.bindPopup(markup, correctPopupOptions)
 
-      
-      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-      popup.on("popupopen", ()=> { handlePopupOpen() })
-      popup.openPopup();
+      setTimeout(function() {
+        let popup = marker.bindPopup(markup, correctPopupOptions)
+        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+        popup.on("popupopen", ()=> { handlePopupOpen() })
+        popup.openPopup();
+        const element = document.getElementsByClassName('popup_correct button')[0];
+        element.addEventListener('click', showViewCodePopup, false);
+        }, 750);
 
 
-      const element = document.getElementsByClassName('popup_correct button')[0];
-      element.addEventListener('click', showViewCodePopup, false);
+
 
       /* Update challenge */
       updateChallenge('challenge3');
@@ -286,13 +298,18 @@ export default function initSearch() {
       /* Show popop */
       const marker = L.marker([-585.7060241699219, 632.9839477539062]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      let popup = marker.bindPopup(markup, correctPopupOptions)
-      
-      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-      popup.on("popupopen", ()=> { handlePopupOpen() })
-      popup.openPopup();
-      const element = document.getElementsByClassName('popup_correct button')[0];
-      element.addEventListener('click', showViewCodePopup, false);
+
+      setTimeout(function() {
+          let popup = marker.bindPopup(markup, correctPopupOptions)
+          popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+          popup.on("popupopen", ()=> { handlePopupOpen() })
+          popup.openPopup();
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
+        }, 750);
+
+
+
 
 
 
@@ -329,15 +346,17 @@ export default function initSearch() {
       /* Show popop */
       const marker = L.marker([-617, 1419]).addTo(window.map);
       const markup = await showSuccessPopUp();
-      let popup = marker.bindPopup(markup,correctPopupOptions)
 
-      
-      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-      popup.on("popupopen", ()=> { handlePopupOpen() })
-      popup.openPopup();
+      setTimeout(function() {
+        let popup = marker.bindPopup(markup, correctPopupOptions)
+        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+        popup.on("popupopen", ()=> { handlePopupOpen() })
+        popup.openPopup();
+        const element = document.getElementsByClassName('popup_correct button')[0];
+        element.addEventListener('click', showViewCodePopup, false);
+      }, 750);
 
-      const element = document.getElementsByClassName('popup_correct button')[0];
-      element.addEventListener('click', showViewCodePopup, false);
+
 
 
       /* Fly to Point */
@@ -351,23 +370,21 @@ export default function initSearch() {
     } else {
 
       /* Show popop */
-      window.map.flyTo([-276, 2222], 1.5);
+      window.map.flyTo([-281.0806053100124, 2210.8239225493235], 1);
 
 
       const markup = await showFailPopUp();
 
 debugger
       setTimeout(function() {
-
-      var currentViewCenter = window.map.getCenter();
-      var marker = L.marker(currentViewCenter).addTo(window.map);
-      let popup = marker.bindPopup(markup, correctPopupOptions)
-         
-      popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-      popup.on("popupopen", ()=> { handlePopupOpen() })
-      popup.openPopup();
-
-      }, 1500);
+        var currentViewCenter = window.map.getCenter();
+        var marker = L.marker(currentViewCenter).addTo(window.map);
+        let popup = marker.bindPopup(markup, correctPopupOptions)
+          
+        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+        popup.on("popupopen", ()=> { handlePopupOpen() })
+        popup.openPopup();
+      }, 1950);
 
       /* Fly to Point */
   
