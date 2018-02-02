@@ -10,11 +10,38 @@ div.leaflet-top.leaflet-left {
 .leaflet-left .leaflet-control {
 
 }
-@include mq($from: tablet) {
+
+
+
   .leaflet-left .leaflet-control {
     margin-left: 0px;
+    @include mq($from: tablet, $until: desktop) {
+    
+    }
+    @include mq($from: desktop, $until: wide) {
+ 
+    }
+    @include mq($from: wide) {
+    
+    }
+  }
+
+.leaflet-popup-pane {
+  @include mq($from: mobile, $until: tablet) {
+    margin-top: 96px;
+  }
+ 
+  @include mq($from: tablet, $until: desktop) {
+    margin-left: -677px;
+  }
+  @include mq($from: desktop, $until: wide) {
+      
+  }
+  @include mq($from: wide) {
+    
   }
 }
+
 
 .leaflet-top .leaflet-control {
   margin-top: 1px;

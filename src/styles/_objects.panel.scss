@@ -13,7 +13,7 @@
     text-decoration: white;
     padding-left: 206px;
     height: 122px;
-    width: 168px;
+    width: 97px;
     @include mq($from: tablet) {
       text-decoration: white;
       padding-left: 206px;
@@ -28,12 +28,26 @@
         margin-left: -203px;
         margin-top: 1px;
 
-        @include mq($from: tablet) {
-          position: absolute;
-          text-decoration: white;
-          margin-left: -152px;
-          margin-top: 11px;
+        @include mq($from: tablet, $until: desktop) {
+            position: absolute;
+            text-decoration: white;
+            margin-left: -152px;
+            margin-top: 11px;
+           }
+        @include mq($from: desktop, $until: wide) {
+            position: absolute;
+            text-decoration: white;
+            margin-left: -152px;
+            margin-top: 11px;
         }
+        @include mq($from: wide) {
+            position: absolute;
+            text-decoration: white;
+            margin-left: -152px;
+            margin-top: 11px;
+        }
+
+
     }
 }
 
@@ -43,7 +57,7 @@
         background-image: url("../assets/searchTexture.png");
         background-repeat: no-repeat;
         background-size: contain;
-        width: 362px;
+        width: 298px;
         height: 71px;
 
         @include mq($from: tablet) {
@@ -52,39 +66,68 @@
         }
         .search__input {
             font-family: 'PT Serif', serif;
-            font-size: 33px;
-            height: 31px;
+            font-size: 22px;
+            height: 24px;
             width: 289px;
             background: transparent;
             outline: none;
             border: none !important;
-            font-size: 26px;
+
             text-decoration: none;
             margin-top: 10px;
             margin-left: 22px;
 
-            @include mq($from: tablet) {
-              font-family: 'PT Serif', serif;
-              height: 31px;
-              width: 289px;
-              background: transparent;
-              outline: none;
-              border: none !important;
-              font-size: 26px;
-              text-decoration: none;
-              margin-top: 21px;
-              margin-left: 38px;
+            @include mq($from: tablet, $until: desktop) {
+                font-family: 'PT Serif', serif;
+                height: 27px;
+                width: 289px;
+                background: transparent;
+                outline: none;
+                border: none !important;
+                font-size: 26px;
+                text-decoration: none;
+                margin-top: 15px;
+                margin-left: 38px;
             }
+            @include mq($from: desktop, $until: wide) {
+                font-family: 'PT Serif', serif;
+                height: 27px;
+                width: 289px;
+                background: transparent;
+                outline: none;
+                border: none !important;
+                font-size: 26px;
+                text-decoration: none;
+                margin-top: 15px;
+                margin-left: 38px;
+            }
+            @include mq($from: wide) {
+                font-family: 'PT Serif', serif;
+                height: 27px;
+                width: 289px;
+                background: transparent;
+                outline: none;
+                border: none !important;
+                font-size: 26px;
+                text-decoration: none;
+                margin-top: 15px;
+                margin-left: 38px;
+            }
+            
+
+
         }
         .search__icon {
           background-image: url("../assets/searchIcon.png");
           background-repeat: no-repeat;
-          margin-left: -27px;
+          margin-left: -75px;
           background-size: contain;
           padding-right: 9px;
-          width: 46px;
-          margin-top: 2px;
+          width: 35px;
+          /* margin-right: 4px; */
+          margin-top: 3px;
           cursor: pointer;
+
 
             @include mq($from: tablet) {
               background-image: url("../assets/searchIcon@desktop.png");

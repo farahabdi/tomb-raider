@@ -102,7 +102,7 @@ export default function initSearch() {
       var marker = L.marker(currentViewCenter).addTo(window.map);
 
       const markup = await showAlreadyCompletedPopUp()
-      let popup = marker.bindPopup(markup, duplicateOptions )
+      let popup = marker.bindPopup(markup, correctPopupOptions)
       
       popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
       popup.on("popupopen", ()=> { handlePopupOpen() })
@@ -455,7 +455,7 @@ async function showSuccessPopUp() {
 async function showAlreadyCompletedPopUp() {
   /* Already completed popup */
   const markup = document.createElement('div');
-  markup.className = 'popup__duplicate';
+  markup.className = 'popup__correct';
   markup.insertAdjacentHTML('afterbegin', `<div class="message">You’ve already uncovered that one. Check out my Field Notes for intel on the other landmarks.</div>`);
   markup.insertAdjacentHTML('afterbegin', `<div class="header">Nice try!</div>`);
 
