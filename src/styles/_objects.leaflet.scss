@@ -10,11 +10,38 @@ div.leaflet-top.leaflet-left {
 .leaflet-left .leaflet-control {
 
 }
-@include mq($from: tablet) {
+
+
+
   .leaflet-left .leaflet-control {
     margin-left: 0px;
+    @include mq($from: tablet, $until: desktop) {
+    
+    }
+    @include mq($from: desktop, $until: wide) {
+ 
+    }
+    @include mq($from: wide) {
+    
+    }
+  }
+
+.leaflet-popup-pane {
+  @include mq($from: mobile, $until: tablet) {
+    margin-top: 96px;
+  }
+ 
+  @include mq($from: tablet, $until: desktop) {
+    margin-left: -677px;
+  }
+  @include mq($from: desktop, $until: wide) {
+      
+  }
+  @include mq($from: wide) {
+    
   }
 }
+
 
 .leaflet-top .leaflet-control {
   margin-top: 1px;
@@ -22,13 +49,19 @@ div.leaflet-top.leaflet-left {
 
 
 
-
+.leaflet-popup-close-button:hover {
+  color: red;
+}
 .leaflet-container {
   background: #D6CDCA !important;
 }
 
 .leaflet-marker-icon.leaflet-zoom-animated.leaflet-interactive {
 
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  font: unset!important;
 }
 
 .leaflet-marker-icon:not(.polaroid):not(.circleMarker) {
@@ -49,6 +82,9 @@ div.leaflet-top.leaflet-left {
  // opacity: 0.1 !important;
 }
 
+.hide-pane {
+  display: none;
+}
 .leaflet-bottom.leaflet-left {
   background-image: url("../assets/logo.png") !important;
   background-repeat: no-repeat !important;
@@ -171,7 +207,7 @@ div.leaflet-top.leaflet-left {
 }
 
 a {
-  color: #337ab7;
+  color: black;
   text-decoration: none;
 }
 
@@ -182,4 +218,8 @@ a {
 }
 .fb-button {
   width: 328px;
+}
+
+.leaflet-container a {
+  color: black;
 }
