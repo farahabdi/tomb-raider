@@ -15,6 +15,8 @@ export default function tabsControl() {
     },
     onAdd() {
 
+
+
       let tabContainer = L.DomUtil.create('div', 'tab__container');
       this.field = L.DomUtil.create('div', 'field', tabContainer);
 

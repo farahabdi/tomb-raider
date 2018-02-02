@@ -22,13 +22,19 @@ div.leaflet-top.leaflet-left {
 
 
 
-
+.leaflet-popup-close-button:hover {
+  color: red;
+}
 .leaflet-container {
   background: #D6CDCA !important;
 }
 
 .leaflet-marker-icon.leaflet-zoom-animated.leaflet-interactive {
 
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  font: unset!important;
 }
 
 .leaflet-marker-icon:not(.polaroid):not(.circleMarker) {

@@ -63,23 +63,44 @@
         }
     }
     .leaflet-popup-close-button {
-        top: 38px !important;
-        right: 14px !important;
+        top: 39px !important;
         color: black !important;
+        height: 23px !important;
+        width: 22px;
+        right: 118px !important;
+        background-image: url("../assets/x.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: contain;
         @include mq($from: tablet, $until: desktop) {
-            top: 36px !important;
-            right: 39px !important;
+            top: 39px !important;
+            right: 48px !important;
             color: black !important;
+            height: 23px !important;
+            width: 22px;
+            background-image: url("../assets/x@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
            }
         @include mq($from: desktop, $until: wide) {
-            top: 36px !important;
-            right: 39px !important;
+            top: 46px !important;
+            right: 55px !important;
+            height: 23px !important;
             color: black !important;
+            width: 22px;
+
+            background-image: url("../assets/x@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
         }
         @include mq($from: wide) {
-            top: 36px !important;
-            right: 39px !important;
+            top: 46px !important;
+            right: 55px !important;
+            height: 23px !important;
             color: black !important;
+            background-image: url("../assets/x@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            width: 22px;
         }
 
     }
@@ -100,6 +121,7 @@
             background-repeat: no-repeat !important;
             background-size: contain;
             height: 372px;
+            width: 585px;
             color: none;
             box-shadow: none;
         }
@@ -108,6 +130,7 @@
             background-repeat: no-repeat !important;
             background-size: contain;
             height: 372px;
+            width: 585px;
             color: none;
             box-shadow: none;
         }
@@ -180,51 +203,76 @@
             font-size: 23px;
             margin-left: 168px;
             margin-top: 7px;
+            height: 70px;
         }
         @include mq($from: desktop, $until: wide) {
             font-size: 23px;
             margin-left: 168px;
             margin-top: 7px;
+            height: 70px;
         }
         @include mq($from: wide) {
             font-size: 23px;
             margin-left: 168px;
             margin-top: 7px;
+            height: 70px;
         }
-        img {
+        .content__arrow {
             width: 58px;
             margin-top: 11px;
             border-style: none;
-            @include mq($from: tablet) {
-                width: 58px;
+
+            background-image: url("../assets/Mark_arrow.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+
+            @include mq($from: tablet, $until: desktop) {
+            background-image: url("../assets/Mark_arrow@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            }
+            @include mq($from: desktop, $until: wide) {
+            background-image: url("../assets/Mark_arrow@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            }
+            @include mq($from: wide) {
+            background-image: url("../assets/Mark_arrow@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+
+            height: 47px;
+            width: 99px;
+            }
+        }
+
+        .button {
+            font-size: 20px;
+            margin-top: 9px;
+            cursor: pointer;
+    
+            @include mq($from: tablet, $until: desktop) {
+                font-size: 26px;
                 margin-top: 11px;
-                border-style: none;
+                margin-top: 5px;
+                margin-left: 4px;
+            }
+            @include mq($from: desktop, $until: wide) {
+                font-size: 26px;
+                margin-top: 11px;
+                margin-top: 5px;
+                margin-left: 4px;
+            }
+            @include mq($from: wide) {
+                
+                font-size: 26px;
+                margin-top: 7px;
+                margin-left: 6px;
+                
             }
         }
     }
-    &.button {
-        font-size: 18px;
-        margin-top: 11px;
 
-        @include mq($from: tablet, $until: desktop) {
-            font-size: 26px;
-            margin-top: 11px;
-            margin-top: 5px;
-            margin-left: 4px;
-        }
-        @include mq($from: desktop, $until: wide) {
-            font-size: 26px;
-            margin-top: 11px;
-            margin-top: 5px;
-            margin-left: 4px;
-        }
-        @include mq($from: wide) {
-            font-size: 26px;
-            margin-top: 11px;
-            margin-top: 5px;
-            margin-left: 4px;
-        }
-    }
 }
 
 
