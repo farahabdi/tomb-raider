@@ -65,6 +65,9 @@ export default function tabsControl() {
       this.fieldWrapper.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
       this.fieldWrapper.setAttribute("tabindex", "1")
 
+
+
+
       // TODO put this facebook stuff in the OTHER folder, not the options folder     
       this.fbBox = L.DomUtil.create('div', 'fb_post_container',  this.fieldWrapper  );
       this.fieldTabClick =  L.DomUtil.create('div', 'field__tab-click',  this.fieldWrapper  );
@@ -73,6 +76,8 @@ export default function tabsControl() {
       this.fieldTabClick.addEventListener("click", showfield, false); //work around for iOS need to capture click
 
 
+
+   
 
 
 
@@ -88,10 +93,30 @@ export default function tabsControl() {
           self.fieldWrapper.className = 'field__wrapper field__wrapper-closed'
           fbBox.className = 'fb_post_container fb_post_container__closed'
           fbContainerElement.className = 'fb_post_container fb_post_container--closed'
+
+          const panelElement = document.getElementsByClassName('leaflet-top leaflet-left')[0];
+          const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+          panelElement.className = "leaflet-top leaflet-left"
+          logoElement.className = "leaflet-bottom leaflet-left"
+
           map.scrollWheelZoom.enable();
           map.dragging.enable();
           event.stopPropagation()
         } else {
+
+          debugger
+          const panelElement = document.getElementsByClassName('leaflet-top leaflet-left')[0];
+          const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+          panelElement.className = "leaflet-top leaflet-left hide-pane"
+          logoElement.className = "leaflet-bottom leaflet-left hide-pane"
+
+
+
+
+
+
+
+
           self.fieldWrapper.className = 'field__wrapper field__wrapper-open'
           fbBox.className = 'fb_post_container fb_post_container__opened onTop'
           fbContainerElement.className = 'fb_post_container'
@@ -135,6 +160,7 @@ export default function tabsControl() {
 
      function logout() {
       firebaseAuth.signOut();
+      localStorage.clear()
       window.location.reload(true);
     }
 

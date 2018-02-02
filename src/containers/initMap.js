@@ -101,6 +101,7 @@ export default function initApp () {
 
       function logout(event) {
         firebaseAuth.signOut()
+        localStorage.clear()
         window.location.reload(true);
       }
 

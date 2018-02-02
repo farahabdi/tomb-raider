@@ -1,5 +1,5 @@
 .tab__container {
-    margin-top: -70px !important;
+    margin-top: -72px !important;
 
     @include mq($from: tablet, $until: desktop) {
         margin-left: -374px;
@@ -20,13 +20,12 @@
 .leaflet-right {
 /* margin-bottom: 25%; */
     @include mq($from: tablet, $until: desktop) {
-    //   margin-bottom: 12%;
-    top: -71px;
+        margin-right: -13px;
+        top: 108px;
     }
     @include mq($from: desktop, $until: wide) {
-        //margin-bottom: 14%;
         margin-right: -13px;
-        top: -71px;
+        top: 108px;
     }
     @include mq($from: wide) {
         margin-right: -13px;
@@ -37,7 +36,7 @@
 
 .field {
     position: absolute;
-    margin-left: -317px;
+    margin-left: -307px;
     z-index: 3;
     top: -202px;
   
@@ -55,17 +54,17 @@
         top: -14px;
         }
     .field__wrapper {
-        background-image: url("../assets/fieldFolder@2x.png") !important;
+        background-image: url("../assets/fieldNotesm.png") !important;
         background-repeat: no-repeat !important;
         background-size: contain;
         width: 953px;
-        height: 1982px;
+        height: 833px;
         padding-bottom: -5px;
         transition: 0.5s all ease;
         @include mq($from: tablet, $until: desktop) {
             background-image: url("../assets/fieldFolder@2x.png") !important;
             background-repeat: no-repeat !important;
-            width: 600px;
+           
                 height: 968px;
             padding-bottom: -5px;
             // padding-left: 48px;
@@ -77,8 +76,7 @@
         @include mq($from: desktop, $until: wide) {
             background-image: url("../assets/fieldFolder@2x.png") !important;
             background-repeat: no-repeat !important;
-            width: 600px;
-                height: 968px;
+            height: 968px;
             padding-bottom: -5px;
             // padding-left: 48px;
             // padding-top: 51px;
@@ -91,7 +89,7 @@
             background-image: url("../assets/fieldFolder@2x.png") !important;
             background-repeat: no-repeat !important;
             
-                height: 968px;
+            height: 968px;
             padding-bottom: -5px;
             // padding-left: 48px;
             // padding-top: 51px;
@@ -130,16 +128,27 @@
     position: absolute;
     margin-top: 2px;
     height: 724px;
-    margin-left: -375px;
+    margin-left: -353px;
     z-index: 1;
         @include mq($from: tablet, $until: desktop) {
-        //   margin-bottom: 12%;
-        top: -71px;
+            font-family: 'Caveat', cursive;
+            font-size: 22px;
+            position: absolute;
+            margin-top: -30px !important;
+            height: 340px;
+            margin-left: -386px;
+            height: 515px;
+            z-index: 1;
         }
         @include mq($from: desktop, $until: wide) {
-            //margin-bottom: 14%;
-            margin-right: -13px;
-            top: -71px;
+            font-family: 'Caveat', cursive;
+            font-size: 22px;
+            position: absolute;
+            margin-top: -30px !important;
+            height: 340px;
+            margin-left: -386px;
+            height: 515px;
+            z-index: 1;
         }
         @include mq($from: wide) {
             font-family: 'Caveat', cursive;
@@ -312,12 +321,27 @@
     }
 }
 
+.field-text__container {
+    .field-text__cross {
+        background-image: url("../assets/fieldFolder@2x.png") !important;
+        background-repeat: no-repeat !important;
+    }
+
+    .field-text__header {
+
+    }
+
+    .field-text__message {
+
+    }
+}
+
 
 /* Facebook Tab */
 
 .fb_post_container {
     position: absolute;
-    top: 399px;
+    top: 337px;
     right: -166px;
     -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
@@ -421,7 +445,7 @@
 .fb_post_container.fb_post_container__opened {
     transition: 0.5s all ease;
     margin-left: -373px;
-    right: 107px;
+    right: 733px;
 
 
     @include mq($from: tablet, $until: desktop) {
@@ -439,7 +463,7 @@
         height: 80%;
         width: 531px;
         /* padding-right: 5px; */
-        right: 253px;
+        right: 703px;
         padding: 33px;
         background: white;
 
@@ -456,7 +480,7 @@
         height: 80%;
         width: 531px;
         /* padding-right: 5px; */
-        right: 600px;
+        right: 902px;
         padding: 33px;
         background: white;
     }

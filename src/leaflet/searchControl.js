@@ -47,6 +47,7 @@ export default function searchControl() {
 
       function logout() {
         firebaseAuth.signOut();
+        localStorage.clear()
         window.location.reload(true);
       }
 

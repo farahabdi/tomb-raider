@@ -82,6 +82,9 @@ div.leaflet-top.leaflet-left {
  // opacity: 0.1 !important;
 }
 
+.hide-pane {
+  display: none;
+}
 .leaflet-bottom.leaflet-left {
   background-image: url("../assets/logo.png") !important;
   background-repeat: no-repeat !important;
