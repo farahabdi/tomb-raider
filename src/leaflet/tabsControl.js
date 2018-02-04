@@ -203,7 +203,7 @@ export default function tabsControl() {
 
       let posts = fetchFacebookPosts().then((posts)=> {
         // console.warn(posts);
-        posts.forEach(post => {
+        posts.reverse().forEach(post => {
           fbBox.innerHTML += '<div class="fb-post" data-href="' + post + '" data-width="350"></div>';
           console.warn(post)
         })
