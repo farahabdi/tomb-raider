@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-import React from 'react';
+import React from 'preact';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import configureStore from './store';
