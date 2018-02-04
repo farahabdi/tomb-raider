@@ -113,7 +113,7 @@
             border: none !important;
 
             text-decoration: none;
-            margin-top: 14px;
+            margin-top: 17px;
             margin-left: 22px;
 
             @include mq($from: tablet, $until: desktop) {
@@ -159,12 +159,12 @@
         .search__icon {
           background-image: url("../assets/searchIcon.png");
           background-repeat: no-repeat;
-          margin-left: -75px;
+          margin-left: -43px;
           background-size: contain;
           padding-right: 9px;
           width: 35px;
           /* margin-right: 4px; */
-          margin-top: 3px;
+          margin-top: 6px;
           cursor: pointer;
 
           @include mq($from: tablet, $until: desktop) {
@@ -183,8 +183,8 @@
             margin-left: -34px;
             background-size: contain;
             padding-right: 9px;
-            width: 50px;
-            margin-top: 2px;
+            width: 44px;
+            margin-top: 5px;
             cursor: pointer;
         }
         @include mq($from: wide) {

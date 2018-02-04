@@ -86,7 +86,7 @@ export default function tabsControl() {
     //  this.fbBox.addEventListener("click", showfield, false); //work around for iOS need to capture click
 
       this.fieldTabClick.addEventListener("click", showfield, false); //work around for iOS need to capture click
-
+      this.fieldTextCross.addEventListener("click", showfield, false); //work around for iOS need to capture click
 
 
    
