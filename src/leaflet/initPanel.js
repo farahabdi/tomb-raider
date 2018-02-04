@@ -36,8 +36,8 @@ export default function initSearch() {
   for (let i = 0; i < searchElement.length; i++) {
     searchElement[i].addEventListener('click', handleSearch);
     searchInput[i].addEventListener('keyup', (event) => {
-      event.preventDefault();
-      console.log(event.key);
+      event.preventDefault(); 
+      // console.log(event.key);
       if ((event.keyCode === 13) || (event.key==='Enter')) {
         handleSearch();
       }
@@ -60,9 +60,10 @@ export default function initSearch() {
   async function handleSearch() {
     const answerInput = searchInput[0].value;
     searchInput[0].blur();
+    showLoader();
     const challenges = await fetchChallenges();
     const answerKey = await checkAnswer(answerInput);
-
+    hideLoader();
 
     const successOptions = {
       maxWidth: '400',
