@@ -12,6 +12,16 @@ class PublicPage extends Component {
     this.state = {
       isDisabled: true
     }
+
+    var preloadImg = new Image();
+    preloadImg.onload = () => {
+      let loaderEl = document.getElementById('animation_container');
+      if (loaderEl && loaderEl.parentNode) {
+        loaderEl.parentNode.removeChild(loaderEl);
+      }
+    }
+    preloadImg.src = "images/landing@2x.jpg";
+    console.error(preloadImg.src)    
   }
 
   toggle() {
@@ -106,28 +116,18 @@ class PublicPage extends Component {
               <div className="terms-and-conditions__container">
                   <input className="terms-and-conditions__checkbox" id="checkBox" type="checkbox" onChange={() => this.toggle()} />
                   <a  target="_blank" className="instructions__terms" style={{display:'block'}} href="https://firebasestorage.googleapis.com/v0/b/tomb-raider-app-34101.appspot.com/o/Tomb%20Raider%20-%20V7%20-%20T%26C%20-%20STC%20-%2022.1.18%20-%20APP.DOCX?alt=media&token=8ba9c7eb-4456-4f05-a981-adb917787b2a">
-            <div className="terms-and-conditions__message">  I have read and accept <span className="underline underline--bacon">T&C's</span></div>
-          </a>
+                    <div className="terms-and-conditions__message">  I have read and accept <span className="underline underline--bacon">T&C's</span></div>
+                  </a>
               </div>
-   
-              
-
-
               <div className="fb-button__container">
-              <div className={`fb-button ${isDisabled ? 'fb-login--disabled' : ''}`}>
-
+                <div className={`fb-button ${isDisabled ? 'fb-login--disabled' : ''}`}>
                   <a onClick={isDisabled ? null : signInWithFacebook} className="btn btn-block btn-social btn-facebook">
                   <span className="fa fa-facebook"></span> <span className="signin__message">  Sign in with Facebook</span>
                   </a>
                 </div>
               </div>
-
             </div>
-          </footer>
-
-
-         
-
+          </footer>         
         </div>
       </main>
     );

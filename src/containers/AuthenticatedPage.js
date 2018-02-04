@@ -18,6 +18,7 @@ class AuthenticatedPage extends Component {
   }
 
   componentDidMount() { 
+
     initApp()
     initPanel()
     initUserMap()

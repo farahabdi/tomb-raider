@@ -223,3 +223,47 @@ a {
 .leaflet-container a {
   color: black;
 }
+
+.leaflet-left .leaflet-control {
+
+  @include mq($from: tablet, $until: desktop) {
+    margin-left: 55px;
+    transition: margin 400ms;
+  }
+  @include mq($from: desktop, $until: wide) {
+    margin-left: 180px;
+    transition: margin 400ms;
+  }
+  @include mq($from: wide) {
+    margin-left: 180px;
+    transition: margin 400ms;
+  }
+}
+
+.leaflet-top.leaflet-left {
+  margin-top: 0px ;
+  transition: margin 700ms;
+  @include mq($from: tablet, $until: desktop) {
+
+  }
+  @include mq($from: desktop, $until: wide) {
+
+  }
+  @include mq($from: wide) {
+
+    }
+}
+
+.leaflet-top.leaflet-left.hide-header {
+  margin-top: -195px;
+  transition: margin 700ms;
+  @include mq($from: tablet, $until: desktop) {
+    margin-top: 0px ;
+    }
+  @include mq($from: desktop, $until: wide) {
+    margin-top: 0px ;
+  }
+  @include mq($from: wide) {
+    margin-top: 0px ;
+    }
+}

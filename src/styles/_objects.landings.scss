@@ -2,14 +2,14 @@
     display: flex;
     flex-direction: column;
 
-    background-image: url("../assets/landing.jpg");
+    background-image: url("/images/landing.jpg");
     background-repeat: no-repeat;
     overflow-y: hidden;
     height: 5006px;
     overflow-x: hidden;
 
     @include mq($from: tablet, $until: desktop) {
-        background-image: url("../assets/landing@2x.jpg");
+        background-image: url("/images/landing@2x.jpg");
         background-repeat: no-repeat;
         height: 3053px;
      //   height: 2037px;
@@ -17,14 +17,14 @@
 
 
     @include mq($from: desktop, $until: wide) {
-        background-image: url("../assets/landing@2x.jpg");
+        background-image: url("/images/landing@2x.jpg");
         background-repeat: no-repeat;
         height: 3053px;
     }
 
 
     @include mq($from: wide) {
-        background-image: url("../assets/landing@2x.jpg");
+        background-image: url("/images/landing@2x.jpg");
         background-repeat: no-repeat;
         height: 4000px;
     }
