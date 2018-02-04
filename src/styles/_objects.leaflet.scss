@@ -90,6 +90,7 @@ div.leaflet-top.leaflet-left {
   width: 138px;
   height: 50px;
   margin-left: 28px;
+  transition: margin 400ms;
 
   @include mq($from: tablet, $until: desktop) {
     background-image: url("../assets/logo.png") !important;
@@ -104,6 +105,7 @@ div.leaflet-top.leaflet-left {
     background-size: contain;
     width: 238px;
     height: 80px;
+    margin-left: 128px;
   }
   @include mq($from: wide) {
     background-image: url("../assets/logo.png") !important;
@@ -111,6 +113,12 @@ div.leaflet-top.leaflet-left {
     background-size: contain;
     width: 238px;
     height: 80px;
+    margin-left: 180px;
+    }
+
+    &.hide-logo {
+      margin-left: -238px;
+      transition: margin 400ms;
     }
 
 }
@@ -225,11 +233,11 @@ a {
 .leaflet-left .leaflet-control {
 
   @include mq($from: tablet, $until: desktop) {
-    margin-left: 55px;
+    margin-left: 13px;
     transition: margin 400ms;
   }
   @include mq($from: desktop, $until: wide) {
-    margin-left: 180px;
+    margin-left: 128px;
     transition: margin 400ms;
   }
   @include mq($from: wide) {
@@ -241,6 +249,7 @@ a {
 .leaflet-top.leaflet-left {
   margin-top: 0px ;
   transition: margin 700ms;
+    
   @include mq($from: tablet, $until: desktop) {
 
   }
@@ -256,12 +265,35 @@ a {
   margin-top: -195px;
   transition: margin 700ms;
   @include mq($from: tablet, $until: desktop) {
-    margin-top: 0px ;
+   // margin-left:0px;
+   margin-top: 0px;
+   margin-left: -133px;
     }
   @include mq($from: desktop, $until: wide) {
-    margin-top: 0px ;
+    margin-left: -129px;
+    margin-top: 0px;
   }
   @include mq($from: wide) {
     margin-top: 0px ;
+    margin-left: -129px;
+
+    }
+}
+
+
+.leaflet-bottom.leaflet-left.hide-logo {
+  margin-top: -195px;
+  transition: margin 700ms;
+  @include mq($from: tablet, $until: desktop) {
+    margin-top: 0px ;
+    transition: margin 400ms;
+    }
+  @include mq($from: desktop, $until: wide) {
+    margin-top: 0px ;
+    transition: margin 400ms;
+  }
+  @include mq($from: wide) {
+    margin-top: 0px ;
+    transition: margin 400ms;
     }
 }
