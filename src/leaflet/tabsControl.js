@@ -20,6 +20,9 @@ export default function tabsControl() {
       let tabContainer = L.DomUtil.create('div', 'tab__container');
       this.field = L.DomUtil.create('div', 'field', tabContainer);
 
+
+
+
       /* Options tab */
       this.optionsElement = L.DomUtil.create('div', 'options leaflet-control', tabContainer);
       this.optionsContainerElement= L.DomUtil.create('div', 'options__container options__container_closed', this.optionsElement );
@@ -65,6 +68,15 @@ export default function tabsControl() {
       this.fieldWrapper.addEventListener("click", showOptionsTab, false); //work around for iOS need to capture click
       this.fieldWrapper.setAttribute("tabindex", "1")
 
+      this.fieldTextContainer = L.DomUtil.create('div', 'field-text__container', this.fieldWrapper);
+      this.fieldTextHeader = L.DomUtil.create('div', 'field-text__header', this.fieldTextContainer);
+      this.fieldTextTitle = L.DomUtil.create('div', 'field-text__title', this.fieldTextHeader);
+      this.fieldTextCross = L.DomUtil.create('div', 'field-text__cross', this.fieldTextHeader);
+      this.fieldTextMessage = L.DomUtil.create('div', 'field-text__message',this.fieldTextContainer);
+
+
+      this.fieldTextTitle.innerHTML = 'Field Notes'
+      this.fieldTextMessage.innerHTML = "Use Croft Holding's intel and work with your fellow Tomb Raiders to find the five landmarks"
 
 
 
@@ -88,6 +100,9 @@ export default function tabsControl() {
         let fbContainerElement = document.getElementsByClassName('fb_post_container')[0]
         let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
         const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+        const fieldElement = document.getElementsByClassName('field')[0];
+
+
         debugger
         //toggle the css class name manually to open or close the tab
         if(self.fieldWrapper.className === 'field__wrapper field__wrapper-open'){
@@ -95,6 +110,7 @@ export default function tabsControl() {
           fbBox.className = 'fb_post_container fb_post_container__closed'
           fbContainerElement.className = 'fb_post_container fb_post_container--closed'
 
+          fieldElement.className = 'field'
           headerElement.className = 'leaflet-top leaflet-left'
           logoElement.className = 'leaflet-bottom leaflet-left'
 
@@ -117,9 +133,9 @@ export default function tabsControl() {
 
 
 
-          panelElement.className = "leaflet-top leaflet-left hide-pane"
+          panelElement.className = "leaflet-top leaflet-left hide-header"
           logoElement.className = "leaflet-bottom leaflet-left hide-logo"
-
+          fieldElement.className = 'field field--open'
 
 
 

@@ -232,7 +232,7 @@ a {
   }
   @include mq($from: desktop, $until: wide) {
     transition: margin 400ms;
-    margin-left: 180px;
+    margin-left: 51px;
   }
   @include mq($from: wide) {
     transition: margin 400ms;
@@ -257,6 +257,7 @@ a {
 .leaflet-top.leaflet-left.hide-header {
 
   transition: margin 700ms;
+  margin-top: -140px;
   @include mq($from: tablet, $until: desktop) {
     margin-top: 0px ;
     }
