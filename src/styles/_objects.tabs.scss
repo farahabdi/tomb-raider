@@ -364,18 +364,34 @@
 
  
     background: white;
-    @include mq($from: tablet) {
-        zoom: 0.8; 
-    }
+
     /* margin-bottom: 25%; */
     @include mq($from: tablet, $until: desktop) {
-
+        position: absolute;
+        top: 337px;
+        right: -166px;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        height: 50%;
+        width: 291px;
     }
     @include mq($from: desktop, $until: wide) {
-       // right: -80px;
+        position: absolute;
+        top: 337px;
+        right: -166px;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        height: 50%;
+        width: 291px;
     }
     @include mq($from: wide) {
-        // padding-left: 473px;
+        position: absolute;
+        top: 337px;
+        right: -166px;
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
+        height: 50%;
+        width: 291px;
     }
 
     &.fb_post_container--open {
@@ -462,7 +478,20 @@
 
 
     @include mq($from: tablet, $until: desktop) {
-        right: 515px;
+        transition: 0.5s all ease;
+        margin-left: -361px;
+        position: absolute;
+        top: 252px;
+        /* padding-left: 170px; */
+        -webkit-overflow-scrolling: touch;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        height: 62%;
+        width: 336px;
+        /* padding-right: 5px; */
+        right: 658px;
+        padding: 33px;
+        background: white;
         
     }
     @include mq($from: desktop, $until: wide) {
@@ -603,20 +632,20 @@ iframe {
             padding-top: 100px;
             font-size: 32px;
             /* margin-right: -246px; */
-            margin-left: 84px;
+            margin-left: -19px;
             }
         @include mq($from: desktop, $until: wide) {
 
             padding-top: 100px;
             font-size: 32px;
             /* margin-right: -246px; */
-            margin-left: 84px;
+            margin-left: -44px;
 
             }
         @include mq($from: wide) {
             padding-top: 85px;
             font-size: 35px;
-            margin-right: -234px;
+            margin-left: -169px;
         }
         .field-text__title {
             margin-left: 24px;
