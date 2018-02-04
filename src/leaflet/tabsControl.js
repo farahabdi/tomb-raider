@@ -31,7 +31,7 @@ export default function tabsControl() {
       this.optionsText = L.DomUtil.create('div', 'options__wrapper', this.optionsContainerElement);
       this.optionsText.insertAdjacentHTML('afterbegin', `
         <div class="instructions">
-          <div class="cross__wrapper">
+          <div class="cross__wrapper" onClick='showOptionsTab()'>
             <div class="cross"> </div>
           </div>
           
