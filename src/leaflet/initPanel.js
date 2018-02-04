@@ -395,6 +395,11 @@ debugger
 
 function handlePopupClose(event, popup) {
   debugger
+  let map = window.map
+  map.dragging.enable();
+  map.touchZoom.enable();
+  map.doubleClickZoom.enable();
+  map.scrollWheelZoom.enable();
   const tabElement = document.getElementsByClassName('tab__container')[0];
   tabElement.setAttribute("style", "display: inherit" )
 
@@ -434,6 +439,12 @@ async function showFailPopUp() {
   markup.className = 'popup__correct';
   markup.insertAdjacentHTML('afterbegin', `<div class="message">${failText[count].message}</div>`);
   markup.insertAdjacentHTML('afterbegin', `<div class="header">${failText[count].heading}</div>`);
+
+  let map = window.map
+  map.dragging.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
 
   return markup;
 }

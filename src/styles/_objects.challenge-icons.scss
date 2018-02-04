@@ -2,9 +2,19 @@
     display: flex;
     margin-left: -16px;
     margin-top: 8px;
-    @include mq($from: tablet) {
+    @include mq($from: tablet, $until: desktop) {
         margin-left: -30px;
-        margin-top: 37px;
+        margin-top: 25px;
+    }
+    @include mq($from: desktop, $until: wide) {
+        margin-left: -30px;
+        margin-top: 25px;
+        transition: margin 400ms;
+    }
+    @include mq($from: wide) {
+        margin-left: -21px;
+        margin-top: 28px;
+        transition: margin 400ms;
     }
 }   
 
@@ -22,7 +32,24 @@
         padding-bottom: 17px;
         padding-left: -3px;
         padding-right: 0px;
-        @include mq($from: tablet) {
+
+        @include mq($from: tablet, $until: desktop) {
+            padding-top: 18px;
+            width: 46px;
+            height: 25px;
+            padding-bottom: 17px;
+            padding-left: -3px;
+            padding-right: 0px;
+        }
+        @include mq($from: desktop, $until: wide) {
+            padding-top: 18px;
+            width: 46px;
+            height: 25px;
+            padding-bottom: 17px;
+            padding-left: -3px;
+            padding-right: 0px;
+        }
+        @include mq($from: wide) {
             padding-top: 18px;
             width: 52px;
             height: 25px;
@@ -30,6 +57,8 @@
             padding-left: -3px;
             padding-right: 0px;
         }
+
+
         &.challenge__1 {
             background-image: url("../assets/code1@2x.png") !important;
             background-repeat: no-repeat !important;
