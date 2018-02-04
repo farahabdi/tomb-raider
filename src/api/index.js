@@ -39,7 +39,7 @@ export async function fetchCompletedChallenges(text) {
         let data = result.data()
         let challenges = []
         for (const prop in data) {
-          debugger
+    
           if (data[prop] == true) {
             challenges.push(prop)
           }

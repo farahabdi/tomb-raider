@@ -18,18 +18,22 @@
 }
 
 .leaflet-right {
+     transition: margin 700ms;
 /* margin-bottom: 25%; */
     @include mq($from: tablet, $until: desktop) {
         margin-right: -13px;
         top: 108px;
+        transition: margin 700ms;
     }
     @include mq($from: desktop, $until: wide) {
         margin-right: -13px;
         top: 108px;
+        transition: margin 700ms;
     }
     @include mq($from: wide) {
         margin-right: -13px;
         top: 108px;
+        transition: margin 700ms;
     }
     
 }
@@ -758,4 +762,10 @@ iframe {
 }
 .cross {
     cursor: pointer;
+}
+
+
+.leaflet-top.leaflet-right.hide-tab {
+    margin-right: -323px;
+    transition: margin 700ms;
 }

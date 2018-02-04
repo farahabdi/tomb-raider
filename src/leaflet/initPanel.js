@@ -159,7 +159,7 @@ export default function initSearch() {
 
 
       const marker = L.marker([-465, 1174]).addTo(window.map);
-      const markup = await showSuccessPopUp();
+      const markup = await PopUpSelector();
 
       setTimeout(function() {
         let popup = marker.bindPopup(markup, correctPopupOptions)
@@ -186,7 +186,7 @@ export default function initSearch() {
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml, ${pathChallenge2}`).replace('#', '%23');
       const pathMarker = new CustomIcon({ iconUrl: url, className: 'circleMarker'})
-      debugger
+
       let circleMarker = L.marker([-830.0923638032468, 1554.33553663961], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
 
       circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
@@ -208,7 +208,7 @@ export default function initSearch() {
 
       /* Show popop */
       const marker = L.marker([-668, 1308]).addTo(window.map);
-      const markup = await showSuccessPopUp();
+      const markup = await PopUpSelector();
 
       setTimeout(function() {
         let popup = marker.bindPopup(markup, correctPopupOptions)
@@ -263,7 +263,7 @@ export default function initSearch() {
 
       /* Show popop */
       const marker = L.marker([-474, 1683]).addTo(window.map);
-      const markup = await showSuccessPopUp();
+      const markup = await PopUpSelector();
 
       setTimeout(function() {
         let popup = marker.bindPopup(markup, correctPopupOptions)
@@ -309,7 +309,7 @@ export default function initSearch() {
 
       /* Show popop */
       const marker = L.marker([-585.7060241699219, 632.9839477539062]).addTo(window.map);
-      const markup = await showSuccessPopUp();
+      const markup = await PopUpSelector();
 
       setTimeout(function() {
           let popup = marker.bindPopup(markup, correctPopupOptions)
@@ -357,7 +357,7 @@ export default function initSearch() {
 
       /* Show popop */
       const marker = L.marker([-617, 1419]).addTo(window.map);
-      const markup = await showSuccessPopUp();
+      const markup = await PopUpSelector();
 
       setTimeout(function() {
         let popup = marker.bindPopup(markup, correctPopupOptions)
@@ -387,7 +387,7 @@ export default function initSearch() {
 
       const markup = await showFailPopUp();
 
-debugger
+
       setTimeout(function() {
         var currentViewCenter = window.map.getCenter();
         var marker = L.marker(currentViewCenter).addTo(window.map);
@@ -406,7 +406,7 @@ debugger
 }
 
 function handlePopupClose(event, popup) {
-  debugger
+
   let map = window.map
   map.dragging.enable();
   map.touchZoom.enable();
@@ -414,8 +414,23 @@ function handlePopupClose(event, popup) {
   map.scrollWheelZoom.enable();
   const tabElement = document.getElementsByClassName('tab__container')[0];
   tabElement.setAttribute("style", "display: inherit" )
+  
 
   const layerElement = document.getElementsByClassName('leaflet-overlay-pane')[0].className = "leaflet-pane leaflet-overlay-pane"
+
+  let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
+  const tabsElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
+  const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+ 
+ 
+  tabsElement.className = 'leaflet-top leaflet-right'
+  headerElement.className = "leaflet-top leaflet-left"
+ logoElement.className = "leaflet-bottom leaflet-left"
+
+
+
+
+
 
 
 
@@ -423,7 +438,7 @@ function handlePopupClose(event, popup) {
 
 function handlePopupOpen() {
   const closeButton = document.getElementsByClassName('leaflet-popup-close-button');
-  debugger
+
     closeButton[0].innerHTML = ''
 }
 
@@ -459,6 +474,29 @@ async function showFailPopUp() {
   map.scrollWheelZoom.disable();
 
   return markup;
+}
+
+
+async function PopUpSelector() {
+  const challenges = await fetchChallenges();
+  let num = 0;
+  let done = false
+
+  var values = Object.keys(challenges).map(e => challenges[e])
+  values.forEach((value) => { if (value === true) { num += 1; } });
+
+  num++;
+  if (num>=5) {
+    num = 5
+    done = true
+  }
+
+  if (done) {
+
+  } else {
+    return showSuccessPopUp()
+  }
+
 }
 
 
@@ -510,45 +548,135 @@ async function showAlreadyCompletedPopUp() {
   return markup;
 }
 
+
+
+async function showCompletedPopup() {
+  const markup = document.createElement('div');
+  markup.className = 'final-code';
+  markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="final-code__message"> Congratulations you have discovered the landmarks and revealed the code!</div>');
+  markup.insertAdjacentHTML('afterbegin', '<div class="final-code__header">Well done</div>');
+}
+
+
+
+
+
+
+
+
+
+const landmarkCodes = {
+  challenge1: 'lorem ipsum challenge.',
+  challenge2: 'lorem ipsum challenge.',
+  challenge3: 'lorem ipsum challenge.',
+  challenge4: 'lorem ipsum challenge.',
+  challenge5: 'lorem ipsum challenge.',
+};
+
+const viewCodeOptions = {
+  maxWidth: '400',
+  width: '450',
+  className: 'code-popup-top',
+};
+
+const codePopupOptions = {
+  maxWidth: '400',
+  width: '450',
+  className: 'popup__codes',
+};
 async function showViewCodePopup() {
  // const marker = L.marker([-668, 1308]).addTo(window.map);
+ let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
+ const tabElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
+ const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
 
 
-
+ tabElement.className = 'leaflet-top leaflet-right hide-tab'
+ headerElement.className = "leaflet-top leaflet-left hide-header"
+logoElement.className = "leaflet-bottom leaflet-left hide-logo"
 
 
   const markup = document.createElement('div');
-  markup.className = 'popup__code';
-  markup.insertAdjacentHTML('afterbegin', '<div class="header">Well done</div>');
+  markup.className = 'code-popup';
 
-  const viewCodeOptions = {
-    maxWidth: '400',
-    width: '450',
-    className: 'popup__code popup__wrapper',
-  };
+  markup.insertAdjacentHTML('afterbegin', `
+  <div class="code-popup__footer">
+      <div class="code-popup__tick"></div>
+      <div class="code-popup__link--container">
+        <span class="code-popup__link underline-transport">Transport me</span>
+        <span class="code-popup__link underline-transport">to the tomb</span>
+      </div>
+    </div>
+  ` ) 
 
-  const codePopupOptions = {
-    maxWidth: '400',
-    width: '450',
-    className: 'popup__codes',
-  };
+  markup.insertAdjacentHTML('afterbegin', `
+  <div class="code-popup__container">
+      <div class="code-popup__wrapper code-popup--1">
+        <div class="code-popup__text code-popup__text--1"></div>
+
+      </div>
+
+      <div class="code-popup__wrapper code-popup--2">
+        <div class="code-popup__text code-popup__text--2"></div>
+      </div>
+
+      <div class="code-popup__wrapper code-popup--3">
+        <div class="code-popup__text code-popup__text--3"> </div>
+      </div>
+
+      <div class="code-popup__wrapper code-popup--4">
+        <div class="code-popup__text code-popup__text--4"></div>
+      </div>
+
+      <div class="code-popup__wrapper code-popup--5">
+        <div class="code-popup__text code-popup__text--5"></div>
+      </div>
+    </div>
+  ` )  
+  
+  markup.insertAdjacentHTML('afterbegin', '<div class="code-popup__header">Progress</div>');
+  markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="final-code__message"> Heres are the codes you have completed so far</div>');
+
   const challengespProgress = await fetchCompletedChallenges();
-  const landmarkCodes = {
-    challenge1: 'lorem ipsum challenge.',
-    challenge2: 'lorem ipsum challenge.',
-    challenge3: 'lorem ipsum challenge.',
-    challenge4: 'lorem ipsum challenge.',
-    challenge5: 'lorem ipsum challenge.',
-  };
 
   for (let i = 0; i < challengespProgress.length; i++) {
-    markup.firstElementChild.insertAdjacentHTML('afterend', `<div class="popup__container"><div class="text">${landmarkCodes[challengespProgress[i]]}</div></div>`);
+
+    if (challengespProgress[i] == 'challenge1') {
+      markup.querySelector('.code-popup__text.code-popup__text--1').innerHTML = 'challenge 1 code'
+
+    } else if (challengespProgress[i] == 'challenge2') {
+      markup.querySelector('.code-popup__text.code-popup__text--2').innerHTML = 'challenge 2 code'
+      
+    } else if (challengespProgress[i] == 'challenge3') {
+      markup.querySelector('.code-popup__text.code-popup__text--3').innerHTML = 'challenge 3 code'
+      
+    } else if (challengespProgress[i] == 'challenge4') {
+      markup.querySelector('.code-popup__text.code-popup__text--4').innerHTML = 'challenge 4 code'
+      
+    } else if (challengespProgress[i] == 'challenge5') {
+      markup.querySelector('.code-popup__text.code-popup__text--5').innerHTML = 'challenge 5 code'
+      
+    }
   }
-  markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="message"> Find all landmarks to complete the code</div>');
+
+  debugger
+
+
+
+
 
   var currentViewCenter = window.map.getCenter();
   var marker = L.marker(currentViewCenter).addTo(window.map);
-  marker.bindPopup(markup,  codePopupOptions).openPopup();
+
+
+  setTimeout(function() {
+    let popup = marker.bindPopup(markup,  viewCodeOptions)
+
+    popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+   // popup.on("popupopen", ()=> { handlePopupOpen() })
+    popup.openPopup();
+  }, 750);
+  
 
  
 }

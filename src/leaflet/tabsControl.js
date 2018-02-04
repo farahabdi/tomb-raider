@@ -103,7 +103,7 @@ export default function tabsControl() {
         const fieldElement = document.getElementsByClassName('field')[0];
 
 
-        debugger
+     
         //toggle the css class name manually to open or close the tab
         if(self.fieldWrapper.className === 'field__wrapper field__wrapper-open'){
           self.fieldWrapper.className = 'field__wrapper field__wrapper-closed'
@@ -128,12 +128,11 @@ export default function tabsControl() {
           event.stopPropagation()
         } else {
 
-          debugger
-          const panelElement = document.getElementsByClassName('leaflet-top leaflet-left')[0];
+        document.getElementsByClassName('leaflet-top leaflet-left')[0];
 
 
 
-          panelElement.className = "leaflet-top leaflet-left hide-header"
+          headerElement.className = "leaflet-top leaflet-left hide-header"
           logoElement.className = "leaflet-bottom leaflet-left hide-logo"
           fieldElement.className = 'field field--open'
 
@@ -152,7 +151,7 @@ export default function tabsControl() {
     }
 
       function showOptionsTab(event){
-        debugger
+   
 
         let element = document.getElementsByClassName('field__wrapper')[0]
         let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
