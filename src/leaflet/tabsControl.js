@@ -119,7 +119,7 @@ export default function tabsControl() {
           panelElement.className = "leaflet-top leaflet-left"
           logoElement.className = "leaflet-bottom leaflet-left"
 
-          headerElement.className = 'leaflet-top leaflet-left hide-header'
+          headerElement.className = 'leaflet-top leaflet-left'
 
 
 
