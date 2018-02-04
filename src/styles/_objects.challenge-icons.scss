@@ -4,7 +4,8 @@
     margin-top: 8px;
     @include mq($from: tablet, $until: desktop) {
         margin-left: -30px;
-        margin-top: 25px;
+        margin-top: 14px;
+        
     }
     @include mq($from: desktop, $until: wide) {
         margin-left: -30px;

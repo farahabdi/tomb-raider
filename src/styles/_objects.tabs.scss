@@ -58,13 +58,13 @@
         top: -88px;
         margin-left: -256px;
         @include mq($from: tablet, $until: desktop) {
-
+            top: -14px;
             }
         @include mq($from: desktop, $until: wide) {
-
+            top: -14px;
         }
         @include mq($from: wide) {
-
+            top: -14px;
             }
     }
     .field__wrapper {
@@ -74,7 +74,8 @@
         width: 953px;
         height: 833px;
         padding-bottom: -5px;
-        transition: 0.5s all ease;
+        transition: margin 700ms;
+       //. transition: 0.5s all ease;
         @include mq($from: tablet, $until: desktop) {
             background-image: url("../assets/fieldFolder@2x.png") !important;
             background-repeat: no-repeat !important;
@@ -84,7 +85,7 @@
             // padding-left: 48px;
             // padding-top: 51px;
             //padding-right: 49px;
-            transition: 0.5s all ease;
+         //   transition: 0.5s all ease;
             outline: none;
         }
         @include mq($from: desktop, $until: wide) {
@@ -95,7 +96,7 @@
             // padding-left: 48px;
             // padding-top: 51px;
             //padding-right: 49px;
-            transition: 0.5s all ease;
+           // transition: 0.5s all ease;
             outline: none;
         }
 
@@ -108,14 +109,14 @@
             // padding-left: 48px;
             // padding-top: 51px;
             //padding-right: 49px;
-            transition: 0.5s all ease;
+            transition: margin 700ms;
             outline: none;
         }
 
         &.field__wrapper-open {
 
             padding-left: 189px;
-            transition: 0.5s all ease;
+           // transition: 0.5s all ease;
             margin-left: -397px;
             top: -88px;
         
@@ -127,7 +128,7 @@
                 }
                 @include mq($from: wide) {
                     padding-left: 399px;
-                    transition: 0.5s all ease;
+                //    transition: 0.5s all ease;
                     margin-left: -656px;
                     height: 893px;
                     
@@ -144,6 +145,7 @@
     height: 724px;
     margin-left: -353px;
     z-index: 1;
+    
         @include mq($from: tablet, $until: desktop) {
             font-family: 'Caveat', cursive;
             font-size: 22px;
@@ -326,12 +328,10 @@
 
 .field__wrapper-close {
     padding-left: 0px;
-    transition: 0.5s all ease;
-    transition: 0.5s all ease;
+
     @include mq($from: tablet) {
         padding-left: 0px;
-        transition: 0.5s all ease;
-        transition: 0.5s all ease;
+
     }
 }
 
@@ -393,7 +393,7 @@
 
 
 .fb_post_container.fb_post_container__closed {
-    transition: 0.5s all ease;
+  //  transition: 0.5s all ease;
     margin-left: 0px;
 }
 
@@ -483,15 +483,15 @@
         transition: 0.5s all ease;
         margin-left: -361px;
         position: absolute;
-        top: 307px;
+        top: 180px;
         /* padding-left: 170px; */
         -webkit-overflow-scrolling: touch;
         overflow-y: scroll;
         overflow-x: hidden;
         height: 62%;
-        width: 531px;
+        width: 413px;
         /* padding-right: 5px; */
-        right: 466px;
+        right: 585px;
         padding: 33px;
         background: white;
 
@@ -500,15 +500,15 @@
         transition: 0.5s all ease;
         margin-left: -361px;
         position: absolute;
-        top: 248px;
+        top: 204px;
         /* padding-left: 170px; */
         -webkit-overflow-scrolling: touch;
         overflow-y: scroll;
         overflow-x: hidden;
         height: 62%;
-        width: 531px;
+        width: 517px;
         /* padding-right: 5px; */
-        right: 630px;
+        right: 656px;
         padding: 33px;
         background: white;
     }
@@ -517,7 +517,7 @@
 
 .fb_post_container.fb_post_container__closed {
     @include mq($from: tablet) {
-     transition: 0.5s all ease;
+    // transition: 0.5s all ease;
      margin-left: 0px;
     }
 }
@@ -536,7 +536,7 @@
 }
 
 .options__container:focus {
-    transition: 2.15s all ease;
+   // transition: 2.15s all ease;
     @include mq($from: tablet) {
         padding-left: 299px;
         transition: 2.15s all ease;
@@ -560,9 +560,9 @@
 }
 
 .options.leaflet-control {
-    transition: 0.5s all ease;
+    transition: margin 700ms;
     @include mq($from: tablet) {
-        transition: 0.5s all ease;
+        transition: margin 700ms;
     }
 }
     
@@ -614,21 +614,21 @@ iframe {
         
 
         @include mq($from: tablet, $until: desktop) {
-            padding-top: 100px;
+            padding-top: 52px;
             font-size: 32px;
             /* margin-right: -246px; */
             margin-left: -19px;
             }
         @include mq($from: desktop, $until: wide) {
 
-            padding-top: 100px;
+            padding-top: 52px;
             font-size: 32px;
             /* margin-right: -246px; */
             margin-left: -44px;
 
             }
         @include mq($from: wide) {
-            padding-top: 85px;
+            padding-top: 52px;
             font-size: 35px;
             margin-left: -169px;
         }
@@ -688,7 +688,7 @@ iframe {
         
 
         .field-text__message {
-            transition: margin 700ms;
+           
             width: 280px;
             font-size: 16px;
                 margin-top: 13px;
@@ -700,11 +700,11 @@ iframe {
                 }
             @include mq($from: desktop, $until: wide) {
                 margin-top: 8px;
-
-    
+                font-size: 21px;
+                width: 329px;
             }
             @include mq($from: wide) {
-                transition: margin 700ms;
+             
                 width: 329px;
                 font-size: 21px;
                 margin-top: 12px;
