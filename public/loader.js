@@ -65,8 +65,14 @@
             canvas.height = h*pRatio*sRatio;
             // canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
             // canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
-            canvas.style.width = dom_overlay_container.style.width = /* anim_container.style.width = */  w*sRatio/2+'px';				
-            canvas.style.height = anim_container.style.height = /* dom_overlay_container.style.height = */ h*sRatio/2+'px';
+            let divider = 3;//divide size by 3 for mobile
+            const tablet = 740;
+            if(window.matchMedia( "(min-width: "+tablet+"px)" ).matches){
+              //tablet or larger only divide size by 2
+              divider = 2;
+            }
+            canvas.style.width = dom_overlay_container.style.width = w*sRatio/divider+'px';				
+            canvas.style.height = anim_container.style.height = h*sRatio/divider+'px';
             stage.scaleX = pRatio*sRatio;			
             stage.scaleY = pRatio*sRatio;			
             lastW = iw; lastH = ih; lastS = sRatio;            
