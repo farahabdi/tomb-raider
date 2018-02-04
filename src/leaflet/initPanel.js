@@ -36,8 +36,9 @@ export default function initSearch() {
   for (let i = 0; i < searchElement.length; i++) {
     searchElement[i].addEventListener('click', handleSearch);
     searchInput[i].addEventListener('keyup', (event) => {
-      event.preventDefault();
-      if (event.keyCode === 13) {
+      event.preventDefault(); 
+      // console.log(event.key);
+      if ((event.keyCode === 13) || (event.key==='Enter')) {
         handleSearch();
       }
     });
@@ -55,13 +56,24 @@ export default function initSearch() {
   let challengeElement = document.getElementsByClassName('challenge__wrapper')[0]
   challengeElement.addEventListener('click', showViewCodePopup, false)
 
+  function showLoader(){
+    let loaderContainer = document.getElementById('animation_container');
+    loaderContainer.style.display = 'inherit'
+  }
+  
+  function hideLoader(){
+    let loaderContainer = document.getElementById('animation_container');
+    loaderContainer.style.display = 'none'
+  }
+  
 
   async function handleSearch() {
     const answerInput = searchInput[0].value;
     searchInput[0].blur();
+    showLoader();
     const challenges = await fetchChallenges();
     const answerKey = await checkAnswer(answerInput);
-
+    hideLoader();
 
     const successOptions = {
       maxWidth: '400',
@@ -460,13 +472,14 @@ async function showSuccessPopUp() {
 
   const popupElement = window.map._panes["popupPane"].className = "leaflet-pane leaflet-popup-pane unhide-map"
   
-
-
-
   let num = 0;
-  Object.values(challenges).forEach((value) => { if (value === true) { num += 1; } });
-  num++;
+  
+  //Object.values(challenges).forEach((value) => { if (value === true) { num += 1; } });
+  //IE doesn't support Object.values so lets get them this way
+  var values = Object.keys(challenges).map(e => challenges[e])
+  values.forEach((value) => { if (value === true) { num += 1; } });
 
+  num++;
   if (num>=5) {
     num = 5
   }

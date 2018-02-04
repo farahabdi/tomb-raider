@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url("../assets/landing@2x.jpg");
+    background-image: url("/images/landing@2x.jpg");
     background-repeat: no-repeat;
     overflow-y: hidden;
     height: 3006px;
@@ -97,25 +97,25 @@
         &.notepad__wrapper-1 {
             width: 285px;
             margin-right: 91px;
-            background-image: url("../assets/postit_1.png");
+            background-image: url("../assets/Postit_1.png");
             background-repeat: no-repeat;
             transform: rotate(13deg);
         }
         &.notepad__wrapper-2 {
             width: 285px;
             transform: rotate(-18deg);
-            background-image: url("../assets/postit_2.png");
+            background-image: url("../assets/Postit_2.png");
             background-repeat: no-repeat;
         }
         &.notepad__wrapper-3 {
             width: 227px;
-            background-image: url("../assets/postit_3.png");
+            background-image: url("../assets/Postit_3.png");
             background-repeat: no-repeat;
         }
         &.notepad__wrapper-4 {
             width: 285px;
           //  padding-top: 17px !important;
-            background-image: url("../assets/postit_5.png");
+            background-image: url("../assets/Postit_5.png");
             background-repeat: no-repeat;
         }
         &.notepad__wrapper-5 {
@@ -125,7 +125,7 @@
         }
         &.notepad__wrapper-6 {
             width: 242px;
-            background-image: url("../assets/postit_7.png");
+            background-image: url("../assets/Postit_7.png");
             background-repeat: no-repeat;
         }
         .notepad__text {

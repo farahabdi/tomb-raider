@@ -1,18 +1,19 @@
 .challenges {
     display: flex;
-    margin-left: -6px;
-    margin-top: 13px;
+    margin-left: -16px;
+    margin-top: 8px;
     @include mq($from: tablet, $until: desktop) {
-        margin-left: -16px;
+        margin-left: -30px;
         margin-top: 25px;
+        transition: margin 400ms
     }
     @include mq($from: desktop, $until: wide) {
-        margin-left: -16px;
-        margin-top: 12px;
+        margin-left: -30px;
+        margin-top: 25px;
         transition: margin 400ms;
     }
     @include mq($from: wide) {
-        margin-left: -21px;
+        margin-left: -30px;
         margin-top: 28px;
         transition: margin 400ms;
     }
@@ -35,7 +36,7 @@
 
         @include mq($from: tablet, $until: desktop) {
             padding-top: 18px;
-            width: 41px;
+            width: 45px;
             height: 25px;
             padding-bottom: 17px;
             padding-left: -3px;
@@ -43,7 +44,7 @@
         }
         @include mq($from: desktop, $until: wide) {
             padding-top: 18px;
-            width: 41px;
+            width: 48px;
             height: 25px;
             padding-bottom: 17px;
             padding-left: -3px;
@@ -57,6 +58,9 @@
             padding-left: -3px;
             padding-right: 0px;
         }
+        
+
+
 
 
         &.challenge__1 {
