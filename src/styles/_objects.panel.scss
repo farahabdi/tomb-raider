@@ -13,16 +13,37 @@
     text-decoration: white;
     padding-left: 206px;
     height: 122px;
-    width: 97px;
-    @include mq($from: tablet) {
-      text-decoration: white;
-      padding-left: 206px;
-      background-image: url("../assets/panelTexture@desktop.png");
-      background-repeat: no-repeat;
-      width: 431px;
-      height: 185px;
-      background-size: contain;
-    }
+    width: 168px;
+    transition: height 400ms;
+    @include mq($from: tablet, $until: desktop) {
+        text-decoration: white;
+        padding-left: 206px;
+        background-image: url(/static/media/panelTexture@desktop.39df7254.png);
+        background-repeat: no-repeat;
+        width: 427px;
+        height: 169px;
+        background-size: contain;
+      }
+      @include mq($from: desktop, $until: wide) {
+          text-decoration: white;
+          padding-left: 206px;
+          background-image: url("../assets/panelTexture@desktop.png");
+          background-repeat: no-repeat;
+          width: 431px;
+          height: 185px;
+          background-size: contain;
+          transition: height 400ms;
+      }
+      @include mq($from: wide) {
+  
+          height: 193px;
+          width: 431px;
+          padding-left: 206px;
+          background-size: contain;
+          background-image: url("../assets/panelTexture@desktop.png");
+          background-repeat: no-repeat;
+          transition: height 400ms;
+      }
     .header__wrapper {
         position: absolute;
         margin-left: -203px;
@@ -57,13 +78,31 @@
         background-image: url("../assets/searchTexture.png");
         background-repeat: no-repeat;
         background-size: contain;
-        width: 298px;
-        height: 71px;
+        transition: height 400ms;
+        transition: width 400ms;
+        width: 362px;
+        height: 68px;
 
-        @include mq($from: tablet) {
-          width: 416px;
-          height: 61px;
-        }
+        @include mq($from: tablet, $until: desktop) {
+            transition: height 700ms;
+            transition: width 400ms;
+            width: 362px;
+            height: 69px;
+          }
+          @include mq($from: desktop, $until: wide) {
+            transition: width 400ms;
+            transition: height 400ms;
+            
+            width: 362px;
+            height: 70px;
+          }
+          @include mq($from: wide) {
+            transition: height 400ms;
+            transition: width 400ms;
+            width: 416px;
+            height: 71px;
+            
+          }
         .search__input {
             font-family: 'PT Serif', serif;
             font-size: 22px;
@@ -74,7 +113,7 @@
             border: none !important;
 
             text-decoration: none;
-            margin-top: 10px;
+            margin-top: 17px;
             margin-left: 22px;
 
             @include mq($from: tablet, $until: desktop) {
@@ -120,25 +159,46 @@
         .search__icon {
           background-image: url("../assets/searchIcon.png");
           background-repeat: no-repeat;
-          margin-left: -75px;
+          margin-left: -43px;
           background-size: contain;
           padding-right: 9px;
           width: 35px;
           /* margin-right: 4px; */
-          margin-top: 3px;
+          margin-top: 6px;
           cursor: pointer;
 
+          @include mq($from: tablet, $until: desktop) {
+            background-image: url("../assets/searchIcon@desktop.png");
+            background-repeat: no-repeat;
+            margin-left: -34px;
+            background-size: contain;
+            padding-right: 9px;
+            width: 48px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+        @include mq($from: desktop, $until: wide) {
+            background-image: url("../assets/searchIcon@desktop.png");
+            background-repeat: no-repeat;
+            margin-left: -34px;
+            background-size: contain;
+            padding-right: 9px;
+            width: 44px;
+            margin-top: 5px;
+            cursor: pointer;
+        }
+        @include mq($from: wide) {
+            background-image: url("../assets/searchIcon@desktop.png");
+            background-repeat: no-repeat;
+            margin-left: -27px;
+            background-size: contain;
+            padding-right: 9px;
+            width: 50px;
+            margin-top: 2px;
+            cursor: pointer;
+        }
 
-            @include mq($from: tablet) {
-              background-image: url("../assets/searchIcon@desktop.png");
-              background-repeat: no-repeat;
-              margin-left: -27px;
-              background-size: contain;
-              padding-right: 9px;
-              width: 56px;
-              margin-top: 2px;
-              cursor: pointer;
-            }
+
         }
     }
 }
