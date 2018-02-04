@@ -84,9 +84,10 @@ export default function tabsControl() {
       self = this;
 
       function showfield(event){
-
+        
         let fbContainerElement = document.getElementsByClassName('fb_post_container')[0]
-
+        let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
+        const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
         debugger
         //toggle the css class name manually to open or close the tab
         if(self.fieldWrapper.className === 'field__wrapper field__wrapper-open'){
@@ -94,10 +95,17 @@ export default function tabsControl() {
           fbBox.className = 'fb_post_container fb_post_container__closed'
           fbContainerElement.className = 'fb_post_container fb_post_container--closed'
 
+          headerElement.className = 'leaflet-top leaflet-left'
+          logoElement.className = 'leaflet-bottom leaflet-left'
+
           const panelElement = document.getElementsByClassName('leaflet-top leaflet-left')[0];
-          const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+
           panelElement.className = "leaflet-top leaflet-left"
           logoElement.className = "leaflet-bottom leaflet-left"
+
+          headerElement.className = 'leaflet-top leaflet-left hide-header'
+
+
 
           map.scrollWheelZoom.enable();
           map.dragging.enable();
@@ -106,9 +114,11 @@ export default function tabsControl() {
 
           debugger
           const panelElement = document.getElementsByClassName('leaflet-top leaflet-left')[0];
-          const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+
+
+
           panelElement.className = "leaflet-top leaflet-left hide-pane"
-          logoElement.className = "leaflet-bottom leaflet-left hide-pane"
+          logoElement.className = "leaflet-bottom leaflet-left hide-logo"
 
 
 

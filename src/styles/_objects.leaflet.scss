@@ -82,9 +82,7 @@ div.leaflet-top.leaflet-left {
  // opacity: 0.1 !important;
 }
 
-.hide-pane {
-  display: none;
-}
+
 .leaflet-bottom.leaflet-left {
   background-image: url("../assets/logo.png") !important;
   background-repeat: no-repeat !important;
@@ -257,7 +255,7 @@ a {
 }
 
 .leaflet-top.leaflet-left.hide-header {
-  margin-top: -195px;
+
   transition: margin 700ms;
   @include mq($from: tablet, $until: desktop) {
     margin-top: 0px ;
@@ -269,3 +267,21 @@ a {
     margin-top: 0px ;
     }
 }
+
+.leaflet-bottom.leaflet-left { 
+  margin-left: 28px;
+  transition: margin 700ms;
+    &.hide-logo {
+      margin-left: -148px;
+      transition: margin 700ms;
+      @include mq($from: tablet, $until: desktop) {
+        margin-top: 0px ;
+        }
+      @include mq($from: desktop, $until: wide) {
+        margin-top: 0px ;
+      }
+      @include mq($from: wide) {
+        margin-top: 0px ;
+        }
+    }
+  }

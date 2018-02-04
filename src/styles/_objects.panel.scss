@@ -14,7 +14,7 @@
     padding-left: 206px;
     height: 122px;
     width: 168px;
-
+    transition: height 400ms;
     @include mq($from: tablet, $until: desktop) {
         text-decoration: white;
         padding-left: 206px;
