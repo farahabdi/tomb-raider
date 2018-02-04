@@ -93,7 +93,7 @@ export default function tabsControl() {
 
 
 
-      let self = this;
+      self = this;
 
       function showfield(event){
         
@@ -155,6 +155,7 @@ export default function tabsControl() {
         debugger
 
         let element = document.getElementsByClassName('field__wrapper')[0]
+        let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
 
               // Options Buttons
           let signOutElement = document.getElementsByClassName('instructions__signout')[0]
@@ -176,11 +177,14 @@ export default function tabsControl() {
         if(self.optionsElement.className === 'options__container options__container-open'){
             self.optionsElement.className = 'options__container options__container_close'
             self.optionsElement.className = "options leaflet-control"
+            headerElement.className = 'leaflet-top leaflet-left'
        } else if (self.optionsElement.className == "options leaflet-control onTop") {
             self.optionsElement.className = 'options leaflet-control'
+            headerElement.className = 'leaflet-top leaflet-left'
        } else {
             self.optionsElement.className = 'options__container options__container-open'
             self.optionsElement.className = "options leaflet-control onTop"
+            headerElement.className = 'leaflet-top leaflet-left hide-header'
        }
      }
 

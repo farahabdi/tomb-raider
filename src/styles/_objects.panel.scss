@@ -13,8 +13,9 @@
     text-decoration: white;
     padding-left: 206px;
     height: 122px;
-    width: 97px;
-
+    width: 162px;
+    transition: height 400ms;
+    transition: width 400ms;
     @include mq($from: tablet, $until: desktop) {
         text-decoration: white;
         padding-left: 206px;
@@ -88,11 +89,15 @@
             transition: width 400ms;
             width: 362px;
             height: 69px;
+            transition: height 400ms;
+            transition: width 400ms;
           }
           @include mq($from: desktop, $until: wide) {
             transition: width 400ms;
             width: 362px;
             height: 70px;
+            transition: height 400ms;
+            transition: width 400ms;
           }
           @include mq($from: wide) {
             transition: height 400ms;

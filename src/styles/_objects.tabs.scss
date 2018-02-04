@@ -178,9 +178,11 @@
         }
         &.onTop {
             @include mq($from: tablet, $until: desktop) {
-
+                margin-top: -15px !important;
             }
             @include mq($from: desktop, $until: wide) {
+                margin-top: -15px !important;
+                
             }
             @include mq($from: wide) {
                 margin-top: -15px !important;
@@ -216,15 +218,36 @@
     flex-direction: column;
     justify-content: center;
     width: 39%;
-    padding-top: 193px;
+    padding-top: 77px;
     padding-left: 62px;
     margin: auto;
     @include mq($from: tablet) {
+
+    }
+
+    @include mq($from: tablet, $until: desktop) {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 45%;
-        padding-top: 193px;
+        padding-top: 53px;
+        margin: auto;
+    }
+    @include mq($from: desktop, $until: wide) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
+        padding-top: 53px;
+        margin: auto;
+        
+    }
+    @include mq($from: wide) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 45%;
+        padding-top: 53px;
         margin: auto;
     }
     .cross__wrapper {
@@ -670,6 +693,7 @@ iframe {
             width: 25px;
             height: 26px;
             margin-left: 101px;
+            cursor: pointer;
             @include mq($from: tablet, $until: desktop) {
                 background-image: url("../assets/Exit_X@2x.png") !important;
                 background-repeat: no-repeat !important;
@@ -731,4 +755,7 @@ iframe {
 
 .field-text__header {
     display: flex;
+}
+.cross {
+    cursor: pointer;
 }
