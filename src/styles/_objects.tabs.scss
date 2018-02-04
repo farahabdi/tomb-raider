@@ -260,6 +260,8 @@
         }
     }
     .instructions__header {
+        font-size: 30px;
+        margin-left: 22px;
 
         @include mq($from: tablet, $until: desktop) {
             //   margin-bottom: 12%;
