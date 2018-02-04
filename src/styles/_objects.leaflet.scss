@@ -259,7 +259,8 @@ a {
   transition: margin 700ms;
   margin-top: -140px;
   @include mq($from: tablet, $until: desktop) {
-    margin-top: 0px ;
+    transition: margin 700ms;
+    margin-top: -180px;
     }
   @include mq($from: desktop, $until: wide) {
     margin-top: 0px ;
@@ -277,12 +278,16 @@ a {
       transition: margin 700ms;
       @include mq($from: tablet, $until: desktop) {
         margin-top: 0px ;
+        margin-left: 28px;
         }
       @include mq($from: desktop, $until: wide) {
         margin-top: 0px ;
+
+        margin-left: 28px;
       }
       @include mq($from: wide) {
         margin-top: 0px ;
+        margin-left: 28px;
         }
     }
   }

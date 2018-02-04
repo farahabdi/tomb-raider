@@ -384,7 +384,7 @@ debugger
         popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
         popup.on("popupopen", ()=> { handlePopupOpen() })
         popup.openPopup();
-      }, 1950);
+      }, 2200);
 
       /* Fly to Point */
   

@@ -18,10 +18,10 @@
     @include mq($from: tablet, $until: desktop) {
         text-decoration: white;
         padding-left: 206px;
-        background-image: url("../assets/panelTexture@desktop.png");
+        background-image: url(/static/media/panelTexture@desktop.39df7254.png);
         background-repeat: no-repeat;
-        width: 431px;
-        height: 185px;
+        width: 427px;
+        height: 169px;
         background-size: contain;
       }
       @include mq($from: desktop, $until: wide) {
@@ -113,7 +113,7 @@
             border: none !important;
 
             text-decoration: none;
-            margin-top: 10px;
+            margin-top: 14px;
             margin-left: 22px;
 
             @include mq($from: tablet, $until: desktop) {

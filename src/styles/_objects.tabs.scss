@@ -56,6 +56,7 @@
 
     &.field--open {
         top: -88px;
+        margin-left: -256px;
         @include mq($from: tablet, $until: desktop) {
 
             }
@@ -115,11 +116,11 @@
 
             padding-left: 189px;
             transition: 0.5s all ease;
-            margin-left: -389px;
+            margin-left: -397px;
             top: -88px;
         
                 @include mq($from: tablet, $until: desktop) {
-                //   margin-bottom: 12%;
+                    margin-left: -570px;
                 }
                 @include mq($from: desktop, $until: wide) {
                     //margin-bottom: 14%;
@@ -334,21 +335,6 @@
     }
 }
 
-.field-text__container {
-    .field-text__cross {
-        background-image: url("../assets/fieldFolder@2x.png") !important;
-        background-repeat: no-repeat !important;
-    }
-
-    .field-text__header {
-
-    }
-
-    .field-text__message {
-
-    }
-}
-
 
 /* Facebook Tab */
 
@@ -474,8 +460,7 @@
 .fb_post_container.fb_post_container__opened {
     transition: 0.5s all ease;
     margin-left: -373px;
-    right: 733px;
-
+    right: 731px;
 
     @include mq($from: tablet, $until: desktop) {
         transition: 0.5s all ease;
@@ -487,9 +472,9 @@
         overflow-y: scroll;
         overflow-x: hidden;
         height: 62%;
-        width: 336px;
+        width: 507px;
         /* padding-right: 5px; */
-        right: 658px;
+        right: 481px;
         padding: 33px;
         background: white;
         
@@ -506,7 +491,7 @@
         height: 62%;
         width: 531px;
         /* padding-right: 5px; */
-        right: 694px;
+        right: 466px;
         padding: 33px;
         background: white;
 
@@ -662,15 +647,56 @@ iframe {
 
             }
         }
+
+        .field-text__cross {
+            background-image: url("../assets/Exit_X.png") !important;
+            background-repeat: no-repeat !important;
+            width: 25px;
+            height: 26px;
+            margin-left: 101px;
+            @include mq($from: tablet, $until: desktop) {
+                background-image: url("../assets/Exit_X@2x.png") !important;
+                background-repeat: no-repeat !important;
+                width: 45px;
+                height: 46px;
+                margin-left: 179px;
+                margin-bottom: 0px;
+                margin-top: -20px;
+            }
+            @include mq($from: desktop, $until: wide) {
+                background-image: url("../assets/Exit_X@2x.png") !important;
+                background-repeat: no-repeat !important;
+
+                width: 45px;
+                height: 46px;
+                margin-left: 191px;
+                margin-bottom: 0px;
+                margin-top: -32px;
+ 
+            }
+            @include mq($from: wide) {
+                background-image: url("../assets/Exit_X@2x.png") !important;
+                background-repeat: no-repeat !important;
+                width: 45px;
+                height: 46px;
+                margin-left: 191px;
+                margin-bottom: 0px;
+                margin-top: -32px;
+
+            }
+        }
         
 
         .field-text__message {
             transition: margin 700ms;
-            width: 315px;
-            font-size: 18px;
+            width: 280px;
+            font-size: 16px;
+                margin-top: 13px;
 
             @include mq($from: tablet, $until: desktop) {
+                width: 353px;
                 margin-top: 8px;
+                font-size: 22px;
                 }
             @include mq($from: desktop, $until: wide) {
                 margin-top: 8px;
@@ -685,4 +711,8 @@ iframe {
             }
         }
     }
+}
+
+.field-text__header {
+    display: flex;
 }
