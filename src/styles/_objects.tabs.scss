@@ -178,9 +178,10 @@
         }
         &.onTop {
             @include mq($from: tablet, $until: desktop) {
-
+                margin-top: -15px !important;
             }
             @include mq($from: desktop, $until: wide) {
+                margin-top: -15px !important;
             }
             @include mq($from: wide) {
                 margin-top: -15px !important;
