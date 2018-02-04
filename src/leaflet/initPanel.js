@@ -64,7 +64,8 @@ export default function initSearch() {
   function hideLoader(){
     let loaderContainer = document.getElementById('animation_container');
     loaderContainer.style.display = 'none'
-  }  
+  }
+  
 
   async function handleSearch() {
     const answerInput = searchInput[0].value;
@@ -460,13 +461,14 @@ async function showSuccessPopUp() {
 
   const popupElement = window.map._panes["popupPane"].className = "leaflet-pane leaflet-popup-pane unhide-map"
   
-
-
-
   let num = 0;
-  Object.values(challenges).forEach((value) => { if (value === true) { num += 1; } });
-  num++;
+  
+  //Object.values(challenges).forEach((value) => { if (value === true) { num += 1; } });
+  //IE doesn't support Object.values so lets get them this way
+  var values = Object.keys(challenges).map(e => challenges[e])
+  values.forEach((value) => { if (value === true) { num += 1; } });
 
+  num++;
   if (num>=5) {
     num = 5
   }
