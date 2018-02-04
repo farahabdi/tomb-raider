@@ -46,7 +46,7 @@ export default function tabsControl() {
           <div> Instructions</div>
 
           </div>
-          <a  target="_blank" class="instructions__terms" style="display:block" href="https://firebasestorage.googleapis.com/v0/b/tomb-raider-app-34101.appspot.com/o/Tomb%20Raider%20-%20V7%20-%20T%26C%20-%20STC%20-%2022.1.18%20-%20APP.DOCX?alt=media&token=8ba9c7eb-4456-4f05-a981-adb917787b2a">
+          <a  target="_blank" class="instructions__terms" style="display:block" href="/Tomb_Raider_V8 _T&C_STC_31.1.18_PERMIT_INC.pdf">
             <div class="tick"></div>
             <div> Terms and conditions </div>
           </a>
