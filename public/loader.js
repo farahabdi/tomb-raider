@@ -97,6 +97,7 @@
         var preloadImg = new Image();
         preloadImg.onload = () => {
           preloadImg = null;
+          // console.log("loaded "+url);
           loadedcount++;
           if(loadedcount === arrayOfImages.length){
             finishedLoading()

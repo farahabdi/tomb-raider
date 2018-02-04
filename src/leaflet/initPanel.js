@@ -37,7 +37,8 @@ export default function initSearch() {
     searchElement[i].addEventListener('click', handleSearch);
     searchInput[i].addEventListener('keyup', (event) => {
       event.preventDefault();
-      if (event.keyCode === 13) {
+      console.log(event.key);
+      if ((event.keyCode === 13) || (event.key==='Enter')) {
         handleSearch();
       }
     });

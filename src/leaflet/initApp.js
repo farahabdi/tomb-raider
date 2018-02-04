@@ -40,7 +40,22 @@ export default function initApp() {
 
 function getMapImageURLs(){
   //get the images urls for the various bits - as determined by the media queries 
-  // let url = document.getElementsByClassName('field__wrapper')[0].style.background-image;
-  // console.log(url)
-  return [mapUrl];
+  const mobile = 320;
+  const tablet = 740;
+  const desktop = 980;
+  const wide = 1300;
+
+  let array = [mapUrl];
+  if(window.matchMedia( "(min-width: "+tablet+"px)" ).matches){
+    //for tablet and larger
+    array.push('/images/fieldFolder@2x.png');
+    array.push('/images/options@desktop.png');
+  } else {
+    //for mobile
+    array.push('/images/fieldNotesm.png');
+    array.push('/images/options.png');
+  }
+  array.push('/images/popup.png'); //these used by different things? do we need to load both?
+  array.push('/images/popup@2x.png');
+  return array;
 }

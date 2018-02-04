@@ -54,7 +54,7 @@
         top: -14px;
         }
     .field__wrapper {
-        background-image: url("../assets/fieldNotesm.png") !important;
+        background-image: url("/images/fieldNotesm.png") !important;
         background-repeat: no-repeat !important;
         background-size: contain;
         width: 953px;
@@ -62,7 +62,7 @@
         padding-bottom: -5px;
         transition: 0.5s all ease;
         @include mq($from: tablet, $until: desktop) {
-            background-image: url("../assets/fieldFolder@2x.png") !important;
+            background-image: url("/images/fieldFolder@2x.png") !important;
             background-repeat: no-repeat !important;
            
                 height: 968px;
@@ -74,7 +74,7 @@
             outline: none;
         }
         @include mq($from: desktop, $until: wide) {
-            background-image: url("../assets/fieldFolder@2x.png") !important;
+            background-image: url("/images/fieldFolder@2x.png") !important;
             background-repeat: no-repeat !important;
             height: 968px;
             padding-bottom: -5px;
@@ -86,7 +86,7 @@
         }
 
         @include mq($from: wide) {
-            background-image: url("../assets/fieldFolder@2x.png") !important;
+            background-image: url("/images/fieldFolder@2x.png") !important;
             background-repeat: no-repeat !important;
             
             height: 968px;
@@ -176,14 +176,14 @@
 
 
 .options__container {
-    background-image: url("../assets/options.png") !important;
+    background-image: url("/images/options.png") !important;
     background-repeat: no-repeat !important;
     width: 400px;
     height: 873px;
     padding-bottom: -5px;
     transition: 0.5s all ease;
     @include mq($from: tablet) {
-        background-image: url("../assets/options@desktop.png") !important;
+        background-image: url("/images/options@desktop.png") !important;
         background-repeat: no-repeat !important;
         width: 400px;
         height: 873px;
@@ -323,7 +323,7 @@
 
 .field-text__container {
     .field-text__cross {
-        background-image: url("../assets/fieldFolder@2x.png") !important;
+        // background-image: url("../assets/fieldFolder@2x.png") !important;
         background-repeat: no-repeat !important;
     }
 
