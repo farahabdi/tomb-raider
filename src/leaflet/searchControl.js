@@ -33,8 +33,6 @@ export default function searchControl() {
 
       // Profile
       this.profilePicture = L.DomUtil.create('img', 'profile__picture', this.profileContainer);
-      this.profilePicture.addEventListener('touchstart', logout, false);
-      this.profilePicture.addEventListener('click', logout, false);
 
       /* Challenge container */
       this.challengeWrapper = L.DomUtil.create('div', 'challenge__wrapper', this.challenges);
@@ -43,13 +41,6 @@ export default function searchControl() {
       this.challengeWrapper3 = L.DomUtil.create('div', 'challenge__icon  challenge__3 dsd', this.challengeWrapper);
       this.challengeWrapper4 = L.DomUtil.create('div', 'challenge__icon  challenge__4', this.challengeWrapper);
       this.challengeWrapper5 = L.DomUtil.create('div', 'challenge__icon  challenge__5', this.challengeWrapper);
-
-
-      function logout() {
-        firebaseAuth.signOut();
-        localStorage.clear()
-        window.location.reload(true);
-      }
 
       function focusSearch(event) {
         // bed - 19 Jan 2018 - have to manually tell this to focus for iOS.
@@ -62,14 +53,6 @@ export default function searchControl() {
 
       /* Image */
       this.profilePicture.src = window.photoURL;
-      this.profilePicture.touchstart = () => {
-        firebaseAuth.signOut();
-        window.location.reload(true);
-      };
-      this.profilePicture.onclick = () => {
-        firebaseAuth.signOut();
-        window.location.reload(true);
-      };
       return container;
     },
   });
