@@ -603,8 +603,8 @@ logoElement.className = "leaflet-bottom leaflet-left hide-logo"
   <div class="code-popup__footer">
       <div class="code-popup__tick"></div>
       <div class="code-popup__link--container">
-        <span class="code-popup__link underline-transport">Transport me</span>
-        <span class="code-popup__link underline-transport">to the tomb</span>
+        <span class="code-popup__link underline-transport"><a href="tombofthechosen.com">Transport me</a></span>
+        <span class="code-popup__link underline-transport"><a href="tombofthechosen.com">to the tomb</a><</span>
       </div>
     </div>
   ` ) 
