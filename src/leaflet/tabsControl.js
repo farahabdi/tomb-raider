@@ -43,18 +43,19 @@ export default function tabsControl() {
             <div class="tick"></div>
           </div>
           <div class="instructions__message">
-          <div> Instructions</div>
-
+            <div> Instructions</div>
           </div>
           <a  target="_blank" class="instructions__terms" style="display:block" href="/Tomb_Raider_V8 _T&C_STC_31.1.18_PERMIT_INC.pdf">
             <div class="tick"></div>
             <div> Terms and conditions </div>
           </a>
-        
-
+          <div class="instructions__message">
+            <div class="fb-like" data-href="https://www.facebook.com/CroftHoldingsAU/" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
+          </div>
           </div>
         </div>
       ` )  
+      FB.XFBML.parse(this.optionsText); //this is the important magic call that makes facebook render
 
 
       // TODO put this facebook stuff in the OTHER folder, not the options folder     
