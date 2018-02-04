@@ -3,6 +3,8 @@
 import searchControl from './searchControl';
 import tabsControl from './tabsControl';
 
+const mapUrl = "images/maps.jpg"
+
 export default function initApp() {
   const map = L.map('map', {
     attributionControl: false,
@@ -14,11 +16,6 @@ export default function initApp() {
   });
 
   window.map = map;
-
-  // dimensions of the image
-  // const url = mapJPG;
-  const url = "images/maps.jpg"
-
   const southWest = { lat: -1400, lng: 10 };
   const northEast = { lat: -10, lng: 2600 };
 
@@ -26,28 +23,24 @@ export default function initApp() {
   map.on('click', (e) => {
     console.log(`Lat, Lon : ${e.latlng.lat}, ${e.latlng.lng}`);
   });
-
-  var preloadImg = new Image();
-  preloadImg.onload = () => {
-    let loaderEl = document.getElementById('animation_container');
-    if (loaderEl && loaderEl.parentNode) {
-      loaderEl.parentNode.removeChild(loaderEl);
-    }
-    // add the image overlay, 
-    // so that it covers the entire map
-    L.imageOverlay(url, bounds).addTo(map);
-  }
-  preloadImg.src = url;
   searchControl();
   tabsControl();
-  
-  // add the image overlay,
-  // so that it covers the entire map
-  // L.imageOverlay(url, bounds).addTo(map);
-  // searchControl();
-  // tabsControl();
 
+  let imagesURLs = getMapImageURLs();
+  loadImages(imagesURLs, () => {
+    hideLoader();
+    // add the image overlay, 
+    // so that it covers the entire map
+    L.imageOverlay(mapUrl, bounds).addTo(map);
+  });
+  
   // tell leaflet that the map is exactly as big as the image
   map.setMaxBounds(bounds);
 }
 
+function getMapImageURLs(){
+  //get the images urls for the various bits - as determined by the media queries 
+  // let url = document.getElementsByClassName('field__wrapper')[0].style.background-image;
+  // console.log(url)
+  return [mapUrl];
+}

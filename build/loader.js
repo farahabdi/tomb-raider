@@ -96,7 +96,6 @@
       arrayOfImages.forEach(url => {
         var preloadImg = new Image();
         preloadImg.onload = () => {
-          preloadImg = null;
           loadedcount++;
           if(loadedcount === arrayOfImages.length){
             finishedLoading()
