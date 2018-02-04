@@ -56,6 +56,15 @@ export default function initSearch() {
   let challengeElement = document.getElementsByClassName('challenge__wrapper')[0]
   challengeElement.addEventListener('click', showViewCodePopup, false)
 
+  function showLoader(){
+    let loaderContainer = document.getElementById('animation_container');
+    loaderContainer.style.display = 'inherit'
+  }
+  
+  function hideLoader(){
+    let loaderContainer = document.getElementById('animation_container');
+    loaderContainer.style.display = 'none'
+  }  
 
   async function handleSearch() {
     const answerInput = searchInput[0].value;

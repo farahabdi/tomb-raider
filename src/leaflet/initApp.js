@@ -38,6 +38,32 @@ export default function initApp() {
   map.setMaxBounds(bounds);
 }
 
+function showLoader(){
+  let loaderContainer = document.getElementById('animation_container');
+  loaderContainer.style.display = 'inherit'
+}
+
+function hideLoader(){
+  let loaderContainer = document.getElementById('animation_container');
+  loaderContainer.style.display = 'none'
+}
+
+function loadImages(arrayOfImages, finishedLoading){
+  let loadedcount = 0;
+  arrayOfImages.forEach(url => {
+    var preloadImg = new Image();
+    preloadImg.onload = () => {
+      preloadImg = null;
+      // console.log("loaded "+url);
+      loadedcount++;
+      if(loadedcount === arrayOfImages.length){
+        finishedLoading()
+      }
+    }
+    preloadImg.src = url;              
+  })
+}
+
 function getMapImageURLs(){
   //get the images urls for the various bits - as determined by the media queries 
   const mobile = 320;

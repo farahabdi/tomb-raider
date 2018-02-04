@@ -81,7 +81,7 @@ export default function tabsControl() {
 
 
 
-      self = this;
+      let self = this;
 
       function showfield(event){
 

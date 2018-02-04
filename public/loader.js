@@ -86,30 +86,4 @@
       AdobeAn.compositionLoaded(lib.properties.id);
       fnStartAnimation();
     }
-
-    function showLoader(){
-      let loaderContainer = document.getElementById('animation_container');
-      loaderContainer.style.display = 'inherit'
-    }
-    
-    function hideLoader(){
-      let loaderContainer = document.getElementById('animation_container');
-      loaderContainer.style.display = 'none'
-    }
-
-    function loadImages(arrayOfImages, finishedLoading){
-      let loadedcount = 0;
-      arrayOfImages.forEach(url => {
-        var preloadImg = new Image();
-        preloadImg.onload = () => {
-          preloadImg = null;
-          // console.log("loaded "+url);
-          loadedcount++;
-          if(loadedcount === arrayOfImages.length){
-            finishedLoading()
-          }
-        }
-        preloadImg.src = url;              
-      })
-    }
     
