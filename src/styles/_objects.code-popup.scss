@@ -54,10 +54,28 @@
 
     >.leaflet-popup-content {
         width: 281px;
-        @include mq($from: tablet) {
-            width: 281px;
-            margin-left: 5px;
-        }
+        width: 281px;
+        margin-left: 5px;
+
+            @include mq($from: tablet, $until: desktop) {
+                width: 281px;
+                width: 281px;
+                margin-left: 5px;
+        
+            }
+            @include mq($from: desktop, $until: wide) {
+                width: 281px;
+                width: 281px;
+                margin-left: 5px;
+        
+            }
+            @include mq($from: wide) {
+                width: 281px;
+                width: 281px;
+                margin-left: 5px;
+        
+            }
+        
     }
 
     .leaflet-popup-content-wrapper {

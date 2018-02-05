@@ -4,7 +4,7 @@ import chinaIcon from '../assets/Polaroid_China.png';
 import stonehengeIcon from '../assets/Polaroid_Stonehenge.png';
 import kenyaIcon from '../assets/Polaroid_Kenya.png';
 import mexicoIcon from '../assets/Polaroid_Mexico.png';
-import niagraIcon from '../assets/Polaroid_Niagara.png';
+import sigiriyaIcon from '../assets/Polaroid_Sigiriya.png';
 
 
 export default async function initUserData() {
@@ -31,18 +31,18 @@ export default async function initUserData() {
       className: 'polaroid',
       iconSize: [38, 95], // size of the icon
       shadowSize: [50, 64], // size of the shadow
-      iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+
       shadowAnchor: [4, 62], // the same for the shadow
       popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
     });
 
-    L.marker([-586, 1439], { icon: polaroidIcon }).addTo(window.map);
+    L.marker([-508.07952602985586, 1297.9567786125249], { icon: polaroidIcon }).addTo(window.map);
 
     /* Show circle marker */
-    const url = encodeURI(`data:image/svg+xml, ${pathChallenge2}`).replace('#', '%23');
-    const pathMarker = new CustomIcon({ iconUrl: url });
-    let marker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+ //   const url = encodeURI(`data:image/svg+xml, ${pathChallenge2}`).replace('#', '%23');
+  //  const pathMarker = new CustomIcon({ iconUrl: url });
+  //  let marker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+  //  marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
   }
   if (challenges.challenge2 === true) {
     document.getElementsByClassName('challenge__icon challenge__2')[0].className = 'challenge__icon challenge__2 challenge__2--complete';
@@ -56,12 +56,12 @@ export default async function initUserData() {
       shadowAnchor: [4, 62], // the same for the shadow
       popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
     });
-    L.marker([-827.5, 1599.5], { icon: polaroidIcon }).addTo(window.map);
+    L.marker([-829.1115636590264, 1546.9409013681461], { icon: polaroidIcon }).addTo(window.map);
 
-    const url = encodeURI(`data:image/svg+xml,${pathChallenge2}`).replace('#', '%23');
-    const pathMarker = new CustomIcon({ iconUrl: url });
-    let marker = L.marker([-847, 1553], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+  //  const url = encodeURI(`data:image/svg+xml,${pathChallenge2}`).replace('#', '%23');
+ //   const pathMarker = new CustomIcon({ iconUrl: url });
+ //   let marker = L.marker([-847, 1553], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+ //   marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
     //   window.map.flyTo([13.87992, 45.9791], 1)
   }
 
@@ -80,11 +80,11 @@ export default async function initUserData() {
     });
     L.marker([-547, 2042], { icon: polaroidIcon }).addTo(window.map);
 
-    const url = encodeURI(`data:image/svg+xml,${pathChallenge3}`).replace('#', '%23');
-    const pathMarker = new CustomIcon({ iconUrl: url });
+ ///   const url = encodeURI(`data:image/svg+xml,${pathChallenge3}`).replace('#', '%23');
+  //  const pathMarker = new CustomIcon({ iconUrl: url });
 
-    let marker = L.marker([-594.5, 1998.5], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+  //  let marker = L.marker([-594.5, 1998.5], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+  //  marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
   }
   if (challenges.challenge4 === true) {
@@ -102,10 +102,10 @@ export default async function initUserData() {
     });
     L.marker([-706, 550], { icon: polaroidIcon }).addTo(window.map);
 
-    const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
-    const pathMarker = new CustomIcon({ iconUrl: url });
-    let marker = L.marker([-739, 747], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+   // const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
+    //const pathMarker = new CustomIcon({ iconUrl: url });
+   // let marker = L.marker([-739, 747], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+ //   marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
   }
 
   if (challenges.challenge5 === true) {
@@ -113,7 +113,7 @@ export default async function initUserData() {
 
     /* Show Polaroid */
     const polaroidIcon = L.icon({
-      iconUrl: niagraIcon,
+      iconUrl: sigiriyaIcon,
       className: 'polaroid',
       iconSize: [38, 95], // size of the icon
       shadowSize: [50, 64], // size of the shadow
@@ -121,12 +121,12 @@ export default async function initUserData() {
       shadowAnchor: [4, 62], // the same for the shadow
       popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
     });
-    L.marker([-567.5, 851], { icon: polaroidIcon }).addTo(window.map);
+    L.marker([-807, 1786], { icon: polaroidIcon }).addTo(window.map);
 
-    const url = encodeURI(`data:image/svg+xml, ${pathChallenge4}`).replace('#', '%23');
-    const pathMarker = new CustomIcon({ iconUrl: url });
-    let marker = L.marker([-604, 835], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-    marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+   // const url = encodeURI(`data:image/svg+xml, ${pathChallenge4}`).replace('#', '%23');
+  //  const pathMarker = new CustomIcon({ iconUrl: url });
+  //  let marker = L.marker([-604, 835], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+  //  marker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
   }
 }
 

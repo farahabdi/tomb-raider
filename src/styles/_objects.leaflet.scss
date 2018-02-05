@@ -32,7 +32,7 @@ div.leaflet-top.leaflet-left {
   }
  
   @include mq($from: tablet, $until: desktop) {
-    margin-left: -677px;
+
   }
   @include mq($from: desktop, $until: wide) {
       
