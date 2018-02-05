@@ -543,7 +543,7 @@ logoElement.className = "leaflet-bottom leaflet-left hide-logo"
 
 
   const markup = document.createElement('div');
-  markup.className = 'code-popup';
+  markup.className = 'code-popup-done';
 
   markup.insertAdjacentHTML('afterbegin', `
   <div class="code-popup__footer">
@@ -716,13 +716,7 @@ logoElement.className = "leaflet-bottom leaflet-left hide-logo"
 
 
   const markup = document.createElement('div');
-  markup.className = 'code-popup';
-
-  markup.insertAdjacentHTML('afterbegin', `
-  <div class="code-popup__footer">
-
-    </div>
-  ` ) 
+  markup.className = 'code-popup-incomplete';
 
 
 
@@ -751,9 +745,17 @@ logoElement.className = "leaflet-bottom leaflet-left hide-logo"
       </div>
     </div>
   ` )  
+
+  markup.insertAdjacentHTML('afterbegin', `
+  <div class="code-popup__message">Find all five landmarks to complete the code and find the tomb.
+
+    </div>
+  ` ) 
+
+
   
 
-  markup.append('afterbegin', '<div class="final-code__message"> Heres are the codes you have completed so far</div>');
+
   const challengespProgress = await fetchCompletedChallenges();
 
   for (let i = 0; i < challengespProgress.length; i++) {
