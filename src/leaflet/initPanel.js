@@ -434,32 +434,18 @@ export default function initSearch() {
 function handlePopupClose(event, popup) {
 
   let map = window.map
-  map.dragging.enable();
-  map.touchZoom.enable();
-  map.doubleClickZoom.enable();
-  map.scrollWheelZoom.enable();
+  enableMap();
   const tabElement = document.getElementsByClassName('tab__container')[0];
   tabElement.setAttribute("style", "display: inherit" )
   
-
   const layerElement = document.getElementsByClassName('leaflet-overlay-pane')[0].className = "leaflet-pane leaflet-overlay-pane"
-
   let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
   const tabsElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
-  const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
- 
+  const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0]; 
  
   tabsElement.className = 'leaflet-top leaflet-right'
   headerElement.className = "leaflet-top leaflet-left"
- logoElement.className = "leaflet-bottom leaflet-left"
-
-
-
-
-
-
-
-
+  logoElement.className = "leaflet-bottom leaflet-left"
 }
 
 function handlePopupOpen() {
@@ -468,11 +454,10 @@ function handlePopupOpen() {
  const tabElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
  const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
 
-
  tabElement.className = 'leaflet-top leaflet-right hide-tab'
  headerElement.className = "leaflet-top leaflet-left hide-header"
-logoElement.className = "leaflet-bottom leaflet-left hide-logo"
-
+ logoElement.className = "leaflet-bottom leaflet-left hide-logo"
+ disableMap();
     
 }
 
@@ -502,14 +487,25 @@ async function showFailPopUp() {
   markup.insertAdjacentHTML('afterbegin', `<div class="header">${failText[count].heading}</div>`);
 
   let map = window.map
-  map.dragging.disable();
-  map.touchZoom.disable();
-  map.doubleClickZoom.disable();
-  map.scrollWheelZoom.disable();
-
+  disableMap();
   return markup;
 }
 
+function disableMap() {
+  map.dragging.disable();
+  map.doubleClickZoom.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
+}
+
+function enableMap() {
+  map.dragging.enable();
+  map.doubleClickZoom.enable();
+  map.touchZoom.enable();
+  map.doubleClickZoom.enable();
+  map.scrollWheelZoom.enable();
+}
 
 async function PopUpSelector() {
   const challenges = await fetchChallenges();

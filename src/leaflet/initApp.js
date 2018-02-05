@@ -91,6 +91,22 @@ function showWelcomePopUp() {
   return markup;
 }
 
+function disableMap() {
+  map.dragging.disable();
+  map.doubleClickZoom.disable();
+  map.touchZoom.disable();
+  map.doubleClickZoom.disable();
+  map.scrollWheelZoom.disable();
+}
+
+function enableMap() {
+  map.dragging.enable();
+  map.doubleClickZoom.enable();
+  map.touchZoom.enable();
+  map.doubleClickZoom.enable();
+  map.scrollWheelZoom.enable();
+}
+
 function handlePopupOpen() {
   // const marker = L.marker([-668, 1308]).addTo(window.map);
   let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
@@ -100,6 +116,7 @@ function handlePopupOpen() {
   tabElement.className = 'leaflet-top leaflet-right hide-tab'
   headerElement.className = "leaflet-top leaflet-left hide-header"
   logoElement.className = "leaflet-bottom leaflet-left hide-logo"
+  disableMap();
  }
 
 
@@ -123,6 +140,8 @@ function handlePopupClose(event, popup) {
   tabsElement.className = 'leaflet-top leaflet-right'
   headerElement.className = "leaflet-top leaflet-left"
   logoElement.className = "leaflet-bottom leaflet-left"
+  enableMap();
+
 }
 
 function showLoader(){
