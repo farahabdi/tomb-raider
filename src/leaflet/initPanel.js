@@ -240,8 +240,8 @@ export default function initSearch() {
 
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
-          popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-          popup.on("popupopen", ()=> { handlePopupOpen() })
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
           popup.openPopup();
 
           const element = document.getElementsByClassName('popup_correct button')[0];
@@ -302,10 +302,9 @@ export default function initSearch() {
 
         if (challengespProgress.length < 4) {
 
-
           let popup = marker.bindPopup(markup, correctPopupOptions)
-          popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-          popup.on("popupopen", ()=> { handlePopupOpen() })
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
           popup.openPopup();
 
           const element = document.getElementsByClassName('popup_correct button')[0];
@@ -357,8 +356,8 @@ export default function initSearch() {
           if (challengespProgress.length < 4) {
 
             let popup = marker.bindPopup(markup, correctPopupOptions)
-            popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-            popup.on("popupopen", ()=> { handlePopupOpen() })
+            popup.on("popupclose", handlePopupClose);
+            popup.on("popupopen", handlePopupOpen)
             popup.openPopup();
 
 
@@ -414,7 +413,7 @@ export default function initSearch() {
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", handlePopupClose);
-          popup.on("popupopen", ()=> { handlePopupOpen() })
+          popup.on("popupopen", handlePopupOpen)
           popup.openPopup();
 
           const element = document.getElementsByClassName('popup_correct button')[0];
