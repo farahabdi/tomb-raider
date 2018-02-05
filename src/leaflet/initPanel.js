@@ -658,7 +658,7 @@ async function showAlreadyCompletedPopUp() {
   const markup = document.createElement('div');
   markup.className = 'popup__correct';
   markup.insertAdjacentHTML('afterbegin', `<div class="message">You’ve already uncovered that one. Check out my Field Notes for intel on the other landmarks.</div>`);
-  markup.insertAdjacentHTML('afterbegin', `<div class="header">Nice try!</div>`);
+  markup.insertAdjacentHTML('afterbegin', `<div class="header">Good Job!</div>`);
 
   const tabElement = document.getElementsByClassName('tab__container')[0];
   tabElement.setAttribute("style", "display: none" )
@@ -807,7 +807,7 @@ const text = {
   },
   2: {
     heading: 'It’s a match',
-    message: 'Each landmark brings us a step closer, keep it up.',
+    message: 'Each landmark brings us a step closer, keep it up. For the next clue, follow @CroftHoldingsAU on Facebook.',
   },
   3: {
     heading: 'Brilliant!',
@@ -815,7 +815,7 @@ const text = {
   },
   4: {
     heading: 'Good job',
-    message: 'I still can’t make sense of this blasted riddle. One more piece should do it.',
+    message: 'I still can’t make sense of this blasted riddle. One more piece should do it. As soon as I find the next clue @CroftHoldingsAU will share it, follow them on Facebook.',
   },
   5: {
     heading: 'You’ve done it!',
