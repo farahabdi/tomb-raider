@@ -58,7 +58,7 @@ export default function initApp() {
       closeOnClick: false,
       maxWidth: '400',
       width: '450',
-      className: 'popup__welcome',
+      className: 'popup__correct',
     };
 
     var currentViewCenter = window.map.getCenter();
@@ -66,7 +66,7 @@ export default function initApp() {
       setTimeout(function() {
         let popup = marker.bindPopup(markup, correctPopupOptions)
         popup.on("popupclose", handlePopupClose);
-      //  popup.on("popupopen", ()=> { handlePopupOpen() })
+        popup.on("popupopen", ()=> { handlePopupOpen() })
         popup.openPopup();
 
       }, 750);
@@ -99,6 +99,20 @@ function showWelcomePopUp() {
 
   return markup;
 }
+
+function handlePopupOpen() {
+  // const marker = L.marker([-668, 1308]).addTo(window.map);
+  let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
+  const tabElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
+  const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+ 
+ 
+  tabElement.className = 'leaflet-top leaflet-right hide-tab'
+  headerElement.className = "leaflet-top leaflet-left hide-header"
+ logoElement.className = "leaflet-bottom leaflet-left hide-logo"
+ 
+     
+ }
 
 
 
