@@ -2,10 +2,12 @@
 // import mapJPG from '../assets/maps.jpg';
 import searchControl from './searchControl';
 import tabsControl from './tabsControl';
+import { firebaseAuth } from '../utils/config'
+import { fetchUserVisited, updateVisited } from '../api/index'
 
 const mapUrl = "images/maps.jpg"
 
-export default function initApp() {
+export default async function initApp() {
   const map = L.map('map', {
     attributionControl: false,
     minZoom: 0,
@@ -28,6 +30,8 @@ export default function initApp() {
   searchControl();
   tabsControl();
 
+  let visited = await fetchUserVisited()
+
   let imagesURLs = getMapImageURLs();
   loadImages(imagesURLs, () => {
     hideLoader();
@@ -37,33 +41,43 @@ export default function initApp() {
 
     window.map.setView([-390.0600290058237, 572.0213891349135], 0.25, {duration:0});
 
-    // setTimeout(function() {
-    //   window.map.flyTo([-390.0600290058237, 572.0213891349135], 1.75);
-    // }, 950);
 
 
-    // setTimeout(function() {
-    //   window.map.flyTo([-984.1715738130089, 989.101837821454], 1);
-    // }, 1950);
+
 
     setTimeout(function() {
       window.map.flyTo([-390.0600290058237, 572.0213891349135], 1.5, {duration:1});
       setTimeout(function() {
-        const markup = showWelcomePopUp();
-        const correctPopupOptions = {
-          closeOnClick: false,
-          maxWidth: '400',
-          width: '450',
-          className: 'popup__correct',
-        };
-        var currentViewCenter = window.map.getCenter();
-        var marker = L.marker(currentViewCenter).addTo(window.map);
+
+
+      
+
+
+
+
         setTimeout(function() {
-          let popup = marker.bindPopup(markup, correctPopupOptions)
-          popup.on("popupclose", handlePopupClose);
-          popup.on("popupopen", ()=> { handlePopupOpen() })
-          popup.openPopup();
-        }, 750);        
+          if (!visited) {
+          const markup = showWelcomePopUp();
+          const correctPopupOptions = {
+            closeOnClick: false,
+            maxWidth: '400',
+            width: '450',
+            className: 'popup__correct',
+          };
+          var currentViewCenter = window.map.getCenter();
+          var marker = L.marker(currentViewCenter).addTo(window.map);
+
+            let popup = marker.bindPopup(markup, correctPopupOptions)
+            popup.on("popupclose", handlePopupClose);
+            popup.on("popupopen", ()=> { handlePopupOpen() })
+            popup.openPopup();
+
+            updateVisited()
+        }
+
+        }, 750);      
+        
+        
       }, 1000);
     }, 2000);
     

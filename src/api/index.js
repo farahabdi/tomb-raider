@@ -13,6 +13,29 @@ export async function fetchUserExists() {
   return userExists;
 }
 
+export async function fetchUserVisited() {
+  let userVisited= false;
+  const user = firebase.auth().currentUser;
+  await db.collection('users')
+    .doc(user.uid)
+    .get()
+    .then((doc) => { 
+    
+      return userVisited = doc.data().visited === true;
+     });
+
+  return userVisited;
+}
+
+export async function updateVisited() {
+  const user = firebase.auth().currentUser;
+  db.collection('users')
+  .doc(user.uid)
+  .update({
+     "visited": true
+  })
+}
+
 export async function fetchChallenges() {
   const user = firebaseAuth.currentUser;
   return db.collection('users')
@@ -107,6 +130,7 @@ export async function createUser() {
     photoURL: user.photoURL,
     displayName: user.displayName,
     birthday: '',
+    visited: false,
     email: user.email,
   });
 
