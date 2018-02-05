@@ -112,7 +112,7 @@
     @include mq($from: desktop, $until: wide) {
         justify-content: end;
         margin-top: 84px;
-        flex-direction: row-reverse;
+     
         /* margin-left: 1px; */
         margin-right: 110px;
     }
@@ -120,7 +120,7 @@
     @include mq($from: wide) {
         justify-content: end;
         margin-top: 192px;
-        flex-direction: row-reverse;
+
         /* margin-left: 1px; */
         margin-right: 274px;
     }
