@@ -1,13 +1,14 @@
 .notes {
+    font-size: 20px;
    
     @include mq($from: tablet, $until: desktop) {
-
+        font-size: 23px;
     }
     @include mq($from: desktop, $until: wide) {
-    
+        font-size: 25px;
     }
     @include mq($from: wide) {
-   
+        font-size: 27px;
     }
 }
 
@@ -18,20 +19,24 @@
     
     transform: rotate(-19deg);
     @include mq($from: tablet, $until: desktop) {
-        justify-content: flex-start;
-        margin-left: 140px;
-        margin-top: 338px;
+        justify-content: start;
+        margin-top: 260px;
+        /* margin-right: 201px; */
+        margin-left: 100px;
 
     }
     @include mq($from: desktop, $until: wide) {
-        justify-content: flex-start;
+        
+        justify-content: flex-end;
         margin-left: 298px;
+        margin-top: 519px;
+
     }
 
     @include mq($from: wide) {
-        justify-content: flex-start;
-        margin-left: 300px;
-        margin-top: 392px;
+        justify-content: flex-end;
+        margin-top: 833px;
+        margin-right: 139px;
     }
 
 
@@ -49,15 +54,15 @@
     @include mq($from: tablet, $until: desktop) {
         justify-content: start;
         margin-left: 191px;
-        margin-top: 298px;
+        margin-top: 295px;
       
 
     }
     @include mq($from: desktop, $until: wide) {
-
+        margin-top: 133px;
     }
     @include mq($from: wide) {
-        margin-top: 544px;
+        margin-top: 38px;
     }
 
 }
@@ -71,19 +76,19 @@
         flex-direction: row-reverse;
         justify-content: space-between;
         margin-right: 114px;
-        margin-top: 318px;
+        margin-top: 187px;
     }
     @include mq($from: desktop, $until: wide) {
-        display: flex;
-        justify-content: end;
-        margin-top: 312px;
-        flex-direction: row-reverse;
-        /* margin-left: 1px; */
-        margin-right: 230px;
+        justify-content: flex-end;
+        margin-right: 326px;
+        margin-top: 138px;
+        
 
     }
     @include mq($from: wide) {
-        margin-top: 481px;
+        justify-content: flex-end;
+        margin-top: 309px;
+        margin-right: 474px;
     }
 }
 
@@ -96,19 +101,20 @@
 
     @include mq($from: tablet, $until: desktop) {
         justify-content: flex-end;
-        margin-top: 212px;
+        margin-top: 84px;
         display: flex;
-        margin-right: 87px;
-        margin-top: 163px;
+        margin-right: 18px;
+        margin-top: 59px;
  
 
     }
 
     @include mq($from: desktop, $until: wide) {
         justify-content: end;
-        margin-top: 176px;
+        margin-top: 84px;
         flex-direction: row-reverse;
-        margin-right: 189px;
+        /* margin-left: 1px; */
+        margin-right: 110px;
     }
 
     @include mq($from: wide) {
@@ -128,13 +134,13 @@
     @include mq($from: tablet, $until: desktop) {
         display: flex;
         justify-content: flex-start;
-        margin-top: 19px;
+        margin-top: 16px;
         margin-left: 56px;
     }
     @include mq($from: desktop, $until: wide) {
         display: flex;
         justify-content: flex-start;
-        margin-top: 43px;
+        margin-top: -147px;
         margin-left: 121px;
     }
 
@@ -150,18 +156,18 @@
     display: flex;
     justify-content: flex-start;
     margin-top: 614px;
-
+    margin-left: 23px;
 
 
     @include mq($from: tablet, $until: desktop) {
         display: flex;
         justify-content: center;
-        margin-top: 72px;
+        margin-top: 23px;
     }
     @include mq($from: desktop, $until: wide) {
         display: flex;
         justify-content: center;
-        margin-top: 88px;
+        margin-top: 23px;
     }
 
     @include mq($from: wide) {
@@ -176,9 +182,23 @@
     .notepad__wrapper {
         height: 205px;
         padding-top: 33px;
-        @include mq($from: tablet) {
+
+        @include mq($from: tablet, $until: desktop) {
             height: 205px;
             padding-top: 33px;
+            padding: 45px;
+        }
+        @include mq($from: desktop, $until: wide) {
+            height: 205px;
+            padding-top: 33px;
+            padding: 52px;
+            
+        }
+        @include mq($from: wide) {
+            height: 205px;
+            padding-top: 33px;
+            padding: 58px;
+            
         }
         
         &.notepad__wrapper-1 {
@@ -186,17 +206,54 @@
             background-image: url("../assets/Postit_1.png");
             background-repeat: no-repeat;
             transform: rotate(13deg);
-            @include mq($from: tablet) {
+
+            @include mq($from: tablet, $until: desktop) {
                 background-image: url("../assets/Postit_1@2x.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 285px;
+                transform: rotate(13deg);
+            }
+            @include mq($from: desktop, $until: wide) {
+                background-image: url("../assets/Postit_1@2x.png");
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 285px;
+
+
+
+                transform: rotate(13deg);
+            }
+            @include mq($from: wide) {
+                background-image: url("../assets/Postit_1@2x.png");
+                width: 285px;
+
+                background-repeat: no-repeat;
+                background-size: contain;
+                transform: rotate(13deg);
             }
 
             .notepad__text {
                 transform: rotate(-4deg);
-                margin-left: 40px;
-                font-size: 24px;
-                margin-top: 12px;
-                @include mq($from: tablet) {
+                margin-left: 29px;
+                margin-top: 18px;
+                width: 80%;
 
+
+                @include mq($from: tablet, $until: desktop) {
+                    transform: rotate(-4deg);
+                    margin-left: 5px;
+                    margin-top: 18px;
+                }
+                @include mq($from: desktop, $until: wide) {
+                    transform: rotate(-4deg);
+                    margin-left: 18px;
+                    margin-top: 3px;
+                }
+                @include mq($from: wide) {
+                    transform: rotate(-4deg);
+                    margin-left: 18px;
+                    margin-top: 3px;
                 }
                 
             }
@@ -207,17 +264,45 @@
             transform: rotate(-10deg);
             background-image: url("../assets/Postit_2.png");
             background-repeat: no-repeat;
-            @include mq($from: tablet) {
+            background-size: contain;
+
+            @include mq($from: tablet, $until: desktop) {
                 background-image: url("../assets/Postit_2@2x.png");
+                background-size: contain;
+
+            }
+            @include mq($from: desktop, $until: wide) {
+                background-image: url("../assets/Postit_2@2x.png");
+                background-size: contain;
+
+            }
+            @include mq($from: wide) {
+                background-image: url("../assets/Postit_2@2x.png");
+                background-size: contain;
             }
 
             .notepad__text {
-                transform: rotate(1deg);
-                width: 84%;
-                margin-left: 34px;
+                transform: rotate(4deg);
+                width: 77%;
+                margin-left: 30px;
                 margin-top: 11px;
-                @include mq($from: tablet) {
-
+                @include mq($from: tablet, $until: desktop) {
+                    transform: rotate(3deg);
+                    width: 84%;
+                    margin-left: 18px;
+                    margin-top: 11px;
+                }
+                @include mq($from: desktop, $until: wide) {
+                    transform: rotate(3deg);
+                    width: 84%;
+                    margin-left: 18px;
+                    margin-top: 11px;
+                }
+                @include mq($from: wide) {
+                    transform: rotate(3deg);
+                    width: 84%;
+                    margin-left: 18px;
+                    margin-top: 11px;
                 }
             }
 
@@ -226,15 +311,44 @@
             width: 227px;
             background-image: url("../assets/Postit_3.png");
             background-repeat: no-repeat;
-            @include mq($from: tablet) {
+
+
+            @include mq($from: tablet, $until: desktop) {
                 background-image: url("../assets/Postit_3@2x.png");
+                background-size: contain;
+            }
+            @include mq($from: desktop, $until: wide) {
+                background-image: url("../assets/Postit_3@2x.png");
+                background-size: contain;
+            }
+            @include mq($from: wide) {
+                background-image: url("../assets/Postit_3@2x.png");
+                background-size: contain;
             }
 
             .notepad__text {
-                transform: rotate(-1deg);
-                margin-left: 27px;
-                font-size: 24px;
-                margin-top: 4px;
+                transform: rotate(1deg);
+                margin-left: 22px;
+                margin-top: 9px;
+
+                @include mq($from: tablet, $until: desktop) {
+                    transform: rotate(1deg);
+                    margin-left: 0px;
+                    margin-top: -2px;
+                }
+                
+                @include mq($from: desktop, $until: wide) {
+                    transform: rotate(1deg);
+                    margin-left: 0px;
+                    margin-top: -2px;
+                }
+                
+                @include mq($from: wide) {
+                    transform: rotate(1deg);
+                    margin-left: 0px;
+                    margin-top: -2px;
+                }
+                
             }
 
 
@@ -244,16 +358,50 @@
           //  padding-top: 17px !important;
             background-image: url("../assets/Postit_5.png");
             background-repeat: no-repeat;
-            @include mq($from: tablet) {
+
+
+            @include mq($from: tablet, $until: desktop) {
                 background-image: url("../assets/Postit_5@2x.png");
+                background-size: contain;
+            }
+            @include mq($from: desktop, $until: wide) {
+                background-image: url("../assets/Postit_5@2x.png");
+                background-size: contain;
+            }
+            @include mq($from: wide) {
+                background-image: url("../assets/Postit_5@2x.png");
+                background-size: contain;
             }
 
             .notepad__text {
                 transform: rotate(0deg);
                 margin-left: 22px;
-                font-size: 22px;
                 width: 74%;
-                margin-top: -22px;
+                margin-top: -8px;
+
+                @include mq($from: tablet, $until: desktop) {
+                    transform: rotate(0deg);
+                    margin-left: 6px;
+                    
+                    width: 89%;
+                    margin-top: -22px;
+                
+                }
+                @include mq($from: desktop, $until: wide) {
+                    transform: rotate(0deg);
+                    margin-left: 6px;
+                    
+                    width: 89%;
+                    margin-top: -22px;
+                }
+                
+                @include mq($from: wide) {
+                    transform: rotate(0deg);
+                    margin-left: 6px;
+                    
+                    width: 89%;
+                    margin-top: -22px;
+                }
             }
 
         }
@@ -261,38 +409,93 @@
             width: 285px;
             background-image: url("../assets/Postit_5.png");
             background-repeat: no-repeat;
-            @include mq($from: tablet) {
+            margin-top: 11px;
+
+            @include mq($from: tablet, $until: desktop) {
                 background-image: url("../assets/Postit_5@2x.png");
+                background-size: contain;
             }
+            @include mq($from: desktop, $until: wide) {
+                background-image: url("../assets/Postit_5@2x.png");
+                background-size: contain;
+            }
+            @include mq($from: wide) {
+                background-image: url("../assets/Postit_5@2x.png");
+                background-size: contain;
+                margin-top: -175px;
+            }
+            
             .notepad__text {
                 width: 73%;
-                font-size: 24px;
                 margin-left: 23px;
+
+                @include mq($from: tablet, $until: desktop) {
+                    width: 94%;
+                    margin-left: -4px;
+                    transform: rotate(1deg);
+                }
+                @include mq($from: desktop, $until: wide) {
+                    width: 94%;
+                    margin-left: -4px;
+                    transform: rotate(1deg);
+                }
+                @include mq($from: wide) {
+                    width: 94%;
+                    margin-left: -4px;
+                    transform: rotate(1deg);
+                }
             }
 
             
         }
         &.notepad__wrapper-6 {
-            width: 242px;
+            width: 296px;
             background-image: url("../assets/Postit_6@2x.png");
             background-repeat: no-repeat;
-            @include mq($from: tablet) {
+            background-size: contain;
+            @include mq($from: tablet, $until: desktop) {
                 background-image: url("../assets/Postit_6@2x.png");
+                background-size: contain;
             }
+            @include mq($from: desktop, $until: wide) {
+                background-image: url("../assets/Postit_6@2x.png");
+                background-size: contain;
+            }
+            @include mq($from: wide) {
+                background-image: url("../assets/Postit_6@2x.png");
+                background-size: contain;
+            }
+
             .notepad__text {
                 transform: rotate(1deg);
-                font-size: 24px;
-                margin-top: -18px;
-                margin-left: 16px;
-                width: 87%;
+                margin-top: 1px;
+                margin-left: 22px;
+                width: 74%;
+
+                @include mq($from: tablet, $until: desktop) {
+                    transform: rotate(1deg);
+                    margin-top: -6px;
+                    margin-left: -3px;
+                    width: 87%;
+                }
+                @include mq($from: desktop, $until: wide) {
+                    transform: rotate(1deg);
+                    margin-top: -28px;
+                    margin-left: -3px;
+                    width: 99%;
+                }
+                @include mq($from: wide) {
+                    transform: rotate(1deg);
+                    margin-top: -15px;
+                    margin-left: -16px;
+                    width: 99%;
+                }
             }
 
         }
 
 
-        .notepad__text {
-            font-size: 24px;
-        }
+
 
     
     }
