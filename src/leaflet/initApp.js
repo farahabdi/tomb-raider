@@ -10,8 +10,10 @@ export default function initApp() {
     attributionControl: false,
     minZoom: 0,
     maxZoom: 2,
-    center: [0, 0],
-    zoom: 0,
+    fadeAnimation: true,
+    zoomAnimation: true,
+    center: [-657.1161288403573, 1570.2315412930102],
+    zoom: 0.5,
     crs: L.CRS.Simple,
   });
 
@@ -32,11 +34,106 @@ export default function initApp() {
     // add the image overlay, 
     // so that it covers the entire map
     L.imageOverlay(mapUrl, bounds).addTo(map);
+
+
+    setTimeout(function() {
+      window.map.flyTo([-390.0600290058237, 572.0213891349135], 1.75);
+    }, 950);
+
+
+    setTimeout(function() {
+      window.map.flyTo([-984.1715738130089, 989.101837821454], 1);
+    }, 1950);
+
+
+
+    setTimeout(function() {
+      window.map.flyTo([-689.0897160777947, 1622.1439776096418], 1.5);
+    }, 2950);
+    
+
+    const markup = showWelcomePopUp();
+
+    const correctPopupOptions = {
+      closeOnClick: false,
+      maxWidth: '400',
+      width: '450',
+      className: 'popup__welcome',
+    };
+
+    var currentViewCenter = window.map.getCenter();
+    var marker = L.marker(currentViewCenter).addTo(window.map);
+      setTimeout(function() {
+        let popup = marker.bindPopup(markup, correctPopupOptions)
+        popup.on("popupclose", handlePopupClose);
+      //  popup.on("popupopen", ()=> { handlePopupOpen() })
+        popup.openPopup();
+
+      }, 750);
+    
+    
   });
   
   // tell leaflet that the map is exactly as big as the image
   map.setMaxBounds(bounds);
 }
+
+
+function showWelcomePopUp() {
+
+
+  const tabElement = document.getElementsByClassName('tab__container')[0];
+   tabElement.setAttribute("style", "display: none" )
+
+  const mapElement = document.getElementsByClassName('leaflet-overlay-pane')[0].className= "leaflet-pane leaflet-overlay-pane hide-map"
+
+  const popupElement = window.map._panes["popupPane"].className = "leaflet-pane leaflet-popup-pane unhide-map"
+  
+
+  /* Success popup */
+  const markup = document.createElement('div');
+  markup.className = 'popup__welcome';
+  
+  markup.insertAdjacentHTML('afterbegin', `<div class="message">Feel free to explore the map.</div>`);
+  markup.insertAdjacentHTML('afterbegin', `<div class="header">Welcome !</div>`);
+
+  return markup;
+}
+
+
+
+function handlePopupClose(event, popup) {
+
+  let map = window.map
+  map.dragging.enable();
+  map.touchZoom.enable();
+  map.doubleClickZoom.enable();
+  map.scrollWheelZoom.enable();
+  const tabElement = document.getElementsByClassName('tab__container')[0];
+  tabElement.setAttribute("style", "display: inherit" )
+  
+
+  const layerElement = document.getElementsByClassName('leaflet-overlay-pane')[0].className = "leaflet-pane leaflet-overlay-pane"
+
+  let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
+  const tabsElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
+  const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+ 
+ 
+  tabsElement.className = 'leaflet-top leaflet-right'
+  headerElement.className = "leaflet-top leaflet-left"
+ logoElement.className = "leaflet-bottom leaflet-left"
+
+
+
+
+
+
+
+
+}
+
+
 
 function showLoader(){
   let loaderContainer = document.getElementById('animation_container');

@@ -3,18 +3,18 @@
     margin-left: -16px;
     margin-top: 8px;
     @include mq($from: tablet, $until: desktop) {
-        margin-left: -30px;
-        margin-top: 25px;
+        margin-left: -20px;
+        margin-top: 20px;
         transition: margin 400ms
     }
     @include mq($from: desktop, $until: wide) {
-        margin-left: -30px;
-        margin-top: 25px;
+        margin-left: -20px;
+        margin-top: 20px;
         transition: margin 400ms;
     }
     @include mq($from: wide) {
-        margin-left: -30px;
-        margin-top: 28px;
+        margin-left: -20px;
+        margin-top: 20px;
         transition: margin 400ms;
     }
 }   
@@ -71,6 +71,7 @@
                 background-image: url("../assets/code1_complete@2x.png") !important;
                 background-repeat: no-repeat !important;
                 background-size: contain;
+                margin-top: 4px;
             }
         }
         &.challenge__2 {
@@ -81,6 +82,7 @@
                 background-image: url("../assets/code2_complete@2x.png") !important;
                 background-repeat: no-repeat !important;
                 background-size: contain;
+                margin-top: 4px;
             }
         }
         &.challenge__3 {
@@ -91,6 +93,8 @@
                 background-image: url("../assets/code3_complete@2x.png") !important;
                 background-repeat: no-repeat !important;
                 background-size: contain;
+                margin-top: 4px;
+                
             }
         }
         &.challenge__4 {
@@ -101,6 +105,7 @@
                 background-image: url("../assets/code4_complete@2x.png") !important;
                 background-repeat: no-repeat !important;
                 background-size: contain;
+                margin-top: 4px;
             }
         }
         &.challenge__5 {
@@ -111,6 +116,7 @@
                 background-image: url("../assets/code5_complete@2x.png") !important;
                 background-repeat: no-repeat !important;
                 background-size: contain;
+                margin-top: 4px;
             }
         }
     }
