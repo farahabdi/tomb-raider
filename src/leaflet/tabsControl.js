@@ -80,8 +80,6 @@ export default function tabsControl() {
       this.fieldTextMessage.innerHTML = "Use Croft Holding's intel and work with your fellow Tomb Raiders to find the five landmarks"
 
 
-
-      // TODO put this facebook stuff in the OTHER folder, not the options folder     
       this.fbBox = L.DomUtil.create('div', 'fb_post_container',  this.fieldWrapper  );
       this.fieldTabClick =  L.DomUtil.create('div', 'field__tab-click',  this.fieldWrapper  );
     //  this.fbBox.addEventListener("click", showfield, false); //work around for iOS need to capture click
