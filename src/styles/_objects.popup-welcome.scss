@@ -144,22 +144,23 @@
     }
     .header {
         font-size: 25px;
-        margin-left: 26px;
-        margin-top: -61px;
+        margin-left: 79px;
+        margin-top: -130px;
+        
         @include mq($from: tablet, $until: desktop) {
             font-size: 32px;
-            margin-left: 96px;
-            margin-top: -3px;
+            margin-left: 107px;
+            margin-top: -57px;
         }
         @include mq($from: desktop, $until: wide) {
             font-size: 32px;
-            margin-left: 96px;
-            margin-top: -3px;
+            margin-left: 107px;
+            margin-top: -57px;
         }
         @include mq($from: wide) {
             font-size: 32px;
-            margin-left: 96px;
-            margin-top: -3px;
+            margin-left: 107px;
+            margin-top: -57px;
         }
     }
     .message {
@@ -167,23 +168,24 @@
 
         margin-top: 12px;
         width: 262px;
-
+        margin-left: 27px;
+        
         @include mq($from: tablet, $until: desktop) {
             font-size: 26px;
             margin-top: 12px;
-            margin-left: 11px;
+            margin-left: 37px;
             width: 355px;
         }
         @include mq($from: desktop, $until: wide) {
             font-size: 26px;
             margin-top: 12px;
-            margin-left: 11px;
+            margin-left: 37px;
             width: 355px;
         }
         @include mq($from: wide) {
             font-size: 26px;
-            margin-top: 12px;
-            margin-left: 11px;
+            margin-top: 35px;
+            margin-left: 34px;
             width: 355px;
         }
     }

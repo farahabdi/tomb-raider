@@ -454,6 +454,10 @@ function handlePopupOpen() {
  const tabElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
  const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
 
+ const closeButton = document.getElementsByClassName('leaflet-popup-close-button');
+ debugger
+   closeButton[0].innerHTML = ''
+
  tabElement.className = 'leaflet-top leaflet-right hide-tab'
  headerElement.className = "leaflet-top leaflet-left hide-header"
  logoElement.className = "leaflet-bottom leaflet-left hide-logo"

@@ -62,7 +62,7 @@ export default async function initApp() {
             closeOnClick: false,
             maxWidth: '400',
             width: '450',
-            className: 'popup__correct',
+            className: 'popup__welcome',
           };
           var currentViewCenter = window.map.getCenter();
           var marker = L.marker(currentViewCenter).addTo(window.map);
