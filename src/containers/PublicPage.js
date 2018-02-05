@@ -50,7 +50,7 @@ class PublicPage extends Component {
               <div className="notepad__container">
                 <div className="notepad__wrapper notepad__wrapper-1">
                   <div className="notepad__text">
-                    There's a reference to an undiscovered tomb in my father's notes. I need your help to find it.
+                  There’s reference to an undiscovered tomb in my father’s notes. I need your help to find it.
                   </div>
                 </div>
               </div>
@@ -61,7 +61,7 @@ class PublicPage extends Component {
               <div className="notepad__container">
                 <div className="notepad__wrapper notepad__wrapper-2">
                   <div className="notepad__text">
-                    This key to locating it lies within an ancient code. Unfortunately for us, it's been broken up in pieces.
+                  The key to locating it lies within an ancient code. Unfortunately for us, it’s been broken up in pieces.
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@ class PublicPage extends Component {
               <div className="notepad__container">
                 <div className="notepad__wrapper notepad__wrapper-3">
                   <div className="notepad__text">
-                    You'll need to keep your wits about you and collect the pieces from unknown landmarks around the world.
+                  You’ll need to keep your wits about you and collect the pieces from unknown landmarks around the world.
                   </div>
                 </div>
               </div>
@@ -84,7 +84,7 @@ class PublicPage extends Component {
               <div className="notepad__container">
                 <div className="notepad__wrapper notepad__wrapper-4">
                   <div className="notepad__text">
-                    My father's company, Croft Holdings, will intel to help locate each landmark. Check out my Field Notes or @Croft HoldingsAU on Facebook for everything they have.
+                  My father's company, Croft Holdings, will provide intel to help locate each landmark. Check out my Field Notes or @CroftHoldingsAU on Facebook for everything they have.
                   </div>
                 </div>
               </div>
@@ -96,7 +96,8 @@ class PublicPage extends Component {
               <div className="notepad__container">
                 <div className="notepad__wrapper notepad__wrapper-5">
                   <div className="notepad__text">
-                    Each landmark you uncover will give you an extra chance to win a Cape Town adventure for two worth $15,000.
+                  Each landmark you uncover will give you an extra chance to win a Cape Town adventure for two worth $15,000.
+
                   </div>
                 </div>
               </div>
@@ -108,7 +109,7 @@ class PublicPage extends Component {
               <div className="notepad__container">
                 <div className="notepad__wrapper notepad__wrapper-6">
                   <div className="notepad__text notepad__text-6">
-                    For those clever enough to find the tomb, extra riches await. Including 30 more chances to win the trip or an exclusive screening of Tomb Raider with 10 friends.
+                  For those that find the tomb, extra riches await. Including 20 bonus entries into the main prize, as well as the chance to win a luxurious private screening of Tomb Raider for you and 10 friends.
                   </div>
                 </div>
               </div>
