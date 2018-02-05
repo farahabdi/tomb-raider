@@ -91,7 +91,9 @@ div.leaflet-top.leaflet-left {
   height: 50px;
   margin-left: 28px;
   transition: margin 400ms;
-
+  @include mq($from: mobile, $until: tablet) {
+    display: none;
+  }
   @include mq($from: tablet, $until: desktop) {
     background-image: url("../assets/logo.png") !important;
     background-repeat: no-repeat !important;
@@ -114,11 +116,6 @@ div.leaflet-top.leaflet-left {
     width: 238px;
     height: 80px;
     margin-left: 180px;
-    }
-
-    &.hide-logo {
-      margin-left: -238px;
-      transition: margin 400ms;
     }
 
 }
@@ -281,19 +278,19 @@ a {
 }
 
 
-.leaflet-bottom.leaflet-left.hide-logo {
-  margin-top: -195px;
-  transition: margin 700ms;
-  @include mq($from: tablet, $until: desktop) {
-    margin-top: 0px ;
-    transition: margin 400ms;
-    }
-  @include mq($from: desktop, $until: wide) {
-    margin-top: 0px ;
-    transition: margin 400ms;
-  }
-  @include mq($from: wide) {
-    margin-top: 0px ;
-    transition: margin 400ms;
-    }
-}
+// .leaflet-bottom.leaflet-left.hide-logo {
+//   margin-top: -195px;
+//   transition: margin 700ms;
+//   @include mq($from: tablet, $until: desktop) {
+//     margin-top: 0px ;
+//     transition: margin 400ms;
+//     }
+//   @include mq($from: desktop, $until: wide) {
+//     margin-top: 0px ;
+//     transition: margin 400ms;
+//   }
+//   @include mq($from: wide) {
+//     margin-top: 0px ;
+//     transition: margin 400ms;
+//     }
+// }
