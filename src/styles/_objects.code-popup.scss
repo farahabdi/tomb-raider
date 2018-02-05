@@ -334,3 +334,17 @@
     font-size: 23px;
     width: 271px;
   }
+
+
+  .code-popup-incomplete {
+    margin-top: -73px;
+        @include mq($from: tablet, $until: desktop) {
+            margin-top: -73px;
+        }
+        @include mq($from: desktop, $until: wide) {
+            margin-top: -73px;
+        }
+        @include mq($from: wide) {
+            margin-top: -73px;
+        }
+  }
