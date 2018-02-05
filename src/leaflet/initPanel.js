@@ -174,13 +174,15 @@ export default function initSearch() {
         debugger
         if (challengespProgress.length < 4) {
 
-          const element = document.getElementsByClassName('popup_correct button')[0];
-          element.addEventListener('click', showViewCodePopup, false);
+
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", handlePopupClose);
           popup.on("popupopen", handlePopupOpen)
           popup.openPopup();
+
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
 
         } else {
           let popup = marker.bindPopup(markup, viewCodeOptions)
@@ -235,13 +237,15 @@ export default function initSearch() {
 
         if (challengespProgress.length < 4) {
 
-          const element = document.getElementsByClassName('popup_correct button')[0];
-          element.addEventListener('click', showViewCodePopup, false);
+
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
           popup.on("popupopen", ()=> { handlePopupOpen() })
           popup.openPopup();
+
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
 
 
         } else {
@@ -297,13 +301,15 @@ export default function initSearch() {
       setTimeout(function() {
 
         if (challengespProgress.length < 4) {
-          const element = document.getElementsByClassName('popup_correct button')[0];
-          element.addEventListener('click', showViewCodePopup, false);
+
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
           popup.on("popupopen", ()=> { handlePopupOpen() })
           popup.openPopup();
+
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
         } else {
           let popup = marker.bindPopup(markup, viewCodeOptions)
           popup.on("popupclose", handlePopupClose);
@@ -404,13 +410,15 @@ export default function initSearch() {
       setTimeout(function() {
 
         if (challengespProgress.length < 4) {
-          const element = document.getElementsByClassName('popup_correct button')[0];
-          element.addEventListener('click', showViewCodePopup, false);
+
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", handlePopupClose);
           popup.on("popupopen", ()=> { handlePopupOpen() })
           popup.openPopup();
+
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
 
         } else {
           let popup = marker.bindPopup(markup, viewCodeOptions)
