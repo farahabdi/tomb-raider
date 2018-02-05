@@ -22,8 +22,6 @@ export default async function initApp() {
   window.map = map;
   const southWest = { lat: -1400, lng: 10 };
   const northEast = { lat: -10, lng: 2600 };
-  //let visited = await fetchUserVisited()
- let visited = true
 
   const bounds = new L.LatLngBounds(southWest, northEast);
   map.on('click', (e) => {
@@ -32,6 +30,7 @@ export default async function initApp() {
   searchControl();
   tabsControl();
 
+  let visited = await fetchUserVisited()
 
   let imagesURLs = getMapImageURLs();
   loadImages(imagesURLs, () => {
@@ -58,7 +57,7 @@ export default async function initApp() {
 
         setTimeout(function() {
           
-          if (visited) {
+          if (!visited) {
           const markup = showWelcomePopUp();
           const correctPopupOptions = {
             closeOnClick: false,
