@@ -9,7 +9,8 @@
     justify-content: center;
     width: 445px;
     bottom: -188px !important;
-    left: -205px !important;
+    left: -270px !important;
+    top: -400px;
     @include mq($from: tablet, $until: desktop) {
         margin-left: 7px;
         margin-top: -22px;
