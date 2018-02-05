@@ -172,19 +172,19 @@
             font-size: 26px;
             margin-top: 12px;
             margin-left: 11px;
-            width: 355px;
+            width: 345px;
         }
         @include mq($from: desktop, $until: wide) {
             font-size: 26px;
             margin-top: 12px;
             margin-left: 11px;
-            width: 355px;
+            width: 345px;
         }
         @include mq($from: wide) {
             font-size: 26px;
             margin-top: 12px;
             margin-left: 11px;
-            width: 355px;
+            width: 345px;
         }
     }
     .content {
