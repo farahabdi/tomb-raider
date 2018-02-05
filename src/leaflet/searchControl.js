@@ -49,6 +49,7 @@ export default function searchControl() {
         // - security reasons I think leaflet may be propogating touch events up? maybe.
         // ¯\_(ツ)_/¯ This seems to work though as we start from a click event
        event.target.focus();
+       event.target.value = '';
       }
 
       /* Image */

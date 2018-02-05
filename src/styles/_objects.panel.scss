@@ -137,7 +137,7 @@
 
             @include mq($from: tablet, $until: desktop) {
                 font-family: 'PT Serif', serif;
-                height: 30px;
+                height: 40px;
                 width: 289px;
                 background: transparent;
                 outline: none;
@@ -149,7 +149,7 @@
             }
             @include mq($from: desktop, $until: wide) {
                 font-family: 'PT Serif', serif;
-                height: 30px;
+                height: 40px;
                 width: 289px;
                 background: transparent;
                 outline: none;
@@ -161,7 +161,7 @@
             }
             @include mq($from: wide) {
                 font-family: 'PT Serif', serif;
-                height: 30px;
+                height: 40px;
                 width: 289px;
                 background: transparent;
                 outline: none;
