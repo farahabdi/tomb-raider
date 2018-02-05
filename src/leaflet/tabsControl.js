@@ -92,7 +92,7 @@ export default function tabsControl() {
 
 
 
-      self = this;
+      let self = this;
 
       function showfield(event){
         
@@ -186,11 +186,11 @@ export default function tabsControl() {
        }
      }
 
-     function logout() {
-      firebaseAuth.signOut();
-      localStorage.clear()
-      window.location.reload(true);
-    }
+      async function logout() {
+        await firebaseAuth.signOut();
+        localStorage.clear()
+        window.location.reload(true);
+      }
 
      let fbBox = this.fbBox
       fbBox.id ='fb-posts-here';
