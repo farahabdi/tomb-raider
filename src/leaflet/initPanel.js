@@ -712,7 +712,7 @@ async function showViewCodePopup() {
 
  tabElement.className = 'leaflet-top leaflet-right hide-tab'
  headerElement.className = "leaflet-top leaflet-left hide-header"
-logoElement.className = "leaflet-bottom leaflet-left hide-logo"
+logoElement.className = "leaflet-bottom leaflet-left"
 
 
   const markup = document.createElement('div');

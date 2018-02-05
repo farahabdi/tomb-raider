@@ -134,7 +134,7 @@ export default function tabsControl() {
 
 
           headerElement.className = "leaflet-top leaflet-left hide-header"
-          logoElement.className = "leaflet-bottom leaflet-left hide-logo"
+          // logoElement.className = "leaflet-bottom leaflet-left"
           fieldElement.className = 'field field--open'
 
 
