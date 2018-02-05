@@ -38,7 +38,7 @@ class PublicPage extends Component {
     const { isDisabled } = this.state;
 
     return (
-      <div className="landing">
+      <main className="landing">
         
           <div className="logo">
             <div className="logo__image" />
@@ -134,7 +134,7 @@ class PublicPage extends Component {
             </div>
           </footer>         
         </div>
-      </div>
+      </main>
     );
   }
 }
