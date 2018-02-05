@@ -81,7 +81,7 @@
 
     .leaflet-popup-content-wrapper {
 
-        background-image: url("../assets/Code_page.png") !important;
+        background-image: url("/images/Code_page.png") !important;
         background-repeat: no-repeat !important;
         background-repeat: no-repeat !important;
         background-size: contain;
@@ -94,7 +94,7 @@
         right: 85px !important;
 
         @include mq($from: tablet, $until: desktop) {
-            background-image: url("../assets/Code_page@3x.png") !important;
+            background-image: url("/images/Code_page@3x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
             height: 664px;
@@ -105,7 +105,7 @@
             box-shadow: none;
         }
         @include mq($from: desktop, $until: wide) {
-            background-image: url("../assets/Code_page@3x.png") !important;
+            background-image: url("/images/Code_page@3x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
             height: 664px;
@@ -116,7 +116,7 @@
             box-shadow: none;
         }
         @include mq($from: wide) {
-            background-image: url("../assets/Code_page@3x.png") !important;
+            background-image: url("/images/Code_page@3x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
             height: 664px;

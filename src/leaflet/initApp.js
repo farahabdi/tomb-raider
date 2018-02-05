@@ -187,10 +187,12 @@ function getMapImageURLs(){
     //for tablet and larger
     array.push('/images/fieldFolder@2x.png');
     array.push('/images/options@desktop.png');
+    array.push('/images/Code_page@3x.png')
   } else {
     //for mobile
     array.push('/images/fieldNotesm.png');
     array.push('/images/options.png');
+    array.push('/images/Code_page.png')
   }
   array.push('/images/popup.png'); //these used by different things? do we need to load both?
   array.push('/images/popup@2x.png');

@@ -55,8 +55,11 @@ export default function tabsControl() {
           </div>
         </div>
       ` )  
-      FB.XFBML.parse(this.optionsText); //this is the important magic call that makes facebook render
-
+      //need to ensure FB SDK has loaded by now
+      //hack it with a delay
+      setTimeout( () => {
+        FB.XFBML.parse(this.optionsText); //this is the important magic call that makes facebook render
+      },1000);
 
       // TODO put this facebook stuff in the OTHER folder, not the options folder     
       const fbBoxc = L.DomUtil.create('div', 'fb_post_container',  this.field );
