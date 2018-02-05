@@ -66,6 +66,7 @@ div.leaflet-top.leaflet-left {
 
 .leaflet-marker-icon:not(.polaroid):not(.circleMarker) {
   transform: none !important;
+  display: none;
 }
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
