@@ -81,7 +81,7 @@
         background-size: contain;
         transition: height 400ms;
         transition: width 400ms;
-        width: 362px;
+        width: 324px;
         height: 68px;
 
           @include mq($from: tablet, $until: desktop) {
@@ -118,6 +118,22 @@
             text-decoration: none;
             margin-top: 17px;
             margin-left: 22px;
+            background: red;
+
+            @include mq($from: mobile, $until: tablet) {
+                font-family: 'PT Serif', serif;
+                color: #2D1C14;
+                font-size: 22px;
+                height: 24px;
+                width: 289px;
+                background: transparent;
+                outline: none;
+                border: none !important;
+    
+                text-decoration: none;
+                margin-top: 17px;
+                margin-left: 22px;
+            }
 
             @include mq($from: tablet, $until: desktop) {
                 font-family: 'PT Serif', serif;
@@ -162,13 +178,15 @@
         .search__icon {
           background-image: url("../assets/searchIcon.png");
           background-repeat: no-repeat;
-          margin-left: -43px;
+          margin-left: -55px;
           background-size: contain;
           padding-right: 9px;
           width: 35px;
           /* margin-right: 4px; */
           margin-top: 6px;
           cursor: pointer;
+
+
 
           @include mq($from: tablet, $until: desktop) {
             background-image: url("../assets/searchIcon@desktop.png");

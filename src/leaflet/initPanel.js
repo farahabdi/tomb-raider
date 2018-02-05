@@ -463,7 +463,15 @@ function handlePopupClose(event, popup) {
 }
 
 function handlePopupOpen() {
-  const closeButton = document.getElementsByClassName('leaflet-popup-close-button');
+ // const marker = L.marker([-668, 1308]).addTo(window.map);
+ let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
+ const tabElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
+ const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+
+
+ tabElement.className = 'leaflet-top leaflet-right hide-tab'
+ headerElement.className = "leaflet-top leaflet-left hide-header"
+logoElement.className = "leaflet-bottom leaflet-left hide-logo"
 
     
 }
@@ -531,15 +539,7 @@ async function PopUpSelector() {
 }
 
 async function showCompletedPopup() {
- // const marker = L.marker([-668, 1308]).addTo(window.map);
- let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
- const tabElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
- const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
 
-
- tabElement.className = 'leaflet-top leaflet-right hide-tab'
- headerElement.className = "leaflet-top leaflet-left hide-header"
-logoElement.className = "leaflet-bottom leaflet-left hide-logo"
 
 
   const markup = document.createElement('div');
@@ -792,7 +792,7 @@ logoElement.className = "leaflet-bottom leaflet-left"
     let popup = marker.bindPopup(markup,  viewCodeOptions)
 
     popup.on("popupclose", handlePopupClose);
-   // popup.on("popupopen", ()=> { handlePopupOpen() })
+    popup.on("popupopen", ()=> { handlePopupOpen() })
     popup.openPopup();
   }, 750);
   

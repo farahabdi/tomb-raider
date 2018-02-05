@@ -50,6 +50,7 @@
         top:auto;
     }
 
+
     @include mq($from: tablet, $until: desktop) {
         margin-left: -374px;
         top: -14px;
