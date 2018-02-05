@@ -62,7 +62,7 @@ export default async function initApp() {
             closeOnClick: false,
             maxWidth: '400',
             width: '450',
-            className: 'popup__correct',
+            className: 'popup__welcome',
           };
           var currentViewCenter = window.map.getCenter();
           var marker = L.marker(currentViewCenter).addTo(window.map);
@@ -126,6 +126,10 @@ function handlePopupOpen() {
   let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
   const tabElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
   const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+
+  const closeButton = document.getElementsByClassName('leaflet-popup-close-button');
+
+    closeButton[0].innerHTML = ''
  
   tabElement.className = 'leaflet-top leaflet-right hide-tab'
   headerElement.className = "leaflet-top leaflet-left hide-header"

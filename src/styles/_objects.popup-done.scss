@@ -1,8 +1,7 @@
-.popup__welcome {
+.code-popup-done {
+    
     margin-left: 7px;
-    margin-top: -22px;
     padding-top: 9px;
-    padding-bottom: 8px;
     display: flex;
     height: 347px;
     flex-direction: column;
@@ -24,8 +23,11 @@
         left: -205px !important;
         }
     @include mq($from: desktop, $until: wide) {
+        background-image: url("../assets/code_page@2x.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: contain;
         margin-left: 7px;
-        margin-top: -22px;
+        margin-top: -11px;
         padding-top: 9px;
         padding-bottom: 8px;
         display: flex;
@@ -37,6 +39,9 @@
         left: -205px !important;
     }
     @include mq($from: wide) {
+        background-image: url("../assets/code_page@2x.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: contain;
         margin-left: 7px;
         margin-top: -22px;
         padding-top: 9px;
@@ -77,8 +82,8 @@
             background-size: contain;
            }
         @include mq($from: desktop, $until: wide) {
-            top: 46px !important;
-            right: 55px !important;
+            top: 39px !important;
+            right: 42px !important;
             height: 23px !important;
             color: black !important;
             width: 22px;
@@ -88,8 +93,8 @@
             background-size: contain;
         }
         @include mq($from: wide) {
-            top: 46px !important;
-            right: 55px !important;
+            top: 27px !important;
+            right: -22px !important;
             height: 23px !important;
             color: black !important;
             background-image: url("../assets/x@2x.png") !important;
@@ -135,6 +140,7 @@
             background-size: contain;
             height: 372px;
             width: 585px;
+            padding: 36px;
             margin-top: 14px;
             color: none;
             box-shadow: none;
@@ -144,23 +150,22 @@
     }
     .header {
         font-size: 25px;
-        margin-left: 79px;
-        margin-top: -130px;
-        
+        margin-left: 26px;
+        margin-top: -61px;
         @include mq($from: tablet, $until: desktop) {
             font-size: 32px;
-            margin-left: 107px;
-            margin-top: -57px;
+            margin-left: 96px;
+            margin-top: -3px;
         }
         @include mq($from: desktop, $until: wide) {
             font-size: 32px;
-            margin-left: 107px;
-            margin-top: -57px;
+            margin-left: 96px;
+            margin-top: -3px;
         }
         @include mq($from: wide) {
             font-size: 32px;
-            margin-left: 107px;
-            margin-top: -57px;
+            margin-left: 96px;
+            margin-top: -19px;
         }
     }
     .message {
@@ -168,25 +173,24 @@
 
         margin-top: 12px;
         width: 262px;
-        margin-left: 27px;
-        
+
         @include mq($from: tablet, $until: desktop) {
             font-size: 26px;
             margin-top: 12px;
-            margin-left: 37px;
-            width: 355px;
+            margin-left: 11px;
+            width: 345px;
         }
         @include mq($from: desktop, $until: wide) {
             font-size: 26px;
             margin-top: 12px;
-            margin-left: 37px;
-            width: 355px;
+            margin-left: 11px;
+            width: 345px;
         }
         @include mq($from: wide) {
             font-size: 26px;
-            margin-top: 35px;
-            margin-left: 34px;
-            width: 355px;
+            margin-top: 29px;
+            margin-left: 11px;
+            width: 351px;
         }
     }
     .content {
