@@ -20,8 +20,13 @@ class PublicPage extends Component {
         loaderEl.parentNode.removeChild(loaderEl);
       }
     }
-    preloadImg.src = "images/landing@2x.jpg";
-    console.error(preloadImg.src)    
+    const tablet = 740;
+    if(window.matchMedia( "(min-width: "+tablet+"px)" ).matches){
+      preloadImg.src = "images/landing@2x.jpg";
+    } else {
+      preloadImg.src = "images/landing.jpg";      
+    }
+    // console.error(preloadImg.src)    
   }
 
   toggle() {
