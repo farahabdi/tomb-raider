@@ -58,7 +58,7 @@ export default async function initApp() {
 
         setTimeout(function() {
           
-          if (!visited) {
+          if (visited) {
           const markup = showWelcomePopUp();
           const correctPopupOptions = {
             closeOnClick: false,
