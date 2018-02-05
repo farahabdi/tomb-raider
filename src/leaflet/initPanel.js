@@ -73,6 +73,8 @@ export default function initSearch() {
     showLoader();
     const challenges = await fetchChallenges();
     const answerKey = await checkAnswer(answerInput);
+    const challengespProgress = await fetchCompletedChallenges();
+
     hideLoader();
 
     const successOptions = {
@@ -161,15 +163,20 @@ export default function initSearch() {
       const marker = L.marker([-465, 1174]).addTo(window.map);
       const markup = await PopUpSelector();
 
-      setTimeout(function() {
-        let popup = marker.bindPopup(markup, correctPopupOptions)
-        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-        popup.on("popupopen", ()=> { handlePopupOpen() })
-        popup.openPopup();
-        const element = document.getElementsByClassName('popup_correct button')[0];
-        element.addEventListener('click', showViewCodePopup, false);
-      }, 750);
-      
+
+      if (markup !== false) {
+        setTimeout(function() {
+          let popup = marker.bindPopup(markup, correctPopupOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
+          popup.openPopup();
+          debugger
+          if (challengespProgress.length < 4) {
+            const element = document.getElementsByClassName('popup_correct button')[0];
+            element.addEventListener('click', showViewCodePopup, false);
+          }
+        }, 750);
+     }
 
 
 
@@ -210,15 +217,22 @@ export default function initSearch() {
       const marker = L.marker([-668, 1308]).addTo(window.map);
       const markup = await PopUpSelector();
 
-      setTimeout(function() {
-        let popup = marker.bindPopup(markup, correctPopupOptions)
-        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-        popup.on("popupopen", ()=> { handlePopupOpen() })
-        popup.openPopup();
-        const element = document.getElementsByClassName('popup_correct button')[0];
-        element.addEventListener('click', showViewCodePopup, false);
-        }, 750);
+      if (markup !== false) {
+        setTimeout(function() {
+          let popup = marker.bindPopup(markup, correctPopupOptions)
+          popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+          popup.on("popupopen", ()=> { handlePopupOpen() })
+          popup.openPopup();
 
+
+          if (challengespProgress.length < 5) {
+            const element = document.getElementsByClassName('popup_correct button')[0];
+            element.addEventListener('click', showViewCodePopup, false);
+          }
+          
+
+          }, 750);
+        }
 
 
 
@@ -265,15 +279,18 @@ export default function initSearch() {
       const marker = L.marker([-474, 1683]).addTo(window.map);
       const markup = await PopUpSelector();
 
-      setTimeout(function() {
-        let popup = marker.bindPopup(markup, correctPopupOptions)
-        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-        popup.on("popupopen", ()=> { handlePopupOpen() })
-        popup.openPopup();
-        const element = document.getElementsByClassName('popup_correct button')[0];
-        element.addEventListener('click', showViewCodePopup, false);
-        }, 750);
-
+      if (markup !== false) {
+        setTimeout(function() {
+          let popup = marker.bindPopup(markup, correctPopupOptions)
+          popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+          popup.on("popupopen", ()=> { handlePopupOpen() })
+          popup.openPopup();
+          if (challengespProgress.length < 4) {
+            const element = document.getElementsByClassName('popup_correct button')[0];
+            element.addEventListener('click', showViewCodePopup, false);
+          }
+          }, 750);
+      }
 
 
 
@@ -311,14 +328,19 @@ export default function initSearch() {
       const marker = L.marker([-585.7060241699219, 632.9839477539062]).addTo(window.map);
       const markup = await PopUpSelector();
 
+
+    if (markup !== false) {
       setTimeout(function() {
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
           popup.on("popupopen", ()=> { handlePopupOpen() })
           popup.openPopup();
-          const element = document.getElementsByClassName('popup_correct button')[0];
-          element.addEventListener('click', showViewCodePopup, false);
+          if (challengespProgress.length < 4) {
+            const element = document.getElementsByClassName('popup_correct button')[0];
+            element.addEventListener('click', showViewCodePopup, false);
+          }
         }, 750);
+      }
 
 
 
@@ -359,15 +381,18 @@ export default function initSearch() {
       const marker = L.marker([-617, 1419]).addTo(window.map);
       const markup = await PopUpSelector();
 
-      setTimeout(function() {
-        let popup = marker.bindPopup(markup, correctPopupOptions)
-        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-        popup.on("popupopen", ()=> { handlePopupOpen() })
-        popup.openPopup();
-        const element = document.getElementsByClassName('popup_correct button')[0];
-        element.addEventListener('click', showViewCodePopup, false);
-      }, 750);
-
+      if (markup !== false) {
+        setTimeout(function() {
+          let popup = marker.bindPopup(markup, correctPopupOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", ()=> { handlePopupOpen() })
+          popup.openPopup();
+          if (challengespProgress.length < 4) {
+            const element = document.getElementsByClassName('popup_correct button')[0];
+            element.addEventListener('click', showViewCodePopup, false);
+          }
+        }, 750);
+      }
 
 
 
@@ -393,7 +418,7 @@ export default function initSearch() {
         var marker = L.marker(currentViewCenter).addTo(window.map);
         let popup = marker.bindPopup(markup, correctPopupOptions)
           
-        popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+        popup.on("popupclose", handlePopupClose);
         popup.on("popupopen", ()=> { handlePopupOpen() })
         popup.openPopup();
       }, 2200);
@@ -439,7 +464,7 @@ function handlePopupClose(event, popup) {
 function handlePopupOpen() {
   const closeButton = document.getElementsByClassName('leaflet-popup-close-button');
 
-    closeButton[0].innerHTML = ''
+    
 }
 
 async function showFailPopUp() {
@@ -490,14 +515,110 @@ async function PopUpSelector() {
     num = 5
     done = true
   }
+  debugger
 
   if (done) {
-
+    debugger
+    showCompletedPopup()
+    return false
   } else {
+    debugger
     return showSuccessPopUp()
+    
   }
 
 }
+
+async function showCompletedPopup() {
+ // const marker = L.marker([-668, 1308]).addTo(window.map);
+ let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
+ const tabElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
+ const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
+
+
+ tabElement.className = 'leaflet-top leaflet-right hide-tab'
+ headerElement.className = "leaflet-top leaflet-left hide-header"
+logoElement.className = "leaflet-bottom leaflet-left hide-logo"
+
+
+  const markup = document.createElement('div');
+  markup.className = 'code-popup';
+
+  markup.insertAdjacentHTML('afterbegin', `
+  <div class="code-popup__footer">
+      <div class="code-popup__tick"></div>
+      <div class="code-popup__link--container">
+        <span class="code-popup__link underline-transport"><a href="tombofthechosen.com">Transport me</a></span>
+        <span class="code-popup__link underline-transport"><a href="tombofthechosen.com">to the tomb</a><</span>
+      </div>
+    </div>
+  ` ) 
+
+  markup.insertAdjacentHTML('afterbegin', `
+  <div class="code-popup__container">
+      <div class="code-popup__wrapper code-popup--1">
+        <div class="code-popup__text code-popup__text--1"></div>
+
+      </div>
+
+      <div class="code-popup__wrapper code-popup--2">
+        <div class="code-popup__text code-popup__text--2"></div>
+      </div>
+
+      <div class="code-popup__wrapper code-popup--3">
+        <div class="code-popup__text code-popup__text--3"> </div>
+      </div>
+
+      <div class="code-popup__wrapper code-popup--4">
+        <div class="code-popup__text code-popup__text--4"></div>
+      </div>
+
+      <div class="code-popup__wrapper code-popup--5">
+        <div class="code-popup__text code-popup__text--5"></div>
+      </div>
+    </div>
+  ` )  
+  
+  markup.insertAdjacentHTML('afterbegin', '<div class="code-popup__header">Well done</div>');
+  markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="final-code__message"> Congratulations you have discovered the landmark and revealed the code</div>');
+
+  const challengespProgress = await fetchCompletedChallenges();
+
+  for (let i = 0; i < challengespProgress.length; i++) {
+
+    if (challengespProgress[i] == 'challenge1') {
+      markup.querySelector('.code-popup__text.code-popup__text--1').innerHTML = 'challenge 1 code'
+
+    } else if (challengespProgress[i] == 'challenge2') {
+      markup.querySelector('.code-popup__text.code-popup__text--2').innerHTML = 'challenge 2 code'
+      
+    } else if (challengespProgress[i] == 'challenge3') {
+      markup.querySelector('.code-popup__text.code-popup__text--3').innerHTML = 'challenge 3 code'
+      
+    } else if (challengespProgress[i] == 'challenge4') {
+      markup.querySelector('.code-popup__text.code-popup__text--4').innerHTML = 'challenge 4 code'
+      
+    } else if (challengespProgress[i] == 'challenge5') {
+      markup.querySelector('.code-popup__text.code-popup__text--5').innerHTML = 'challenge 5 code'
+      
+    }
+  }
+
+
+  var currentViewCenter = window.map.getCenter();
+  var marker = L.marker(currentViewCenter).addTo(window.map);
+
+
+  setTimeout(function() {
+    let popup = marker.bindPopup(markup,  viewCodeOptions)
+
+    popup.on("popupclose",  handlePopupClose);
+   // popup.on("popupopen", ()=> { handlePopupOpen() })
+    popup.openPopup();
+  }, 750);
+  
+}
+
 
 
 async function showSuccessPopUp() {
@@ -550,12 +671,6 @@ async function showAlreadyCompletedPopUp() {
 
 
 
-async function showCompletedPopup() {
-  const markup = document.createElement('div');
-  markup.className = 'final-code';
-  markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="final-code__message"> Congratulations you have discovered the landmarks and revealed the code!</div>');
-  markup.insertAdjacentHTML('afterbegin', '<div class="final-code__header">Well done</div>');
-}
 
 
 
@@ -584,6 +699,9 @@ const codePopupOptions = {
   width: '450',
   className: 'popup__codes',
 };
+
+
+
 async function showViewCodePopup() {
  // const marker = L.marker([-668, 1308]).addTo(window.map);
  let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
@@ -672,7 +790,7 @@ logoElement.className = "leaflet-bottom leaflet-left hide-logo"
   setTimeout(function() {
     let popup = marker.bindPopup(markup,  viewCodeOptions)
 
-    popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+    popup.on("popupclose", handlePopupClose);
    // popup.on("popupopen", ()=> { handlePopupOpen() })
     popup.openPopup();
   }, 750);
