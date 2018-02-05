@@ -110,7 +110,7 @@
     }
 
     @include mq($from: desktop, $until: wide) {
-        justify-content: end;
+        justify-content: flex-end;
         margin-top: 84px;
      
         /* margin-left: 1px; */
@@ -118,7 +118,7 @@
     }
 
     @include mq($from: wide) {
-        justify-content: end;
+        justify-content: flex-end;
         margin-top: 192px;
 
         /* margin-left: 1px; */
