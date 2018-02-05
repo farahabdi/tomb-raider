@@ -584,19 +584,19 @@ async function showCompletedPopup() {
   for (let i = 0; i < challengespProgress.length; i++) {
 
     if (challengespProgress[i] == 'challenge1') {
-      markup.querySelector('.code-popup__text.code-popup__text--1').innerHTML = 'challenge 1 code'
+      markup.querySelector('.code-popup__text.code-popup__text--1').innerHTML = 'Neither stone nor'
 
     } else if (challengespProgress[i] == 'challenge2') {
-      markup.querySelector('.code-popup__text.code-popup__text--2').innerHTML = 'challenge 2 code'
+      markup.querySelector('.code-popup__text.code-popup__text--2').innerHTML = 'sun shall stop'
       
     } else if (challengespProgress[i] == 'challenge3') {
-      markup.querySelector('.code-popup__text.code-popup__text--3').innerHTML = 'challenge 3 code'
+      markup.querySelector('.code-popup__text.code-popup__text--3').innerHTML = 'the lion entering'
       
     } else if (challengespProgress[i] == 'challenge4') {
-      markup.querySelector('.code-popup__text.code-popup__text--4').innerHTML = 'challenge 4 code'
+      markup.querySelector('.code-popup__text.code-popup__text--4').innerHTML = 'the city of'
       
     } else if (challengespProgress[i] == 'challenge5') {
-      markup.querySelector('.code-popup__text.code-popup__text--5').innerHTML = 'challenge 5 code'
+      markup.querySelector('.code-popup__text.code-popup__text--5').innerHTML = 'endless ruin'
       
     }
   }
@@ -757,20 +757,19 @@ logoElement.className = "leaflet-bottom leaflet-left"
   for (let i = 0; i < challengespProgress.length; i++) {
 
     if (challengespProgress[i] == 'challenge1') {
-      markup.querySelector('.code-popup__text.code-popup__text--1').innerHTML = 'challenge 1 code'
+      markup.querySelector('.code-popup__text.code-popup__text--1').innerHTML = 'Neither stone nor'
 
     } else if (challengespProgress[i] == 'challenge2') {
-      markup.querySelector('.code-popup__text.code-popup__text--2').innerHTML = 'challenge 2 code'
+      markup.querySelector('.code-popup__text.code-popup__text--2').innerHTML = 'sun shall stop'
       
     } else if (challengespProgress[i] == 'challenge3') {
-      markup.querySelector('.code-popup__text.code-popup__text--3').innerHTML = 'challenge 3 code'
+      markup.querySelector('.code-popup__text.code-popup__text--3').innerHTML = 'the lion entering'
       
     } else if (challengespProgress[i] == 'challenge4') {
-      markup.querySelector('.code-popup__text.code-popup__text--4').innerHTML = 'challenge 4 code'
+      markup.querySelector('.code-popup__text.code-popup__text--4').innerHTML = 'the city of'
       
     } else if (challengespProgress[i] == 'challenge5') {
-      markup.querySelector('.code-popup__text.code-popup__text--5').innerHTML = 'challenge 5 code'
-      
+      markup.querySelector('.code-popup__text.code-popup__text--5').innerHTML = 'endless ruin'  
     }
   }
 
