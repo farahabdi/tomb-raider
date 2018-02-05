@@ -15,6 +15,11 @@ const pathChallenge4 = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102
 
 
 
+const viewCodeOptions = {
+  maxWidth: '400',
+  width: '450',
+  className: 'code-popup-top',
+};
 
 
 
@@ -102,12 +107,6 @@ export default function initSearch() {
       maxWidth: '400',
       width: '450',
       className: 'popup__correct',
-    };
-
-    const viewCodeOptions = {
-      maxWidth: '400',
-      width: '450',
-      className: 'code-popup-top',
     };
 
     const failPopupOptions = {
@@ -715,6 +714,7 @@ const codePopupOptions = {
 
 
 async function showViewCodePopup() {
+
  // const marker = L.marker([-668, 1308]).addTo(window.map);
  let headerElement = document.getElementsByClassName('leaflet-top leaflet-left')[0]
  const tabElement = document.getElementsByClassName('leaflet-top leaflet-right')[0];
