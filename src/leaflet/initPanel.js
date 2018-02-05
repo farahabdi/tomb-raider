@@ -104,6 +104,12 @@ export default function initSearch() {
       className: 'popup__correct',
     };
 
+    const viewCodeOptions = {
+      maxWidth: '400',
+      width: '450',
+      className: 'code-popup-top',
+    };
+
     const failPopupOptions = {
       maxWidth: '400',
       width: '450',
@@ -158,29 +164,35 @@ export default function initSearch() {
       window.map.flyTo([-465, 1174], 1);
 
       /* Show popop */
+      
 
 
       const marker = L.marker([-465, 1174]).addTo(window.map);
       const markup = await PopUpSelector();
+    
+      setTimeout(function() {
 
+        debugger
+        if (challengespProgress.length < 4) {
 
-      if (markup !== false) {
-        setTimeout(function() {
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
+
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", handlePopupClose);
           popup.on("popupopen", handlePopupOpen)
           popup.openPopup();
-          debugger
-          if (challengespProgress.length < 4) {
-            const element = document.getElementsByClassName('popup_correct button')[0];
-            element.addEventListener('click', showViewCodePopup, false);
-          }
-        }, 750);
-     }
+
+        } else {
+          let popup = marker.bindPopup(markup, viewCodeOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
+          popup.openPopup();
 
 
-
-
+        }
+      }, 750);
+     
       /* Update challenge */
       updateChallenge('challenge1');
 
@@ -219,28 +231,30 @@ export default function initSearch() {
       const marker = L.marker([-829.1115636590264, 1546.9409013681461]).addTo(window.map);
       const markup = await PopUpSelector();
 
-      if (markup !== false) {
-        setTimeout(function() {
+  
+      setTimeout(function() {
+
+        if (challengespProgress.length < 4) {
+
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
+
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
           popup.on("popupopen", ()=> { handlePopupOpen() })
           popup.openPopup();
 
 
-          if (challengespProgress.length < 5) {
-            const element = document.getElementsByClassName('popup_correct button')[0];
-            element.addEventListener('click', showViewCodePopup, false);
-          }
-          
-
-          }, 750);
+        } else {
+          let popup = marker.bindPopup(markup, viewCodeOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
+          popup.openPopup();
         }
+        
 
-
-
-
-
-
+        }, 750);
+        
       /* Update challenge */
       updateChallenge('challenge2');
 
@@ -274,27 +288,31 @@ export default function initSearch() {
         popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
       });
 
-      L.marker([-547, 2042], { icon: polaroidIcon }).addTo(window.map);
+      L.marker([-534.0938407152298, 2073.9158506047934], { icon: polaroidIcon }).addTo(window.map);
 
       /* Show popop */
       const marker = L.marker([-534.0938407152298, 2073.9158506047934]).addTo(window.map);
       const markup = await PopUpSelector();
 
-      if (markup !== false) {
-        setTimeout(function() {
+  
+      setTimeout(function() {
+
+        if (challengespProgress.length < 4) {
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
+
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
           popup.on("popupopen", ()=> { handlePopupOpen() })
           popup.openPopup();
-          if (challengespProgress.length < 4) {
-            const element = document.getElementsByClassName('popup_correct button')[0];
-            element.addEventListener('click', showViewCodePopup, false);
-          }
-          }, 750);
-      }
-
-
-
+        } else {
+          let popup = marker.bindPopup(markup, viewCodeOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
+          popup.openPopup();
+        }
+        }, 750);
+      
       /* Update challenge */
       updateChallenge('challenge3');
     } else if (answerKey === 'challenge4') {
@@ -304,7 +322,7 @@ export default function initSearch() {
       document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
 
       /* Fly to Point */
-      window.map.flyTo([-585.7060241699219, 632.9839477539062], 1);
+      window.map.flyTo([-799.5745942851532, 842.1214866398966], 1);
 
       /* Show circle marker */
       const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
@@ -326,29 +344,30 @@ export default function initSearch() {
       L.marker([-769.208961825107, 813.0431918688164], { icon: polaroidIcon }).addTo(window.map);
 
       /* Show popop */
-      const marker = L.marker([-585.7060241699219, 632.9839477539062]).addTo(window.map);
+      const marker = L.marker([-717.4574528333092, 864.5532170140973]).addTo(window.map);
       const markup = await PopUpSelector();
 
-
-    if (markup !== false) {
       setTimeout(function() {
-          let popup = marker.bindPopup(markup, correctPopupOptions)
-          popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
-          popup.on("popupopen", ()=> { handlePopupOpen() })
-          popup.openPopup();
+
           if (challengespProgress.length < 4) {
+
+            let popup = marker.bindPopup(markup, correctPopupOptions)
+            popup.on("popupclose", (marker) => { handlePopupClose(event, marker)});
+            popup.on("popupopen", ()=> { handlePopupOpen() })
+            popup.openPopup();
+
+
             const element = document.getElementsByClassName('popup_correct button')[0];
             element.addEventListener('click', showViewCodePopup, false);
+          } else {
+
+            let popup = marker.bindPopup(markup, viewCodeOptions)
+            popup.on("popupclose", handlePopupClose);
+            popup.on("popupopen", handlePopupOpen)
+            popup.openPopup();
           }
         }, 750);
-      }
-
-
-
-
-
-
-
+      
       /* Update challenge */
       updateChallenge('challenge4');
 
@@ -382,23 +401,31 @@ export default function initSearch() {
       const marker = L.marker([-807, 1786]).addTo(window.map);
       const markup = await PopUpSelector();
 
-      if (markup !== false) {
-        setTimeout(function() {
+   
+      setTimeout(function() {
+
+        if (challengespProgress.length < 4) {
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
+
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", handlePopupClose);
           popup.on("popupopen", ()=> { handlePopupOpen() })
           popup.openPopup();
-          if (challengespProgress.length < 4) {
-            const element = document.getElementsByClassName('popup_correct button')[0];
-            element.addEventListener('click', showViewCodePopup, false);
-          }
-        }, 750);
-      }
+
+        } else {
+          let popup = marker.bindPopup(markup, viewCodeOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
+          popup.openPopup();
+        }
+      }, 750);
+      
 
 
 
       /* Fly to Point */
-      window.map.flyTo([-845.0254483295539, 1805.235034227058], 1);
+      window.map.flyTo([-807, 1786], 1);
 
 
       /* Update challenge */
@@ -528,8 +555,8 @@ async function PopUpSelector() {
 
   if (done) {
     debugger
-    showCompletedPopup()
-    return false
+    return showCompletedPopup()
+
   } else {
     debugger
     return showSuccessPopUp()
@@ -538,7 +565,7 @@ async function PopUpSelector() {
 
 }
 
-async function showCompletedPopup() {
+async function showCompletedPopup(loc) {
 
 
 
@@ -604,19 +631,7 @@ async function showCompletedPopup() {
       
     }
   }
-
-
-  var currentViewCenter = window.map.getCenter();
-  var marker = L.marker(currentViewCenter).addTo(window.map);
-
-
-  setTimeout(function() {
-    let popup = marker.bindPopup(markup,  viewCodeOptions)
-
-    popup.on("popupclose",  handlePopupClose);
-   // popup.on("popupopen", ()=> { handlePopupOpen() })
-    popup.openPopup();
-  }, 750);
+  return markup
   
 }
 
@@ -689,11 +704,7 @@ const landmarkCodes = {
   challenge5: 'lorem ipsum challenge.',
 };
 
-const viewCodeOptions = {
-  maxWidth: '400',
-  width: '450',
-  className: 'code-popup-top',
-};
+
 
 const codePopupOptions = {
   maxWidth: '400',

@@ -263,8 +263,8 @@ a {
   transition: margin 700ms;
   @include mq($from: tablet, $until: desktop) {
    // margin-left:0px;
-   margin-top: 0px;
-   margin-left: -133px;
+   margin-top: -195px;
+   transition: margin 700ms;
     }
   @include mq($from: desktop, $until: wide) {
     margin-left: -129px;
