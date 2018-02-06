@@ -142,7 +142,7 @@ export default async function initSearch() {
       updateChallenge('challenge1');
 
     /* Cross icon */
-      document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
+      document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon challenge__1 challenge__1--complete';
 
       /* Fly to Point */
       window.map.flyTo([-534.0938407152298, 2073.9158506047934], 1);
@@ -273,7 +273,7 @@ export default async function initSearch() {
       updateChallenge('challenge3');
 
     /* Cross icon */
-      document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
+      document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
 
       /* Fly to Point */
       window.map.flyTo([-799.5745942851532, 842.1214866398966], 1);
@@ -329,6 +329,10 @@ export default async function initSearch() {
 
       /* Update challenge */
       updateChallenge('challenge4');
+
+
+        /* Cross icon */
+        document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
 
       /* Show Polaroid */
       const polaroidIcon = L.icon({
@@ -389,7 +393,7 @@ export default async function initSearch() {
       updateChallenge('challenge5');
 
     /* Cross icon */
-      document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon  challenge__1 challenge__1--complete';
+      document.getElementsByClassName('challenge__icon challenge__5')[0].className = 'challenge__icon  challenge__5 challenge__5--complete';
 
       /* Show circle marker */
      // const url = encodeURI(`data:image/svg+xml,${pathChallenge1}`).replace('#', '%23');
