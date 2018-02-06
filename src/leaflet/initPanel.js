@@ -138,6 +138,9 @@ export default function initSearch() {
     if (answerKey === 'challenge1') {
     /* Stonehenge - UK */
 
+      /* Update challenge */
+      updateChallenge('challenge1');
+
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon  challenge__1 challenge__1--complete';
 
@@ -194,12 +197,17 @@ export default function initSearch() {
         }
       }, 750);
      
-      /* Update challenge */
-      updateChallenge('challenge1');
+
 
       
     } else if (answerKey === 'challenge2') {
     /* Gedi Ruins -- Kenya */
+
+
+      /* Update challenge */
+      updateChallenge('challenge2');
+
+
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__2')[0].className = 'challenge__icon challenge__2 challenge__2--complete';
 
@@ -258,12 +266,14 @@ export default function initSearch() {
 
         }, 750);
         
-      /* Update challenge */
-      updateChallenge('challenge2');
+
 
 
     } else if (answerKey === 'challenge3') {
     /* Forbidden City -- China */
+
+      /* Update challenge */
+      updateChallenge('challenge3');
 
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
@@ -317,10 +327,12 @@ export default function initSearch() {
         }
         }, 750);
       
-      /* Update challenge */
-      updateChallenge('challenge3');
+
     } else if (answerKey === 'challenge4') {
     /* Pyramid of the Suns -- Mexico */
+
+      /* Update challenge */
+      updateChallenge('challenge4');
 
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
@@ -372,12 +384,15 @@ export default function initSearch() {
           }
         }, 750);
       
-      /* Update challenge */
-      updateChallenge('challenge4');
+
 
 
     } else if (answerKey === 'challenge5') {
     /* Sigiriya */
+
+
+    /* Update challenge */
+    updateChallenge('challenge5');
 
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__5')[0].className = 'challenge__icon challenge__5 challenge__5--complete';
@@ -434,8 +449,6 @@ export default function initSearch() {
       window.map.flyTo([-807, 1786], 1);
 
 
-      /* Update challenge */
-      updateChallenge('challenge5');
 
       
     } else {

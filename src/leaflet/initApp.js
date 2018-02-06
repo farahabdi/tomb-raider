@@ -100,7 +100,7 @@ function showWelcomePopUp() {
   const markup = document.createElement('div');
   markup.className = 'popup__welcome';
   
-  markup.insertAdjacentHTML('afterbegin', `<div class="message">Feel free to explore the map.</div>`);
+  markup.insertAdjacentHTML('afterbegin', `<div class="message">Feel free to explore the entire map.</div>`);
   markup.insertAdjacentHTML('afterbegin', `<div class="header">Welcome !</div>`);
 
   return markup;
