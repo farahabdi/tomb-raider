@@ -564,7 +564,7 @@ async function PopUpSelector() {
   var values = Object.keys(challenges).map(e => challenges[e])
   values.forEach((value) => { if (value === true) { num += 1; } });
 
-  num++;
+
   if (num>=5) {
     num = 5
     done = true
