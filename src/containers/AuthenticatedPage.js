@@ -8,21 +8,26 @@ import { firebase } from '@firebase/app';
 import { firebaseAuth } from '../utils/config';
 import { connect } from 'react-redux';
 import { authActions } from '../actions';
-import { fetchChallenges } from '../api/index'
+import { fetchChallenges, checkUserExists } from '../api/index'
 
 
 class AuthenticatedPage extends Component {
 
-  componentWillMount() {
-    authActions.initialiseApp();
+  async componentWillMount() {
+    await authActions.initialiseApp();
+
   }
 
-  componentDidMount() { 
-
-    initApp()
-    initPanel()
-    initUserMap()
+  async componentDidMount() { 
+    await checkUserExists()
+    await initApp()
+    await initPanel()
+    await initUserMap()
   }
+
+
+
+
 
   render() {
     return (

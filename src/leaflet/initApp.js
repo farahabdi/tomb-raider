@@ -30,7 +30,9 @@ export default async function initApp() {
   searchControl();
   tabsControl();
 
-  let visited = await fetchUserVisited()
+  // let visited = await fetchUserVisited()
+
+  let visited = true
 
   let imagesURLs = getMapImageURLs();
   loadImages(imagesURLs, () => {

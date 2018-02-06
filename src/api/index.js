@@ -13,6 +13,17 @@ export async function fetchUserExists() {
   return userExists;
 }
 
+export async function checkUserExists() {
+  let userExists = await fetchUserExists()
+
+  if (!userExists) {
+    await createUser()
+  }
+
+}
+
+
+
 export async function fetchUserVisited() {
   let userVisited= false;
   const user = firebase.auth().currentUser;
@@ -124,6 +135,8 @@ export async function checkAnswer(text) {
 export async function createUser() {
   const user = firebase.auth().currentUser;
   const userRef = db.collection('users').doc(user.uid);
+
+  debugger
 
   userRef.set({
     uid: user.uid,

@@ -33,7 +33,7 @@ export function initAuth(dispatch) {
         dispatch(initialiseAuth(authUser));
         if (authUser != null) {
           window.photoURL = authUser.photoURL
-          dispatch(initialiseApp(authUser));
+        //  dispatch(initialiseApp(authUser));
         }
         unsubscribe();
         resolve();
@@ -53,7 +53,17 @@ export const createNewUser = () =>
       dispatch(userCreated());
     });
   };
+/*
 
+export async function createNewUser() {
+  return async dispatch => {
+    await createUser()
+      dispatch(userCreated())
+
+  };
+}
+
+*/
 export const receivedChallenges = challenges => ({
   type: RECEIVED_CHALLENGES,
   payload: challenges,
@@ -68,7 +78,7 @@ export const fetchUserChallenges = () =>
 const receiveUserExists = userExists =>
   (dispatch) => {
     if (userExists) {
-      dispatch(fetchUserChallenges());
+     // dispatch(fetchUserChallenges());
     } else {
       dispatch(createNewUser());
     }

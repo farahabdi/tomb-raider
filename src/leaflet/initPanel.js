@@ -31,7 +31,7 @@ const coordinates = {
 }
 
 
-export default function initSearch() {
+export default async function initSearch() {
   const searchElement = document.getElementsByClassName('search__icon');
   const searchInput = document.getElementsByClassName('search__input');
 
@@ -174,7 +174,7 @@ export default function initSearch() {
     
       setTimeout(function() {
 
-        debugger
+  
         if (challengespProgress.length < 4) {
 
 
@@ -501,9 +501,8 @@ function handlePopupOpen() {
  const logoElement = document.getElementsByClassName('leaflet-bottom leaflet-left')[0];
 
  const closeButton = document.getElementsByClassName('leaflet-popup-close-button');
- debugger
-   closeButton[0].innerHTML = ''
 
+  closeButton[0].innerHTML = ''
  tabElement.className = 'leaflet-top leaflet-right hide-tab'
  headerElement.className = "leaflet-top leaflet-left hide-header"
  logoElement.className = "leaflet-bottom leaflet-left hide-logo"
@@ -570,14 +569,14 @@ async function PopUpSelector() {
     num = 5
     done = true
   }
-  debugger
+
 
   if (done) {
-    debugger
+
     return showCompletedPopup()
 
   } else {
-    debugger
+  
     return showSuccessPopUp()
     
   }
@@ -807,11 +806,6 @@ logoElement.className = "leaflet-bottom leaflet-left"
       markup.querySelector('.code-popup__text.code-popup__text--5').innerHTML = 'endless ruin'  
     }
   }
-
-  debugger
-
-
-
 
 
   var currentViewCenter = window.map.getCenter();
