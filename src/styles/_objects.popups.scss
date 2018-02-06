@@ -87,8 +87,10 @@
         }
         @include mq($from: wide) {
             top: 27px !important;
-            right: -22px !important;
+            // right: -22px !important;
+            right: 42px !important;
             height: 23px !important;
+            width: 22px;
             color: black !important;
             background-image: url("../assets/x@2x.png") !important;
             background-repeat: no-repeat !important;
@@ -133,8 +135,8 @@
             background-size: contain;
             height: 372px;
             width: 585px;
-            padding: 36px;
-            margin-top: 14px;
+            // padding: 36px;
+            // margin-top: 14px;
             color: none;
             box-shadow: none;
         }
@@ -158,7 +160,8 @@
         @include mq($from: wide) {
             font-size: 32px;
             margin-left: 96px;
-            margin-top: -19px;
+            margin-top: -3px;
+            // margin-top: -19px;
         }
     }
     .message {
@@ -181,9 +184,12 @@
         }
         @include mq($from: wide) {
             font-size: 26px;
-            margin-top: 29px;
+            margin-top: 12px;
             margin-left: 11px;
-            width: 351px;
+            width: 345px;
+            // margin-top: 29px;
+            // margin-left: 11px;
+            // width: 351px;
         }
     }
     .content {
@@ -235,8 +241,8 @@
             background-repeat: no-repeat !important;
             background-size: contain;
 
-            height: 47px;
-            width: 99px;
+            // height: 47px;
+            // width: 99px;
             }
         }
 
@@ -260,8 +266,11 @@
             @include mq($from: wide) {
                 
                 font-size: 26px;
-                margin-top: 7px;
-                margin-left: 6px;
+                // margin-top: 7px;
+                // margin-left: 6px;
+                margin-top: 11px;
+                margin-top: 5px;
+                margin-left: 4px;
                 
             }
         }
