@@ -1,0 +1,221 @@
+
+
+.code-popup-incomplete {
+
+
+    @include mq($from: tablet, $until: desktop) {
+
+        }
+    @include mq($from: desktop, $until: wide) {
+
+    }
+    @include mq($from: wide) {
+
+    }
+
+    >.leaflet-popup-content {
+
+
+        @include mq($from: tablet, $until: desktop) {
+
+    
+        }
+        @include mq($from: desktop, $until: wide) {
+
+    
+        }
+        @include mq($from: wide) {
+
+    
+        }
+        
+    }
+
+    .leaflet-popup-content-wrapper {
+
+
+
+        @include mq($from: tablet, $until: desktop) {
+
+        }
+        @include mq($from: desktop, $until: wide) {
+
+        }
+        @include mq($from: wide) {
+
+        }
+
+
+
+    }
+
+    .code-popup__image {
+
+        @include mq($from: tablet, $until: desktop) {
+
+        }
+        @include mq($from: desktop, $until: wide) {
+
+        }
+        @include mq($from: wide) {
+            content:url("/images/Code_page@3x.png");
+        }
+
+    }
+    .code-popup__header {
+
+        @include mq($from: tablet, $until: desktop) {
+
+        }
+        @include mq($from: desktop, $until: wide) {
+
+        }
+        @include mq($from: wide) {
+
+        }
+    }
+    .code-popup__message {
+
+
+        @include mq($from: tablet, $until: desktop) {
+
+        }
+        @include mq($from: desktop, $until: wide) {
+
+        }
+        @include mq($from: wide) {
+
+        }
+    }
+    .leaflet-popup-close-button {
+
+        @include mq($from: tablet, $until: desktop) {
+
+        }
+        @include mq($from: desktop, $until: wide) {
+
+        }
+        @include mq($from: wide) {
+
+        }
+    }
+
+
+}
+
+
+.code-popup__container {
+
+    .code-popup__wrapper{
+
+
+        &.code-popup--1 {
+
+            
+           
+
+        }
+        &.code-popup--2 {
+
+         
+            
+        }
+        &.code-popup--3 {
+
+ 
+            
+        }
+        &.code-popup--4 {
+ 
+         
+            
+        }
+        &.code-popup--5 {
+
+
+            
+        }
+    }
+
+
+}
+
+.code-popup__text {
+
+
+    &.code-popup__text--1 {
+
+    }
+    &.code-popup__text--2 {
+        
+    }
+    &.code-popup__text--3 {
+        
+    }
+    &.code-popup__text--4 {
+        
+    }
+    &.code-popup__text--5 {
+        
+    }
+    
+}
+
+.code-popup__footer {
+
+    @include mq($from: tablet, $until: desktop) {
+
+    }
+    @include mq($from: desktop, $until: wide) {
+
+    }
+    @include mq($from: wide) {
+
+    }
+    
+    .code-popup__tick {
+
+
+        @include mq($from: tablet, $until: desktop) {
+
+        }
+        @include mq($from: desktop, $until: wide) {
+
+        }
+        @include mq($from: wide) {
+
+        }
+
+    }
+
+    .code-popup__link--container {
+      
+    }
+    .code-popup__link {
+
+    }
+
+}
+
+
+.underline-transport {
+
+  }
+
+  .code-popup__message {
+
+  }
+
+
+  .code-popup-incomplete {
+
+        @include mq($from: tablet, $until: desktop) {
+
+        }
+        @include mq($from: desktop, $until: wide) {
+
+        }
+        @include mq($from: wide) {
+
+        }
+  }

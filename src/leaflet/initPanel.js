@@ -782,6 +782,18 @@ logoElement.className = "leaflet-bottom leaflet-left"
     </div>
   ` ) 
 
+  markup.insertAdjacentHTML('afterbegin', `
+  <div class="code-popup__header">
+      <span class="code-popup__header--text">Keep going</span>
+      
+    </div>
+  ` )  
+
+
+  markup.insertAdjacentHTML('afterbegin', `
+  <img class="code-popup__image"></img>
+  ` )  
+
 
   
 
