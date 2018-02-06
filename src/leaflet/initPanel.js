@@ -139,7 +139,7 @@ export default async function initSearch() {
 /* Forbidden City -- China */
 
       /* Update challenge */
-      updateChallenge('challenge3');
+      updateChallenge('challenge1');
 
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
@@ -270,7 +270,7 @@ export default async function initSearch() {
  /* Pyramid of the Suns -- Mexico */
 
       /* Update challenge */
-      updateChallenge('challenge4');
+      updateChallenge('challenge3');
 
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
@@ -326,20 +326,9 @@ export default async function initSearch() {
       
 
     } else if (answerKey === 'challenge4') {
-    /* Sigiriya */
 
-
-    /* Update challenge */
-    updateChallenge('challenge5');
-
-    /* Cross icon */
-      document.getElementsByClassName('challenge__icon challenge__5')[0].className = 'challenge__icon challenge__5 challenge__5--complete';
-
-      /* Show circle marker */
-    //  const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
-    //  const pathMarker = new CustomIcon({ iconUrl: url });
-     // let circleMarker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-      //circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+      /* Update challenge */
+      updateChallenge('challenge4');
 
       /* Show Polaroid */
       const polaroidIcon = L.icon({
@@ -366,7 +355,7 @@ export default async function initSearch() {
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", handlePopupClose);
-          popup.on("popupopen", handlePopupOpen)
+          popup.on("popupopen", ()=> { handlePopupOpen() })
           popup.openPopup();
 
           const element = document.getElementsByClassName('popup_correct button')[0];
@@ -387,13 +376,17 @@ export default async function initSearch() {
       window.map.flyTo([-807, 1786], 1);
 
 
+
+
+
+
     } else if (answerKey === 'challenge5') {
 
 
 /* Stonehenge - UK */
 
       /* Update challenge */
-      updateChallenge('challenge1');
+      updateChallenge('challenge5');
 
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon  challenge__1 challenge__1--complete';
