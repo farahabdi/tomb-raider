@@ -136,23 +136,29 @@ export default async function initSearch() {
 
 
     if (answerKey === 'challenge1') {
-    /* Stonehenge - UK */
+/* Forbidden City -- China */
 
       /* Update challenge */
-      updateChallenge('challenge1');
+      updateChallenge('challenge3');
 
     /* Cross icon */
-      document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon  challenge__1 challenge__1--complete';
+      document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
+
+      /* Fly to Point */
+      window.map.flyTo([-534.0938407152298, 2073.9158506047934], 1);
 
       /* Show circle marker */
-     // const url = encodeURI(`data:image/svg+xml,${pathChallenge1}`).replace('#', '%23');
-     // const pathMarker = new CustomIcon({ iconUrl: url });
-     // let circleMarker = L.marker([-522, 1295], { icon: pathMarker, className: 'circleMarker' }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-     //  circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+      const url = encodeURI(`data:image/svg+xml,${pathChallenge3}`).replace('#', '%23');
+      const pathMarker = new CustomIcon({ iconUrl: url, className: 'cirlceMarker'});
 
-      /* Show Polaroid */
+
+      //let circleMarker = L.marker([-568.076913031732, 1995.321254295155], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+
+     // circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+
+      /* Show Polaroid -- */
       const polaroidIcon = L.icon({
-        iconUrl: stonehengeIcon,
+        iconUrl: chinaIcon,
         className: 'polaroid',
         iconSize: [38, 95], // size of the icon
         shadowSize: [50, 64], // size of the shadow
@@ -160,24 +166,17 @@ export default async function initSearch() {
         shadowAnchor: [4, 62], // the same for the shadow
         popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
       });
-      L.marker([-508.07952602985586, 1297.9567786125249], { icon: polaroidIcon }).addTo(window.map);
 
-      /* Fly to Point */
-      window.map.flyTo([-465, 1174], 1);
+      L.marker([-534.0938407152298, 2073.9158506047934], { icon: polaroidIcon }).addTo(window.map);
 
       /* Show popop */
-      
-
-
-      const marker = L.marker([-465, 1174]).addTo(window.map);
+      const marker = L.marker([-534.0938407152298, 2073.9158506047934]).addTo(window.map);
       const markup = await PopUpSelector();
-    
-      setTimeout(function() {
 
   
+      setTimeout(function() {
+
         if (challengespProgress.length < 4) {
-
-
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", handlePopupClose);
@@ -186,16 +185,14 @@ export default async function initSearch() {
 
           const element = document.getElementsByClassName('popup_correct button')[0];
           element.addEventListener('click', showViewCodePopup, false);
-
         } else {
           let popup = marker.bindPopup(markup, viewCodeOptions)
           popup.on("popupclose", handlePopupClose);
           popup.on("popupopen", handlePopupOpen)
           popup.openPopup();
-
-
         }
-      }, 750);
+        }, 750);
+      
      
 
 
@@ -270,66 +267,7 @@ export default async function initSearch() {
 
 
     } else if (answerKey === 'challenge3') {
-    /* Forbidden City -- China */
-
-      /* Update challenge */
-      updateChallenge('challenge3');
-
-    /* Cross icon */
-      document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
-
-      /* Fly to Point */
-      window.map.flyTo([-534.0938407152298, 2073.9158506047934], 1);
-
-      /* Show circle marker */
-      const url = encodeURI(`data:image/svg+xml,${pathChallenge3}`).replace('#', '%23');
-      const pathMarker = new CustomIcon({ iconUrl: url, className: 'cirlceMarker'});
-
-
-      //let circleMarker = L.marker([-568.076913031732, 1995.321254295155], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-
-     // circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
-
-      /* Show Polaroid -- */
-      const polaroidIcon = L.icon({
-        iconUrl: chinaIcon,
-        className: 'polaroid',
-        iconSize: [38, 95], // size of the icon
-        shadowSize: [50, 64], // size of the shadow
-        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62], // the same for the shadow
-        popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-      });
-
-      L.marker([-534.0938407152298, 2073.9158506047934], { icon: polaroidIcon }).addTo(window.map);
-
-      /* Show popop */
-      const marker = L.marker([-534.0938407152298, 2073.9158506047934]).addTo(window.map);
-      const markup = await PopUpSelector();
-
-  
-      setTimeout(function() {
-
-        if (challengespProgress.length < 4) {
-
-          let popup = marker.bindPopup(markup, correctPopupOptions)
-          popup.on("popupclose", handlePopupClose);
-          popup.on("popupopen", handlePopupOpen)
-          popup.openPopup();
-
-          const element = document.getElementsByClassName('popup_correct button')[0];
-          element.addEventListener('click', showViewCodePopup, false);
-        } else {
-          let popup = marker.bindPopup(markup, viewCodeOptions)
-          popup.on("popupclose", handlePopupClose);
-          popup.on("popupopen", handlePopupOpen)
-          popup.openPopup();
-        }
-        }, 750);
-      
-
-    } else if (answerKey === 'challenge4') {
-    /* Pyramid of the Suns -- Mexico */
+ /* Pyramid of the Suns -- Mexico */
 
       /* Update challenge */
       updateChallenge('challenge4');
@@ -385,9 +323,9 @@ export default async function initSearch() {
         }, 750);
       
 
+      
 
-
-    } else if (answerKey === 'challenge5') {
+    } else if (answerKey === 'challenge4') {
     /* Sigiriya */
 
 
@@ -447,6 +385,73 @@ export default async function initSearch() {
 
       /* Fly to Point */
       window.map.flyTo([-807, 1786], 1);
+
+
+    } else if (answerKey === 'challenge5') {
+
+
+/* Stonehenge - UK */
+
+      /* Update challenge */
+      updateChallenge('challenge1');
+
+    /* Cross icon */
+      document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon  challenge__1 challenge__1--complete';
+
+      /* Show circle marker */
+     // const url = encodeURI(`data:image/svg+xml,${pathChallenge1}`).replace('#', '%23');
+     // const pathMarker = new CustomIcon({ iconUrl: url });
+     // let circleMarker = L.marker([-522, 1295], { icon: pathMarker, className: 'circleMarker' }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+     //  circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+
+      /* Show Polaroid */
+      const polaroidIcon = L.icon({
+        iconUrl: stonehengeIcon,
+        className: 'polaroid',
+        iconSize: [38, 95], // size of the icon
+        shadowSize: [50, 64], // size of the shadow
+        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+        shadowAnchor: [4, 62], // the same for the shadow
+        popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+      });
+      L.marker([-508.07952602985586, 1297.9567786125249], { icon: polaroidIcon }).addTo(window.map);
+
+      /* Fly to Point */
+      window.map.flyTo([-465, 1174], 1);
+
+      /* Show popop */
+      
+
+
+      const marker = L.marker([-465, 1174]).addTo(window.map);
+      const markup = await PopUpSelector();
+    
+      setTimeout(function() {
+
+  
+        if (challengespProgress.length < 4) {
+
+
+
+          let popup = marker.bindPopup(markup, correctPopupOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
+          popup.openPopup();
+
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
+
+        } else {
+          let popup = marker.bindPopup(markup, viewCodeOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
+          popup.openPopup();
+
+
+        }
+      }, 750);
+     
+
 
 
 
