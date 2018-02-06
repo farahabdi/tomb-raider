@@ -23,7 +23,7 @@ export default async function initUserData() {
 
 
   if (challenges.challenge1 === true) {
-    document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
+    document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon challenge__1 challenge__1--complete';
 
     /* Show Polaroid -- */
     const polaroidIcon = L.icon({
@@ -56,7 +56,7 @@ export default async function initUserData() {
   }
 
   if (challenges.challenge3 === true) {
-    document.getElementsByClassName('challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
+    document.getElementsByClassName('challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
 
     /* Show Polaroid */
     const polaroidIcon = L.icon({
@@ -72,7 +72,7 @@ export default async function initUserData() {
 
   }
   if (challenges.challenge4 === true) {
-    document.getElementsByClassName('challenge__icon challenge__5')[0].className = 'challenge__icon challenge__5 challenge__5--complete';
+    document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
 
     /* Show Polaroid */
     const polaroidIcon = L.icon({
@@ -89,7 +89,7 @@ export default async function initUserData() {
 
   if (challenges.challenge5 === true) {
 
-    document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon challenge__1 challenge__1--complete';
+    document.getElementsByClassName('challenge__icon challenge__5')[0].className = 'challenge__icon challenge__5 challenge__5--complete';
 
     /* Show Polaroid */
     const polaroidIcon = L.icon({
