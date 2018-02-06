@@ -136,29 +136,23 @@ export default async function initSearch() {
 
 
     if (answerKey === 'challenge1') {
-/* Forbidden City -- China */
+    /* Stonehenge - UK */
 
       /* Update challenge */
       updateChallenge('challenge1');
 
     /* Cross icon */
-      document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon challenge__1 challenge__1--complete';
-
-      /* Fly to Point */
-      window.map.flyTo([-534.0938407152298, 2073.9158506047934], 1);
+      document.getElementsByClassName('challenge__icon challenge__1')[0].className = 'challenge__icon  challenge__1 challenge__1--complete';
 
       /* Show circle marker */
-      const url = encodeURI(`data:image/svg+xml,${pathChallenge3}`).replace('#', '%23');
-      const pathMarker = new CustomIcon({ iconUrl: url, className: 'cirlceMarker'});
+     // const url = encodeURI(`data:image/svg+xml,${pathChallenge1}`).replace('#', '%23');
+     // const pathMarker = new CustomIcon({ iconUrl: url });
+     // let circleMarker = L.marker([-522, 1295], { icon: pathMarker, className: 'circleMarker' }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+     //  circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
-
-      //let circleMarker = L.marker([-568.076913031732, 1995.321254295155], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-
-     // circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
-
-      /* Show Polaroid -- */
+      /* Show Polaroid */
       const polaroidIcon = L.icon({
-        iconUrl: chinaIcon,
+        iconUrl: stonehengeIcon,
         className: 'polaroid',
         iconSize: [38, 95], // size of the icon
         shadowSize: [50, 64], // size of the shadow
@@ -166,17 +160,24 @@ export default async function initSearch() {
         shadowAnchor: [4, 62], // the same for the shadow
         popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
       });
+      L.marker([-508.07952602985586, 1297.9567786125249], { icon: polaroidIcon }).addTo(window.map);
 
-      L.marker([-534.0938407152298, 2073.9158506047934], { icon: polaroidIcon }).addTo(window.map);
+      /* Fly to Point */
+      window.map.flyTo([-465, 1174], 1);
 
       /* Show popop */
-      const marker = L.marker([-534.0938407152298, 2073.9158506047934]).addTo(window.map);
-      const markup = await PopUpSelector();
+      
 
-  
+
+      const marker = L.marker([-465, 1174]).addTo(window.map);
+      const markup = await PopUpSelector();
+    
       setTimeout(function() {
 
+  
         if (challengespProgress.length < 4) {
+
+
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", handlePopupClose);
@@ -185,14 +186,16 @@ export default async function initSearch() {
 
           const element = document.getElementsByClassName('popup_correct button')[0];
           element.addEventListener('click', showViewCodePopup, false);
+
         } else {
           let popup = marker.bindPopup(markup, viewCodeOptions)
           popup.on("popupclose", handlePopupClose);
           popup.on("popupopen", handlePopupOpen)
           popup.openPopup();
+
+
         }
-        }, 750);
-      
+      }, 750);
      
 
 
@@ -267,13 +270,72 @@ export default async function initSearch() {
 
 
     } else if (answerKey === 'challenge3') {
- /* Pyramid of the Suns -- Mexico */
+    /* Forbidden City -- China */
 
       /* Update challenge */
       updateChallenge('challenge3');
 
     /* Cross icon */
       document.getElementsByClassName('challenge__icon challenge__3')[0].className = 'challenge__icon challenge__3 challenge__3--complete';
+
+      /* Fly to Point */
+      window.map.flyTo([-534.0938407152298, 2073.9158506047934], 1);
+
+      /* Show circle marker */
+      const url = encodeURI(`data:image/svg+xml,${pathChallenge3}`).replace('#', '%23');
+      const pathMarker = new CustomIcon({ iconUrl: url, className: 'cirlceMarker'});
+
+
+      //let circleMarker = L.marker([-568.076913031732, 1995.321254295155], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+
+     // circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
+
+      /* Show Polaroid -- */
+      const polaroidIcon = L.icon({
+        iconUrl: chinaIcon,
+        className: 'polaroid',
+        iconSize: [38, 95], // size of the icon
+        shadowSize: [50, 64], // size of the shadow
+        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+        shadowAnchor: [4, 62], // the same for the shadow
+        popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
+      });
+
+      L.marker([-534.0938407152298, 2073.9158506047934], { icon: polaroidIcon }).addTo(window.map);
+
+      /* Show popop */
+      const marker = L.marker([-534.0938407152298, 2073.9158506047934]).addTo(window.map);
+      const markup = await PopUpSelector();
+
+  
+      setTimeout(function() {
+
+        if (challengespProgress.length < 4) {
+
+          let popup = marker.bindPopup(markup, correctPopupOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
+          popup.openPopup();
+
+          const element = document.getElementsByClassName('popup_correct button')[0];
+          element.addEventListener('click', showViewCodePopup, false);
+        } else {
+          let popup = marker.bindPopup(markup, viewCodeOptions)
+          popup.on("popupclose", handlePopupClose);
+          popup.on("popupopen", handlePopupOpen)
+          popup.openPopup();
+        }
+        }, 750);
+      
+
+    } else if (answerKey === 'challenge4') {
+    /* Pyramid of the Suns -- Mexico */
+
+      /* Update challenge */
+      updateChallenge('challenge4');
+
+    /* Cross icon */
+      document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
 
       /* Fly to Point */
       window.map.flyTo([-799.5745942851532, 842.1214866398966], 1);
@@ -323,16 +385,23 @@ export default async function initSearch() {
         }, 750);
       
 
-      
-
-    } else if (answerKey === 'challenge4') {
-
-      /* Update challenge */
-      updateChallenge('challenge4');
 
 
-        /* Cross icon */
-        document.getElementsByClassName('challenge__icon challenge__4')[0].className = 'challenge__icon challenge__4 challenge__4--complete';
+    } else if (answerKey === 'challenge5') {
+    /* Sigiriya */
+
+
+    /* Update challenge */
+    updateChallenge('challenge5');
+
+    /* Cross icon */
+      document.getElementsByClassName('challenge__icon challenge__5')[0].className = 'challenge__icon challenge__5 challenge__5--complete';
+
+      /* Show circle marker */
+    //  const url = encodeURI(`data:image/svg+xml,${pathChallenge4}`).replace('#', '%23');
+    //  const pathMarker = new CustomIcon({ iconUrl: url });
+     // let circleMarker = L.marker([-617, 1419], { icon: pathMarker }).bindPopup('I am data URI SVG icon.').addTo(window.map);
+      //circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
 
       /* Show Polaroid */
       const polaroidIcon = L.icon({
@@ -359,7 +428,7 @@ export default async function initSearch() {
 
           let popup = marker.bindPopup(markup, correctPopupOptions)
           popup.on("popupclose", handlePopupClose);
-          popup.on("popupopen", ()=> { handlePopupOpen() })
+          popup.on("popupopen", handlePopupOpen)
           popup.openPopup();
 
           const element = document.getElementsByClassName('popup_correct button')[0];
@@ -378,77 +447,6 @@ export default async function initSearch() {
 
       /* Fly to Point */
       window.map.flyTo([-807, 1786], 1);
-
-
-
-
-
-
-    } else if (answerKey === 'challenge5') {
-
-
-/* Stonehenge - UK */
-
-      /* Update challenge */
-      updateChallenge('challenge5');
-
-    /* Cross icon */
-      document.getElementsByClassName('challenge__icon challenge__5')[0].className = 'challenge__icon  challenge__5 challenge__5--complete';
-
-      /* Show circle marker */
-     // const url = encodeURI(`data:image/svg+xml,${pathChallenge1}`).replace('#', '%23');
-     // const pathMarker = new CustomIcon({ iconUrl: url });
-     // let circleMarker = L.marker([-522, 1295], { icon: pathMarker, className: 'circleMarker' }).bindPopup('I am data URI SVG icon.').addTo(window.map);
-     //  circleMarker._icon.className = "leaflet-marker-icon circleMarker leaflet-zoom-animated leaflet-interactive"
-
-      /* Show Polaroid */
-      const polaroidIcon = L.icon({
-        iconUrl: stonehengeIcon,
-        className: 'polaroid',
-        iconSize: [38, 95], // size of the icon
-        shadowSize: [50, 64], // size of the shadow
-        iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-        shadowAnchor: [4, 62], // the same for the shadow
-        popupAnchor: [-3, -76], // point from which the popup should open relative to the iconAnchor
-      });
-      L.marker([-508.07952602985586, 1297.9567786125249], { icon: polaroidIcon }).addTo(window.map);
-
-      /* Fly to Point */
-      window.map.flyTo([-465, 1174], 1);
-
-      /* Show popop */
-      
-
-
-      const marker = L.marker([-465, 1174]).addTo(window.map);
-      const markup = await PopUpSelector();
-    
-      setTimeout(function() {
-
-  
-        if (challengespProgress.length < 4) {
-
-
-
-          let popup = marker.bindPopup(markup, correctPopupOptions)
-          popup.on("popupclose", handlePopupClose);
-          popup.on("popupopen", handlePopupOpen)
-          popup.openPopup();
-
-          const element = document.getElementsByClassName('popup_correct button')[0];
-          element.addEventListener('click', showViewCodePopup, false);
-
-        } else {
-          let popup = marker.bindPopup(markup, viewCodeOptions)
-          popup.on("popupclose", handlePopupClose);
-          popup.on("popupopen", handlePopupOpen)
-          popup.openPopup();
-
-
-        }
-      }, 750);
-     
-
 
 
 
