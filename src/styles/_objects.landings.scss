@@ -214,10 +214,13 @@ footer {
     line-height: 34px;
     font-size: 1.6em;
     text-align: center;
+    margin-left: 6px;
     border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-
+.btn {
+    line-height: 1.728571 !important;
+}
 // obsolete
 .fb-login__container {
     height: 40px;
