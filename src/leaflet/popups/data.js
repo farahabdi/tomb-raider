@@ -21,18 +21,3 @@ export const text = {
   };
   
   
-  export const failText = {
-    1: {
-      heading: 'Incorrect',
-      message: 'Unless there was a typo, something’s gone awry. Retrace your steps and try again.',
-    },
-    2: {
-      heading: 'Damn it!',
-      message: 'The intel was solid but what you entered was incorrect. Try visiting @CroftHoldingsAU to see if any of your fellow tomb raiders have any ideas.',
-    },
-    3: {
-      heading: 'Need some help?',
-      message: 'There are five sticky notes on the map that contain clues to the landmarks. They might be just what you’re looking for.',
-    }
-  };
-  

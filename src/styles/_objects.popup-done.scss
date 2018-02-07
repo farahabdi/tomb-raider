@@ -158,19 +158,19 @@
 
         @include mq($from: tablet, $until: desktop) {
             font-size: 28px;
-            width: 331px;
+            width: 341px;
             margin-left: 33px;
             margin-top: 23px;
         }
         @include mq($from: desktop, $until: wide) {
             font-size: 28px;
-            width: 331px;
+            width: 341px;
             margin-left: 33px;
             margin-top: 23px;
         }
         @include mq($from: wide) {
             font-size: 28px;
-            width: 331px;
+            width: 341px;
             margin-left: 33px;
             margin-top: 23px;
         
@@ -183,25 +183,34 @@
         top: -208px !important;
         right: 33px !important;
         @include mq($from: tablet, $until: desktop) {
-            background-image: url("../assets/x.png") !important;
+            background-image: url("../assets/x@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
-            top: -112px !important;
-            right: 121px !important;
+            top: -471px !important;
+            right: 60px !important;
+            width: 20px !important;
+
+            height: 20px !important;
+
         }
         @include mq($from: desktop, $until: wide) {
-            background-image: url("../assets/x.png") !important;
+            background-image: url("../assets/x@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
-            top: -112px !important;
-            right: 121px !important;
+            top: -471px !important;
+            right: 60px !important;
+            width: 20px;
+            height: 20px;
         }
         @include mq($from: wide) {
-            background-image: url("../assets/x.png") !important;
+            background-image: url("../assets/x@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
-            top: -112px !important;
-            right: 121px !important;
+            top: -462px !important;
+            right: 54px !important;
+            width: 20px;
+            height: 20px;
+            
         }
     }
 
@@ -308,6 +317,17 @@
         padding-top: 12px;
         font-size: 20px;
         margin-left: 46px;
+
+
+        @include mq($from: tablet, $until: desktop) {
+            font-size: 26px;
+        }
+        @include mq($from: desktop, $until: wide) {
+            font-size: 29px;
+        }
+        @include mq($from: wide) {
+            font-size: 29px;
+        }
     
         &.code-popup__text--1 {
     
@@ -351,19 +371,19 @@
     @include mq($from: tablet, $until: desktop) {
         display: flex;
         justify-content: flex-end;
-        margin-right: 127px;
+        margin-right: 16px;
         margin-top: 32px;
     }
     @include mq($from: desktop, $until: wide) {
         display: flex;
         justify-content: flex-end;
-        margin-right: 127px;
+        margin-right: 16px;
         margin-top: 32px;
     }
     @include mq($from: wide) {
         display: flex;
         justify-content: flex-end;
-        margin-right: 127px;
+        margin-right: 16px;
         margin-top: 32px;
     }
     
@@ -388,6 +408,16 @@
 
     .code-popup__link--container {
         width: 103px;
+        @include mq($from: tablet, $until: desktop) {
+            font-size: 26px;
+        }
+        @include mq($from: desktop, $until: wide) {
+            font-size: 29px;
+        }
+        @include mq($from: wide) {
+            font-size: 29px;
+        }
+
     }
     .code-popup__link {
         font-size: 22px;

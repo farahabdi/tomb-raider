@@ -2,7 +2,24 @@
 import { updateChallenge, checkAnswer, fetchChallenges, fetchCompletedChallenges } from '../../api/index';
 import { handlePopupClose, handlePopupOpen, disableMap, enableMap } from './utils'
 
-export async function showFailPopUp() {
+const failText = {
+  1: {
+    heading: 'Incorrect',
+    message: 'Unless there was a typo, something’s gone awry. Retrace your steps and try again.',
+  },
+  2: {
+    heading: 'Damn it!',
+    message: 'The intel was solid but what you entered was incorrect. Try visiting @CroftHoldingsAU to see if any of your fellow tomb raiders have any ideas.',
+  },
+  3: {
+    heading: 'Need some help?',
+    message: 'There are five sticky notes on the map that contain clues to the landmarks. They might be just what you’re looking for.',
+  }
+};
+
+
+export async function showFailPopup() {
+  debugger
 
     let count = 1
     if (!window.numTries) {
@@ -28,6 +45,6 @@ export async function showFailPopUp() {
     markup.insertAdjacentHTML('afterbegin', `<div class="header">${failText[count].heading}</div>`);
   
     let map = window.map
-    disableMap();
+    //disableMap();
     return markup;
   }

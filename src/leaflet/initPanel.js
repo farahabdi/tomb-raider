@@ -51,7 +51,7 @@ export default async function initSearch() {
       closeOnClick: false,
       maxWidth: '400',
       width: '450',
-      className: 'popup__correct',
+      className: 'popup__success',
     };
 
 
@@ -174,7 +174,7 @@ export default async function initSearch() {
       window.map.flyTo([-281.0806053100124, 2210.8239225493235], 1);
 
 
-      const markup = await showFailPopUp();
+      const markup = await showFailPopup();
 
 
       setTimeout(function() {

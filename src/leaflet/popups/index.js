@@ -10,7 +10,7 @@ import { showPopup } from './showPopup'
 import { handlePopupClose, handlePopupOpen, disableMap, enableMap } from './utils'
 
 
-import { text, failText } from './data'
+import { text } from './data'
 
 
 export  {
@@ -24,7 +24,6 @@ export  {
     enableMap,
     showFailPopup,
     text,
-    failText,
     showPopup
 };
 
