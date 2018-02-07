@@ -5,7 +5,7 @@ import { handlePopupClose, handlePopupOpen, disableMap, enableMap } from './util
 const incompleteOptions = {
     maxWidth: '400',
     width: '450',
-    className: 'code-popup-top',
+    className: 'code-popup-incomplete',
   };
 
 export async function showIncompletePopup() {

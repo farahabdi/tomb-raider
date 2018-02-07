@@ -27,9 +27,10 @@ export async function showPopup(challenge) {
 
     let marker = L.marker(coordinates[challenge]).addTo(window.map);
 
-    const completedChallenge = isFinalChallenge()
+    const completedChallenges = fetchCompletedChallenges()
+    const finalChallengeCompletesd = completedChallenges.length === 5
 
-    if (!completedChallenge) {
+    if (!finalChallengeCompletesd) {
         markup = await showCompletedPopup()
 
         setTimeout(() => {
@@ -40,7 +41,7 @@ export async function showPopup(challenge) {
         }, 750);
       
     } else {
-        markup = await showSuccessPopup()
+        markup = await showSuccessPopup(completedChallenges)
 
         setTimeout(() => {
             let popup = marker.bindPopup(markup, correctPopupOptions)

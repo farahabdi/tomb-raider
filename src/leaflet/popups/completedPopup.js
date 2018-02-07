@@ -2,7 +2,7 @@
 import { updateChallenge, checkAnswer, fetchChallenges, fetchCompletedChallenges } from '../../api/index';
 import { handlePopupClose, handlePopupOpen, disableMap, enableMap } from './utils'
 
-export async function showCompletedPopup(loc) {
+export async function showCompletedPopup(challengespProgress) {
 
     const markup = document.createElement('div');
     markup.className = 'code-popup-done';
@@ -45,7 +45,6 @@ export async function showCompletedPopup(loc) {
     markup.insertAdjacentHTML('afterbegin', '<div class="code-popup__header">Well done</div>');
     markup.firstElementChild.insertAdjacentHTML('afterend', '<div class="final-code__message"> Congratulations you have discovered the landmark and revealed the code</div>');
   
-    const challengespProgress = await fetchCompletedChallenges();
   
     for (let i = 0; i < challengespProgress.length; i++) {
   
