@@ -1,221 +1,365 @@
-
-
 .code-popup-incomplete {
+    margin-left: 7px;
+    margin-top: -22px;
+    padding-top: 9px;
+    padding-bottom: 8px;
+    display: flex;
 
+    flex-direction: column;
+    justify-content: center;
+   // bottom: -285px;
+    top: -55px;
+    left: -149px !important;
 
     @include mq($from: tablet, $until: desktop) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
+        margin-left: 7px;
+        margin-top: -22px;
+        padding-top: 9px;
+        padding-bottom: 8px;
+        
+
+        top: 65px;
+        left: -205px !important;
         }
     @include mq($from: desktop, $until: wide) {
 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        margin-left: 7px;
+        margin-top: -22px;
+        padding-top: 9px;
+        padding-bottom: 8px;
+        
+
+        top: 65px;
+        left: -205px !important;
     }
     @include mq($from: wide) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
+        margin-left: 7px;
+        margin-top: -22px;
+        padding-top: 9px;
+        padding-bottom: 8px;
+        
+
+        top: 65px;
+        left: -205px !important;
     }
 
-    >.leaflet-popup-content {
+    .leaflet-popup-content {
 
+        margin-left: 5px;
 
-        @include mq($from: tablet, $until: desktop) {
+            @include mq($from: tablet, $until: desktop) {
 
-    
-        }
-        @include mq($from: desktop, $until: wide) {
+                margin-left: 5px;
+        
+            }
+            @include mq($from: desktop, $until: wide) {
 
-    
-        }
-        @include mq($from: wide) {
+                margin-left: 5px;
+        
+            }
+            @include mq($from: wide) {
 
-    
-        }
+                margin-left: 5px;
+  
+        
+            }
         
     }
 
     .leaflet-popup-content-wrapper {
 
+        background-image: url("/images/Code_page.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: contain;
 
-
-        @include mq($from: tablet, $until: desktop) {
-
-        }
-        @include mq($from: desktop, $until: wide) {
-
-        }
-        @include mq($from: wide) {
-
-        }
-
-
-
-    }
-
-    .code-popup__image {
+        padding: 21px 19px;
+        padding-bottom: 20px;
+        color: none;
+        box-shadow: none;    
 
         @include mq($from: tablet, $until: desktop) {
+            background-image: url("/images/Code_page@3x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
 
+            padding-right: 61px;
+            padding-left: 9px;
+            padding-bottom: 247px;
+            color: none;
+            box-shadow: none;   
+            margin-left: 47px;
         }
         @include mq($from: desktop, $until: wide) {
+            background-image: url("/images/Code_page@3x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
 
+            padding-right: 61px;
+            padding-left: 9px;
+            padding-bottom: 247px;
+            color: none;
+            box-shadow: none;   
+            margin-left: 47px;  
         }
         @include mq($from: wide) {
-            content:url("/images/Code_page@3x.png");
+            background-image: url("/images/Code_page@3x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+
+            padding-right: 61px;
+            padding-left: 9px;
+            padding-bottom: 247px;
+            color: none;
+            box-shadow: none;   
+            margin-left: 47px;
         }
+
+
+
 
     }
     .code-popup__header {
+        font-size: 35px;
+        padding-top: 10px;
+        padding-left: 15px;
 
         @include mq($from: tablet, $until: desktop) {
-
+            font-size: 48px;
+            padding-top: 40px;
+            padding-left: 15px;
+            margin-left: 28px;
         }
         @include mq($from: desktop, $until: wide) {
-
+            font-size: 48px;
+            padding-top: 40px;
+            padding-left: 15px;
+            margin-left: 28px;
         }
         @include mq($from: wide) {
-
+            font-size: 48px;
+            padding-top: 40px;
+            padding-left: 15px;
+            margin-left: 28px;
         }
     }
     .code-popup__message {
-
+        font-size: 20px;
+        margin-top: 17px;
+        width: 250px;
 
         @include mq($from: tablet, $until: desktop) {
-
+            font-size: 28px;
+            width: 331px;
+            margin-left: 33px;
+            margin-top: 23px;
         }
         @include mq($from: desktop, $until: wide) {
-
+            font-size: 28px;
+            width: 331px;
+            margin-left: 33px;
+            margin-top: 23px;
         }
         @include mq($from: wide) {
-
+            font-size: 28px;
+            width: 331px;
+            margin-left: 33px;
+            margin-top: 23px;
+        
         }
     }
     .leaflet-popup-close-button {
-
+        background-image: url("../assets/x.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: contain;
+        top: -168px !important;
+        right: 57px !important;
         @include mq($from: tablet, $until: desktop) {
-
+            background-image: url("../assets/x@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            width: 40px !important;
+            height: 40px !important;
+            top: -398px !important;
+            right: 50px !important;
         }
         @include mq($from: desktop, $until: wide) {
-
+            background-image: url("../assets/x@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            width: 40px !important;
+            height: 40px !important;
+            top: -398px !important;
+            right: 50px !important;
         }
         @include mq($from: wide) {
-
+            background-image: url("../assets/x@2x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            width: 40px !important;
+            height: 40px !important;
+            top: -398px !important;
+            right: 50px !important;
         }
     }
 
+    .code-popup__container {
+    
 
-}
+        @include mq($from: tablet, $until: desktop) {
+            margin-top: 40px;
+            margin-left: 23px;
+        }
+        @include mq($from: desktop, $until: wide) {
+            margin-top: 40px;
+            margin-left: 23px;
+        }
+        @include mq($from: wide) {
+            margin-top: 40px;
+            margin-left: 23px;
+        }
+
+        .code-popup__wrapper{
+            width: 205px;
+            height: 48px;
+            background-repeat: no-repeat !important;
+            margin-top: 5px;
+
+            @include mq($from: tablet, $until: desktop) {
+                width: 377px;
+                height: 68px;
+                background-repeat: no-repeat !important;
+                margin-top: 5px;
+            }
+            @include mq($from: desktop, $until: wide) {
+                width: 377px;
+                height: 68px;
+                background-repeat: no-repeat !important;
+                margin-top: 5px;
+            }
+            @include mq($from: wide) {
+                width: 377px;
+                height: 68px;
+                background-repeat: no-repeat !important;
+                margin-top: 5px;
+            }
+    
+            &.code-popup--1 {
+                background-image: url("../assets/Search_Box.png") !important;
+     
+                margin-left: 18px;
+                @include mq($from: tablet, $until: desktop) {
+                }
+                @include mq($from: desktop, $until: wide) {
+                }
+                @include mq($from: wide) {
+                }
+               
+    
+            }
+            &.code-popup--2 {
+                background-image: url("../assets/Search_Box.png") !important;
+
+                margin-left: 18px;
+                @include mq($from: tablet, $until: desktop) {
+                }
+                @include mq($from: desktop, $until: wide) {
+                }
+                @include mq($from: wide) {
+                }
+                
+            }
+            &.code-popup--3 {
+                background-image: url("../assets/Search_Box.png") !important;
+
+                margin-left: 8px;
+                @include mq($from: tablet, $until: desktop) {
+                }
+                @include mq($from: desktop, $until: wide) {
+                }
+                @include mq($from: wide) {
+                }
+                
+            }
+            &.code-popup--4 {
+                background-image: url("../assets/Search_Box.png") !important;
+
+                margin-left: 18px;
+                @include mq($from: tablet, $until: desktop) {
+                }
+                @include mq($from: desktop, $until: wide) {
+                }
+                @include mq($from: wide) {
+                }
+                
+            }
+            &.code-popup--5 {
+                background-image: url("../assets/Search_Box.png") !important;
+    
+                margin-left: 18px;
+                @include mq($from: tablet, $until: desktop) {
+                }
+                @include mq($from: desktop, $until: wide) {
+                }
+                @include mq($from: wide) {
+                }
+                
+            }
+        }
 
 
-.code-popup__container {
 
-    .code-popup__wrapper{
+    .code-popup__text {
+        padding-top: 17px;
+        font-size: 17px;
+        margin-left: 46px;
 
-
-        &.code-popup--1 {
-
+        @include mq($from: tablet, $until: desktop) {
+            padding-top: 12px;
+            font-size: 25px;
+            margin-left: 46px;
+        }
+        @include mq($from: desktop, $until: wide) {
+            padding-top: 12px;
+            font-size: 25px;
+            margin-left: 46px;
+        }
+        @include mq($from: wide) {
+            padding-top: 12px;
+            font-size: 25px;
+            margin-left: 46px;
+        }
+    
+        &.code-popup__text--1 {
+    
+        }
+        &.code-popup__text--2 {
             
-           
-
         }
-        &.code-popup--2 {
-
-         
+        &.code-popup__text--3 {
             
         }
-        &.code-popup--3 {
-
- 
+        &.code-popup__text--4 {
             
         }
-        &.code-popup--4 {
- 
-         
+        &.code-popup__text--5 {
             
         }
-        &.code-popup--5 {
-
-
-            
-        }
-    }
-
-
-}
-
-.code-popup__text {
-
-
-    &.code-popup__text--1 {
-
-    }
-    &.code-popup__text--2 {
-        
-    }
-    &.code-popup__text--3 {
-        
-    }
-    &.code-popup__text--4 {
-        
-    }
-    &.code-popup__text--5 {
         
     }
     
-}
-
-.code-popup__footer {
-
-    @include mq($from: tablet, $until: desktop) {
-
-    }
-    @include mq($from: desktop, $until: wide) {
-
-    }
-    @include mq($from: wide) {
-
-    }
-    
-    .code-popup__tick {
-
-
-        @include mq($from: tablet, $until: desktop) {
-
-        }
-        @include mq($from: desktop, $until: wide) {
-
-        }
-        @include mq($from: wide) {
-
-        }
-
-    }
-
-    .code-popup__link--container {
-      
-    }
-    .code-popup__link {
-
-    }
+ }
 
 }
 
-
-.underline-transport {
-
-  }
-
-  .code-popup__message {
-
-  }
-
-
-  .code-popup-incomplete {
-
-        @include mq($from: tablet, $until: desktop) {
-
-        }
-        @include mq($from: desktop, $until: wide) {
-
-        }
-        @include mq($from: wide) {
-
-        }
-  }
