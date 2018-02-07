@@ -59,7 +59,11 @@ export async function fetchChallenges() {
       })
 }
 
-
+export async function isFinalChallenge() {
+  const challenges = await fetchCompletedChallenges();
+  let x = 2
+  return challenges.length === 5
+}
 
 export async function fetchCompletedChallenges(text) {
   const user = firebaseAuth.currentUser;
