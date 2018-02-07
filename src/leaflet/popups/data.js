@@ -17,11 +17,7 @@ export const text = {
     4: {
       heading: 'Good job',
       message: 'I still can’t make sense of this blasted riddle. One more piece should do it. As soon as I find the next clue @CroftHoldingsAU will share it, follow them on Facebook.',
-    },
-    5: {
-      heading: 'You’ve done it!',
-      message: 'The code is complete, now we have to figure out what it means. Ready for one last adventure?',
-    },
+    }
   };
   
   

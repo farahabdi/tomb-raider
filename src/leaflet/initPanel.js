@@ -6,20 +6,9 @@ import { polaroid, displayPolaroid, coordinates} from './utils'
 import { crossIcon } from './utils/crossIcon';
 
 
-
-const doneOptions = {
-  maxWidth: '400',
-  width: '450',
-  className: 'code-popup-top',
-};
-
-
-
 export default async function initSearch() {
   const searchElement = document.getElementsByClassName('search__icon');
   const searchInput = document.getElementsByClassName('search__input');
-
-
 
   for (let i = 0; i < searchElement.length; i++) {
     searchElement[i].addEventListener('click', handleSearch);
@@ -31,14 +20,6 @@ export default async function initSearch() {
       }
     });
   }
-
-
-  const CustomIcon = L.Icon.extend({
-    options: {
-      iconSize: [60, 60],
-      iconAnchor: [60, 60],
-    },
-  });
 
 
   let challengeElement = document.getElementsByClassName('challenge__wrapper')[0]

@@ -23,7 +23,7 @@ export async function showFailPopUp() {
   
     /* Fail popup */
     const markup = document.createElement('div');
-    markup.className = 'popup__correct';
+    markup.className = 'popup__success';
     markup.insertAdjacentHTML('afterbegin', `<div class="message">${failText[count].message}</div>`);
     markup.insertAdjacentHTML('afterbegin', `<div class="header">${failText[count].heading}</div>`);
   

@@ -5,7 +5,7 @@ import { handlePopupClose, handlePopupOpen, disableMap, enableMap } from './util
 export async function showDuplicatePopup() {
     /* Already completed popup */
     const markup = document.createElement('div');
-    markup.className = 'popup__correct';
+    markup.className = 'popup__success';
     markup.insertAdjacentHTML('afterbegin', `<div class="message">You’ve already uncovered that one. Check out my Field Notes for intel on the other landmarks.</div>`);
     markup.insertAdjacentHTML('afterbegin', `<div class="header">Good Job!</div>`);
   

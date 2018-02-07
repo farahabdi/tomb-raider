@@ -1,21 +1,24 @@
+.leaflet-pane .leaflet-map-pane {}
+
 .code-popup-done {
-    
     margin-left: 7px;
+    margin-top: -22px;
     padding-top: 9px;
+    padding-bottom: 8px;
     display: flex;
-    height: 347px;
+
     flex-direction: column;
     justify-content: center;
-    width: 445px;
-    bottom: -188px !important;
-    left: -205px !important;
+
+    top: -174px;
+
     @include mq($from: tablet, $until: desktop) {
         margin-left: 7px;
         margin-top: -22px;
         padding-top: 9px;
         padding-bottom: 8px;
         display: flex;
-        height: 347px;
+        height: 284px;
         flex-direction: column;
         justify-content: center;
         width: 445px;
@@ -23,15 +26,12 @@
         left: -205px !important;
         }
     @include mq($from: desktop, $until: wide) {
-        background-image: url("../assets/code_page@2x.png") !important;
-        background-repeat: no-repeat !important;
-        background-size: contain;
         margin-left: 7px;
-        margin-top: -11px;
+        margin-top: -22px;
         padding-top: 9px;
         padding-bottom: 8px;
         display: flex;
-        height: 347px;
+        height: 284px;
         flex-direction: column;
         justify-content: center;
         width: 445px;
@@ -39,15 +39,12 @@
         left: -205px !important;
     }
     @include mq($from: wide) {
-        background-image: url("../assets/code_page@2x.png") !important;
-        background-repeat: no-repeat !important;
-        background-size: contain;
         margin-left: 7px;
         margin-top: -22px;
         padding-top: 9px;
         padding-bottom: 8px;
         display: flex;
-        height: 347px;
+        height: 284px;
         flex-direction: column;
         justify-content: center;
         width: 445px;
@@ -57,221 +54,297 @@
 
     >.leaflet-popup-content {
         width: 281px;
-        @include mq($from: tablet) {
-            width: 281px;
-            margin-left: 5px;
-        }
-    }
-    .leaflet-popup-close-button {
-        top: 39px !important;
-        color: black !important;
-        height: 23px !important;
-        width: 22px;
-        right: 118px !important;
-        background-image: url("../assets/x.png") !important;
-        background-repeat: no-repeat !important;
-        background-size: contain;
-        @include mq($from: tablet, $until: desktop) {
-            top: 39px !important;
-            right: 48px !important;
-            color: black !important;
-            height: 23px !important;
-            width: 22px;
-            background-image: url("../assets/x@2x.png") !important;
-            background-repeat: no-repeat !important;
-            background-size: contain;
-           }
-        @include mq($from: desktop, $until: wide) {
-            top: 39px !important;
-            right: 42px !important;
-            height: 23px !important;
-            color: black !important;
-            width: 22px;
+        width: 281px;
+        margin-left: 5px;
 
-            background-image: url("../assets/x@2x.png") !important;
-            background-repeat: no-repeat !important;
-            background-size: contain;
-        }
-        @include mq($from: wide) {
-            top: 27px !important;
-            right: -22px !important;
-            height: 23px !important;
-            color: black !important;
-            background-image: url("../assets/x@2x.png") !important;
-            background-repeat: no-repeat !important;
-            background-size: contain;
-            width: 22px;
-        }
-
+            @include mq($from: tablet, $until: desktop) {
+                width: 281px;
+                width: 281px;
+                margin-left: 5px;
+        
+            }
+            @include mq($from: desktop, $until: wide) {
+                width: 281px;
+                width: 281px;
+                margin-left: 5px;
+        
+            }
+            @include mq($from: wide) {
+                width: 281px;
+                width: 281px;
+                margin-left: 5px;
+                padding: 133px 19px;
+        
+            }
+        
     }
+
     .leaflet-popup-content-wrapper {
 
-        background-image: url("/images/popup@2x.png") !important;
+        background-image: url("/images/Code_page.png") !important;
+        background-repeat: no-repeat !important;
         background-repeat: no-repeat !important;
         background-size: contain;
-        height: 372px;
-        width: 347px;
-        margin-left: 29px;
-
+        height: auto;
+        width: 381px;
+        margin-top: 105px;
+        padding: 120px 19px;
         color: none;
-        box-shadow: none;
+        box-shadow: none;    top: -158px !important;
+        right: 85px !important;
 
         @include mq($from: tablet, $until: desktop) {
-            background-image: url("/images/popup@2x.png") !important;
+            background-image: url("/images/Code_page@3x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
-            height: 372px;
-            width: 585px;
+            // height: 664px;
+            // width: 381px;
+            margin-top: 14px;
+            padding: 146px 19px;
             color: none;
             box-shadow: none;
         }
         @include mq($from: desktop, $until: wide) {
-            background-image: url("/images/popup@2x.png") !important;
+            background-image: url("/images/Code_page@3x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
-            height: 372px;
-            width: 585px;
+            // height: 664px;
+            // width: 381px;
+            padding: 146px 19px;
+            margin-top: 14px;
             color: none;
             box-shadow: none;
         }
         @include mq($from: wide) {
-            background-image: url("/images/popup@2x.png") !important;
+            background-image: url("/images/Code_page@3x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
-            height: 372px;
-            width: 585px;
-            padding: 36px;
+            // height: 664px;
+            // width: 381px;
+            padding: 146px 19px;
             margin-top: 14px;
             color: none;
             box-shadow: none;
         }
 
 
+
+
     }
-    .header {
-        font-size: 25px;
-        margin-left: 26px;
-        margin-top: -61px;
+    .code-popup__header {
+        font-size: 35px;
+        padding-top: 10px;
+        padding-left: 15px;
+
         @include mq($from: tablet, $until: desktop) {
-            font-size: 32px;
-            margin-left: 96px;
-            margin-top: -3px;
+            font-size: 35px;
+            padding-top: 10px;
+            padding-left: 15px;
         }
         @include mq($from: desktop, $until: wide) {
-            font-size: 32px;
-            margin-left: 96px;
-            margin-top: -3px;
+            font-size: 35px;
+            padding-top: 10px;
+            padding-left: 15px;
         }
         @include mq($from: wide) {
-            font-size: 32px;
-            margin-left: 96px;
-            margin-top: -19px;
+            font-size: 35px;
+            padding-top: 10px;
+            padding-left: 15px;
         }
     }
-    .message {
+    .final-code__message {
         font-size: 20px;
-
-        margin-top: 12px;
-        width: 262px;
+        margin-top: 17px;
+        width: 339px;
 
         @include mq($from: tablet, $until: desktop) {
-            font-size: 26px;
-            margin-top: 12px;
-            margin-left: 11px;
-            width: 345px;
+            font-size: 23px;
+            margin-top: 17px;
         }
         @include mq($from: desktop, $until: wide) {
-            font-size: 26px;
-            margin-top: 12px;
-            margin-left: 11px;
-            width: 345px;
+            font-size: 23px;
+            margin-top: 17px;
         }
         @include mq($from: wide) {
-            font-size: 26px;
-            margin-top: 29px;
-            margin-left: 11px;
-            width: 351px;
+            font-size: 23px;
+            margin-top: 17px;
         }
     }
-    .content {
-        display: -webkit-inline-box;
-        font-size: 23px;
-        margin-left: 168px;
-        margin-top: 7px;
-        margin-left: 107px;
-
+    .leaflet-popup-close-button {
+        background-image: url("../assets/x.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: contain;
+        top: -102px !important;
+        right: 108px !important;
         @include mq($from: tablet, $until: desktop) {
-            font-size: 23px;
-            margin-left: 168px;
-            margin-top: 7px;
-            height: 70px;
+            background-image: url("../assets/x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            top: -112px !important;
+            right: 121px !important;
         }
         @include mq($from: desktop, $until: wide) {
-            font-size: 23px;
-            margin-left: 168px;
-            margin-top: 7px;
-            height: 70px;
+            background-image: url("../assets/x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            top: -112px !important;
+            right: 121px !important;
         }
         @include mq($from: wide) {
-            font-size: 23px;
-            margin-left: 168px;
-            margin-top: 7px;
-            height: 70px;
+            background-image: url("../assets/x.png") !important;
+            background-repeat: no-repeat !important;
+            background-size: contain;
+            top: -112px !important;
+            right: 121px !important;
         }
-        .content__arrow {
-            width: 58px;
-            margin-top: 11px;
-            border-style: none;
+    }
 
-            background-image: url("../assets/Mark_arrow.png") !important;
-            background-repeat: no-repeat !important;
-            background-size: contain;
 
-            @include mq($from: tablet, $until: desktop) {
-            background-image: url("../assets/Mark_arrow@2x.png") !important;
-            background-repeat: no-repeat !important;
-            background-size: contain;
-            }
-            @include mq($from: desktop, $until: wide) {
-            background-image: url("../assets/Mark_arrow@2x.png") !important;
-            background-repeat: no-repeat !important;
-            background-size: contain;
-            }
-            @include mq($from: wide) {
-            background-image: url("../assets/Mark_arrow@2x.png") !important;
-            background-repeat: no-repeat !important;
-            background-size: contain;
+}
 
-            height: 47px;
-            width: 99px;
-            }
+
+.code-popup__container {
+
+    .code-popup__wrapper{
+        width: 231px;
+        height: 55px;
+        background-repeat: no-repeat !important;
+        margin-top: 5px;
+
+        &.code-popup--1 {
+            background-image: url("../assets/Search_Box.png") !important;
+            
+           
+
         }
+        &.code-popup--2 {
+            background-image: url("../assets/Search_Box.png") !important;
+            margin-left: 39px;
+         
+            
+        }
+        &.code-popup--3 {
+            background-image: url("../assets/Search_Box.png") !important;
+            margin-left: 61px;
+ 
+            
+        }
+        &.code-popup--4 {
+            background-image: url("../assets/Search_Box.png") !important;
+            margin-left: 24px;
+         
+            
+        }
+        &.code-popup--5 {
+            background-image: url("../assets/Search_Box.png") !important;
+            margin-left: 45px;
 
-        .button {
-            font-size: 20px;
-            margin-top: 9px;
-            cursor: pointer;
+            
+        }
+    }
+
+
+}
+
+.code-popup__text {
+    padding-top: 12px;
+    font-size: 20px;
+    margin-left: 46px;
+
+    &.code-popup__text--1 {
+
+    }
+    &.code-popup__text--2 {
+        
+    }
+    &.code-popup__text--3 {
+        
+    }
+    &.code-popup__text--4 {
+        
+    }
+    &.code-popup__text--5 {
+        
+    }
     
-            @include mq($from: tablet, $until: desktop) {
-                font-size: 26px;
-                margin-top: 11px;
-                margin-top: 5px;
-                margin-left: 4px;
-            }
-            @include mq($from: desktop, $until: wide) {
-                font-size: 26px;
-                margin-top: 11px;
-                margin-top: 5px;
-                margin-left: 4px;
-            }
-            @include mq($from: wide) {
-                
-                font-size: 26px;
-                margin-top: 7px;
-                margin-left: 6px;
-                
-            }
+}
+
+.code-popup__footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 127px;
+    margin-top: 30px;
+    @include mq($from: tablet, $until: desktop) {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 127px;
+        margin-top: 32px;
+    }
+    @include mq($from: desktop, $until: wide) {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 127px;
+        margin-top: 32px;
+    }
+    @include mq($from: wide) {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 127px;
+        margin-top: 32px;
+    }
+    
+    .code-popup__tick {
+        background-image: url("../assets/Mark_arrow@2x.png") !important;
+        background-repeat: no-repeat !important;
+        background-size: contain;
+        height: 77px;
+        width: 104px;
+        margin-top: 20px;
+        @include mq($from: tablet, $until: desktop) {
+
         }
+        @include mq($from: desktop, $until: wide) {
+
+        }
+        @include mq($from: wide) {
+
+        }
+
+    }
+
+    .code-popup__link--container {
+        width: 103px;
+    }
+    .code-popup__link {
+        font-size: 22px;
+        width: 104px;
     }
 
 }
+
+
+.underline-transport {
+    background-image: url("../assets/underline.png");
+    background-position: 0 0.96em;
+    background-size: 28px 9px;
+    background-repeat: repeat-x;
+  }
+
+  .code-popup__message {
+    font-size: 23px;
+    width: 271px;
+  }
+
+
+  .code-popup-incomplete {
+    margin-top: -73px;
+        @include mq($from: tablet, $until: desktop) {
+            margin-top: -73px;
+        }
+        @include mq($from: desktop, $until: wide) {
+            margin-top: -73px;
+        }
+        @include mq($from: wide) {
+            margin-top: -73px;
+        }
+  }
