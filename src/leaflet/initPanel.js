@@ -39,7 +39,7 @@ export default async function initSearch() {
   
 
   async function handleSearch() {
-    const answerInput = searchInput[0].value;
+    const answerInput = searchInput[0].value.trim();
     searchInput[0].blur();
     showLoader();
     const challenges = await fetchChallenges();
