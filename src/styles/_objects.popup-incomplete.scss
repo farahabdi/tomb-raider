@@ -180,13 +180,15 @@
         }
     }
     .leaflet-popup-close-button {
-        background-image: url("../assets/x.png") !important;
+        background-image: url("../assets/Exit_X.png") !important;
         background-repeat: no-repeat !important;
         background-size: contain;
+        height: 23px !important;
         top: -168px !important;
         right: 57px !important;
+
         @include mq($from: tablet, $until: desktop) {
-            background-image: url("../assets/x@2x.png") !important;
+            background-image: url("../assets/Exit_X@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
             width: 40px !important;
@@ -195,7 +197,7 @@
             right: 50px !important;
         }
         @include mq($from: desktop, $until: wide) {
-            background-image: url("../assets/x@2x.png") !important;
+            background-image: url("../assets/Exit_X@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
             width: 40px !important;
@@ -204,7 +206,7 @@
             right: 50px !important;
         }
         @include mq($from: wide) {
-            background-image: url("../assets/x@2x.png") !important;
+            background-image: url("../assets/Exit_X@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
             width: 40px !important;

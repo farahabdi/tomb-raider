@@ -64,7 +64,7 @@
         height: 23px !important;
         width: 22px;
         right: 118px !important;
-        background-image: url("../assets/x.png") !important;
+        background-image: url("../assets/Exit_X.png") !important;
         background-repeat: no-repeat !important;
         background-size: contain;
         @include mq($from: tablet, $until: desktop) {
@@ -73,7 +73,7 @@
             color: black !important;
             height: 23px !important;
             width: 22px;
-            background-image: url("../assets/x@2x.png") !important;
+            background-image: url("../assets/Exit_X@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
            }
@@ -84,7 +84,7 @@
             color: black !important;
             width: 22px;
 
-            background-image: url("../assets/x@2x.png") !important;
+            background-image: url("../assets/Exit_X@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
         }
@@ -93,7 +93,7 @@
             right: 55px !important;
             height: 23px !important;
             color: black !important;
-            background-image: url("../assets/x@2x.png") !important;
+            background-image: url("../assets/Exit_X@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
             width: 22px;
