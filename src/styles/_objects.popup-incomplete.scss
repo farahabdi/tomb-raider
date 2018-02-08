@@ -184,8 +184,10 @@
         background-repeat: no-repeat !important;
         background-size: contain;
         height: 23px !important;
-        top: -168px !important;
-        right: 57px !important;
+        top: -179px !important;
+        right: 44px !important;
+        width: 40px !important;
+        height: 40px !important;
 
         @include mq($from: tablet, $until: desktop) {
             background-image: url("../assets/Exit_X@2x.png") !important;
@@ -211,7 +213,7 @@
             background-size: contain;
             width: 40px !important;
             height: 40px !important;
-            top: -398px !important;
+            top: -421px !important;
             right: 50px !important;
         }
     }
