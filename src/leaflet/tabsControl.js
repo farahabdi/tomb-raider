@@ -42,16 +42,20 @@ export default function tabsControl() {
             <div> Sign out </div>
             <div class="tick"></div>
           </div>
+          <a href="instructions_sml.pdf">
           <div class="instructions__message">
             <div> Instructions</div>
           </div>
+          </a>
           <a  target="_blank" class="instructions__terms" style="display:block" href="/Tomb_Raider_V8 _T&C_STC_31.1.18_PERMIT_INC.pdf">
             <div class="tick"></div>
             <div> Terms and conditions </div>
           </a>
+          
           <div class="instructions__message">
             <div class="fb-like" data-href="https://www.facebook.com/CroftHoldingsAU/" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="false"></div>
           </div>
+         
           </div>
         </div>
       ` )  
@@ -166,7 +170,7 @@ export default function tabsControl() {
        
 
           signOutElement.addEventListener("click", logout, false);
-          instructionsElement.addEventListener("click", logout, false); 
+
           //termsAndCondotionsElement.addEventListener("click", showOptionsTab, false); 
 
 
