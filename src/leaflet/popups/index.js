@@ -6,7 +6,7 @@ import { showCompletedPopup } from './completedPopup'
 import { showFailPopup } from './failPopup'
 import { showSuccessPopup } from './successPopup'
 import { showDuplicatePopup } from './duplicatePopup'
-import { showPopup } from './showPopup'
+import { showPopup, handleIconClick } from './showPopup'
 import { handlePopupClose, handlePopupOpen, disableMap, enableMap } from './utils'
 
 
@@ -24,7 +24,8 @@ export  {
     enableMap,
     showFailPopup,
     text,
-    showPopup
+    showPopup,
+    handleIconClick
 };
 
   

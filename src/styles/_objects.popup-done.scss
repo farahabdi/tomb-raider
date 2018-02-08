@@ -180,7 +180,9 @@
         background-image: url("../assets/Exit_X.png") !important;
         background-repeat: no-repeat !important;
         background-size: contain;
-        top: -208px !important;
+      //  width: 30px !important;
+        height: 30px !important;
+        top: -227px !important;
         right: 33px !important;
         @include mq($from: tablet, $until: desktop) {
             background-image: url("../assets/Exit_X@2x.png") !important;

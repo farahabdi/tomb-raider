@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { updateChallenge, checkAnswer, fetchChallenges, fetchCompletedChallenges } from '../api/index';
 import { showIncompletePopup, showFailPopup, showCompletedPopup, showSuccessPopup, showDuplicatePopup } from './popups'
-import { showPopup, handlePopupOpen, handlePopupClose, disableMap } from './popups'
+import { showPopup, handlePopupOpen, handlePopupClose, disableMap, handleIconClick } from './popups'
 import { polaroid, displayPolaroid, coordinates} from './utils'
 import { crossIcon } from './utils/crossIcon';
 
@@ -23,7 +23,9 @@ export default async function initSearch() {
 
 
   let challengeElement = document.getElementsByClassName('challenge__wrapper')[0]
-  challengeElement.addEventListener('click', showIncompletePopup, false)
+  challengeElement.addEventListener('click', handleIconClick, false)
+
+
 
   function showLoader(){
     let loaderContainer = document.getElementById('animation_container');
