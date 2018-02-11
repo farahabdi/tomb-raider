@@ -5,6 +5,7 @@ import { db } from '../utils/config';
 export async function fetchUserExists() {
   let userExists = false;
   const user = firebase.auth().currentUser;
+  debugger
   await db.collection('users')
     .doc(user.uid)
     .get()
@@ -27,6 +28,7 @@ export async function checkUserExists() {
 export async function fetchUserVisited() {
   let userVisited= false;
   const user = firebase.auth().currentUser;
+  debugger
   await db.collection('users')
     .doc(user.uid)
     .get()

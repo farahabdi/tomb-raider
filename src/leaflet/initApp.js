@@ -72,7 +72,7 @@ export default async function initApp() {
 
             let popup = marker.bindPopup(markup, correctPopupOptions)
             popup.on("popupclose", handlePopupClose);
-            popup.on("popupopen", ()=> { handlePopupOpen() })
+            popup.on("popupopen", handlePopupOpen)
             popup.openPopup();
 
             updateVisited()
