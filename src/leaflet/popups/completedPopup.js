@@ -11,8 +11,8 @@ export async function showCompletedPopup(challengespProgress) {
     <div class="code-popup__footer">
         <div class="code-popup__tick"></div>
         <div class="code-popup__link--container">
-          <span class="code-popup__link underline-transport"><a href="tombofthechosen.com">Transport me</a></span>
-          <span class="code-popup__link underline-transport"><a href="tombofthechosen.com">to the tomb</a><</span>
+          <span class="code-popup__link underline-transport"><a href="http://tombofthechosen.com">Transport me</a></span>
+          <span class="code-popup__link underline-transport"><a href="http://tombofthechosen.com">to the tomb</a><</span>
         </div>
       </div>
     ` ) 
