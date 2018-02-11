@@ -176,7 +176,7 @@
         
         }
     }
-    .leaflet-popup-close-button {
+    a.leaflet-popup-close-button {
         background-image: url("../assets/Exit_X.png") !important;
         background-repeat: no-repeat !important;
         background-size: contain;
@@ -190,8 +190,8 @@
             background-size: contain;
             top: -471px !important;
             right: 60px !important;
-            width: 20px !important;
-            height: 20px !important;
+            width: 40px !important;
+            height: 40px !important;
 
         }
         @include mq($from: desktop, $until: wide) {
@@ -200,8 +200,8 @@
             background-size: contain;
             top: -471px !important;
             right: 60px !important;
-            width: 20px;
-            height: 20px;
+            width: 40px;
+            height: 40px;
         }
         @include mq($from: wide) {
             background-image: url("../assets/Exit_X@2x.png") !important;

@@ -71,36 +71,39 @@
         background-repeat: no-repeat !important;
         background-size: contain;
         @include mq($from: tablet, $until: desktop) {
-            top: 39px !important;
-            right: 65px !important;
+            top: 19px !important;
+            right: 53px !important;
+            height: 43px !important;
+            width: 35px !important;
             color: black !important;
-            height: 23px !important;
-            width: 22px;
+
+
             background-image: url("../assets/Exit_X@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
            }
         @include mq($from: desktop, $until: wide) {
-            top: 43px !important;
-            right: 69px !important;
-            height: 23px !important;
+            top: 19px !important;
+            right: 53px !important;
+            height: 41px !important;
+            width: 35px !important;
             color: black !important;
-            width: 22px;
+
 
             background-image: url("../assets/Exit_X@2x.png") !important;
             background-repeat: no-repeat !important;
             background-size: contain;
         }
         @include mq($from: wide) {
-            top: 43px !important;
-            right: 69px !important;
+            top: 19px !important;
+            right: 53px !important;
             height: 23px !important;
-            width: 22px;
+            width: 35px !important;
+            height: 42px !important;
             color: black !important;
             background-image: url("../assets/Exit_X@2x.png") !important;
             background-repeat: no-repeat !important;
-            background-size: contain;
-            width: 22px;
+ 
         }
 
     }
